@@ -1,0 +1,32 @@
+{
+    "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+    "spaces": 2,
+    "generator-cli": {
+        "version": "5.2.1",
+        "generators": {
+            "csharp-netcore": {
+                "generatorName": "csharp-netcore",
+                "httpUserAgent": "MDMC-DotNet-SDK",
+                "gitHost": "github.com",
+                "gitRepoId": "dotnet-sdk",
+                "gitUserId": "mydatamyconsent",
+                "inputSpec": "https://api.mydatamyconsent.com/swagger/v1/swagger.json",
+                "removeOperationIdPrefix": true,
+                "additionalProperties": {
+                    "packageName": "com.mydatamyconsent",
+                    "developerEmail": "developers@mydatamyconsent.com",
+                    "developerName": "Balamurali Pandranki",
+                    "developerOrganization": "DataConsent, Inc.",
+                    "developerOrganizationUrl": "https://mydatamyconsent.com",
+                    "artifactDescription": "My Data My Consent Dotnet Rest API SDK",
+                    "artifactUrl": "https://github.com/mydatamyconsent/dotnet-sdk",
+                    "artifactVersion": "v1",
+                    "licenseUrl": "https://mydatamyconsent.com/en-us/legal/terms-of-service",
+                    "licenseName": "DataConsent, Inc. ToS",
+                    "scmUrl": "https://github.com/mydatamyconsent/dotnet-sdk",
+                    "scmDeveloperConnection": "scm:git:git@github.com:mydatamyconsent/dotnet-sdk.git"
+                }
+            }
+        }
+    }
+}
