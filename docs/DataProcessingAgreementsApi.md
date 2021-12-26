@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Api.DataProcessingAgreementsApi
+# MyDataMyConsent.Api.DataProcessingAgreementsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,9 +22,9 @@ Get all data processing agreements.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -95,9 +95,9 @@ Delete a data processing agreement. This will not delete a published or a agreem
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -108,7 +108,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = new Guid(); // Guid | 
+            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
 
             try
             {
@@ -130,7 +130,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Guid**](Guid.md)|  | 
+ **id** | **Guid**|  | 
 
 ### Return type
 
@@ -166,9 +166,9 @@ Get data processing agreement by Id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -179,7 +179,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = new Guid(); // Guid | 
+            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
 
             try
             {
@@ -202,7 +202,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Guid**](Guid.md)|  | 
+ **id** | **Guid**|  | 
 
 ### Return type
 
@@ -237,9 +237,9 @@ Update a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -250,7 +250,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = new Guid(); // Guid | 
+            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
             var dataProcessingAgreement = new DataProcessingAgreement(); // DataProcessingAgreement |  (optional) 
 
             try
@@ -274,7 +274,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Guid**](Guid.md)|  | 
+ **id** | **Guid**|  | 
  **dataProcessingAgreement** | [**DataProcessingAgreement**](DataProcessingAgreement.md)|  | [optional] 
 
 ### Return type
@@ -311,9 +311,9 @@ Terminate a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -324,7 +324,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = new Guid(); // Guid | 
+            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
 
             try
             {
@@ -346,7 +346,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**Guid**](Guid.md)|  | 
+ **id** | **Guid**|  | 
 
 ### Return type
 
@@ -382,9 +382,9 @@ Create a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

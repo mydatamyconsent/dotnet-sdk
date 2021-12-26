@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.IdentifierStringKeyValuePair
+# MyDataMyConsent.Models.IdentifierStringKeyValuePair
 
 ## Properties
 

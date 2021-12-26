@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.IdentityClaim
+# MyDataMyConsent.Models.IdentityClaim
 
 ## Properties
 

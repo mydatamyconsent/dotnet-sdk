@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.OrganizationType
+# MyDataMyConsent.Models.OrganizationType
 
 ## Properties
 

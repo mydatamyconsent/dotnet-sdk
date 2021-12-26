@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataProtectionOfficer
+# MyDataMyConsent.Models.DataProtectionOfficer
 
 ## Properties
 

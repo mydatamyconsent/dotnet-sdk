@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataLifeUnit
+# MyDataMyConsent.Models.DataLifeUnit
 
 ## Properties
 

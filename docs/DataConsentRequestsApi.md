@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Api.DataConsentRequestsApi
+# MyDataMyConsent.Api.DataConsentRequestsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,9 +22,9 @@ Cancel a Consent Request by ID.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -35,7 +35,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = new Guid(); // Guid | consent request id.
+            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | consent request id.
 
             try
             {
@@ -57,7 +57,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestId** | [**Guid**](Guid.md)| consent request id. | 
+ **requestId** | **Guid**| consent request id. | 
 
 ### Return type
 
@@ -90,9 +90,9 @@ Create a consent request.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -161,9 +161,9 @@ Get all Consent Requests.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -232,9 +232,9 @@ Get a Consent Request by ID.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -245,7 +245,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = new Guid(); // Guid | 
+            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
 
             try
             {
@@ -268,7 +268,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestId** | [**Guid**](Guid.md)|  | 
+ **requestId** | **Guid**|  | 
 
 ### Return type
 

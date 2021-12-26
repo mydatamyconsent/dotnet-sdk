@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.ReceiverType
+# MyDataMyConsent.Models.ReceiverType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Api.DocumentsApi
+# MyDataMyConsent.Api.DocumentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Issue a new document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -92,9 +92,9 @@ Get issued document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -105,7 +105,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentId = new Guid(); // Guid | Document id.
+            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | Document id.
 
             try
             {
@@ -127,7 +127,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentId** | [**Guid**](Guid.md)| Document id. | 
+ **documentId** | **Guid**| Document id. | 
 
 ### Return type
 
@@ -160,9 +160,9 @@ Get issued documents.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -173,7 +173,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentTypeId = new Guid?(); // Guid? |  (optional) 
+            var documentTypeId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid? |  (optional) 
             var fromDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
             var toDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
             var pageSize = 56;  // int? |  (optional)  (default to 25)
@@ -199,7 +199,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentTypeId** | [**Guid?**](Guid?.md)|  | [optional] 
+ **documentTypeId** | **Guid?**|  | [optional] 
  **fromDateTime** | **DateTime?**|  | [optional] 
  **toDateTime** | **DateTime?**|  | [optional] 
  **pageSize** | **int?**|  | [optional] [default to 25]
@@ -236,9 +236,9 @@ Get registered document types.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

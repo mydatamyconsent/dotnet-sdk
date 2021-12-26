@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.OrganizationCategory
+# MyDataMyConsent.Models.OrganizationCategory
 
 ## Properties
 

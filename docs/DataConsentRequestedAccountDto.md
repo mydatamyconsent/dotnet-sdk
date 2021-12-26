@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataConsentRequestedAccountDto
+# MyDataMyConsent.Models.DataConsentRequestedAccountDto
 
 ## Properties
 

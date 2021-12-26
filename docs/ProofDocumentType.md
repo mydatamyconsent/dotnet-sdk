@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.ProofDocumentType
+# MyDataMyConsent.Models.ProofDocumentType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.JsonSchema
+# MyDataMyConsent.Models.JsonSchema
 
 ## Properties
 

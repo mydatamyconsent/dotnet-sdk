@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.FileType
+# MyDataMyConsent.Models.FileType
 
 ## Properties
 

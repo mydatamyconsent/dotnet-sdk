@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.OrganizationAddress
+# MyDataMyConsent.Models.OrganizationAddress
 
 ## Properties
 

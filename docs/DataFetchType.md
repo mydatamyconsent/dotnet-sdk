@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataFetchType
+# MyDataMyConsent.Models.DataFetchType
 
 ## Properties
 

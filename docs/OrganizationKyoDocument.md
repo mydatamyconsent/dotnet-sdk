@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.OrganizationKyoDocument
+# MyDataMyConsent.Models.OrganizationKyoDocument
 
 ## Properties
 

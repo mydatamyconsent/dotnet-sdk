@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Identifier
+# MyDataMyConsent.Models.Identifier
 
 ## Properties
 

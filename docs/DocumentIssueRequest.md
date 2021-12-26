@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DocumentIssueRequest
+# MyDataMyConsent.Models.DocumentIssueRequest
 
 ## Properties
 

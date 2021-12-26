@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.RefreshToken
+# MyDataMyConsent.Models.RefreshToken
 
 ## Properties
 

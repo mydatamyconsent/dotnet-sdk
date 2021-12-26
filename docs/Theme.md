@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Theme
+# MyDataMyConsent.Models.Theme
 
 ## Properties
 

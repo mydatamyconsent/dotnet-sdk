@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.CategoryIconFontFamily
+# MyDataMyConsent.Models.CategoryIconFontFamily
 
 ## Properties
 

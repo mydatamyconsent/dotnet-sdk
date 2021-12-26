@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Gender
+# MyDataMyConsent.Models.Gender
 
 ## Properties
 

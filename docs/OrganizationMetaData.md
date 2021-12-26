@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.OrganizationMetaData
+# MyDataMyConsent.Models.OrganizationMetaData
 
 ## Properties
 

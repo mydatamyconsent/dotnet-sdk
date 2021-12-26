@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.FilterType
+# MyDataMyConsent.Models.FilterType
 
 ## Properties
 

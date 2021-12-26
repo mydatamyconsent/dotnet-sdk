@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Api.DataConsentsApi
+# MyDataMyConsent.Api.DataConsentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -26,9 +26,9 @@ Get consented financial account details.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -99,9 +99,9 @@ Get consented financial account insights.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -172,9 +172,9 @@ Get consented financial account transactions.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -251,9 +251,9 @@ Get all accounts in a consent.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -322,9 +322,9 @@ Get analysis of a consented document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -395,9 +395,9 @@ Download a consented document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -468,9 +468,9 @@ Get consented document details.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -541,9 +541,9 @@ Get all documents in a consent.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -612,9 +612,9 @@ Get consent details by consent id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -683,9 +683,9 @@ Get all consents filtered by status and time.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using com.mydatamyconsent.Api;
-using com.mydatamyconsent.Client;
-using com.mydatamyconsent.Model;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

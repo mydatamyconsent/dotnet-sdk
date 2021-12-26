@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.ApplicationUser
+# MyDataMyConsent.Models.ApplicationUser
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.SuggestedAccountDto
+# MyDataMyConsent.Models.SuggestedAccountDto
 
 ## Properties
 

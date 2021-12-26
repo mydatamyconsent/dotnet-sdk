@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Country
+# MyDataMyConsent.Models.Country
 
 ## Properties
 

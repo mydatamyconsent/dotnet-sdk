@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Rejection
+# MyDataMyConsent.Models.Rejection
 
 ## Properties
 

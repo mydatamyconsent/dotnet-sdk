@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataConsentRequestedFaDto
+# MyDataMyConsent.Models.DataConsentRequestedFaDto
 
 ## Properties
 

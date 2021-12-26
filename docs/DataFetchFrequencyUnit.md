@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataFetchFrequencyUnit
+# MyDataMyConsent.Models.DataFetchFrequencyUnit
 
 ## Properties
 

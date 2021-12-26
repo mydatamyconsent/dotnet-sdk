@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Organization
+# MyDataMyConsent.Models.Organization
 
 ## Properties
 
@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **BrandName** | **string** |  | [optional] 
 **AuthorizedPersonnelTaxId** | **string** |  | [optional] 
 **AuthorizedPersonnelName** | **string** |  | [optional] 
+**AuthorizedPersonnelKycDocumentType** | **AuthorizedPersonnelKycDocumentType** |  | [optional] 
 **RegistrationId** | **string** |  | [optional] 
 **VatId** | **string** |  | [optional] 
 **TaxId** | **string** |  | [optional] 
@@ -37,6 +38,8 @@ Name | Type | Description | Notes
 **PrivacyPolicyUrl** | **string** |  | [optional] 
 **TermsOfServiceUrl** | **string** |  | [optional] 
 **WebsiteUrl** | **string** |  | [optional] 
+**HelpLineNumber** | **string** |  | [optional] 
+**SupportEmail** | **string** |  | [optional] 
 **IsGovernmentOrganization** | **bool** |  | [optional] 
 **DlApiKey** | **string** |  | [optional] 
 **IsKyoCompleted** | **bool** |  | [optional] 

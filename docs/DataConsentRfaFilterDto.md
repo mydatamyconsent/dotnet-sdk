@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.DataConsentRfaFilterDto
+# MyDataMyConsent.Models.DataConsentRfaFilterDto
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.FinancialAccountTypes
+# MyDataMyConsent.Models.FinancialAccountTypes
 
 ## Properties
 

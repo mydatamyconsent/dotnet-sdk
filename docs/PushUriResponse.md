@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.PushUriResponse
+# MyDataMyConsent.Models.PushUriResponse
 
 ## Properties
 

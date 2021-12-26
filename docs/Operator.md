@@ -1,4 +1,4 @@
-# com.mydatamyconsent.Model.Operator
+# MyDataMyConsent.Models.Operator
 
 ## Properties
 
