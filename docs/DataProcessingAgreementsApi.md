@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="v1dataagreementsget"></a>
 # **V1DataAgreementsGet**
-> DataProcessingAgreementPaginatedList V1DataAgreementsGet (int? pageNo = null, int? pageSize = null)
+> DataProcessingAgreementDtoPaginatedList V1DataAgreementsGet (int? pageNo = null, int? pageSize = null)
 
 Get all data processing agreements.
 
@@ -41,7 +41,7 @@ namespace Example
             try
             {
                 // Get all data processing agreements.
-                DataProcessingAgreementPaginatedList result = apiInstance.V1DataAgreementsGet(pageNo, pageSize);
+                DataProcessingAgreementDtoPaginatedList result = apiInstance.V1DataAgreementsGet(pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataProcessingAgreementPaginatedList**](DataProcessingAgreementPaginatedList.md)
+[**DataProcessingAgreementDtoPaginatedList**](DataProcessingAgreementDtoPaginatedList.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -143,7 +143,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -158,7 +158,7 @@ No authorization required
 
 <a name="v1dataagreementsidget"></a>
 # **V1DataAgreementsIdGet**
-> DataProcessingAgreement V1DataAgreementsIdGet (Guid id)
+> DataProcessingAgreementDto V1DataAgreementsIdGet (Guid id)
 
 Get data processing agreement by Id.
 
@@ -184,7 +184,7 @@ namespace Example
             try
             {
                 // Get data processing agreement by Id.
-                DataProcessingAgreement result = apiInstance.V1DataAgreementsIdGet(id);
+                DataProcessingAgreementDto result = apiInstance.V1DataAgreementsIdGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -229,7 +229,7 @@ No authorization required
 
 <a name="v1dataagreementsidput"></a>
 # **V1DataAgreementsIdPut**
-> DataProcessingAgreement V1DataAgreementsIdPut (Guid id, DataProcessingAgreement dataProcessingAgreement = null)
+> DataProcessingAgreementDto V1DataAgreementsIdPut (Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = null)
 
 Update a data processing agreement.
 
@@ -251,12 +251,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var dataProcessingAgreement = new DataProcessingAgreement(); // DataProcessingAgreement |  (optional) 
+            var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel(); // UpdateDataProcessingAgreementRequestModel |  (optional) 
 
             try
             {
                 // Update a data processing agreement.
-                DataProcessingAgreement result = apiInstance.V1DataAgreementsIdPut(id, dataProcessingAgreement);
+                DataProcessingAgreementDto result = apiInstance.V1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -275,11 +275,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Guid**|  | 
- **dataProcessingAgreement** | [**DataProcessingAgreement**](DataProcessingAgreement.md)|  | [optional] 
+ **updateDataProcessingAgreementRequestModel** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md)|  | [optional] 
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -287,8 +287,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -359,7 +359,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -374,7 +374,7 @@ No authorization required
 
 <a name="v1dataagreementspost"></a>
 # **V1DataAgreementsPost**
-> DataProcessingAgreement V1DataAgreementsPost (DataProcessingAgreement dataProcessingAgreement = null)
+> DataProcessingAgreementDto V1DataAgreementsPost (CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null)
 
 Create a data processing agreement.
 
@@ -395,12 +395,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var dataProcessingAgreement = new DataProcessingAgreement(); // DataProcessingAgreement |  (optional) 
+            var createDataProcessingAgreementRequestModel = new CreateDataProcessingAgreementRequestModel(); // CreateDataProcessingAgreementRequestModel |  (optional) 
 
             try
             {
                 // Create a data processing agreement.
-                DataProcessingAgreement result = apiInstance.V1DataAgreementsPost(dataProcessingAgreement);
+                DataProcessingAgreementDto result = apiInstance.V1DataAgreementsPost(createDataProcessingAgreementRequestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -418,11 +418,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dataProcessingAgreement** | [**DataProcessingAgreement**](DataProcessingAgreement.md)|  | [optional] 
+ **createDataProcessingAgreementRequestModel** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md)|  | [optional] 
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -430,8 +430,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details

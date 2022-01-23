@@ -31,88 +31,41 @@ namespace MyDataMyConsent.Models
     [DataContract(Name = "DataConsentRequestModel")]
     public partial class DataConsentRequestModel : IEquatable<DataConsentRequestModel>
     {
-
-        /// <summary>
-        /// Gets or Sets DataLifeUnit
-        /// </summary>
-        [DataMember(Name = "dataLifeUnit", EmitDefaultValue = false)]
-        public DataLifeUnit? DataLifeUnit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DataFetchFrequencyUnit
-        /// </summary>
-        [DataMember(Name = "dataFetchFrequencyUnit", EmitDefaultValue = false)]
-        public DataFetchFrequencyUnit? DataFetchFrequencyUnit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DataFetchType
-        /// </summary>
-        [DataMember(Name = "dataFetchType", EmitDefaultValue = false)]
-        public DataFetchType? DataFetchType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DataConsentRequestModel" /> class.
         /// </summary>
-        /// <param name="organizationId">organizationId.</param>
-        /// <param name="transactionId">transactionId.</param>
-        /// <param name="identifiers">identifiers.</param>
+        [JsonConstructorAttribute]
+        protected DataConsentRequestModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataConsentRequestModel" /> class.
+        /// </summary>
+        /// <param name="consentTemplateId">consentTemplateId.</param>
         /// <param name="startDateTime">startDateTime.</param>
         /// <param name="expiryDateTime">expiryDateTime.</param>
-        /// <param name="description">description.</param>
-        /// <param name="purposeCode">purposeCode.</param>
-        /// <param name="purposeLink">purposeLink.</param>
-        /// <param name="dataLifeUnit">dataLifeUnit.</param>
-        /// <param name="dataLifeValue">dataLifeValue.</param>
-        /// <param name="dataFetchFrequencyUnit">dataFetchFrequencyUnit.</param>
-        /// <param name="dataFetchFrequencyUnitValue">dataFetchFrequencyUnitValue.</param>
-        /// <param name="dataFetchType">dataFetchType.</param>
-        /// <param name="agreementId">agreementId.</param>
-        /// <param name="identityClaims">identityClaims.</param>
-        /// <param name="financialAccounts">financialAccounts.</param>
-        /// <param name="documents">documents.</param>
-        public DataConsentRequestModel(Guid organizationId = default(Guid), string transactionId = default(string), Dictionary<string, string> identifiers = default(Dictionary<string, string>), DateTime? startDateTime = default(DateTime?), DateTime expiryDateTime = default(DateTime), string description = default(string), string purposeCode = default(string), string purposeLink = default(string), DataLifeUnit? dataLifeUnit = default(DataLifeUnit?), int dataLifeValue = default(int), DataFetchFrequencyUnit? dataFetchFrequencyUnit = default(DataFetchFrequencyUnit?), int dataFetchFrequencyUnitValue = default(int), DataFetchType? dataFetchType = default(DataFetchType?), Guid agreementId = default(Guid), List<IdentityClaim> identityClaims = default(List<IdentityClaim>), List<DataConsentRequestedFaDto> financialAccounts = default(List<DataConsentRequestedFaDto>), List<DataConsentRequestedDocumentDto> documents = default(List<DataConsentRequestedDocumentDto>))
+        /// <param name="receiver">receiver (required).</param>
+        public DataConsentRequestModel(Guid consentTemplateId = default(Guid), DateTime startDateTime = default(DateTime), DateTime expiryDateTime = default(DateTime), Receiver receiver = default(Receiver))
         {
-            this.OrganizationId = organizationId;
-            this.TransactionId = transactionId;
-            this.Identifiers = identifiers;
+            // to ensure "receiver" is required (not null)
+            if (receiver == null) {
+                throw new ArgumentNullException("receiver is a required property for DataConsentRequestModel and cannot be null");
+            }
+            this.Receiver = receiver;
+            this.ConsentTemplateId = consentTemplateId;
             this.StartDateTime = startDateTime;
             this.ExpiryDateTime = expiryDateTime;
-            this.Description = description;
-            this.PurposeCode = purposeCode;
-            this.PurposeLink = purposeLink;
-            this.DataLifeUnit = dataLifeUnit;
-            this.DataLifeValue = dataLifeValue;
-            this.DataFetchFrequencyUnit = dataFetchFrequencyUnit;
-            this.DataFetchFrequencyUnitValue = dataFetchFrequencyUnitValue;
-            this.DataFetchType = dataFetchType;
-            this.AgreementId = agreementId;
-            this.IdentityClaims = identityClaims;
-            this.FinancialAccounts = financialAccounts;
-            this.Documents = documents;
         }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Gets or Sets ConsentTemplateId
         /// </summary>
-        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TransactionId
-        /// </summary>
-        [DataMember(Name = "transactionId", EmitDefaultValue = true)]
-        public string TransactionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Identifiers
-        /// </summary>
-        [DataMember(Name = "identifiers", EmitDefaultValue = true)]
-        public Dictionary<string, string> Identifiers { get; set; }
+        [DataMember(Name = "consentTemplateId", EmitDefaultValue = false)]
+        public Guid ConsentTemplateId { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDateTime
         /// </summary>
-        [DataMember(Name = "startDateTime", EmitDefaultValue = true)]
-        public DateTime? StartDateTime { get; set; }
+        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
+        public DateTime StartDateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiryDateTime
@@ -121,58 +74,10 @@ namespace MyDataMyConsent.Models
         public DateTime ExpiryDateTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets Receiver
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PurposeCode
-        /// </summary>
-        [DataMember(Name = "purposeCode", EmitDefaultValue = true)]
-        public string PurposeCode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PurposeLink
-        /// </summary>
-        [DataMember(Name = "purposeLink", EmitDefaultValue = true)]
-        public string PurposeLink { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DataLifeValue
-        /// </summary>
-        [DataMember(Name = "dataLifeValue", EmitDefaultValue = false)]
-        public int DataLifeValue { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DataFetchFrequencyUnitValue
-        /// </summary>
-        [DataMember(Name = "dataFetchFrequencyUnitValue", EmitDefaultValue = false)]
-        public int DataFetchFrequencyUnitValue { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AgreementId
-        /// </summary>
-        [DataMember(Name = "agreementId", EmitDefaultValue = false)]
-        public Guid AgreementId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IdentityClaims
-        /// </summary>
-        [DataMember(Name = "identityClaims", EmitDefaultValue = true)]
-        public List<IdentityClaim> IdentityClaims { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FinancialAccounts
-        /// </summary>
-        [DataMember(Name = "financialAccounts", EmitDefaultValue = true)]
-        public List<DataConsentRequestedFaDto> FinancialAccounts { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Documents
-        /// </summary>
-        [DataMember(Name = "documents", EmitDefaultValue = true)]
-        public List<DataConsentRequestedDocumentDto> Documents { get; set; }
+        [DataMember(Name = "receiver", IsRequired = true, EmitDefaultValue = false)]
+        public Receiver Receiver { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -182,23 +87,10 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DataConsentRequestModel {\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
-            sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
-            sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
+            sb.Append("  ConsentTemplateId: ").Append(ConsentTemplateId).Append("\n");
             sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
             sb.Append("  ExpiryDateTime: ").Append(ExpiryDateTime).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  PurposeCode: ").Append(PurposeCode).Append("\n");
-            sb.Append("  PurposeLink: ").Append(PurposeLink).Append("\n");
-            sb.Append("  DataLifeUnit: ").Append(DataLifeUnit).Append("\n");
-            sb.Append("  DataLifeValue: ").Append(DataLifeValue).Append("\n");
-            sb.Append("  DataFetchFrequencyUnit: ").Append(DataFetchFrequencyUnit).Append("\n");
-            sb.Append("  DataFetchFrequencyUnitValue: ").Append(DataFetchFrequencyUnitValue).Append("\n");
-            sb.Append("  DataFetchType: ").Append(DataFetchType).Append("\n");
-            sb.Append("  AgreementId: ").Append(AgreementId).Append("\n");
-            sb.Append("  IdentityClaims: ").Append(IdentityClaims).Append("\n");
-            sb.Append("  FinancialAccounts: ").Append(FinancialAccounts).Append("\n");
-            sb.Append("  Documents: ").Append(Documents).Append("\n");
+            sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,20 +127,9 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
-                    this.TransactionId == input.TransactionId ||
-                    (this.TransactionId != null &&
-                    this.TransactionId.Equals(input.TransactionId))
-                ) && 
-                (
-                    this.Identifiers == input.Identifiers ||
-                    this.Identifiers != null &&
-                    input.Identifiers != null &&
-                    this.Identifiers.SequenceEqual(input.Identifiers)
+                    this.ConsentTemplateId == input.ConsentTemplateId ||
+                    (this.ConsentTemplateId != null &&
+                    this.ConsentTemplateId.Equals(input.ConsentTemplateId))
                 ) && 
                 (
                     this.StartDateTime == input.StartDateTime ||
@@ -261,62 +142,9 @@ namespace MyDataMyConsent.Models
                     this.ExpiryDateTime.Equals(input.ExpiryDateTime))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.PurposeCode == input.PurposeCode ||
-                    (this.PurposeCode != null &&
-                    this.PurposeCode.Equals(input.PurposeCode))
-                ) && 
-                (
-                    this.PurposeLink == input.PurposeLink ||
-                    (this.PurposeLink != null &&
-                    this.PurposeLink.Equals(input.PurposeLink))
-                ) && 
-                (
-                    this.DataLifeUnit == input.DataLifeUnit ||
-                    this.DataLifeUnit.Equals(input.DataLifeUnit)
-                ) && 
-                (
-                    this.DataLifeValue == input.DataLifeValue ||
-                    this.DataLifeValue.Equals(input.DataLifeValue)
-                ) && 
-                (
-                    this.DataFetchFrequencyUnit == input.DataFetchFrequencyUnit ||
-                    this.DataFetchFrequencyUnit.Equals(input.DataFetchFrequencyUnit)
-                ) && 
-                (
-                    this.DataFetchFrequencyUnitValue == input.DataFetchFrequencyUnitValue ||
-                    this.DataFetchFrequencyUnitValue.Equals(input.DataFetchFrequencyUnitValue)
-                ) && 
-                (
-                    this.DataFetchType == input.DataFetchType ||
-                    this.DataFetchType.Equals(input.DataFetchType)
-                ) && 
-                (
-                    this.AgreementId == input.AgreementId ||
-                    (this.AgreementId != null &&
-                    this.AgreementId.Equals(input.AgreementId))
-                ) && 
-                (
-                    this.IdentityClaims == input.IdentityClaims ||
-                    this.IdentityClaims != null &&
-                    input.IdentityClaims != null &&
-                    this.IdentityClaims.SequenceEqual(input.IdentityClaims)
-                ) && 
-                (
-                    this.FinancialAccounts == input.FinancialAccounts ||
-                    this.FinancialAccounts != null &&
-                    input.FinancialAccounts != null &&
-                    this.FinancialAccounts.SequenceEqual(input.FinancialAccounts)
-                ) && 
-                (
-                    this.Documents == input.Documents ||
-                    this.Documents != null &&
-                    input.Documents != null &&
-                    this.Documents.SequenceEqual(input.Documents)
+                    this.Receiver == input.Receiver ||
+                    (this.Receiver != null &&
+                    this.Receiver.Equals(input.Receiver))
                 );
         }
 
@@ -329,17 +157,9 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrganizationId != null)
+                if (this.ConsentTemplateId != null)
                 {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
-                }
-                if (this.TransactionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.TransactionId.GetHashCode();
-                }
-                if (this.Identifiers != null)
-                {
-                    hashCode = (hashCode * 59) + this.Identifiers.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConsentTemplateId.GetHashCode();
                 }
                 if (this.StartDateTime != null)
                 {
@@ -349,38 +169,9 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.ExpiryDateTime.GetHashCode();
                 }
-                if (this.Description != null)
+                if (this.Receiver != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.PurposeCode != null)
-                {
-                    hashCode = (hashCode * 59) + this.PurposeCode.GetHashCode();
-                }
-                if (this.PurposeLink != null)
-                {
-                    hashCode = (hashCode * 59) + this.PurposeLink.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.DataLifeUnit.GetHashCode();
-                hashCode = (hashCode * 59) + this.DataLifeValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.DataFetchFrequencyUnit.GetHashCode();
-                hashCode = (hashCode * 59) + this.DataFetchFrequencyUnitValue.GetHashCode();
-                hashCode = (hashCode * 59) + this.DataFetchType.GetHashCode();
-                if (this.AgreementId != null)
-                {
-                    hashCode = (hashCode * 59) + this.AgreementId.GetHashCode();
-                }
-                if (this.IdentityClaims != null)
-                {
-                    hashCode = (hashCode * 59) + this.IdentityClaims.GetHashCode();
-                }
-                if (this.FinancialAccounts != null)
-                {
-                    hashCode = (hashCode * 59) + this.FinancialAccounts.GetHashCode();
-                }
-                if (this.Documents != null)
-                {
-                    hashCode = (hashCode * 59) + this.Documents.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
                 }
                 return hashCode;
             }

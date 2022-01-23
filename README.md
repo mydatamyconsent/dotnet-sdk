@@ -73,12 +73,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | consent request id.
+            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
 
             try
             {
-                // Cancel a Consent Request by ID.
-                apiInstance.CancelConsentRequest(requestId);
+                // Revoke / Cancel the ConsentRequest based on Id
+                bool result = apiInstance.CancelConsentRequest(requestId);
+                Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
@@ -99,7 +100,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DataConsentRequestsApi* | [**CancelConsentRequest**](docs/DataConsentRequestsApi.md#cancelconsentrequest) | **DELETE** /v1/consent-requests/{requestId}/cancel | Cancel a Consent Request by ID.
+*DataConsentRequestsApi* | [**CancelConsentRequest**](docs/DataConsentRequestsApi.md#cancelconsentrequest) | **DELETE** /v1/consent-requests/{requestId}/cancel | Revoke / Cancel the ConsentRequest based on Id
 *DataConsentRequestsApi* | [**CreateRequest**](docs/DataConsentRequestsApi.md#createrequest) | **POST** /v1/consent-requests | Create a consent request.
 *DataConsentRequestsApi* | [**GetAllConsentRequests**](docs/DataConsentRequestsApi.md#getallconsentrequests) | **GET** /v1/consent-requests | Get all Consent Requests.
 *DataConsentRequestsApi* | [**GetConsentRequestById**](docs/DataConsentRequestsApi.md#getconsentrequestbyid) | **GET** /v1/consent-requests/{requestId} | Get a Consent Request by ID.
@@ -131,64 +132,37 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
- - [Models.ApplicationUser](docs/ApplicationUser.md)
- - [Models.AuthorizedPersonnelKycDocumentType](docs/AuthorizedPersonnelKycDocumentType.md)
- - [Models.BankAccountType](docs/BankAccountType.md)
- - [Models.CategoryIconFontFamily](docs/CategoryIconFontFamily.md)
- - [Models.Country](docs/Country.md)
- - [Models.CountryState](docs/CountryState.md)
- - [Models.DataConsent](docs/DataConsent.md)
+ - [Models.CollectibleTypes](docs/CollectibleTypes.md)
+ - [Models.ConsentTemplateTypes](docs/ConsentTemplateTypes.md)
+ - [Models.CreateDataProcessingAgreementRequestModel](docs/CreateDataProcessingAgreementRequestModel.md)
  - [Models.DataConsentDetailsDto](docs/DataConsentDetailsDto.md)
- - [Models.DataConsentIdentifier](docs/DataConsentIdentifier.md)
  - [Models.DataConsentRequestModel](docs/DataConsentRequestModel.md)
- - [Models.DataConsentRequestedAccountDto](docs/DataConsentRequestedAccountDto.md)
- - [Models.DataConsentRequestedDocument](docs/DataConsentRequestedDocument.md)
- - [Models.DataConsentRequestedDocumentDto](docs/DataConsentRequestedDocumentDto.md)
- - [Models.DataConsentRequestedFaDto](docs/DataConsentRequestedFaDto.md)
- - [Models.DataConsentRequestedFinancialAccount](docs/DataConsentRequestedFinancialAccount.md)
  - [Models.DataConsentRequesterDto](docs/DataConsentRequesterDto.md)
- - [Models.DataConsentRfaFilter](docs/DataConsentRfaFilter.md)
- - [Models.DataConsentRfaFilterDto](docs/DataConsentRfaFilterDto.md)
  - [Models.DataConsentStatus](docs/DataConsentStatus.md)
- - [Models.DataFetchFrequencyUnit](docs/DataFetchFrequencyUnit.md)
- - [Models.DataFetchType](docs/DataFetchType.md)
- - [Models.DataLifeUnit](docs/DataLifeUnit.md)
- - [Models.DataProcessingAgreement](docs/DataProcessingAgreement.md)
- - [Models.DataProcessingAgreementPaginatedList](docs/DataProcessingAgreementPaginatedList.md)
+ - [Models.DataProcessingAgreementDto](docs/DataProcessingAgreementDto.md)
+ - [Models.DataProcessingAgreementDtoPaginatedList](docs/DataProcessingAgreementDtoPaginatedList.md)
  - [Models.DataProtectionOfficer](docs/DataProtectionOfficer.md)
  - [Models.DataProvider](docs/DataProvider.md)
  - [Models.DataProviderPaginatedList](docs/DataProviderPaginatedList.md)
+ - [Models.Document](docs/Document.md)
  - [Models.DocumentIssueRequest](docs/DocumentIssueRequest.md)
- - [Models.DocumentProviderCategory](docs/DocumentProviderCategory.md)
- - [Models.FileType](docs/FileType.md)
- - [Models.FilterType](docs/FilterType.md)
- - [Models.FinancialAccountTypes](docs/FinancialAccountTypes.md)
- - [Models.Gender](docs/Gender.md)
+ - [Models.DocumentsRequired](docs/DocumentsRequired.md)
+ - [Models.FetchTypes](docs/FetchTypes.md)
+ - [Models.Financial](docs/Financial.md)
+ - [Models.FinancialAccountDetailsRequired](docs/FinancialAccountDetailsRequired.md)
+ - [Models.FinancialAccounts](docs/FinancialAccounts.md)
+ - [Models.GetConsentTemplateDetailsDto](docs/GetConsentTemplateDetailsDto.md)
  - [Models.IdentificationStrategy](docs/IdentificationStrategy.md)
  - [Models.Identifier](docs/Identifier.md)
  - [Models.IdentifierStringKeyValuePair](docs/IdentifierStringKeyValuePair.md)
- - [Models.IdentityClaim](docs/IdentityClaim.md)
- - [Models.JsonSchema](docs/JsonSchema.md)
- - [Models.Operator](docs/Operator.md)
- - [Models.Organization](docs/Organization.md)
- - [Models.OrganizationAddress](docs/OrganizationAddress.md)
- - [Models.OrganizationAddressType](docs/OrganizationAddressType.md)
- - [Models.OrganizationCategory](docs/OrganizationCategory.md)
- - [Models.OrganizationFinancialAccount](docs/OrganizationFinancialAccount.md)
- - [Models.OrganizationKyoDocument](docs/OrganizationKyoDocument.md)
- - [Models.OrganizationMetaData](docs/OrganizationMetaData.md)
- - [Models.OrganizationStatus](docs/OrganizationStatus.md)
- - [Models.OrganizationType](docs/OrganizationType.md)
+ - [Models.IdentitySupportedFields](docs/IdentitySupportedFields.md)
+ - [Models.Life](docs/Life.md)
  - [Models.ProblemDetails](docs/ProblemDetails.md)
- - [Models.ProofDocumentType](docs/ProofDocumentType.md)
  - [Models.PushUriRequest](docs/PushUriRequest.md)
  - [Models.PushUriResponse](docs/PushUriResponse.md)
  - [Models.Receiver](docs/Receiver.md)
  - [Models.ReceiverType](docs/ReceiverType.md)
- - [Models.RefreshToken](docs/RefreshToken.md)
- - [Models.Rejection](docs/Rejection.md)
- - [Models.SuggestedAccountDto](docs/SuggestedAccountDto.md)
- - [Models.Theme](docs/Theme.md)
+ - [Models.UpdateDataProcessingAgreementRequestModel](docs/UpdateDataProcessingAgreementRequestModel.md)
  - [Models.UriDetails](docs/UriDetails.md)
 
 

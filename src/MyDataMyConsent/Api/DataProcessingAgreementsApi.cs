@@ -33,8 +33,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>DataProcessingAgreementPaginatedList</returns>
-        DataProcessingAgreementPaginatedList V1DataAgreementsGet(int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>DataProcessingAgreementDtoPaginatedList</returns>
+        DataProcessingAgreementDtoPaginatedList V1DataAgreementsGet(int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get all data processing agreements.
@@ -45,8 +45,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of DataProcessingAgreementPaginatedList</returns>
-        ApiResponse<DataProcessingAgreementPaginatedList> V1DataAgreementsGetWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>ApiResponse of DataProcessingAgreementDtoPaginatedList</returns>
+        ApiResponse<DataProcessingAgreementDtoPaginatedList> V1DataAgreementsGetWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
         /// </summary>
@@ -70,8 +70,8 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>DataProcessingAgreement</returns>
-        DataProcessingAgreement V1DataAgreementsIdGet(Guid id);
+        /// <returns>DataProcessingAgreementDto</returns>
+        DataProcessingAgreementDto V1DataAgreementsIdGet(Guid id);
 
         /// <summary>
         /// Get data processing agreement by Id.
@@ -81,16 +81,16 @@ namespace MyDataMyConsent.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        ApiResponse<DataProcessingAgreement> V1DataAgreementsIdGetWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        ApiResponse<DataProcessingAgreementDto> V1DataAgreementsIdGetWithHttpInfo(Guid id);
         /// <summary>
         /// Update a data processing agreement.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>DataProcessingAgreement</returns>
-        DataProcessingAgreement V1DataAgreementsIdPut(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement));
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>DataProcessingAgreementDto</returns>
+        DataProcessingAgreementDto V1DataAgreementsIdPut(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel));
 
         /// <summary>
         /// Update a data processing agreement.
@@ -100,9 +100,9 @@ namespace MyDataMyConsent.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        ApiResponse<DataProcessingAgreement> V1DataAgreementsIdPutWithHttpInfo(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement));
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        ApiResponse<DataProcessingAgreementDto> V1DataAgreementsIdPutWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel));
         /// <summary>
         /// Terminate a data processing agreement.
         /// </summary>
@@ -125,9 +125,9 @@ namespace MyDataMyConsent.Api
         /// Create a data processing agreement.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>DataProcessingAgreement</returns>
-        DataProcessingAgreement V1DataAgreementsPost(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement));
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>DataProcessingAgreementDto</returns>
+        DataProcessingAgreementDto V1DataAgreementsPost(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel));
 
         /// <summary>
         /// Create a data processing agreement.
@@ -136,9 +136,9 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        ApiResponse<DataProcessingAgreement> V1DataAgreementsPostWithHttpInfo(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement));
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        ApiResponse<DataProcessingAgreementDto> V1DataAgreementsPostWithHttpInfo(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel));
         #endregion Synchronous Operations
     }
 
@@ -158,8 +158,8 @@ namespace MyDataMyConsent.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreementPaginatedList</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreementPaginatedList> V1DataAgreementsGetAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataProcessingAgreementDtoPaginatedList</returns>
+        System.Threading.Tasks.Task<DataProcessingAgreementDtoPaginatedList> V1DataAgreementsGetAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all data processing agreements.
@@ -171,8 +171,8 @@ namespace MyDataMyConsent.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreementPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementPaginatedList>> V1DataAgreementsGetWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDtoPaginatedList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDtoPaginatedList>> V1DataAgreementsGetWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
         /// </summary>
@@ -205,8 +205,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get data processing agreement by Id.
@@ -217,8 +217,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreement>> V1DataAgreementsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a data processing agreement.
         /// </summary>
@@ -227,10 +227,10 @@ namespace MyDataMyConsent.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsIdPutAsync(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsIdPutAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update a data processing agreement.
@@ -240,10 +240,10 @@ namespace MyDataMyConsent.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreement>> V1DataAgreementsIdPutWithHttpInfoAsync(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsIdPutWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Terminate a data processing agreement.
         /// </summary>
@@ -274,10 +274,10 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsPostAsync(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsPostAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a data processing agreement.
@@ -286,10 +286,10 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreement>> V1DataAgreementsPostWithHttpInfoAsync(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsPostWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -416,10 +416,10 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>DataProcessingAgreementPaginatedList</returns>
-        public DataProcessingAgreementPaginatedList V1DataAgreementsGet(int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>DataProcessingAgreementDtoPaginatedList</returns>
+        public DataProcessingAgreementDtoPaginatedList V1DataAgreementsGet(int? pageNo = default(int?), int? pageSize = default(int?))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementPaginatedList> localVarResponse = V1DataAgreementsGetWithHttpInfo(pageNo, pageSize);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDtoPaginatedList> localVarResponse = V1DataAgreementsGetWithHttpInfo(pageNo, pageSize);
             return localVarResponse.Data;
         }
 
@@ -429,8 +429,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of DataProcessingAgreementPaginatedList</returns>
-        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementPaginatedList> V1DataAgreementsGetWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>ApiResponse of DataProcessingAgreementDtoPaginatedList</returns>
+        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDtoPaginatedList> V1DataAgreementsGetWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
@@ -439,8 +439,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -466,7 +465,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DataProcessingAgreementPaginatedList>("/v1/data-agreements", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataProcessingAgreementDtoPaginatedList>("/v1/data-agreements", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("V1DataAgreementsGet", localVarResponse);
@@ -486,10 +485,10 @@ namespace MyDataMyConsent.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreementPaginatedList</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreementPaginatedList> V1DataAgreementsGetAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataProcessingAgreementDtoPaginatedList</returns>
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDtoPaginatedList> V1DataAgreementsGetAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementPaginatedList> localVarResponse = await V1DataAgreementsGetWithHttpInfoAsync(pageNo, pageSize, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDtoPaginatedList> localVarResponse = await V1DataAgreementsGetWithHttpInfoAsync(pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -500,8 +499,8 @@ namespace MyDataMyConsent.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreementPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementPaginatedList>> V1DataAgreementsGetWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDtoPaginatedList)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDtoPaginatedList>> V1DataAgreementsGetWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
@@ -511,8 +510,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -538,7 +536,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProcessingAgreementPaginatedList>("/v1/data-agreements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProcessingAgreementDtoPaginatedList>("/v1/data-agreements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -578,8 +576,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -640,8 +637,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -679,10 +675,10 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>DataProcessingAgreement</returns>
-        public DataProcessingAgreement V1DataAgreementsIdGet(Guid id)
+        /// <returns>DataProcessingAgreementDto</returns>
+        public DataProcessingAgreementDto V1DataAgreementsIdGet(Guid id)
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = V1DataAgreementsIdGetWithHttpInfo(id);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = V1DataAgreementsIdGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -691,8 +687,8 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> V1DataAgreementsIdGetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> V1DataAgreementsIdGetWithHttpInfo(Guid id)
         {
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
@@ -701,8 +697,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -721,7 +716,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DataProcessingAgreement>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataProcessingAgreementDto>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("V1DataAgreementsIdGet", localVarResponse);
@@ -740,10 +735,10 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = await V1DataAgreementsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = await V1DataAgreementsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -753,8 +748,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement>> V1DataAgreementsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
@@ -764,8 +759,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -784,7 +778,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProcessingAgreement>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProcessingAgreementDto>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -803,11 +797,11 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>DataProcessingAgreement</returns>
-        public DataProcessingAgreement V1DataAgreementsIdPut(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement))
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>DataProcessingAgreementDto</returns>
+        public DataProcessingAgreementDto V1DataAgreementsIdPut(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = V1DataAgreementsIdPutWithHttpInfo(id, dataProcessingAgreement);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = V1DataAgreementsIdPutWithHttpInfo(id, updateDataProcessingAgreementRequestModel);
             return localVarResponse.Data;
         }
 
@@ -816,21 +810,19 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> V1DataAgreementsIdPutWithHttpInfo(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement))
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> V1DataAgreementsIdPutWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel))
         {
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -846,11 +838,11 @@ namespace MyDataMyConsent.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", MyDataMyConsent.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = dataProcessingAgreement;
+            localVarRequestOptions.Data = updateDataProcessingAgreementRequestModel;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<DataProcessingAgreement>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<DataProcessingAgreementDto>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("V1DataAgreementsIdPut", localVarResponse);
@@ -868,12 +860,12 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsIdPutAsync(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsIdPutAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = await V1DataAgreementsIdPutWithHttpInfoAsync(id, dataProcessingAgreement, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = await V1DataAgreementsIdPutWithHttpInfoAsync(id, updateDataProcessingAgreementRequestModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -882,23 +874,21 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="updateDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement>> V1DataAgreementsIdPutWithHttpInfoAsync(Guid id, DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsIdPutWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "application/xml"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -914,11 +904,11 @@ namespace MyDataMyConsent.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", MyDataMyConsent.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = dataProcessingAgreement;
+            localVarRequestOptions.Data = updateDataProcessingAgreementRequestModel;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<DataProcessingAgreement>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<DataProcessingAgreementDto>("/v1/data-agreements/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -958,8 +948,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1020,8 +1009,7 @@ namespace MyDataMyConsent.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1058,11 +1046,11 @@ namespace MyDataMyConsent.Api
         /// Create a data processing agreement. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>DataProcessingAgreement</returns>
-        public DataProcessingAgreement V1DataAgreementsPost(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement))
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>DataProcessingAgreementDto</returns>
+        public DataProcessingAgreementDto V1DataAgreementsPost(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = V1DataAgreementsPostWithHttpInfo(dataProcessingAgreement);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = V1DataAgreementsPostWithHttpInfo(createDataProcessingAgreementRequestModel);
             return localVarResponse.Data;
         }
 
@@ -1070,21 +1058,19 @@ namespace MyDataMyConsent.Api
         /// Create a data processing agreement. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
-        /// <returns>ApiResponse of DataProcessingAgreement</returns>
-        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> V1DataAgreementsPostWithHttpInfo(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement))
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
+        /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
+        public MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> V1DataAgreementsPostWithHttpInfo(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel))
         {
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1099,11 +1085,11 @@ namespace MyDataMyConsent.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = dataProcessingAgreement;
+            localVarRequestOptions.Data = createDataProcessingAgreementRequestModel;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DataProcessingAgreement>("/v1/data-agreements", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DataProcessingAgreementDto>("/v1/data-agreements", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("V1DataAgreementsPost", localVarResponse);
@@ -1120,12 +1106,12 @@ namespace MyDataMyConsent.Api
         /// Create a data processing agreement. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProcessingAgreement</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreement> V1DataAgreementsPostAsync(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataProcessingAgreementDto</returns>
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> V1DataAgreementsPostAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement> localVarResponse = await V1DataAgreementsPostWithHttpInfoAsync(dataProcessingAgreement, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = await V1DataAgreementsPostWithHttpInfoAsync(createDataProcessingAgreementRequestModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1133,23 +1119,21 @@ namespace MyDataMyConsent.Api
         /// Create a data processing agreement. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="dataProcessingAgreement"> (optional)</param>
+        /// <param name="createDataProcessingAgreementRequestModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProcessingAgreement)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreement>> V1DataAgreementsPostWithHttpInfoAsync(DataProcessingAgreement dataProcessingAgreement = default(DataProcessingAgreement), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataProcessingAgreementDto>> V1DataAgreementsPostWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "application/xml"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
+                "application/json"
             };
 
             var localVarContentType = MyDataMyConsent.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1164,11 +1148,11 @@ namespace MyDataMyConsent.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = dataProcessingAgreement;
+            localVarRequestOptions.Data = createDataProcessingAgreementRequestModel;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DataProcessingAgreement>("/v1/data-agreements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DataProcessingAgreementDto>("/v1/data-agreements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

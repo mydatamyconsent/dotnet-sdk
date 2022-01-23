@@ -1,13 +1,11 @@
-# MyDataMyConsent.Models.DataConsentRequestModel
+# MyDataMyConsent.Models.Life
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConsentTemplateId** | **Guid** |  | [optional] 
-**StartDateTime** | **DateTime** |  | [optional] 
-**ExpiryDateTime** | **DateTime** |  | [optional] 
-**Receiver** | [**Receiver**](Receiver.md) |  | 
+**Unit** | **string** |  | [optional] 
+**Value** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
