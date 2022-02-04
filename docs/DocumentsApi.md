@@ -249,8 +249,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var pageSize = 56;  // int? |  (optional) 
-            var pageNo = 56;  // int? |  (optional) 
+            var pageSize = 56;  // int? |  (optional)  (default to 25)
+            var pageNo = 56;  // int? |  (optional)  (default to 1)
 
             try
             {
@@ -272,8 +272,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **int?**|  | [optional] 
- **pageNo** | **int?**|  | [optional] 
+ **pageSize** | **int?**|  | [optional] [default to 25]
+ **pageNo** | **int?**|  | [optional] [default to 1]
 
 ### Return type
 

@@ -36,8 +36,8 @@ namespace Example
             var accountType = accountType_example;  // string | Account type. (optional) 
             var documentType = documentType_example;  // string | Document type. (optional) 
             var organizationCategory = organizationCategory_example;  // string | Organization category. (optional) 
-            var pageNo = 56;  // int? | Page number. (optional) 
-            var pageSize = 56;  // int? | Page size. (optional) 
+            var pageNo = 56;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 56;  // int? | Page size. (optional)  (default to 25)
             var country = country_example;  // string | ISO2 Country code. (optional)  (default to "IN")
 
             try
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
  **accountType** | **string**| Account type. | [optional] 
  **documentType** | **string**| Document type. | [optional] 
  **organizationCategory** | **string**| Organization category. | [optional] 
- **pageNo** | **int?**| Page number. | [optional] 
- **pageSize** | **int?**| Page size. | [optional] 
+ **pageNo** | **int?**| Page number. | [optional] [default to 1]
+ **pageSize** | **int?**| Page size. | [optional] [default to 25]
  **country** | **string**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
 
 ### Return type

@@ -93,8 +93,8 @@ namespace MyDataMyConsent.Api
         /// Get registered document types.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <returns></returns>
         void V1DocumentsTypesGet(int? pageSize = default(int?), int? pageNo = default(int?));
 
@@ -105,8 +105,8 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> V1DocumentsTypesGetWithHttpInfo(int? pageSize = default(int?), int? pageNo = default(int?));
         #endregion Synchronous Operations
@@ -202,8 +202,8 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task V1DocumentsTypesGetAsync(int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -215,8 +215,8 @@ namespace MyDataMyConsent.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> V1DocumentsTypesGetWithHttpInfoAsync(int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -758,8 +758,8 @@ namespace MyDataMyConsent.Api
         /// Get registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <returns></returns>
         public void V1DocumentsTypesGet(int? pageSize = default(int?), int? pageNo = default(int?))
         {
@@ -770,8 +770,8 @@ namespace MyDataMyConsent.Api
         /// Get registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public MyDataMyConsent.Client.ApiResponse<Object> V1DocumentsTypesGetWithHttpInfo(int? pageSize = default(int?), int? pageNo = default(int?))
         {
@@ -824,8 +824,8 @@ namespace MyDataMyConsent.Api
         /// Get registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task V1DocumentsTypesGetAsync(int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -837,8 +837,8 @@ namespace MyDataMyConsent.Api
         /// Get registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize"> (optional)</param>
-        /// <param name="pageNo"> (optional)</param>
+        /// <param name="pageSize"> (optional, default to 25)</param>
+        /// <param name="pageNo"> (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<Object>> V1DocumentsTypesGetWithHttpInfoAsync(int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

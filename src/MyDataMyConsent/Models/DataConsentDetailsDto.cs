@@ -48,7 +48,10 @@ namespace MyDataMyConsent.Models
         /// <param name="requestedAtUtc">requestedAtUtc.</param>
         /// <param name="requester">requester.</param>
         /// <param name="consentDetails">consentDetails.</param>
-        public DataConsentDetailsDto(Guid id = default(Guid), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime expiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), DataConsentRequesterDto requester = default(DataConsentRequesterDto), GetConsentTemplateDetailsDto consentDetails = default(GetConsentTemplateDetailsDto))
+        /// <param name="identifiers">identifiers.</param>
+        /// <param name="approvedDocuments">approvedDocuments.</param>
+        /// <param name="approvedFinancials">approvedFinancials.</param>
+        public DataConsentDetailsDto(Guid id = default(Guid), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime expiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), DataConsentRequesterDto requester = default(DataConsentRequesterDto), GetConsentTemplateDetailsDto consentDetails = default(GetConsentTemplateDetailsDto), List<DataConsentIdentifier> identifiers = default(List<DataConsentIdentifier>), List<DataConsentRequestedDocument> approvedDocuments = default(List<DataConsentRequestedDocument>), List<DataConsentRequestedFinancialAccount> approvedFinancials = default(List<DataConsentRequestedFinancialAccount>))
         {
             this.Id = id;
             this.Status = status;
@@ -58,6 +61,9 @@ namespace MyDataMyConsent.Models
             this.RequestedAtUtc = requestedAtUtc;
             this.Requester = requester;
             this.ConsentDetails = consentDetails;
+            this.Identifiers = identifiers;
+            this.ApprovedDocuments = approvedDocuments;
+            this.ApprovedFinancials = approvedFinancials;
         }
 
         /// <summary>
@@ -103,6 +109,24 @@ namespace MyDataMyConsent.Models
         public GetConsentTemplateDetailsDto ConsentDetails { get; set; }
 
         /// <summary>
+        /// Gets or Sets Identifiers
+        /// </summary>
+        [DataMember(Name = "identifiers", EmitDefaultValue = true)]
+        public List<DataConsentIdentifier> Identifiers { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApprovedDocuments
+        /// </summary>
+        [DataMember(Name = "approvedDocuments", EmitDefaultValue = true)]
+        public List<DataConsentRequestedDocument> ApprovedDocuments { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApprovedFinancials
+        /// </summary>
+        [DataMember(Name = "approvedFinancials", EmitDefaultValue = true)]
+        public List<DataConsentRequestedFinancialAccount> ApprovedFinancials { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -118,6 +142,9 @@ namespace MyDataMyConsent.Models
             sb.Append("  RequestedAtUtc: ").Append(RequestedAtUtc).Append("\n");
             sb.Append("  Requester: ").Append(Requester).Append("\n");
             sb.Append("  ConsentDetails: ").Append(ConsentDetails).Append("\n");
+            sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
+            sb.Append("  ApprovedDocuments: ").Append(ApprovedDocuments).Append("\n");
+            sb.Append("  ApprovedFinancials: ").Append(ApprovedFinancials).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +218,24 @@ namespace MyDataMyConsent.Models
                     this.ConsentDetails == input.ConsentDetails ||
                     (this.ConsentDetails != null &&
                     this.ConsentDetails.Equals(input.ConsentDetails))
+                ) && 
+                (
+                    this.Identifiers == input.Identifiers ||
+                    this.Identifiers != null &&
+                    input.Identifiers != null &&
+                    this.Identifiers.SequenceEqual(input.Identifiers)
+                ) && 
+                (
+                    this.ApprovedDocuments == input.ApprovedDocuments ||
+                    this.ApprovedDocuments != null &&
+                    input.ApprovedDocuments != null &&
+                    this.ApprovedDocuments.SequenceEqual(input.ApprovedDocuments)
+                ) && 
+                (
+                    this.ApprovedFinancials == input.ApprovedFinancials ||
+                    this.ApprovedFinancials != null &&
+                    input.ApprovedFinancials != null &&
+                    this.ApprovedFinancials.SequenceEqual(input.ApprovedFinancials)
                 );
         }
 
@@ -231,6 +276,18 @@ namespace MyDataMyConsent.Models
                 if (this.ConsentDetails != null)
                 {
                     hashCode = (hashCode * 59) + this.ConsentDetails.GetHashCode();
+                }
+                if (this.Identifiers != null)
+                {
+                    hashCode = (hashCode * 59) + this.Identifiers.GetHashCode();
+                }
+                if (this.ApprovedDocuments != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovedDocuments.GetHashCode();
+                }
+                if (this.ApprovedFinancials != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovedFinancials.GetHashCode();
                 }
                 return hashCode;
             }

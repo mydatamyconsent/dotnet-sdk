@@ -31,32 +31,26 @@ namespace MyDataMyConsent.Models
     [DataContract(Name = "DataConsentRequestedFinancialAccount")]
     public partial class DataConsentRequestedFinancialAccount : IEquatable<DataConsentRequestedFinancialAccount>
     {
-
-        /// <summary>
-        /// Gets or Sets AccountType
-        /// </summary>
-        [DataMember(Name = "accountType", EmitDefaultValue = false)]
-        public FinancialAccountTypes? AccountType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DataConsentRequestedFinancialAccount" /> class.
         /// </summary>
+        /// <param name="customKey">customKey.</param>
         /// <param name="drn">drn.</param>
-        /// <param name="fromDatetime">fromDatetime.</param>
-        /// <param name="toDatetime">toDatetime.</param>
-        /// <param name="providerId">providerId.</param>
-        /// <param name="accountType">accountType.</param>
+        /// <param name="accountTypeId">accountTypeId.</param>
         /// <param name="accountIdentifier">accountIdentifier.</param>
-        /// <param name="filters">filters.</param>
-        public DataConsentRequestedFinancialAccount(string drn = default(string), DateTime fromDatetime = default(DateTime), DateTime toDatetime = default(DateTime), Guid? providerId = default(Guid?), FinancialAccountTypes? accountType = default(FinancialAccountTypes?), string accountIdentifier = default(string), List<DataConsentRfaFilter> filters = default(List<DataConsentRfaFilter>))
+        public DataConsentRequestedFinancialAccount(string customKey = default(string), string drn = default(string), Guid? accountTypeId = default(Guid?), Guid? accountIdentifier = default(Guid?))
         {
+            this.CustomKey = customKey;
             this.Drn = drn;
-            this.FromDatetime = fromDatetime;
-            this.ToDatetime = toDatetime;
-            this.ProviderId = providerId;
-            this.AccountType = accountType;
+            this.AccountTypeId = accountTypeId;
             this.AccountIdentifier = accountIdentifier;
-            this.Filters = filters;
         }
+
+        /// <summary>
+        /// Gets or Sets CustomKey
+        /// </summary>
+        [DataMember(Name = "customKey", EmitDefaultValue = true)]
+        public string CustomKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Drn
@@ -65,34 +59,16 @@ namespace MyDataMyConsent.Models
         public string Drn { get; set; }
 
         /// <summary>
-        /// Gets or Sets FromDatetime
+        /// Gets or Sets AccountTypeId
         /// </summary>
-        [DataMember(Name = "fromDatetime", EmitDefaultValue = false)]
-        public DateTime FromDatetime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ToDatetime
-        /// </summary>
-        [DataMember(Name = "toDatetime", EmitDefaultValue = false)]
-        public DateTime ToDatetime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProviderId
-        /// </summary>
-        [DataMember(Name = "providerId", EmitDefaultValue = true)]
-        public Guid? ProviderId { get; set; }
+        [DataMember(Name = "accountTypeId", EmitDefaultValue = true)]
+        public Guid? AccountTypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountIdentifier
         /// </summary>
         [DataMember(Name = "accountIdentifier", EmitDefaultValue = true)]
-        public string AccountIdentifier { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Filters
-        /// </summary>
-        [DataMember(Name = "filters", EmitDefaultValue = true)]
-        public List<DataConsentRfaFilter> Filters { get; set; }
+        public Guid? AccountIdentifier { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,13 +78,10 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DataConsentRequestedFinancialAccount {\n");
+            sb.Append("  CustomKey: ").Append(CustomKey).Append("\n");
             sb.Append("  Drn: ").Append(Drn).Append("\n");
-            sb.Append("  FromDatetime: ").Append(FromDatetime).Append("\n");
-            sb.Append("  ToDatetime: ").Append(ToDatetime).Append("\n");
-            sb.Append("  ProviderId: ").Append(ProviderId).Append("\n");
-            sb.Append("  AccountType: ").Append(AccountType).Append("\n");
+            sb.Append("  AccountTypeId: ").Append(AccountTypeId).Append("\n");
             sb.Append("  AccountIdentifier: ").Append(AccountIdentifier).Append("\n");
-            sb.Append("  Filters: ").Append(Filters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,39 +118,24 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
+                    this.CustomKey == input.CustomKey ||
+                    (this.CustomKey != null &&
+                    this.CustomKey.Equals(input.CustomKey))
+                ) && 
+                (
                     this.Drn == input.Drn ||
                     (this.Drn != null &&
                     this.Drn.Equals(input.Drn))
                 ) && 
                 (
-                    this.FromDatetime == input.FromDatetime ||
-                    (this.FromDatetime != null &&
-                    this.FromDatetime.Equals(input.FromDatetime))
-                ) && 
-                (
-                    this.ToDatetime == input.ToDatetime ||
-                    (this.ToDatetime != null &&
-                    this.ToDatetime.Equals(input.ToDatetime))
-                ) && 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.AccountType == input.AccountType ||
-                    this.AccountType.Equals(input.AccountType)
+                    this.AccountTypeId == input.AccountTypeId ||
+                    (this.AccountTypeId != null &&
+                    this.AccountTypeId.Equals(input.AccountTypeId))
                 ) && 
                 (
                     this.AccountIdentifier == input.AccountIdentifier ||
                     (this.AccountIdentifier != null &&
                     this.AccountIdentifier.Equals(input.AccountIdentifier))
-                ) && 
-                (
-                    this.Filters == input.Filters ||
-                    this.Filters != null &&
-                    input.Filters != null &&
-                    this.Filters.SequenceEqual(input.Filters)
                 );
         }
 
@@ -190,30 +148,21 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CustomKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomKey.GetHashCode();
+                }
                 if (this.Drn != null)
                 {
                     hashCode = (hashCode * 59) + this.Drn.GetHashCode();
                 }
-                if (this.FromDatetime != null)
+                if (this.AccountTypeId != null)
                 {
-                    hashCode = (hashCode * 59) + this.FromDatetime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AccountTypeId.GetHashCode();
                 }
-                if (this.ToDatetime != null)
-                {
-                    hashCode = (hashCode * 59) + this.ToDatetime.GetHashCode();
-                }
-                if (this.ProviderId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProviderId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.AccountType.GetHashCode();
                 if (this.AccountIdentifier != null)
                 {
                     hashCode = (hashCode * 59) + this.AccountIdentifier.GetHashCode();
-                }
-                if (this.Filters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Filters.GetHashCode();
                 }
                 return hashCode;
             }

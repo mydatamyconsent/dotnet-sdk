@@ -34,21 +34,23 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DataConsentRequestedDocument" /> class.
         /// </summary>
+        /// <param name="customKey">customKey.</param>
         /// <param name="drn">drn.</param>
-        /// <param name="fromDatetime">fromDatetime.</param>
-        /// <param name="toDatetime">toDatetime.</param>
-        /// <param name="providerId">providerId.</param>
         /// <param name="documentTypeId">documentTypeId.</param>
         /// <param name="documentIdentifier">documentIdentifier.</param>
-        public DataConsentRequestedDocument(string drn = default(string), DateTime fromDatetime = default(DateTime), DateTime toDatetime = default(DateTime), Guid providerId = default(Guid), string documentTypeId = default(string), string documentIdentifier = default(string))
+        public DataConsentRequestedDocument(string customKey = default(string), string drn = default(string), Guid? documentTypeId = default(Guid?), Guid? documentIdentifier = default(Guid?))
         {
+            this.CustomKey = customKey;
             this.Drn = drn;
-            this.FromDatetime = fromDatetime;
-            this.ToDatetime = toDatetime;
-            this.ProviderId = providerId;
             this.DocumentTypeId = documentTypeId;
             this.DocumentIdentifier = documentIdentifier;
         }
+
+        /// <summary>
+        /// Gets or Sets CustomKey
+        /// </summary>
+        [DataMember(Name = "customKey", EmitDefaultValue = true)]
+        public string CustomKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Drn
@@ -57,34 +59,16 @@ namespace MyDataMyConsent.Models
         public string Drn { get; set; }
 
         /// <summary>
-        /// Gets or Sets FromDatetime
-        /// </summary>
-        [DataMember(Name = "fromDatetime", EmitDefaultValue = false)]
-        public DateTime FromDatetime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ToDatetime
-        /// </summary>
-        [DataMember(Name = "toDatetime", EmitDefaultValue = false)]
-        public DateTime ToDatetime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProviderId
-        /// </summary>
-        [DataMember(Name = "providerId", EmitDefaultValue = false)]
-        public Guid ProviderId { get; set; }
-
-        /// <summary>
         /// Gets or Sets DocumentTypeId
         /// </summary>
         [DataMember(Name = "documentTypeId", EmitDefaultValue = true)]
-        public string DocumentTypeId { get; set; }
+        public Guid? DocumentTypeId { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentIdentifier
         /// </summary>
         [DataMember(Name = "documentIdentifier", EmitDefaultValue = true)]
-        public string DocumentIdentifier { get; set; }
+        public Guid? DocumentIdentifier { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,10 +78,8 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DataConsentRequestedDocument {\n");
+            sb.Append("  CustomKey: ").Append(CustomKey).Append("\n");
             sb.Append("  Drn: ").Append(Drn).Append("\n");
-            sb.Append("  FromDatetime: ").Append(FromDatetime).Append("\n");
-            sb.Append("  ToDatetime: ").Append(ToDatetime).Append("\n");
-            sb.Append("  ProviderId: ").Append(ProviderId).Append("\n");
             sb.Append("  DocumentTypeId: ").Append(DocumentTypeId).Append("\n");
             sb.Append("  DocumentIdentifier: ").Append(DocumentIdentifier).Append("\n");
             sb.Append("}\n");
@@ -136,24 +118,14 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
+                    this.CustomKey == input.CustomKey ||
+                    (this.CustomKey != null &&
+                    this.CustomKey.Equals(input.CustomKey))
+                ) && 
+                (
                     this.Drn == input.Drn ||
                     (this.Drn != null &&
                     this.Drn.Equals(input.Drn))
-                ) && 
-                (
-                    this.FromDatetime == input.FromDatetime ||
-                    (this.FromDatetime != null &&
-                    this.FromDatetime.Equals(input.FromDatetime))
-                ) && 
-                (
-                    this.ToDatetime == input.ToDatetime ||
-                    (this.ToDatetime != null &&
-                    this.ToDatetime.Equals(input.ToDatetime))
-                ) && 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
                 ) && 
                 (
                     this.DocumentTypeId == input.DocumentTypeId ||
@@ -176,21 +148,13 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CustomKey != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomKey.GetHashCode();
+                }
                 if (this.Drn != null)
                 {
                     hashCode = (hashCode * 59) + this.Drn.GetHashCode();
-                }
-                if (this.FromDatetime != null)
-                {
-                    hashCode = (hashCode * 59) + this.FromDatetime.GetHashCode();
-                }
-                if (this.ToDatetime != null)
-                {
-                    hashCode = (hashCode * 59) + this.ToDatetime.GetHashCode();
-                }
-                if (this.ProviderId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ProviderId.GetHashCode();
                 }
                 if (this.DocumentTypeId != null)
                 {

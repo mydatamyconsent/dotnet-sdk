@@ -45,9 +45,9 @@ namespace MyDataMyConsent.Models
         /// <param name="description">description (required).</param>
         /// <param name="receiver">receiver (required).</param>
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
-        /// <param name="base64PDFDocument">base64PDFDocument (required).</param>
+        /// <param name="base64PdfDocument">base64PdfDocument (required).</param>
         /// <param name="metadata">metadata.</param>
-        public DocumentIssueRequest(string documentTypeId = default(string), string identifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), string expiresAtUtc = default(string), string base64PDFDocument = default(string), Object metadata = default(Object))
+        public DocumentIssueRequest(string documentTypeId = default(string), string identifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), string expiresAtUtc = default(string), string base64PdfDocument = default(string), Object metadata = default(Object))
         {
             // to ensure "documentTypeId" is required (not null)
             if (documentTypeId == null) {
@@ -74,11 +74,11 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("receiver is a required property for DocumentIssueRequest and cannot be null");
             }
             this.Receiver = receiver;
-            // to ensure "base64PDFDocument" is required (not null)
-            if (base64PDFDocument == null) {
-                throw new ArgumentNullException("base64PDFDocument is a required property for DocumentIssueRequest and cannot be null");
+            // to ensure "base64PdfDocument" is required (not null)
+            if (base64PdfDocument == null) {
+                throw new ArgumentNullException("base64PdfDocument is a required property for DocumentIssueRequest and cannot be null");
             }
-            this.Base64PDFDocument = base64PDFDocument;
+            this.Base64PdfDocument = base64PdfDocument;
             this.ExpiresAtUtc = expiresAtUtc;
             this.Metadata = metadata;
         }
@@ -120,10 +120,10 @@ namespace MyDataMyConsent.Models
         public string ExpiresAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Base64PDFDocument
+        /// Gets or Sets Base64PdfDocument
         /// </summary>
-        [DataMember(Name = "base64PDFDocument", IsRequired = true, EmitDefaultValue = false)]
-        public string Base64PDFDocument { get; set; }
+        [DataMember(Name = "base64PdfDocument", IsRequired = true, EmitDefaultValue = false)]
+        public string Base64PdfDocument { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -145,7 +145,7 @@ namespace MyDataMyConsent.Models
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
-            sb.Append("  Base64PDFDocument: ").Append(Base64PDFDocument).Append("\n");
+            sb.Append("  Base64PdfDocument: ").Append(Base64PdfDocument).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -213,9 +213,9 @@ namespace MyDataMyConsent.Models
                     this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
                 ) && 
                 (
-                    this.Base64PDFDocument == input.Base64PDFDocument ||
-                    (this.Base64PDFDocument != null &&
-                    this.Base64PDFDocument.Equals(input.Base64PDFDocument))
+                    this.Base64PdfDocument == input.Base64PdfDocument ||
+                    (this.Base64PdfDocument != null &&
+                    this.Base64PdfDocument.Equals(input.Base64PdfDocument))
                 ) && 
                 (
                     this.Metadata == input.Metadata ||
@@ -257,9 +257,9 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
                 }
-                if (this.Base64PDFDocument != null)
+                if (this.Base64PdfDocument != null)
                 {
-                    hashCode = (hashCode * 59) + this.Base64PDFDocument.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Base64PdfDocument.GetHashCode();
                 }
                 if (this.Metadata != null)
                 {

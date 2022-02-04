@@ -4,12 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CustomKey** | **string** |  | [optional] 
 **Drn** | **string** |  | [optional] 
-**FromDatetime** | **DateTime** |  | [optional] 
-**ToDatetime** | **DateTime** |  | [optional] 
-**ProviderId** | **Guid** |  | [optional] 
-**DocumentTypeId** | **string** |  | [optional] 
-**DocumentIdentifier** | **string** |  | [optional] 
+**DocumentTypeId** | **Guid?** |  | [optional] 
+**DocumentIdentifier** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
