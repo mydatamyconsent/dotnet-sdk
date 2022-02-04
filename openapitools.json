@@ -2,7 +2,6 @@
   "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "spaces": 2,
   "generator-cli": {
-    "version": "5.3.1",
     "generators": {
       "csharp-netcore": {
         "generatorName": "csharp-netcore",
@@ -16,7 +15,6 @@
           "packageName": "MyDataMyConsent",
           "apiPackage": "Api",
           "modelPackage": "Models",
-          "validatable": false,
           "developerEmail": "developers@mydatamyconsent.com",
           "developerName": "Balamurali Pandranki",
           "developerOrganization": "DataConsent, Inc.",
@@ -27,7 +25,9 @@
           "licenseUrl": "https://mydatamyconsent.com/en-us/legal/terms-of-service",
           "licenseName": "DataConsent, Inc. ToS",
           "scmUrl": "https://github.com/mydatamyconsent/dotnet-sdk",
-          "scmDeveloperConnection": "scm:git:git@github.com:mydatamyconsent/dotnet-sdk.git"
+          "scmDeveloperConnection": "scm:git:git@github.com:mydatamyconsent/dotnet-sdk.git",
+          "targetFramework": "netstandard2.1;net5.0;net6.0",
+          "validatable": false
         }
       }
     }
