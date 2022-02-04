@@ -58,36 +58,20 @@ namespace MyDataMyConsent.Test.Model
 
 
         /// <summary>
+        /// Test the property 'CustomKey'
+        /// </summary>
+        [Fact]
+        public void CustomKeyTest()
+        {
+            // TODO unit test for the property 'CustomKey'
+        }
+        /// <summary>
         /// Test the property 'Drn'
         /// </summary>
         [Fact]
         public void DrnTest()
         {
             // TODO unit test for the property 'Drn'
-        }
-        /// <summary>
-        /// Test the property 'FromDatetime'
-        /// </summary>
-        [Fact]
-        public void FromDatetimeTest()
-        {
-            // TODO unit test for the property 'FromDatetime'
-        }
-        /// <summary>
-        /// Test the property 'ToDatetime'
-        /// </summary>
-        [Fact]
-        public void ToDatetimeTest()
-        {
-            // TODO unit test for the property 'ToDatetime'
-        }
-        /// <summary>
-        /// Test the property 'ProviderId'
-        /// </summary>
-        [Fact]
-        public void ProviderIdTest()
-        {
-            // TODO unit test for the property 'ProviderId'
         }
         /// <summary>
         /// Test the property 'DocumentTypeId'

@@ -58,6 +58,14 @@ namespace MyDataMyConsent.Test.Model
 
 
         /// <summary>
+        /// Test the property 'CustomKey'
+        /// </summary>
+        [Fact]
+        public void CustomKeyTest()
+        {
+            // TODO unit test for the property 'CustomKey'
+        }
+        /// <summary>
         /// Test the property 'Drn'
         /// </summary>
         [Fact]
@@ -66,36 +74,12 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Drn'
         }
         /// <summary>
-        /// Test the property 'FromDatetime'
+        /// Test the property 'AccountTypeId'
         /// </summary>
         [Fact]
-        public void FromDatetimeTest()
+        public void AccountTypeIdTest()
         {
-            // TODO unit test for the property 'FromDatetime'
-        }
-        /// <summary>
-        /// Test the property 'ToDatetime'
-        /// </summary>
-        [Fact]
-        public void ToDatetimeTest()
-        {
-            // TODO unit test for the property 'ToDatetime'
-        }
-        /// <summary>
-        /// Test the property 'ProviderId'
-        /// </summary>
-        [Fact]
-        public void ProviderIdTest()
-        {
-            // TODO unit test for the property 'ProviderId'
-        }
-        /// <summary>
-        /// Test the property 'AccountType'
-        /// </summary>
-        [Fact]
-        public void AccountTypeTest()
-        {
-            // TODO unit test for the property 'AccountType'
+            // TODO unit test for the property 'AccountTypeId'
         }
         /// <summary>
         /// Test the property 'AccountIdentifier'
@@ -104,14 +88,6 @@ namespace MyDataMyConsent.Test.Model
         public void AccountIdentifierTest()
         {
             // TODO unit test for the property 'AccountIdentifier'
-        }
-        /// <summary>
-        /// Test the property 'Filters'
-        /// </summary>
-        [Fact]
-        public void FiltersTest()
-        {
-            // TODO unit test for the property 'Filters'
         }
 
     }

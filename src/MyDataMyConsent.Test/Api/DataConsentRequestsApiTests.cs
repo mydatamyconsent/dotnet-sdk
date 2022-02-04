@@ -63,7 +63,8 @@ namespace MyDataMyConsent.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid requestId = null;
-            //instance.CancelConsentRequest(requestId);
+            //var response = instance.CancelConsentRequest(requestId);
+            //Assert.IsType<bool>(response);
         }
 
         /// <summary>
@@ -75,30 +76,58 @@ namespace MyDataMyConsent.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //DataConsentRequestModel dataConsentRequestModel = null;
             //var response = instance.CreateRequest(dataConsentRequestModel);
-            //Assert.IsType<DataConsent>(response);
+            //Assert.IsType<bool>(response);
         }
 
         /// <summary>
-        /// Test GetAllConsentRequests
+        /// Test GetAllConsentRequestsToIndividuals
         /// </summary>
         [Fact]
-        public void GetAllConsentRequestsTest()
+        public void GetAllConsentRequestsToIndividualsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
+            //int? pageNo = null;
+            //int? pageSize = null;
             //DataConsentStatus? status = null;
-            //var response = instance.GetAllConsentRequests(status);
+            //var response = instance.GetAllConsentRequestsToIndividuals(pageNo, pageSize, status);
             //Assert.IsType<Object>(response);
         }
 
         /// <summary>
-        /// Test GetConsentRequestById
+        /// Test GetAllConsentRequestsToOrganizations
         /// </summary>
         [Fact]
-        public void GetConsentRequestByIdTest()
+        public void GetAllConsentRequestsToOrganizationsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //int? pageNo = null;
+            //int? pageSize = null;
+            //DataConsentStatus? status = null;
+            //var response = instance.GetAllConsentRequestsToOrganizations(pageNo, pageSize, status);
+            //Assert.IsType<Object>(response);
+        }
+
+        /// <summary>
+        /// Test GetIndividualConsentRequestById
+        /// </summary>
+        [Fact]
+        public void GetIndividualConsentRequestByIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid requestId = null;
-            //var response = instance.GetConsentRequestById(requestId);
+            //var response = instance.GetIndividualConsentRequestById(requestId);
+            //Assert.IsType<DataConsentDetailsDto>(response);
+        }
+
+        /// <summary>
+        /// Test GetOrganizationConsentRequestById
+        /// </summary>
+        [Fact]
+        public void GetOrganizationConsentRequestByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid requestId = null;
+            //var response = instance.GetOrganizationConsentRequestById(requestId);
             //Assert.IsType<DataConsentDetailsDto>(response);
         }
     }

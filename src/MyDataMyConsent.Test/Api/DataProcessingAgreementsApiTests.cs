@@ -65,7 +65,7 @@ namespace MyDataMyConsent.Test.Api
             //int? pageNo = null;
             //int? pageSize = null;
             //var response = instance.V1DataAgreementsGet(pageNo, pageSize);
-            //Assert.IsType<DataProcessingAgreementPaginatedList>(response);
+            //Assert.IsType<DataProcessingAgreementDtoPaginatedList>(response);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace MyDataMyConsent.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
             //var response = instance.V1DataAgreementsIdGet(id);
-            //Assert.IsType<DataProcessingAgreement>(response);
+            //Assert.IsType<DataProcessingAgreementDto>(response);
         }
 
         /// <summary>
@@ -99,9 +99,9 @@ namespace MyDataMyConsent.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
-            //DataProcessingAgreement dataProcessingAgreement = null;
-            //var response = instance.V1DataAgreementsIdPut(id, dataProcessingAgreement);
-            //Assert.IsType<DataProcessingAgreement>(response);
+            //UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = null;
+            //var response = instance.V1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel);
+            //Assert.IsType<DataProcessingAgreementDto>(response);
         }
 
         /// <summary>
@@ -122,9 +122,9 @@ namespace MyDataMyConsent.Test.Api
         public void V1DataAgreementsPostTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //DataProcessingAgreement dataProcessingAgreement = null;
-            //var response = instance.V1DataAgreementsPost(dataProcessingAgreement);
-            //Assert.IsType<DataProcessingAgreement>(response);
+            //CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null;
+            //var response = instance.V1DataAgreementsPost(createDataProcessingAgreementRequestModel);
+            //Assert.IsType<DataProcessingAgreementDto>(response);
         }
     }
 }

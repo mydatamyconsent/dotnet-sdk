@@ -106,12 +106,12 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'ExpiresAtUtc'
         }
         /// <summary>
-        /// Test the property 'Base64PDFDocument'
+        /// Test the property 'Base64PdfDocument'
         /// </summary>
         [Fact]
-        public void Base64PDFDocumentTest()
+        public void Base64PdfDocumentTest()
         {
-            // TODO unit test for the property 'Base64PDFDocument'
+            // TODO unit test for the property 'Base64PdfDocument'
         }
         /// <summary>
         /// Test the property 'Metadata'

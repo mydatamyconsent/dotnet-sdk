@@ -56,134 +56,221 @@ namespace MyDataMyConsent.Test.Api
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdAccountsAccountIdGet
+        /// Test V1ConsentsIndividualsConsentIdAccountsAccountIdGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdAccountsAccountIdGetTest()
+        public void V1ConsentsIndividualsConsentIdAccountsAccountIdGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string accountId = null;
-            //var response = instance.V1ConsentsConsentIdAccountsAccountIdGet(consentId, accountId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //Guid accountId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId, accountId);
+            //Assert.IsType<FinancialAccount>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdAccountsAccountIdInsightsGet
+        /// Test V1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdAccountsAccountIdInsightsGetTest()
+        public void V1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string accountId = null;
-            //var response = instance.V1ConsentsConsentIdAccountsAccountIdInsightsGet(consentId, accountId);
-            //Assert.IsType<Object>(response);
-        }
-
-        /// <summary>
-        /// Test V1ConsentsConsentIdAccountsAccountIdTransactionsGet
-        /// </summary>
-        [Fact]
-        public void V1ConsentsConsentIdAccountsAccountIdTransactionsGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string accountId = null;
+            //Guid consentId = null;
+            //Guid accountId = null;
             //string filters = null;
+            //int? pageNo = null;
+            //int? pageSize = null;
             //DateTime? fromDate = null;
             //DateTime? toDate = null;
-            //var response = instance.V1ConsentsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, fromDate, toDate);
-            //Assert.IsType<Object>(response);
+            //var response = instance.V1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate);
+            //Assert.IsType<UserAccountFinancialTransactionsDtoPaginatedList>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdAccountsGet
+        /// Test V1ConsentsIndividualsConsentIdAccountsGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdAccountsGetTest()
+        public void V1ConsentsIndividualsConsentIdAccountsGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //var response = instance.V1ConsentsConsentIdAccountsGet(consentId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdAccountsGet(consentId);
+            //Assert.IsType<DataConsentFinancialsDto>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdDocumentsDocumentIdAnalysisGet
+        /// Test V1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdDocumentsDocumentIdAnalysisGetTest()
+        public void V1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string documentId = null;
-            //var response = instance.V1ConsentsConsentIdDocumentsDocumentIdAnalysisGet(consentId, documentId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //Guid documentId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId);
+            //Assert.IsType<UserDocumentDownloadDto>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdDocumentsDocumentIdDownloadGet
+        /// Test V1ConsentsIndividualsConsentIdDocumentsDocumentIdGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdDocumentsDocumentIdDownloadGetTest()
+        public void V1ConsentsIndividualsConsentIdDocumentsDocumentIdGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string documentId = null;
-            //var response = instance.V1ConsentsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //Guid documentId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId, documentId);
+            //Assert.IsType<UserDocumentDetailsDto>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdDocumentsDocumentIdGet
+        /// Test V1ConsentsIndividualsConsentIdDocumentsGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdDocumentsDocumentIdGetTest()
+        public void V1ConsentsIndividualsConsentIdDocumentsGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //string documentId = null;
-            //var response = instance.V1ConsentsConsentIdDocumentsDocumentIdGet(consentId, documentId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdDocumentsGet(consentId);
+            //Assert.IsType<DataConsentDocumentsDto>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdDocumentsGet
+        /// Test V1ConsentsIndividualsConsentIdGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdDocumentsGetTest()
+        public void V1ConsentsIndividualsConsentIdGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //var response = instance.V1ConsentsConsentIdDocumentsGet(consentId);
-            //Assert.IsType<Object>(response);
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsIndividualsConsentIdGet(consentId);
+            //Assert.IsType<DataConsentDetailsDto>(response);
         }
 
         /// <summary>
-        /// Test V1ConsentsConsentIdGet
+        /// Test V1ConsentsIndividualsGet
         /// </summary>
         [Fact]
-        public void V1ConsentsConsentIdGetTest()
+        public void V1ConsentsIndividualsGetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string consentId = null;
-            //var response = instance.V1ConsentsConsentIdGet(consentId);
-            //Assert.IsType<Object>(response);
-        }
-
-        /// <summary>
-        /// Test V1ConsentsGet
-        /// </summary>
-        [Fact]
-        public void V1ConsentsGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
+            //int? pageNo = null;
+            //int? pageSize = null;
             //DataConsentStatus? status = null;
             //DateTime? startDate = null;
             //DateTime? endDate = null;
-            //var response = instance.V1ConsentsGet(status, startDate, endDate);
-            //Assert.IsType<Object>(response);
+            //var response = instance.V1ConsentsIndividualsGet(pageNo, pageSize, status, startDate, endDate);
+            //Assert.IsType<UserDataConsentInfoDtoPaginatedList>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdAccountsAccountIdGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdAccountsAccountIdGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //Guid accountId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId, accountId);
+            //Assert.IsType<OrganizationFinancialAccountDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //Guid accountId = null;
+            //string filters = null;
+            //int? pageNo = null;
+            //int? pageSize = null;
+            //DateTime? fromDate = null;
+            //DateTime? toDate = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate);
+            //Assert.IsType<OrganizationFinancialTransactionsDtoPaginatedList>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdAccountsGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdAccountsGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdAccountsGet(consentId);
+            //Assert.IsType<DataConsentFinancialsDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //Guid documentId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId);
+            //Assert.IsType<OrganizationDocumentDownloadDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdDocumentsDocumentIdGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //Guid documentId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId, documentId);
+            //Assert.IsType<OrganizationDocumentDetailsDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdDocumentsGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdDocumentsGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdDocumentsGet(consentId);
+            //Assert.IsType<DataConsentDocumentsDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsConsentIdGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsConsentIdGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid consentId = null;
+            //var response = instance.V1ConsentsOrganizationsConsentIdGet(consentId);
+            //Assert.IsType<DataConsentDetailsDto>(response);
+        }
+
+        /// <summary>
+        /// Test V1ConsentsOrganizationsGet
+        /// </summary>
+        [Fact]
+        public void V1ConsentsOrganizationsGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //int? pageNo = null;
+            //int? pageSize = null;
+            //DataConsentStatus? status = null;
+            //DateTime? startDate = null;
+            //DateTime? endDate = null;
+            //var response = instance.V1ConsentsOrganizationsGet(pageNo, pageSize, status, startDate, endDate);
+            //Assert.IsType<OrganizationDataConsentInfoDtoPaginatedList>(response);
         }
     }
 }

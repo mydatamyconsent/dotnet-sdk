@@ -58,28 +58,12 @@ namespace MyDataMyConsent.Test.Model
 
 
         /// <summary>
-        /// Test the property 'OrganizationId'
+        /// Test the property 'ConsentTemplateId'
         /// </summary>
         [Fact]
-        public void OrganizationIdTest()
+        public void ConsentTemplateIdTest()
         {
-            // TODO unit test for the property 'OrganizationId'
-        }
-        /// <summary>
-        /// Test the property 'TransactionId'
-        /// </summary>
-        [Fact]
-        public void TransactionIdTest()
-        {
-            // TODO unit test for the property 'TransactionId'
-        }
-        /// <summary>
-        /// Test the property 'Identifiers'
-        /// </summary>
-        [Fact]
-        public void IdentifiersTest()
-        {
-            // TODO unit test for the property 'Identifiers'
+            // TODO unit test for the property 'ConsentTemplateId'
         }
         /// <summary>
         /// Test the property 'StartDateTime'
@@ -98,100 +82,12 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'ExpiryDateTime'
         }
         /// <summary>
-        /// Test the property 'Description'
+        /// Test the property 'Receiver'
         /// </summary>
         [Fact]
-        public void DescriptionTest()
+        public void ReceiverTest()
         {
-            // TODO unit test for the property 'Description'
-        }
-        /// <summary>
-        /// Test the property 'PurposeCode'
-        /// </summary>
-        [Fact]
-        public void PurposeCodeTest()
-        {
-            // TODO unit test for the property 'PurposeCode'
-        }
-        /// <summary>
-        /// Test the property 'PurposeLink'
-        /// </summary>
-        [Fact]
-        public void PurposeLinkTest()
-        {
-            // TODO unit test for the property 'PurposeLink'
-        }
-        /// <summary>
-        /// Test the property 'DataLifeUnit'
-        /// </summary>
-        [Fact]
-        public void DataLifeUnitTest()
-        {
-            // TODO unit test for the property 'DataLifeUnit'
-        }
-        /// <summary>
-        /// Test the property 'DataLifeValue'
-        /// </summary>
-        [Fact]
-        public void DataLifeValueTest()
-        {
-            // TODO unit test for the property 'DataLifeValue'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchFrequencyUnit'
-        /// </summary>
-        [Fact]
-        public void DataFetchFrequencyUnitTest()
-        {
-            // TODO unit test for the property 'DataFetchFrequencyUnit'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchFrequencyUnitValue'
-        /// </summary>
-        [Fact]
-        public void DataFetchFrequencyUnitValueTest()
-        {
-            // TODO unit test for the property 'DataFetchFrequencyUnitValue'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchType'
-        /// </summary>
-        [Fact]
-        public void DataFetchTypeTest()
-        {
-            // TODO unit test for the property 'DataFetchType'
-        }
-        /// <summary>
-        /// Test the property 'AgreementId'
-        /// </summary>
-        [Fact]
-        public void AgreementIdTest()
-        {
-            // TODO unit test for the property 'AgreementId'
-        }
-        /// <summary>
-        /// Test the property 'IdentityClaims'
-        /// </summary>
-        [Fact]
-        public void IdentityClaimsTest()
-        {
-            // TODO unit test for the property 'IdentityClaims'
-        }
-        /// <summary>
-        /// Test the property 'FinancialAccounts'
-        /// </summary>
-        [Fact]
-        public void FinancialAccountsTest()
-        {
-            // TODO unit test for the property 'FinancialAccounts'
-        }
-        /// <summary>
-        /// Test the property 'Documents'
-        /// </summary>
-        [Fact]
-        public void DocumentsTest()
-        {
-            // TODO unit test for the property 'Documents'
+            // TODO unit test for the property 'Receiver'
         }
 
     }

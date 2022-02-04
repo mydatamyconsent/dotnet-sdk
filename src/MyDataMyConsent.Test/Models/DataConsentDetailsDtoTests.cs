@@ -66,134 +66,6 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'Requester'
-        /// </summary>
-        [Fact]
-        public void RequesterTest()
-        {
-            // TODO unit test for the property 'Requester'
-        }
-        /// <summary>
-        /// Test the property 'Location'
-        /// </summary>
-        [Fact]
-        public void LocationTest()
-        {
-            // TODO unit test for the property 'Location'
-        }
-        /// <summary>
-        /// Test the property 'PersonalInfoRequested'
-        /// </summary>
-        [Fact]
-        public void PersonalInfoRequestedTest()
-        {
-            // TODO unit test for the property 'PersonalInfoRequested'
-        }
-        /// <summary>
-        /// Test the property 'Documents'
-        /// </summary>
-        [Fact]
-        public void DocumentsTest()
-        {
-            // TODO unit test for the property 'Documents'
-        }
-        /// <summary>
-        /// Test the property 'FinancialAccounts'
-        /// </summary>
-        [Fact]
-        public void FinancialAccountsTest()
-        {
-            // TODO unit test for the property 'FinancialAccounts'
-        }
-        /// <summary>
-        /// Test the property 'TransactionId'
-        /// </summary>
-        [Fact]
-        public void TransactionIdTest()
-        {
-            // TODO unit test for the property 'TransactionId'
-        }
-        /// <summary>
-        /// Test the property 'IpAddress'
-        /// </summary>
-        [Fact]
-        public void IpAddressTest()
-        {
-            // TODO unit test for the property 'IpAddress'
-        }
-        /// <summary>
-        /// Test the property 'Description'
-        /// </summary>
-        [Fact]
-        public void DescriptionTest()
-        {
-            // TODO unit test for the property 'Description'
-        }
-        /// <summary>
-        /// Test the property 'PurposeCode'
-        /// </summary>
-        [Fact]
-        public void PurposeCodeTest()
-        {
-            // TODO unit test for the property 'PurposeCode'
-        }
-        /// <summary>
-        /// Test the property 'PurposeLink'
-        /// </summary>
-        [Fact]
-        public void PurposeLinkTest()
-        {
-            // TODO unit test for the property 'PurposeLink'
-        }
-        /// <summary>
-        /// Test the property 'AgreementId'
-        /// </summary>
-        [Fact]
-        public void AgreementIdTest()
-        {
-            // TODO unit test for the property 'AgreementId'
-        }
-        /// <summary>
-        /// Test the property 'DataLifeUnit'
-        /// </summary>
-        [Fact]
-        public void DataLifeUnitTest()
-        {
-            // TODO unit test for the property 'DataLifeUnit'
-        }
-        /// <summary>
-        /// Test the property 'DataLifeValue'
-        /// </summary>
-        [Fact]
-        public void DataLifeValueTest()
-        {
-            // TODO unit test for the property 'DataLifeValue'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchFrequencyUnit'
-        /// </summary>
-        [Fact]
-        public void DataFetchFrequencyUnitTest()
-        {
-            // TODO unit test for the property 'DataFetchFrequencyUnit'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchFrequencyUnitValue'
-        /// </summary>
-        [Fact]
-        public void DataFetchFrequencyUnitValueTest()
-        {
-            // TODO unit test for the property 'DataFetchFrequencyUnitValue'
-        }
-        /// <summary>
-        /// Test the property 'DataFetchType'
-        /// </summary>
-        [Fact]
-        public void DataFetchTypeTest()
-        {
-            // TODO unit test for the property 'DataFetchType'
-        }
-        /// <summary>
         /// Test the property 'Status'
         /// </summary>
         [Fact]
@@ -234,36 +106,44 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'RequestedAtUtc'
         }
         /// <summary>
-        /// Test the property 'RequestedFinancialAccounts'
+        /// Test the property 'Requester'
         /// </summary>
         [Fact]
-        public void RequestedFinancialAccountsTest()
+        public void RequesterTest()
         {
-            // TODO unit test for the property 'RequestedFinancialAccounts'
+            // TODO unit test for the property 'Requester'
         }
         /// <summary>
-        /// Test the property 'RequestedDocuments'
+        /// Test the property 'ConsentDetails'
         /// </summary>
         [Fact]
-        public void RequestedDocumentsTest()
+        public void ConsentDetailsTest()
         {
-            // TODO unit test for the property 'RequestedDocuments'
+            // TODO unit test for the property 'ConsentDetails'
         }
         /// <summary>
-        /// Test the property 'RequestedHealthData'
+        /// Test the property 'Identifiers'
         /// </summary>
         [Fact]
-        public void RequestedHealthDataTest()
+        public void IdentifiersTest()
         {
-            // TODO unit test for the property 'RequestedHealthData'
+            // TODO unit test for the property 'Identifiers'
         }
         /// <summary>
-        /// Test the property 'RequestedIdentityDetails'
+        /// Test the property 'ApprovedDocuments'
         /// </summary>
         [Fact]
-        public void RequestedIdentityDetailsTest()
+        public void ApprovedDocumentsTest()
         {
-            // TODO unit test for the property 'RequestedIdentityDetails'
+            // TODO unit test for the property 'ApprovedDocuments'
+        }
+        /// <summary>
+        /// Test the property 'ApprovedFinancials'
+        /// </summary>
+        [Fact]
+        public void ApprovedFinancialsTest()
+        {
+            // TODO unit test for the property 'ApprovedFinancials'
         }
 
     }
