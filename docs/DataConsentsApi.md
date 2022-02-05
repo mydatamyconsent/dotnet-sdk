@@ -45,8 +45,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var accountId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
+            var accountId = "accountId_example";  // Guid | 
 
             try
             {
@@ -118,13 +118,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var accountId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var filters = filters_example;  // string |  (optional) 
+            var consentId = "consentId_example";  // Guid | 
+            var accountId = "accountId_example";  // Guid | 
+            var filters = "filters_example";  // string |  (optional) 
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
@@ -201,7 +201,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -272,8 +272,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | consentId.
-            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | documentId.
+            var consentId = "consentId_example";  // Guid | consentId.
+            var documentId = "documentId_example";  // Guid | documentId.
 
             try
             {
@@ -345,8 +345,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | Document Id.
+            var consentId = "consentId_example";  // Guid | 
+            var documentId = "documentId_example";  // Guid | Document Id.
 
             try
             {
@@ -418,7 +418,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -489,7 +489,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -562,9 +562,9 @@ namespace Example
             var apiInstance = new DataConsentsApi(config);
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var status = ;  // DataConsentStatus? |  (optional) 
-            var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var endDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
@@ -639,8 +639,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var accountId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
+            var accountId = "accountId_example";  // Guid | 
 
             try
             {
@@ -712,13 +712,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var accountId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var filters = filters_example;  // string |  (optional) 
+            var consentId = "consentId_example";  // Guid | 
+            var accountId = "accountId_example";  // Guid | 
+            var filters = "filters_example";  // string |  (optional) 
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {
@@ -795,7 +795,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -866,8 +866,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
+            var documentId = "documentId_example";  // Guid | 
 
             try
             {
@@ -939,8 +939,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
-            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
+            var documentId = "documentId_example";  // Guid | 
 
             try
             {
@@ -1012,7 +1012,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -1083,7 +1083,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var consentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var consentId = "consentId_example";  // Guid | 
 
             try
             {
@@ -1156,9 +1156,9 @@ namespace Example
             var apiInstance = new DataConsentsApi(config);
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var status = ;  // DataConsentStatus? |  (optional) 
-            var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var endDate = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? |  (optional) 
+            var startDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var endDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
 
             try
             {

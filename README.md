@@ -73,7 +73,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var requestId = "requestId_example";  // Guid | 
 
             try
             {

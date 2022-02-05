@@ -35,7 +35,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var requestId = "requestId_example";  // Guid | 
 
             try
             {
@@ -179,7 +179,7 @@ namespace Example
             var apiInstance = new DataConsentRequestsApi(config);
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var status = ;  // DataConsentStatus? |  (optional) 
+            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? |  (optional) 
 
             try
             {
@@ -254,7 +254,7 @@ namespace Example
             var apiInstance = new DataConsentRequestsApi(config);
             var pageNo = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var status = ;  // DataConsentStatus? |  (optional) 
+            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? |  (optional) 
 
             try
             {
@@ -327,7 +327,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var requestId = "requestId_example";  // Guid | 
 
             try
             {
@@ -398,7 +398,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var requestId = "requestId_example";  // Guid | 
 
             try
             {

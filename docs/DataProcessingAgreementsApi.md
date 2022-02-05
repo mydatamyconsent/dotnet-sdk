@@ -35,8 +35,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var pageNo = 56;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 56;  // int? | Number of items to return. (optional)  (default to 25)
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
@@ -108,7 +108,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var id = "id_example";  // Guid | 
 
             try
             {
@@ -179,7 +179,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var id = "id_example";  // Guid | 
 
             try
             {
@@ -250,7 +250,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var id = "id_example";  // Guid | 
             var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel(); // UpdateDataProcessingAgreementRequestModel |  (optional) 
 
             try
@@ -324,7 +324,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var id = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | 
+            var id = "id_example";  // Guid | 
 
             try
             {

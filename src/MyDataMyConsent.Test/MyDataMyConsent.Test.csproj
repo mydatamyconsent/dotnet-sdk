@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>MyDataMyConsent.Test</AssemblyName>
     <RootNamespace>MyDataMyConsent.Test</RootNamespace>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

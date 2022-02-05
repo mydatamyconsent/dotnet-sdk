@@ -33,12 +33,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProviderDiscoveryApi(config);
-            var accountType = accountType_example;  // string | Account type. (optional) 
-            var documentType = documentType_example;  // string | Document type. (optional) 
-            var organizationCategory = organizationCategory_example;  // string | Organization category. (optional) 
-            var pageNo = 56;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 56;  // int? | Page size. (optional)  (default to 25)
-            var country = country_example;  // string | ISO2 Country code. (optional)  (default to "IN")
+            var accountType = "accountType_example";  // string | Account type. (optional) 
+            var documentType = "documentType_example";  // string | Document type. (optional) 
+            var organizationCategory = "organizationCategory_example";  // string | Organization category. (optional) 
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var country = "\"IN\"";  // string | ISO2 Country code. (optional)  (default to "IN")
 
             try
             {
@@ -116,7 +116,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProviderDiscoveryApi(config);
-            var providerId = providerId_example;  // string | Provider Id.
+            var providerId = "providerId_example";  // string | Provider Id.
 
             try
             {

@@ -105,7 +105,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid | Document id.
+            var documentId = "documentId_example";  // Guid | Document id.
 
             try
             {
@@ -173,11 +173,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentTypeId = 38400000-8cf0-11bd-b23e-10b96e4ef00d;  // Guid? |  (optional) 
-            var fromDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var toDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
-            var pageSize = 56;  // int? |  (optional)  (default to 25)
-            var pageNo = 56;  // int? |  (optional)  (default to 1)
+            var documentTypeId = "documentTypeId_example";  // Guid? |  (optional) 
+            var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
+            var pageSize = 25;  // int? |  (optional)  (default to 25)
+            var pageNo = 1;  // int? |  (optional)  (default to 1)
 
             try
             {
@@ -249,8 +249,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var pageSize = 56;  // int? |  (optional)  (default to 25)
-            var pageNo = 56;  // int? |  (optional)  (default to 1)
+            var pageSize = 25;  // int? |  (optional)  (default to 25)
+            var pageNo = 1;  // int? |  (optional)  (default to 1)
 
             try
             {
