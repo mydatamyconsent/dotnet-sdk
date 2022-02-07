@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataMyConsent", "src\MyDataMyConsent\MyDataMyConsent.csproj", "{577E5CBD-7174-4512-A399-0D6320758DF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataMyConsent", "src\MyDataMyConsent\MyDataMyConsent.csproj", "{8CE5ECC8-B9BB-4224-904B-E2FB4AD650B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataMyConsent.Test", "src\MyDataMyConsent.Test\MyDataMyConsent.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{577E5CBD-7174-4512-A399-0D6320758DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{577E5CBD-7174-4512-A399-0D6320758DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{577E5CBD-7174-4512-A399-0D6320758DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{577E5CBD-7174-4512-A399-0D6320758DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE5ECC8-B9BB-4224-904B-E2FB4AD650B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE5ECC8-B9BB-4224-904B-E2FB4AD650B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE5ECC8-B9BB-4224-904B-E2FB4AD650B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE5ECC8-B9BB-4224-904B-E2FB4AD650B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
