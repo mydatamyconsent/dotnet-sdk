@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Icon** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
+**IconCodePoint** | **int** |  | 
+**Title** | **string** |  | 
 **Description** | **string** |  | [optional] 
-**Key** | **string** |  | [optional] 
-**DataType** | **string** |  | [optional] 
+**Key** | **string** |  | 
+**DataType** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

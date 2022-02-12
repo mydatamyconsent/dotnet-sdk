@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocumentField** | **string** |  | [optional] 
-**CustomKey** | **string** |  | [optional] 
-**Drn** | **List&lt;string&gt;** |  | [optional] 
-**Requirement** | **DocumentsRequired** |  | [optional] 
+**FieldTitle** | **string** |  | 
+**FieldSlug** | **string** |  | 
+**Drn** | **List&lt;string&gt;** |  | 
+**Requirement** | **DocumentsRequired** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

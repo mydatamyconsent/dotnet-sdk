@@ -58,12 +58,12 @@ namespace MyDataMyConsent.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Icon'
+        /// Test the property 'IconCodePoint'
         /// </summary>
         [Fact]
-        public void IconTest()
+        public void IconCodePointTest()
         {
-            // TODO unit test for the property 'Icon'
+            // TODO unit test for the property 'IconCodePoint'
         }
         /// <summary>
         /// Test the property 'Title'

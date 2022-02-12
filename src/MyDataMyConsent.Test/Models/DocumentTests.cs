@@ -58,20 +58,20 @@ namespace MyDataMyConsent.Test.Model
 
 
         /// <summary>
-        /// Test the property 'DocumentField'
+        /// Test the property 'FieldTitle'
         /// </summary>
         [Fact]
-        public void DocumentFieldTest()
+        public void FieldTitleTest()
         {
-            // TODO unit test for the property 'DocumentField'
+            // TODO unit test for the property 'FieldTitle'
         }
         /// <summary>
-        /// Test the property 'CustomKey'
+        /// Test the property 'FieldSlug'
         /// </summary>
         [Fact]
-        public void CustomKeyTest()
+        public void FieldSlugTest()
         {
-            // TODO unit test for the property 'CustomKey'
+            // TODO unit test for the property 'FieldSlug'
         }
         /// <summary>
         /// Test the property 'Drn'

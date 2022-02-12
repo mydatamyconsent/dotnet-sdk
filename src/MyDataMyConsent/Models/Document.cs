@@ -35,39 +35,56 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Gets or Sets Requirement
         /// </summary>
-        [DataMember(Name = "requirement", EmitDefaultValue = false)]
-        public DocumentsRequired? Requirement { get; set; }
+        [DataMember(Name = "requirement", IsRequired = true, EmitDefaultValue = false)]
+        public DocumentsRequired Requirement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Document" /> class.
         /// </summary>
-        /// <param name="documentField">documentField.</param>
-        /// <param name="customKey">customKey.</param>
-        /// <param name="drn">drn.</param>
-        /// <param name="requirement">requirement.</param>
-        public Document(string documentField = default(string), string customKey = default(string), List<string> drn = default(List<string>), DocumentsRequired? requirement = default(DocumentsRequired?))
+        [JsonConstructorAttribute]
+        protected Document() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Document" /> class.
+        /// </summary>
+        /// <param name="fieldTitle">fieldTitle (required).</param>
+        /// <param name="fieldSlug">fieldSlug (required).</param>
+        /// <param name="drn">drn (required).</param>
+        /// <param name="requirement">requirement (required).</param>
+        public Document(string fieldTitle = default(string), string fieldSlug = default(string), List<string> drn = default(List<string>), DocumentsRequired requirement = default(DocumentsRequired))
         {
-            this.DocumentField = documentField;
-            this.CustomKey = customKey;
+            // to ensure "fieldTitle" is required (not null)
+            if (fieldTitle == null) {
+                throw new ArgumentNullException("fieldTitle is a required property for Document and cannot be null");
+            }
+            this.FieldTitle = fieldTitle;
+            // to ensure "fieldSlug" is required (not null)
+            if (fieldSlug == null) {
+                throw new ArgumentNullException("fieldSlug is a required property for Document and cannot be null");
+            }
+            this.FieldSlug = fieldSlug;
+            // to ensure "drn" is required (not null)
+            if (drn == null) {
+                throw new ArgumentNullException("drn is a required property for Document and cannot be null");
+            }
             this.Drn = drn;
             this.Requirement = requirement;
         }
 
         /// <summary>
-        /// Gets or Sets DocumentField
+        /// Gets or Sets FieldTitle
         /// </summary>
-        [DataMember(Name = "documentField", EmitDefaultValue = true)]
-        public string DocumentField { get; set; }
+        [DataMember(Name = "fieldTitle", IsRequired = true, EmitDefaultValue = false)]
+        public string FieldTitle { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomKey
+        /// Gets or Sets FieldSlug
         /// </summary>
-        [DataMember(Name = "customKey", EmitDefaultValue = true)]
-        public string CustomKey { get; set; }
+        [DataMember(Name = "fieldSlug", IsRequired = true, EmitDefaultValue = false)]
+        public string FieldSlug { get; set; }
 
         /// <summary>
         /// Gets or Sets Drn
         /// </summary>
-        [DataMember(Name = "drn", EmitDefaultValue = true)]
+        [DataMember(Name = "drn", IsRequired = true, EmitDefaultValue = false)]
         public List<string> Drn { get; set; }
 
         /// <summary>
@@ -78,8 +95,8 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Document {\n");
-            sb.Append("  DocumentField: ").Append(DocumentField).Append("\n");
-            sb.Append("  CustomKey: ").Append(CustomKey).Append("\n");
+            sb.Append("  FieldTitle: ").Append(FieldTitle).Append("\n");
+            sb.Append("  FieldSlug: ").Append(FieldSlug).Append("\n");
             sb.Append("  Drn: ").Append(Drn).Append("\n");
             sb.Append("  Requirement: ").Append(Requirement).Append("\n");
             sb.Append("}\n");
@@ -118,14 +135,14 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
-                    this.DocumentField == input.DocumentField ||
-                    (this.DocumentField != null &&
-                    this.DocumentField.Equals(input.DocumentField))
+                    this.FieldTitle == input.FieldTitle ||
+                    (this.FieldTitle != null &&
+                    this.FieldTitle.Equals(input.FieldTitle))
                 ) && 
                 (
-                    this.CustomKey == input.CustomKey ||
-                    (this.CustomKey != null &&
-                    this.CustomKey.Equals(input.CustomKey))
+                    this.FieldSlug == input.FieldSlug ||
+                    (this.FieldSlug != null &&
+                    this.FieldSlug.Equals(input.FieldSlug))
                 ) && 
                 (
                     this.Drn == input.Drn ||
@@ -148,13 +165,13 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DocumentField != null)
+                if (this.FieldTitle != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentField.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FieldTitle.GetHashCode();
                 }
-                if (this.CustomKey != null)
+                if (this.FieldSlug != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomKey.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FieldSlug.GetHashCode();
                 }
                 if (this.Drn != null)
                 {
