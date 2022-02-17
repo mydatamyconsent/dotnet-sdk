@@ -32,46 +32,34 @@ namespace MyDataMyConsent.Models
     public enum DocumentCategoryType
     {
         /// <summary>
-        /// Enum Health for value: Health
+        /// Enum Personal for value: Personal
         /// </summary>
-        [EnumMember(Value = "Health")]
-        Health = 1,
-
-        /// <summary>
-        /// Enum Finance for value: Finance
-        /// </summary>
-        [EnumMember(Value = "Finance")]
-        Finance = 2,
+        [EnumMember(Value = "Personal")]
+        Personal = 1,
 
         /// <summary>
         /// Enum Education for value: Education
         /// </summary>
         [EnumMember(Value = "Education")]
-        Education = 3,
+        Education = 2,
 
         /// <summary>
-        /// Enum Bills for value: Bills
+        /// Enum Health for value: Health
         /// </summary>
-        [EnumMember(Value = "Bills")]
-        Bills = 4,
+        [EnumMember(Value = "Health")]
+        Health = 3,
 
         /// <summary>
-        /// Enum Tax for value: Tax
+        /// Enum Finance for value: Finance
         /// </summary>
-        [EnumMember(Value = "Tax")]
-        Tax = 5,
+        [EnumMember(Value = "Finance")]
+        Finance = 4,
 
         /// <summary>
         /// Enum Certificates for value: Certificates
         /// </summary>
         [EnumMember(Value = "Certificates")]
-        Certificates = 6,
-
-        /// <summary>
-        /// Enum Invoices for value: Invoices
-        /// </summary>
-        [EnumMember(Value = "Invoices")]
-        Invoices = 7
+        Certificates = 5
 
     }
 
