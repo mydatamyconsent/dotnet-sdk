@@ -76,7 +76,7 @@ namespace MyDataMyConsent.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //DataConsentRequestModel dataConsentRequestModel = null;
             //var response = instance.CreateRequest(dataConsentRequestModel);
-            //Assert.IsType<bool>(response);
+            //Assert.IsType<DataConsentRequest>(response);
         }
 
         /// <summary>

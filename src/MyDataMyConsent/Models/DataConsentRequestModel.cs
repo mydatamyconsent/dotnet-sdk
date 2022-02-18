@@ -40,10 +40,8 @@ namespace MyDataMyConsent.Models
         /// Initializes a new instance of the <see cref="DataConsentRequestModel" /> class.
         /// </summary>
         /// <param name="consentTemplateId">consentTemplateId.</param>
-        /// <param name="startDateTime">startDateTime.</param>
-        /// <param name="expiryDateTime">expiryDateTime.</param>
         /// <param name="receiver">receiver (required).</param>
-        public DataConsentRequestModel(Guid consentTemplateId = default(Guid), DateTime startDateTime = default(DateTime), DateTime expiryDateTime = default(DateTime), Receiver receiver = default(Receiver))
+        public DataConsentRequestModel(Guid consentTemplateId = default(Guid), Receiver receiver = default(Receiver))
         {
             // to ensure "receiver" is required (not null)
             if (receiver == null) {
@@ -51,8 +49,6 @@ namespace MyDataMyConsent.Models
             }
             this.Receiver = receiver;
             this.ConsentTemplateId = consentTemplateId;
-            this.StartDateTime = startDateTime;
-            this.ExpiryDateTime = expiryDateTime;
         }
 
         /// <summary>
@@ -60,18 +56,6 @@ namespace MyDataMyConsent.Models
         /// </summary>
         [DataMember(Name = "consentTemplateId", EmitDefaultValue = false)]
         public Guid ConsentTemplateId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets StartDateTime
-        /// </summary>
-        [DataMember(Name = "startDateTime", EmitDefaultValue = false)]
-        public DateTime StartDateTime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExpiryDateTime
-        /// </summary>
-        [DataMember(Name = "expiryDateTime", EmitDefaultValue = false)]
-        public DateTime ExpiryDateTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Receiver
@@ -88,8 +72,6 @@ namespace MyDataMyConsent.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class DataConsentRequestModel {\n");
             sb.Append("  ConsentTemplateId: ").Append(ConsentTemplateId).Append("\n");
-            sb.Append("  StartDateTime: ").Append(StartDateTime).Append("\n");
-            sb.Append("  ExpiryDateTime: ").Append(ExpiryDateTime).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -132,16 +114,6 @@ namespace MyDataMyConsent.Models
                     this.ConsentTemplateId.Equals(input.ConsentTemplateId))
                 ) && 
                 (
-                    this.StartDateTime == input.StartDateTime ||
-                    (this.StartDateTime != null &&
-                    this.StartDateTime.Equals(input.StartDateTime))
-                ) && 
-                (
-                    this.ExpiryDateTime == input.ExpiryDateTime ||
-                    (this.ExpiryDateTime != null &&
-                    this.ExpiryDateTime.Equals(input.ExpiryDateTime))
-                ) && 
-                (
                     this.Receiver == input.Receiver ||
                     (this.Receiver != null &&
                     this.Receiver.Equals(input.Receiver))
@@ -160,14 +132,6 @@ namespace MyDataMyConsent.Models
                 if (this.ConsentTemplateId != null)
                 {
                     hashCode = (hashCode * 59) + this.ConsentTemplateId.GetHashCode();
-                }
-                if (this.StartDateTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartDateTime.GetHashCode();
-                }
-                if (this.ExpiryDateTime != null)
-                {
-                    hashCode = (hashCode * 59) + this.ExpiryDateTime.GetHashCode();
                 }
                 if (this.Receiver != null)
                 {

@@ -85,7 +85,7 @@ No authorization required
 
 <a name="createrequest"></a>
 # **CreateRequest**
-> bool CreateRequest (DataConsentRequestModel dataConsentRequestModel = null)
+> DataConsentRequest CreateRequest (DataConsentRequestModel dataConsentRequestModel = null)
 
 Create a consent request.
 
@@ -111,7 +111,7 @@ namespace Example
             try
             {
                 // Create a consent request.
-                bool result = apiInstance.CreateRequest(dataConsentRequestModel);
+                DataConsentRequest result = apiInstance.CreateRequest(dataConsentRequestModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool**
+[**DataConsentRequest**](DataConsentRequest.md)
 
 ### Authorization
 

@@ -66,22 +66,6 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'ConsentTemplateId'
         }
         /// <summary>
-        /// Test the property 'StartDateTime'
-        /// </summary>
-        [Fact]
-        public void StartDateTimeTest()
-        {
-            // TODO unit test for the property 'StartDateTime'
-        }
-        /// <summary>
-        /// Test the property 'ExpiryDateTime'
-        /// </summary>
-        [Fact]
-        public void ExpiryDateTimeTest()
-        {
-            // TODO unit test for the property 'ExpiryDateTime'
-        }
-        /// <summary>
         /// Test the property 'Receiver'
         /// </summary>
         [Fact]

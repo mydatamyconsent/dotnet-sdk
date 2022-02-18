@@ -50,8 +50,8 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
-        /// <returns>bool</returns>
-        bool CreateRequest(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel));
+        /// <returns>DataConsentRequest</returns>
+        DataConsentRequest CreateRequest(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel));
 
         /// <summary>
         /// Create a consent request.
@@ -61,8 +61,8 @@ namespace MyDataMyConsent.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
-        /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> CreateRequestWithHttpInfo(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel));
+        /// <returns>ApiResponse of DataConsentRequest</returns>
+        ApiResponse<DataConsentRequest> CreateRequestWithHttpInfo(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel));
         /// <summary>
         /// Get all Consent Requests sent to Individuals.
         /// </summary>
@@ -184,8 +184,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> CreateRequestAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsentRequest</returns>
+        System.Threading.Tasks.Task<DataConsentRequest> CreateRequestAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a consent request.
@@ -196,8 +196,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> CreateRequestWithHttpInfoAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsentRequest)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsentRequest>> CreateRequestWithHttpInfoAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all Consent Requests sent to Individuals.
         /// </summary>
@@ -545,10 +545,10 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
-        /// <returns>bool</returns>
-        public bool CreateRequest(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel))
+        /// <returns>DataConsentRequest</returns>
+        public DataConsentRequest CreateRequest(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel))
         {
-            MyDataMyConsent.Client.ApiResponse<bool> localVarResponse = CreateRequestWithHttpInfo(dataConsentRequestModel);
+            MyDataMyConsent.Client.ApiResponse<DataConsentRequest> localVarResponse = CreateRequestWithHttpInfo(dataConsentRequestModel);
             return localVarResponse.Data;
         }
 
@@ -557,8 +557,8 @@ namespace MyDataMyConsent.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
-        /// <returns>ApiResponse of bool</returns>
-        public MyDataMyConsent.Client.ApiResponse<bool> CreateRequestWithHttpInfo(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel))
+        /// <returns>ApiResponse of DataConsentRequest</returns>
+        public MyDataMyConsent.Client.ApiResponse<DataConsentRequest> CreateRequestWithHttpInfo(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel))
         {
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
 
@@ -587,7 +587,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<bool>("/v1/consent-requests", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DataConsentRequest>("/v1/consent-requests", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateRequest", localVarResponse);
@@ -606,10 +606,10 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> CreateRequestAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsentRequest</returns>
+        public async System.Threading.Tasks.Task<DataConsentRequest> CreateRequestAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Client.ApiResponse<bool> localVarResponse = await CreateRequestWithHttpInfoAsync(dataConsentRequestModel, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Client.ApiResponse<DataConsentRequest> localVarResponse = await CreateRequestWithHttpInfoAsync(dataConsentRequestModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -619,8 +619,8 @@ namespace MyDataMyConsent.Api
         /// <exception cref="MyDataMyConsent.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dataConsentRequestModel">MyDataMyConsent.Models.Consents.DataConsentRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<bool>> CreateRequestWithHttpInfoAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsentRequest)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Client.ApiResponse<DataConsentRequest>> CreateRequestWithHttpInfoAsync(DataConsentRequestModel dataConsentRequestModel = default(DataConsentRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Client.RequestOptions();
@@ -650,7 +650,7 @@ namespace MyDataMyConsent.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/v1/consent-requests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DataConsentRequest>("/v1/consent-requests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

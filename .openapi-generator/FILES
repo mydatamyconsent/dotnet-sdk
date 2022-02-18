@@ -11,6 +11,7 @@ docs/DataConsentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentIdentifier.md
+docs/DataConsentRequest.md
 docs/DataConsentRequestModel.md
 docs/DataConsentRequestedDocument.md
 docs/DataConsentRequestedFinancialAccount.md
@@ -82,6 +83,7 @@ src/MyDataMyConsent.Test/Models/DataConsentDocumentsDtoTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentFinancialsDtoTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentIdentifierTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentRequestModelTests.cs
+src/MyDataMyConsent.Test/Models/DataConsentRequestTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentRequestedDocumentTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentRequestedFinancialAccountTests.cs
 src/MyDataMyConsent.Test/Models/DataConsentRequesterDtoTests.cs
@@ -163,6 +165,7 @@ src/MyDataMyConsent/Models/DataConsentDetailsDto.cs
 src/MyDataMyConsent/Models/DataConsentDocumentsDto.cs
 src/MyDataMyConsent/Models/DataConsentFinancialsDto.cs
 src/MyDataMyConsent/Models/DataConsentIdentifier.cs
+src/MyDataMyConsent/Models/DataConsentRequest.cs
 src/MyDataMyConsent/Models/DataConsentRequestModel.cs
 src/MyDataMyConsent/Models/DataConsentRequestedDocument.cs
 src/MyDataMyConsent/Models/DataConsentRequestedFinancialAccount.cs
