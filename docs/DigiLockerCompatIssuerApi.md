@@ -1,4 +1,4 @@
-# MyDataMyConsent.Api.DigiLockerCompatIssuerApi
+# MyDataMyConsent.Sdk.Api.DigiLockerCompatIssuerApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Digilocker Compatible endpoint to Issue Documents.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {

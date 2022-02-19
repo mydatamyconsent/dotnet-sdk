@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.OrganizationDocumentDetailsDto
+# MyDataMyConsent.Sdk.Models.OrganizationDocumentDetailsDto
 
 ## Properties
 

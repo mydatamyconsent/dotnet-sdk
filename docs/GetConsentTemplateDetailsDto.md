@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.GetConsentTemplateDetailsDto
+# MyDataMyConsent.Sdk.Models.GetConsentTemplateDetailsDto
 
 ## Properties
 

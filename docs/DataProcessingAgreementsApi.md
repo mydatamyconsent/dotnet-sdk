@@ -1,4 +1,4 @@
-# MyDataMyConsent.Api.DataProcessingAgreementsApi
+# MyDataMyConsent.Sdk.Api.DataProcessingAgreementsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,9 +22,9 @@ Get all data processing agreements.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -95,9 +95,9 @@ Delete a data processing agreement. This will not delete a published or a agreem
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -166,9 +166,9 @@ Get data processing agreement by Id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -237,9 +237,9 @@ Update a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -311,9 +311,9 @@ Terminate a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -382,9 +382,9 @@ Create a data processing agreement.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {

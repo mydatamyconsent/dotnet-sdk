@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.OrganizationDocumentDownloadDto
+# MyDataMyConsent.Sdk.Models.OrganizationDocumentDownloadDto
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.FetchTypes
+# MyDataMyConsent.Sdk.Models.FetchTypes
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Api.DocumentsApi
+# MyDataMyConsent.Sdk.Api.DocumentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Issue a new document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -92,9 +92,9 @@ Get issued document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -160,9 +160,9 @@ Get issued documents.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -236,9 +236,9 @@ Get registered document types.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {

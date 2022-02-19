@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.UserDocumentDetailsDto
+# MyDataMyConsent.Sdk.Models.UserDocumentDetailsDto
 
 ## Properties
 

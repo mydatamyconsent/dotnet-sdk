@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.PushUriRequest
+# MyDataMyConsent.Sdk.Models.PushUriRequest
 
 ## Properties
 

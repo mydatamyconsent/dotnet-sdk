@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.IdentitySupportedFields
+# MyDataMyConsent.Sdk.Models.IdentitySupportedFields
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.BankAccountType
+# MyDataMyConsent.Sdk.Models.BankAccountType
 
 ## Properties
 

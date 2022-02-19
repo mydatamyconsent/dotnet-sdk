@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.OrganizationFinancialTransactionsDtoPaginatedList
+# MyDataMyConsent.Sdk.Models.OrganizationFinancialTransactionsDtoPaginatedList
 
 ## Properties
 

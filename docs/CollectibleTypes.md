@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.CollectibleTypes
+# MyDataMyConsent.Sdk.Models.CollectibleTypes
 
 ## Properties
 

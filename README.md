@@ -1,4 +1,4 @@
-# MyDataMyConsent - the C# library for the My Data My Consent - Developer API
+# MyDataMyConsent.Sdk - the C# library for the My Data My Consent - Developer API
 
 Unleashing the power of data consent by establishing trust. The Platform Core Developer API defines a set of capabilities that can be used to request, issue, manage and update data, documents and credentials by organizations. The API can be used to request, manage and update Decentralised Identifiers, Financial Data, Health Data issue Documents, Credentials directly or using OpenID Connect flows, and verify Messages signed with DIDs and much more.
 
@@ -38,9 +38,9 @@ Generate the DLL using your preferred tool (e.g. `dotnet build`)
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 ```
 <a name="usage"></a>
 ## Usage
@@ -59,9 +59,9 @@ c.Proxy = webProxy;
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -73,17 +73,17 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var requestId = "requestId_example";  // Guid | 
+            var requestId = "requestId_example";  // Guid | Individual consent request id.
 
             try
             {
-                // Revoke / Cancel the ConsentRequest based on Id.
-                bool result = apiInstance.CancelConsentRequest(requestId);
+                // Cancel the individual data consent request based on Id.
+                IndividualDataConsentRequestResponse result = apiInstance.CancelIndividualDataConsentRequest(requestId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling DataConsentRequestsApi.CancelConsentRequest: " + e.Message );
+                Debug.Print("Exception when calling DataConsentRequestsApi.CancelIndividualDataConsentRequest: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -100,12 +100,14 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DataConsentRequestsApi* | [**CancelConsentRequest**](docs/DataConsentRequestsApi.md#cancelconsentrequest) | **DELETE** /v1/consent-requests/{requestId}/cancel | Revoke / Cancel the ConsentRequest based on Id.
-*DataConsentRequestsApi* | [**CreateRequest**](docs/DataConsentRequestsApi.md#createrequest) | **POST** /v1/consent-requests | Create a consent request.
+*DataConsentRequestsApi* | [**CancelIndividualDataConsentRequest**](docs/DataConsentRequestsApi.md#cancelindividualdataconsentrequest) | **PUT** /v1/consent-requests/individual/{requestId}/cancel | Cancel the individual data consent request based on Id.
+*DataConsentRequestsApi* | [**CancelOrganizationDataConsentRequest**](docs/DataConsentRequestsApi.md#cancelorganizationdataconsentrequest) | **PUT** /v1/consent-requests/organization/{requestId}/cancel | Cancel the Organization data consent request based on Id.
+*DataConsentRequestsApi* | [**CreateIndividualDataConsentRequest**](docs/DataConsentRequestsApi.md#createindividualdataconsentrequest) | **POST** /v1/consent-requests/individual | Create a individual data consent request.
+*DataConsentRequestsApi* | [**CreateOrganizationDataConsentRequest**](docs/DataConsentRequestsApi.md#createorganizationdataconsentrequest) | **POST** /v1/consent-requests/organization | Create a organization data consent request.
 *DataConsentRequestsApi* | [**GetAllConsentRequestsToIndividuals**](docs/DataConsentRequestsApi.md#getallconsentrequeststoindividuals) | **GET** /v1/consent-requests/individuals | Get all Consent Requests sent to Individuals.
-*DataConsentRequestsApi* | [**GetAllConsentRequestsToOrganizations**](docs/DataConsentRequestsApi.md#getallconsentrequeststoorganizations) | **GET** /v1/consent-requests/organizations | Get All Consent Requests sent to Organizations
+*DataConsentRequestsApi* | [**GetAllConsentRequestsToOrganizations**](docs/DataConsentRequestsApi.md#getallconsentrequeststoorganizations) | **GET** /v1/consent-requests/organizations | Get All Consent Requests sent to Organizations.
 *DataConsentRequestsApi* | [**GetIndividualConsentRequestById**](docs/DataConsentRequestsApi.md#getindividualconsentrequestbyid) | **GET** /v1/consent-requests/individuals/{requestId} | Get a Consent Request by ID.
-*DataConsentRequestsApi* | [**GetOrganizationConsentRequestById**](docs/DataConsentRequestsApi.md#getorganizationconsentrequestbyid) | **GET** /v1/consent-requests/organizations/{requestId} | Get a OrganizationConsent Request by Id
+*DataConsentRequestsApi* | [**GetOrganizationConsentRequestById**](docs/DataConsentRequestsApi.md#getorganizationconsentrequestbyid) | **GET** /v1/consent-requests/organizations/{requestId} | Get a OrganizationConsent Request by Id.
 *DataConsentsApi* | [**V1ConsentsIndividualsConsentIdAccountsAccountIdGet**](docs/DataConsentsApi.md#v1consentsindividualsconsentidaccountsaccountidget) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
 *DataConsentsApi* | [**V1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet**](docs/DataConsentsApi.md#v1consentsindividualsconsentidaccountsaccountidtransactionsget) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get consented financial account transactions of an individual based on accountId.
 *DataConsentsApi* | [**V1ConsentsIndividualsConsentIdAccountsGet**](docs/DataConsentsApi.md#v1consentsindividualsconsentidaccountsget) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual financial accounts in a consent.
@@ -146,12 +148,12 @@ Class | Method | HTTP request | Description
  - [Models.CollectibleTypes](docs/CollectibleTypes.md)
  - [Models.ConsentTemplateTypes](docs/ConsentTemplateTypes.md)
  - [Models.CreateDataProcessingAgreementRequestModel](docs/CreateDataProcessingAgreementRequestModel.md)
+ - [Models.CreateIndividualDataConsentRequest](docs/CreateIndividualDataConsentRequest.md)
+ - [Models.CreateOrganizationDataConsentRequest](docs/CreateOrganizationDataConsentRequest.md)
  - [Models.DataConsentDetailsDto](docs/DataConsentDetailsDto.md)
  - [Models.DataConsentDocumentsDto](docs/DataConsentDocumentsDto.md)
  - [Models.DataConsentFinancialsDto](docs/DataConsentFinancialsDto.md)
  - [Models.DataConsentIdentifier](docs/DataConsentIdentifier.md)
- - [Models.DataConsentRequest](docs/DataConsentRequest.md)
- - [Models.DataConsentRequestModel](docs/DataConsentRequestModel.md)
  - [Models.DataConsentRequestedDocument](docs/DataConsentRequestedDocument.md)
  - [Models.DataConsentRequestedFinancialAccount](docs/DataConsentRequestedFinancialAccount.md)
  - [Models.DataConsentRequesterDto](docs/DataConsentRequesterDto.md)
@@ -177,9 +179,11 @@ Class | Method | HTTP request | Description
  - [Models.Identifier](docs/Identifier.md)
  - [Models.IdentifierStringKeyValuePair](docs/IdentifierStringKeyValuePair.md)
  - [Models.IdentitySupportedFields](docs/IdentitySupportedFields.md)
+ - [Models.IndividualDataConsentRequestResponse](docs/IndividualDataConsentRequestResponse.md)
  - [Models.Life](docs/Life.md)
  - [Models.OrganizationDataConsentInfoDto](docs/OrganizationDataConsentInfoDto.md)
  - [Models.OrganizationDataConsentInfoDtoPaginatedList](docs/OrganizationDataConsentInfoDtoPaginatedList.md)
+ - [Models.OrganizationDataConsentRequestResponse](docs/OrganizationDataConsentRequestResponse.md)
  - [Models.OrganizationDocumentDetailsDto](docs/OrganizationDocumentDetailsDto.md)
  - [Models.OrganizationDocumentDownloadDto](docs/OrganizationDocumentDownloadDto.md)
  - [Models.OrganizationFinancialAccountDto](docs/OrganizationFinancialAccountDto.md)

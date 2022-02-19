@@ -1,4 +1,4 @@
-# MyDataMyConsent.Api.DataProviderDiscoveryApi
+# MyDataMyConsent.Sdk.Api.DataProviderDiscoveryApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Discover all data providers in My Data My Consent by country and filters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
@@ -103,9 +103,9 @@ Get a Data Provider details.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Api;
-using MyDataMyConsent.Client;
-using MyDataMyConsent.Models;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {

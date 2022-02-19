@@ -1,4 +1,4 @@
-# MyDataMyConsent.Models.ConsentTemplateTypes
+# MyDataMyConsent.Sdk.Models.ConsentTemplateTypes
 
 ## Properties
 
