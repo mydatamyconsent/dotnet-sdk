@@ -40,25 +40,25 @@ namespace MyDataMyConsent.Models
         /// Initializes a new instance of the <see cref="DocumentIssueRequest" /> class.
         /// </summary>
         /// <param name="documentTypeId">documentTypeId (required).</param>
-        /// <param name="identifier">identifier (required).</param>
+        /// <param name="documentIdentifier">documentIdentifier (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="description">description (required).</param>
         /// <param name="receiver">receiver (required).</param>
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
         /// <param name="base64PdfDocument">base64PdfDocument (required).</param>
         /// <param name="metadata">metadata.</param>
-        public DocumentIssueRequest(string documentTypeId = default(string), string identifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), string expiresAtUtc = default(string), string base64PdfDocument = default(string), Object metadata = default(Object))
+        public DocumentIssueRequest(string documentTypeId = default(string), string documentIdentifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), string expiresAtUtc = default(string), string base64PdfDocument = default(string), Object metadata = default(Object))
         {
             // to ensure "documentTypeId" is required (not null)
             if (documentTypeId == null) {
                 throw new ArgumentNullException("documentTypeId is a required property for DocumentIssueRequest and cannot be null");
             }
             this.DocumentTypeId = documentTypeId;
-            // to ensure "identifier" is required (not null)
-            if (identifier == null) {
-                throw new ArgumentNullException("identifier is a required property for DocumentIssueRequest and cannot be null");
+            // to ensure "documentIdentifier" is required (not null)
+            if (documentIdentifier == null) {
+                throw new ArgumentNullException("documentIdentifier is a required property for DocumentIssueRequest and cannot be null");
             }
-            this.Identifier = identifier;
+            this.DocumentIdentifier = documentIdentifier;
             // to ensure "name" is required (not null)
             if (name == null) {
                 throw new ArgumentNullException("name is a required property for DocumentIssueRequest and cannot be null");
@@ -90,10 +90,10 @@ namespace MyDataMyConsent.Models
         public string DocumentTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Gets or Sets DocumentIdentifier
         /// </summary>
-        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
-        public string Identifier { get; set; }
+        [DataMember(Name = "documentIdentifier", IsRequired = true, EmitDefaultValue = false)]
+        public string DocumentIdentifier { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -140,7 +140,7 @@ namespace MyDataMyConsent.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class DocumentIssueRequest {\n");
             sb.Append("  DocumentTypeId: ").Append(DocumentTypeId).Append("\n");
-            sb.Append("  Identifier: ").Append(Identifier).Append("\n");
+            sb.Append("  DocumentIdentifier: ").Append(DocumentIdentifier).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
@@ -188,9 +188,9 @@ namespace MyDataMyConsent.Models
                     this.DocumentTypeId.Equals(input.DocumentTypeId))
                 ) && 
                 (
-                    this.Identifier == input.Identifier ||
-                    (this.Identifier != null &&
-                    this.Identifier.Equals(input.Identifier))
+                    this.DocumentIdentifier == input.DocumentIdentifier ||
+                    (this.DocumentIdentifier != null &&
+                    this.DocumentIdentifier.Equals(input.DocumentIdentifier))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -237,9 +237,9 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.DocumentTypeId.GetHashCode();
                 }
-                if (this.Identifier != null)
+                if (this.DocumentIdentifier != null)
                 {
-                    hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DocumentIdentifier.GetHashCode();
                 }
                 if (this.Name != null)
                 {

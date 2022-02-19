@@ -39,14 +39,14 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="IdentitySupportedFields" /> class.
         /// </summary>
-        /// <param name="iconCodePoint">iconCodePoint (required).</param>
+        /// <param name="icon">icon (required).</param>
         /// <param name="title">title (required).</param>
         /// <param name="description">description.</param>
         /// <param name="key">key (required).</param>
         /// <param name="dataType">dataType (required).</param>
-        public IdentitySupportedFields(int iconCodePoint = default(int), string title = default(string), string description = default(string), string key = default(string), string dataType = default(string))
+        public IdentitySupportedFields(int icon = default(int), string title = default(string), string description = default(string), string key = default(string), string dataType = default(string))
         {
-            this.IconCodePoint = iconCodePoint;
+            this.Icon = icon;
             // to ensure "title" is required (not null)
             if (title == null) {
                 throw new ArgumentNullException("title is a required property for IdentitySupportedFields and cannot be null");
@@ -66,10 +66,10 @@ namespace MyDataMyConsent.Models
         }
 
         /// <summary>
-        /// Gets or Sets IconCodePoint
+        /// Gets or Sets Icon
         /// </summary>
-        [DataMember(Name = "iconCodePoint", IsRequired = true, EmitDefaultValue = false)]
-        public int IconCodePoint { get; set; }
+        [DataMember(Name = "icon", IsRequired = true, EmitDefaultValue = false)]
+        public int Icon { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -103,7 +103,7 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class IdentitySupportedFields {\n");
-            sb.Append("  IconCodePoint: ").Append(IconCodePoint).Append("\n");
+            sb.Append("  Icon: ").Append(Icon).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
@@ -144,8 +144,8 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
-                    this.IconCodePoint == input.IconCodePoint ||
-                    this.IconCodePoint.Equals(input.IconCodePoint)
+                    this.Icon == input.Icon ||
+                    this.Icon.Equals(input.Icon)
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -178,7 +178,7 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.IconCodePoint.GetHashCode();
+                hashCode = (hashCode * 59) + this.Icon.GetHashCode();
                 if (this.Title != null)
                 {
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();

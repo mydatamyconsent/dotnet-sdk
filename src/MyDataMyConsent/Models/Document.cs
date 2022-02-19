@@ -72,13 +72,13 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Gets or Sets FieldTitle
         /// </summary>
-        [DataMember(Name = "fieldTitle", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "field_title", IsRequired = true, EmitDefaultValue = false)]
         public string FieldTitle { get; set; }
 
         /// <summary>
         /// Gets or Sets FieldSlug
         /// </summary>
-        [DataMember(Name = "fieldSlug", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "field_slug", IsRequired = true, EmitDefaultValue = false)]
         public string FieldSlug { get; set; }
 
         /// <summary>

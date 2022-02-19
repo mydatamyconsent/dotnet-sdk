@@ -49,7 +49,7 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Gets or Sets CustomKey
         /// </summary>
-        [DataMember(Name = "customKey", EmitDefaultValue = true)]
+        [DataMember(Name = "custom_key", EmitDefaultValue = true)]
         public string CustomKey { get; set; }
 
         /// <summary>

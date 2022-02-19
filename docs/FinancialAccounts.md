@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Drn** | **string** |  | [optional] 
-**FinancialAccountDetailsRequired** | [**List&lt;FinancialAccountDetailsRequired&gt;**](FinancialAccountDetailsRequired.md) |  | [optional] 
+**RequiredDetails** | [**List&lt;FinancialAccountDetailsRequired&gt;**](FinancialAccountDetailsRequired.md) |  | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **EndDate** | **DateTime?** |  | [optional] 
 

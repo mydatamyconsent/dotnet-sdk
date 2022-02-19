@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountField** | **string** |  | [optional] 
+**FieldName** | **string** |  | [optional] 
 **CustomKey** | **string** |  | [optional] 
 **Accounts** | [**List&lt;FinancialAccounts&gt;**](FinancialAccounts.md) |  | [optional] 
 **Requirement** | **DocumentsRequired** |  | [optional] 

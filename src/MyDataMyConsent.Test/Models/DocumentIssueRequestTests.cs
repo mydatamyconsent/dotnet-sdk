@@ -66,12 +66,12 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'DocumentTypeId'
         }
         /// <summary>
-        /// Test the property 'Identifier'
+        /// Test the property 'DocumentIdentifier'
         /// </summary>
         [Fact]
-        public void IdentifierTest()
+        public void DocumentIdentifierTest()
         {
-            // TODO unit test for the property 'Identifier'
+            // TODO unit test for the property 'DocumentIdentifier'
         }
         /// <summary>
         /// Test the property 'Name'

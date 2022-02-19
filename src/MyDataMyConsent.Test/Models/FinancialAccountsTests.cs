@@ -66,12 +66,12 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Drn'
         }
         /// <summary>
-        /// Test the property 'FinancialAccountDetailsRequired'
+        /// Test the property 'RequiredDetails'
         /// </summary>
         [Fact]
-        public void FinancialAccountDetailsRequiredTest()
+        public void RequiredDetailsTest()
         {
-            // TODO unit test for the property 'FinancialAccountDetailsRequired'
+            // TODO unit test for the property 'RequiredDetails'
         }
         /// <summary>
         /// Test the property 'StartDate'

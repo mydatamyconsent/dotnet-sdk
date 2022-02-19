@@ -40,28 +40,28 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="Financial" /> class.
         /// </summary>
-        /// <param name="accountField">accountField.</param>
+        /// <param name="fieldName">fieldName.</param>
         /// <param name="customKey">customKey.</param>
         /// <param name="accounts">accounts.</param>
         /// <param name="requirement">requirement.</param>
-        public Financial(string accountField = default(string), string customKey = default(string), List<FinancialAccounts> accounts = default(List<FinancialAccounts>), DocumentsRequired? requirement = default(DocumentsRequired?))
+        public Financial(string fieldName = default(string), string customKey = default(string), List<FinancialAccounts> accounts = default(List<FinancialAccounts>), DocumentsRequired? requirement = default(DocumentsRequired?))
         {
-            this.AccountField = accountField;
+            this.FieldName = fieldName;
             this.CustomKey = customKey;
             this.Accounts = accounts;
             this.Requirement = requirement;
         }
 
         /// <summary>
-        /// Gets or Sets AccountField
+        /// Gets or Sets FieldName
         /// </summary>
-        [DataMember(Name = "accountField", EmitDefaultValue = true)]
-        public string AccountField { get; set; }
+        [DataMember(Name = "field_name", EmitDefaultValue = true)]
+        public string FieldName { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomKey
         /// </summary>
-        [DataMember(Name = "customKey", EmitDefaultValue = true)]
+        [DataMember(Name = "custom_key", EmitDefaultValue = true)]
         public string CustomKey { get; set; }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace MyDataMyConsent.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Financial {\n");
-            sb.Append("  AccountField: ").Append(AccountField).Append("\n");
+            sb.Append("  FieldName: ").Append(FieldName).Append("\n");
             sb.Append("  CustomKey: ").Append(CustomKey).Append("\n");
             sb.Append("  Accounts: ").Append(Accounts).Append("\n");
             sb.Append("  Requirement: ").Append(Requirement).Append("\n");
@@ -118,9 +118,9 @@ namespace MyDataMyConsent.Models
             }
             return 
                 (
-                    this.AccountField == input.AccountField ||
-                    (this.AccountField != null &&
-                    this.AccountField.Equals(input.AccountField))
+                    this.FieldName == input.FieldName ||
+                    (this.FieldName != null &&
+                    this.FieldName.Equals(input.FieldName))
                 ) && 
                 (
                     this.CustomKey == input.CustomKey ||
@@ -148,9 +148,9 @@ namespace MyDataMyConsent.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AccountField != null)
+                if (this.FieldName != null)
                 {
-                    hashCode = (hashCode * 59) + this.AccountField.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FieldName.GetHashCode();
                 }
                 if (this.CustomKey != null)
                 {

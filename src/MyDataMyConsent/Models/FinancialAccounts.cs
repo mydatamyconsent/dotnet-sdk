@@ -35,13 +35,13 @@ namespace MyDataMyConsent.Models
         /// Initializes a new instance of the <see cref="FinancialAccounts" /> class.
         /// </summary>
         /// <param name="drn">drn.</param>
-        /// <param name="financialAccountDetailsRequired">financialAccountDetailsRequired.</param>
+        /// <param name="requiredDetails">requiredDetails.</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
-        public FinancialAccounts(string drn = default(string), List<FinancialAccountDetailsRequired> financialAccountDetailsRequired = default(List<FinancialAccountDetailsRequired>), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
+        public FinancialAccounts(string drn = default(string), List<FinancialAccountDetailsRequired> requiredDetails = default(List<FinancialAccountDetailsRequired>), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
         {
             this.Drn = drn;
-            this.FinancialAccountDetailsRequired = financialAccountDetailsRequired;
+            this.RequiredDetails = requiredDetails;
             this.StartDate = startDate;
             this.EndDate = endDate;
         }
@@ -53,21 +53,21 @@ namespace MyDataMyConsent.Models
         public string Drn { get; set; }
 
         /// <summary>
-        /// Gets or Sets FinancialAccountDetailsRequired
+        /// Gets or Sets RequiredDetails
         /// </summary>
-        [DataMember(Name = "financialAccountDetailsRequired", EmitDefaultValue = true)]
-        public List<FinancialAccountDetailsRequired> FinancialAccountDetailsRequired { get; set; }
+        [DataMember(Name = "required_details", EmitDefaultValue = true)]
+        public List<FinancialAccountDetailsRequired> RequiredDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets StartDate
         /// </summary>
-        [DataMember(Name = "startDate", EmitDefaultValue = true)]
+        [DataMember(Name = "start_date", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// Gets or Sets EndDate
         /// </summary>
-        [DataMember(Name = "endDate", EmitDefaultValue = true)]
+        [DataMember(Name = "end_date", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace MyDataMyConsent.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class FinancialAccounts {\n");
             sb.Append("  Drn: ").Append(Drn).Append("\n");
-            sb.Append("  FinancialAccountDetailsRequired: ").Append(FinancialAccountDetailsRequired).Append("\n");
+            sb.Append("  RequiredDetails: ").Append(RequiredDetails).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("}\n");
@@ -123,10 +123,10 @@ namespace MyDataMyConsent.Models
                     this.Drn.Equals(input.Drn))
                 ) && 
                 (
-                    this.FinancialAccountDetailsRequired == input.FinancialAccountDetailsRequired ||
-                    this.FinancialAccountDetailsRequired != null &&
-                    input.FinancialAccountDetailsRequired != null &&
-                    this.FinancialAccountDetailsRequired.SequenceEqual(input.FinancialAccountDetailsRequired)
+                    this.RequiredDetails == input.RequiredDetails ||
+                    this.RequiredDetails != null &&
+                    input.RequiredDetails != null &&
+                    this.RequiredDetails.SequenceEqual(input.RequiredDetails)
                 ) && 
                 (
                     this.StartDate == input.StartDate ||
@@ -153,9 +153,9 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Drn.GetHashCode();
                 }
-                if (this.FinancialAccountDetailsRequired != null)
+                if (this.RequiredDetails != null)
                 {
-                    hashCode = (hashCode * 59) + this.FinancialAccountDetailsRequired.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RequiredDetails.GetHashCode();
                 }
                 if (this.StartDate != null)
                 {

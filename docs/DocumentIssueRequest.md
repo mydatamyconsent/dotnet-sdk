@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentTypeId** | **string** |  | 
-**Identifier** | **string** |  | 
+**DocumentIdentifier** | **string** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | 
 **Receiver** | [**Receiver**](Receiver.md) |  | 
