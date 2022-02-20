@@ -48,8 +48,13 @@ jobs:
             
             - name: Create the package
               run: dotnet pack --configuration Release src/MyDataMyConsent.Sdk/MyDataMyConsent.Sdk.csproj
+
+            - uses: actions/delete-package-versions@v2
+              with:
+                package-name: 'MyDataMyConsent.Sdk'
+                num-old-versions-to-delete: 1
             
-            - name: Publish the package to GPR
+            - name: Publish the package to Github Package Registry
               run: dotnet nuget push src/MyDataMyConsent.Sdk/bin/Release/*.nupkg
 
             - name: Repository update
