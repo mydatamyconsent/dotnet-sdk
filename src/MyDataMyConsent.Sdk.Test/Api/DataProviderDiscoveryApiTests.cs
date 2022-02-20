@@ -56,10 +56,22 @@ namespace MyDataMyConsent.Sdk.Test.Api
         }
 
         /// <summary>
-        /// Test V1DataProvidersGet
+        /// Test GetDataProviderById
         /// </summary>
         [Fact]
-        public void V1DataProvidersGetTest()
+        public void GetDataProviderByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string providerId = null;
+            //var response = instance.GetDataProviderById(providerId);
+            //Assert.IsType<DataProvider>(response);
+        }
+
+        /// <summary>
+        /// Test GetDataProviders
+        /// </summary>
+        [Fact]
+        public void GetDataProvidersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string accountType = null;
@@ -68,20 +80,8 @@ namespace MyDataMyConsent.Sdk.Test.Api
             //int? pageNo = null;
             //int? pageSize = null;
             //string country = null;
-            //var response = instance.V1DataProvidersGet(accountType, documentType, organizationCategory, pageNo, pageSize, country);
+            //var response = instance.GetDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country);
             //Assert.IsType<DataProviderPaginatedList>(response);
-        }
-
-        /// <summary>
-        /// Test V1DataProvidersProviderIdGet
-        /// </summary>
-        [Fact]
-        public void V1DataProvidersProviderIdGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string providerId = null;
-            //var response = instance.V1DataProvidersProviderIdGet(providerId);
-            //Assert.IsType<DataProvider>(response);
         }
     }
 }

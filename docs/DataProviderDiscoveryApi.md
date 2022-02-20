@@ -4,17 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1DataProvidersGet**](DataProviderDiscoveryApi.md#v1dataprovidersget) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
-[**V1DataProvidersProviderIdGet**](DataProviderDiscoveryApi.md#v1dataprovidersprovideridget) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details.
+[**GetDataProviderById**](DataProviderDiscoveryApi.md#getdataproviderbyid) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details based on provider id.
+[**GetDataProviders**](DataProviderDiscoveryApi.md#getdataproviders) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 
 
-<a name="v1dataprovidersget"></a>
-# **V1DataProvidersGet**
-> DataProviderPaginatedList V1DataProvidersGet (string accountType = null, string documentType = null, string organizationCategory = null, int? pageNo = null, int? pageSize = null, string country = null)
+<a name="getdataproviderbyid"></a>
+# **GetDataProviderById**
+> DataProvider GetDataProviderById (string providerId)
 
-Discover all data providers in My Data My Consent by country and filters.
-
-.
+Get a Data Provider details based on provider id.
 
 ### Example
 ```csharp
@@ -26,7 +24,76 @@ using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
-    public class V1DataProvidersGetExample
+    public class GetDataProviderByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new DataProviderDiscoveryApi(config);
+            var providerId = "providerId_example";  // string | Provider id.
+
+            try
+            {
+                // Get a Data Provider details based on provider id.
+                DataProvider result = apiInstance.GetDataProviderById(providerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataProviderDiscoveryApi.GetDataProviderById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **providerId** | **string**| Provider id. | 
+
+### Return type
+
+[**DataProvider**](DataProvider.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdataproviders"></a>
+# **GetDataProviders**
+> DataProviderPaginatedList GetDataProviders (string accountType = null, string documentType = null, string organizationCategory = null, int? pageNo = null, int? pageSize = null, string country = null)
+
+Discover all data providers in My Data My Consent by country and filters.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class GetDataProvidersExample
     {
         public static void Main()
         {
@@ -43,12 +110,12 @@ namespace Example
             try
             {
                 // Discover all data providers in My Data My Consent by country and filters.
-                DataProviderPaginatedList result = apiInstance.V1DataProvidersGet(accountType, documentType, organizationCategory, pageNo, pageSize, country);
+                DataProviderPaginatedList result = apiInstance.GetDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DataProviderDiscoveryApi.V1DataProvidersGet: " + e.Message );
+                Debug.Print("Exception when calling DataProviderDiscoveryApi.GetDataProviders: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -85,82 +152,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK. |  -  |
-| **401** | Unauthorized. |  -  |
-| **500** | Internal Server Error. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="v1dataprovidersprovideridget"></a>
-# **V1DataProvidersProviderIdGet**
-> DataProvider V1DataProvidersProviderIdGet (string providerId)
-
-Get a Data Provider details.
-
-.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
-
-namespace Example
-{
-    public class V1DataProvidersProviderIdGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            var apiInstance = new DataProviderDiscoveryApi(config);
-            var providerId = "providerId_example";  // string | Provider Id.
-
-            try
-            {
-                // Get a Data Provider details.
-                DataProvider result = apiInstance.V1DataProvidersProviderIdGet(providerId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DataProviderDiscoveryApi.V1DataProvidersProviderIdGet: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **providerId** | **string**| Provider Id. | 
-
-### Return type
-
-[**DataProvider**](DataProvider.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK. |  -  |
-| **401** | Unauthorized. |  -  |
-| **500** | Internal Server Error. |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

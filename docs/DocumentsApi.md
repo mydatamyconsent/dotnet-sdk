@@ -247,7 +247,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
 
             try
             {
@@ -270,7 +270,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| MyDataMyConsent.Models.Documents.DocumentIssueRequest. | 
+ **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest. | 
 
 ### Return type
 

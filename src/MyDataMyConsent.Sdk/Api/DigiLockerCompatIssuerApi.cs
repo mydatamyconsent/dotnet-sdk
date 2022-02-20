@@ -28,23 +28,23 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents.
+        /// Digilocker Compatible endpoint to issue document.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <returns>PushUriResponse</returns>
-        PushUriResponse IssuerIssuedoc1XmlPost(PushUriRequest pushUriRequest = default(PushUriRequest));
+        PushUriResponse DigilockerCompatIssueDocument(PushUriRequest pushUriRequest = default(PushUriRequest));
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents.
+        /// Digilocker Compatible endpoint to issue document.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <returns>ApiResponse of PushUriResponse</returns>
-        ApiResponse<PushUriResponse> IssuerIssuedoc1XmlPostWithHttpInfo(PushUriRequest pushUriRequest = default(PushUriRequest));
+        ApiResponse<PushUriResponse> DigilockerCompatIssueDocumentWithHttpInfo(PushUriRequest pushUriRequest = default(PushUriRequest));
         #endregion Synchronous Operations
     }
 
@@ -55,28 +55,28 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents.
+        /// Digilocker Compatible endpoint to issue document.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PushUriResponse</returns>
-        System.Threading.Tasks.Task<PushUriResponse> IssuerIssuedoc1XmlPostAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PushUriResponse> DigilockerCompatIssueDocumentAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents.
+        /// Digilocker Compatible endpoint to issue document.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PushUriResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PushUriResponse>> IssuerIssuedoc1XmlPostWithHttpInfoAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PushUriResponse>> DigilockerCompatIssueDocumentWithHttpInfoAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -198,24 +198,24 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents. 
+        /// Digilocker Compatible endpoint to issue document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <returns>PushUriResponse</returns>
-        public PushUriResponse IssuerIssuedoc1XmlPost(PushUriRequest pushUriRequest = default(PushUriRequest))
+        public PushUriResponse DigilockerCompatIssueDocument(PushUriRequest pushUriRequest = default(PushUriRequest))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> localVarResponse = IssuerIssuedoc1XmlPostWithHttpInfo(pushUriRequest);
+            MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> localVarResponse = DigilockerCompatIssueDocumentWithHttpInfo(pushUriRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents. 
+        /// Digilocker Compatible endpoint to issue document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <returns>ApiResponse of PushUriResponse</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> IssuerIssuedoc1XmlPostWithHttpInfo(PushUriRequest pushUriRequest = default(PushUriRequest))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> DigilockerCompatIssueDocumentWithHttpInfo(PushUriRequest pushUriRequest = default(PushUriRequest))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -247,7 +247,7 @@ namespace MyDataMyConsent.Sdk.Api
             var localVarResponse = this.Client.Post<PushUriResponse>("/issuer/issuedoc/1/xml", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IssuerIssuedoc1XmlPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DigilockerCompatIssueDocument", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -258,26 +258,26 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents. 
+        /// Digilocker Compatible endpoint to issue document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PushUriResponse</returns>
-        public async System.Threading.Tasks.Task<PushUriResponse> IssuerIssuedoc1XmlPostAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PushUriResponse> DigilockerCompatIssueDocumentAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> localVarResponse = await IssuerIssuedoc1XmlPostWithHttpInfoAsync(pushUriRequest, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse> localVarResponse = await DigilockerCompatIssueDocumentWithHttpInfoAsync(pushUriRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Digilocker Compatible endpoint to Issue Documents. 
+        /// Digilocker Compatible endpoint to issue document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pushUriRequest"> (optional)</param>
+        /// <param name="pushUriRequest">Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PushUriResponse)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse>> IssuerIssuedoc1XmlPostWithHttpInfoAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<PushUriResponse>> DigilockerCompatIssueDocumentWithHttpInfoAsync(PushUriRequest pushUriRequest = default(PushUriRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -311,7 +311,7 @@ namespace MyDataMyConsent.Sdk.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IssuerIssuedoc1XmlPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DigilockerCompatIssueDocument", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

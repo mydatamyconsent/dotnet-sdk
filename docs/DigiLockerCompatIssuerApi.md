@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**IssuerIssuedoc1XmlPost**](DigiLockerCompatIssuerApi.md#issuerissuedoc1xmlpost) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to Issue Documents.
+[**DigilockerCompatIssueDocument**](DigiLockerCompatIssuerApi.md#digilockercompatissuedocument) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document.
 
 
-<a name="issuerissuedoc1xmlpost"></a>
-# **IssuerIssuedoc1XmlPost**
-> PushUriResponse IssuerIssuedoc1XmlPost (PushUriRequest pushUriRequest = null)
+<a name="digilockercompatissuedocument"></a>
+# **DigilockerCompatIssueDocument**
+> PushUriResponse DigilockerCompatIssueDocument (PushUriRequest pushUriRequest = null)
 
-Digilocker Compatible endpoint to Issue Documents.
+Digilocker Compatible endpoint to issue document.
 
 ### Example
 ```csharp
@@ -23,24 +23,24 @@ using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
-    public class IssuerIssuedoc1XmlPostExample
+    public class DigilockerCompatIssueDocumentExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DigiLockerCompatIssuerApi(config);
-            var pushUriRequest = new PushUriRequest(); // PushUriRequest |  (optional) 
+            var pushUriRequest = new PushUriRequest(); // PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional) 
 
             try
             {
-                // Digilocker Compatible endpoint to Issue Documents.
-                PushUriResponse result = apiInstance.IssuerIssuedoc1XmlPost(pushUriRequest);
+                // Digilocker Compatible endpoint to issue document.
+                PushUriResponse result = apiInstance.DigilockerCompatIssueDocument(pushUriRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DigiLockerCompatIssuerApi.IssuerIssuedoc1XmlPost: " + e.Message );
+                Debug.Print("Exception when calling DigiLockerCompatIssuerApi.DigilockerCompatIssueDocument: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushUriRequest** | [**PushUriRequest**](PushUriRequest.md)|  | [optional] 
+ **pushUriRequest** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional] 
 
 ### Return type
 

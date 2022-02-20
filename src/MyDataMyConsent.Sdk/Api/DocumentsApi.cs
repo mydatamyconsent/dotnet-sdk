@@ -95,7 +95,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <returns>bool</returns>
         bool IssueDocument(DocumentIssueRequest documentIssueRequest);
 
@@ -106,7 +106,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <returns>ApiResponse of bool</returns>
         ApiResponse<bool> IssueDocumentWithHttpInfo(DocumentIssueRequest documentIssueRequest);
         #endregion Synchronous Operations
@@ -204,7 +204,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
         System.Threading.Tasks.Task<bool> IssueDocumentAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -216,7 +216,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool>> IssueDocumentWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -770,7 +770,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <returns>bool</returns>
         public bool IssueDocument(DocumentIssueRequest documentIssueRequest)
         {
@@ -782,7 +782,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <returns>ApiResponse of bool</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<bool> IssueDocumentWithHttpInfo(DocumentIssueRequest documentIssueRequest)
         {
@@ -836,7 +836,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
         public async System.Threading.Tasks.Task<bool> IssueDocumentAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -849,7 +849,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<bool>> IssueDocumentWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

@@ -28,11 +28,26 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Discover all data providers in My Data My Consent by country and filters.
+        /// Get a Data Provider details based on provider id.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <returns>DataProvider</returns>
+        DataProvider GetDataProviderById(string providerId);
+
+        /// <summary>
+        /// Get a Data Provider details based on provider id.
         /// </summary>
         /// <remarks>
-        /// .
+        /// 
         /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <returns>ApiResponse of DataProvider</returns>
+        ApiResponse<DataProvider> GetDataProviderByIdWithHttpInfo(string providerId);
+        /// <summary>
+        /// Discover all data providers in My Data My Consent by country and filters.
+        /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
         /// <param name="documentType">Document type. (optional)</param>
@@ -41,13 +56,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Page size. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
-        DataProviderPaginatedList V1DataProvidersGet(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
+        DataProviderPaginatedList GetDataProviders(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
 
         /// <summary>
         /// Discover all data providers in My Data My Consent by country and filters.
         /// </summary>
         /// <remarks>
-        /// .
+        /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -57,28 +72,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Page size. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
-        ApiResponse<DataProviderPaginatedList> V1DataProvidersGetWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
-        /// <summary>
-        /// Get a Data Provider details.
-        /// </summary>
-        /// <remarks>
-        /// .
-        /// </remarks>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <returns>DataProvider</returns>
-        DataProvider V1DataProvidersProviderIdGet(string providerId);
-
-        /// <summary>
-        /// Get a Data Provider details.
-        /// </summary>
-        /// <remarks>
-        /// .
-        /// </remarks>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <returns>ApiResponse of DataProvider</returns>
-        ApiResponse<DataProvider> V1DataProvidersProviderIdGetWithHttpInfo(string providerId);
+        ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
         #endregion Synchronous Operations
     }
 
@@ -89,10 +83,33 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Get a Data Provider details based on provider id.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DataProvider</returns>
+        System.Threading.Tasks.Task<DataProvider> GetDataProviderByIdAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get a Data Provider details based on provider id.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DataProvider)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataProvider>> GetDataProviderByIdWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Discover all data providers in My Data My Consent by country and filters.
         /// </summary>
         /// <remarks>
-        /// .
+        /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -103,13 +120,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
-        System.Threading.Tasks.Task<DataProviderPaginatedList> V1DataProvidersGetAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Discover all data providers in My Data My Consent by country and filters.
         /// </summary>
         /// <remarks>
-        /// .
+        /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -120,30 +137,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProviderPaginatedList>> V1DataProvidersGetWithHttpInfoAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get a Data Provider details.
-        /// </summary>
-        /// <remarks>
-        /// .
-        /// </remarks>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProvider</returns>
-        System.Threading.Tasks.Task<DataProvider> V1DataProvidersProviderIdGetAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get a Data Provider details.
-        /// </summary>
-        /// <remarks>
-        /// .
-        /// </remarks>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProvider)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProvider>> V1DataProvidersProviderIdGetWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -265,7 +259,143 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Discover all data providers in My Data My Consent by country and filters. .
+        /// Get a Data Provider details based on provider id. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <returns>DataProvider</returns>
+        public DataProvider GetDataProviderById(string providerId)
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> localVarResponse = GetDataProviderByIdWithHttpInfo(providerId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a Data Provider details based on provider id. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <returns>ApiResponse of DataProvider</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> GetDataProviderByIdWithHttpInfo(string providerId)
+        {
+            // verify the required parameter 'providerId' is set
+            if (providerId == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'providerId' when calling DataProviderDiscoveryApi->GetDataProviderById");
+            }
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "application/xml"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(providerId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DataProvider>("/v1/data-providers/{providerId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDataProviderById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get a Data Provider details based on provider id. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DataProvider</returns>
+        public async System.Threading.Tasks.Task<DataProvider> GetDataProviderByIdAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> localVarResponse = await GetDataProviderByIdWithHttpInfoAsync(providerId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a Data Provider details based on provider id. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="providerId">Provider id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DataProvider)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider>> GetDataProviderByIdWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'providerId' is set
+            if (providerId == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'providerId' when calling DataProviderDiscoveryApi->GetDataProviderById");
+            }
+
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "application/xml"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("providerId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(providerId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProvider>("/v1/data-providers/{providerId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDataProviderById", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Discover all data providers in My Data My Consent by country and filters. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -275,14 +405,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Page size. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
-        public DataProviderPaginatedList V1DataProvidersGet(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
+        public DataProviderPaginatedList GetDataProviders(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = V1DataProvidersGetWithHttpInfo(accountType, documentType, organizationCategory, pageNo, pageSize, country);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = GetDataProvidersWithHttpInfo(accountType, documentType, organizationCategory, pageNo, pageSize, country);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Discover all data providers in My Data My Consent by country and filters. .
+        /// Discover all data providers in My Data My Consent by country and filters. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -292,7 +422,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Page size. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> V1DataProvidersGetWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -347,7 +477,7 @@ namespace MyDataMyConsent.Sdk.Api
             var localVarResponse = this.Client.Get<DataProviderPaginatedList>("/v1/data-providers", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1DataProvidersGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDataProviders", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -358,7 +488,7 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Discover all data providers in My Data My Consent by country and filters. .
+        /// Discover all data providers in My Data My Consent by country and filters. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -369,14 +499,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
-        public async System.Threading.Tasks.Task<DataProviderPaginatedList> V1DataProvidersGetAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = await V1DataProvidersGetWithHttpInfoAsync(accountType, documentType, organizationCategory, pageNo, pageSize, country, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = await GetDataProvidersWithHttpInfoAsync(accountType, documentType, organizationCategory, pageNo, pageSize, country, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Discover all data providers in My Data My Consent by country and filters. .
+        /// Discover all data providers in My Data My Consent by country and filters. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountType">Account type. (optional)</param>
@@ -387,7 +517,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList>> V1DataProvidersGetWithHttpInfoAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -444,143 +574,7 @@ namespace MyDataMyConsent.Sdk.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V1DataProvidersGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a Data Provider details. .
-        /// </summary>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <returns>DataProvider</returns>
-        public DataProvider V1DataProvidersProviderIdGet(string providerId)
-        {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> localVarResponse = V1DataProvidersProviderIdGetWithHttpInfo(providerId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a Data Provider details. .
-        /// </summary>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <returns>ApiResponse of DataProvider</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> V1DataProvidersProviderIdGetWithHttpInfo(string providerId)
-        {
-            // verify the required parameter 'providerId' is set
-            if (providerId == null)
-            {
-                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'providerId' when calling DataProviderDiscoveryApi->V1DataProvidersProviderIdGet");
-            }
-
-            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
-            };
-
-            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("providerId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(providerId)); // path parameter
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<DataProvider>("/v1/data-providers/{providerId}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1DataProvidersProviderIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get a Data Provider details. .
-        /// </summary>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DataProvider</returns>
-        public async System.Threading.Tasks.Task<DataProvider> V1DataProvidersProviderIdGetAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> localVarResponse = await V1DataProvidersProviderIdGetWithHttpInfoAsync(providerId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get a Data Provider details. .
-        /// </summary>
-        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider Id.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DataProvider)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider>> V1DataProvidersProviderIdGetWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'providerId' is set
-            if (providerId == null)
-            {
-                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'providerId' when calling DataProviderDiscoveryApi->V1DataProvidersProviderIdGet");
-            }
-
-
-            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json",
-                "application/xml"
-            };
-
-            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("providerId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(providerId)); // path parameter
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DataProvider>("/v1/data-providers/{providerId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V1DataProvidersProviderIdGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDataProviders", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -56,74 +56,74 @@ namespace MyDataMyConsent.Sdk.Test.Api
         }
 
         /// <summary>
-        /// Test V1DataAgreementsGet
+        /// Test CreateDataProcessingAgreement
         /// </summary>
         [Fact]
-        public void V1DataAgreementsGetTest()
+        public void CreateDataProcessingAgreementTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null;
+            //var response = instance.CreateDataProcessingAgreement(createDataProcessingAgreementRequestModel);
+            //Assert.IsType<DataProcessingAgreementDto>(response);
+        }
+
+        /// <summary>
+        /// Test DeleteDataProcessingAgreementById
+        /// </summary>
+        [Fact]
+        public void DeleteDataProcessingAgreementByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //instance.DeleteDataProcessingAgreementById(id);
+        }
+
+        /// <summary>
+        /// Test GetDataProcessingAgreementById
+        /// </summary>
+        [Fact]
+        public void GetDataProcessingAgreementByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid id = null;
+            //var response = instance.GetDataProcessingAgreementById(id);
+            //Assert.IsType<DataProcessingAgreementDto>(response);
+        }
+
+        /// <summary>
+        /// Test GetDataProcessingAgreements
+        /// </summary>
+        [Fact]
+        public void GetDataProcessingAgreementsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //int? pageNo = null;
             //int? pageSize = null;
-            //var response = instance.V1DataAgreementsGet(pageNo, pageSize);
+            //var response = instance.GetDataProcessingAgreements(pageNo, pageSize);
             //Assert.IsType<DataProcessingAgreementDtoPaginatedList>(response);
         }
 
         /// <summary>
-        /// Test V1DataAgreementsIdDelete
+        /// Test TerminateDataProcessingAgreementById
         /// </summary>
         [Fact]
-        public void V1DataAgreementsIdDeleteTest()
+        public void TerminateDataProcessingAgreementByIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
-            //instance.V1DataAgreementsIdDelete(id);
+            //instance.TerminateDataProcessingAgreementById(id);
         }
 
         /// <summary>
-        /// Test V1DataAgreementsIdGet
+        /// Test UpdateDataProcessingAgreement
         /// </summary>
         [Fact]
-        public void V1DataAgreementsIdGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //var response = instance.V1DataAgreementsIdGet(id);
-            //Assert.IsType<DataProcessingAgreementDto>(response);
-        }
-
-        /// <summary>
-        /// Test V1DataAgreementsIdPut
-        /// </summary>
-        [Fact]
-        public void V1DataAgreementsIdPutTest()
+        public void UpdateDataProcessingAgreementTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
             //UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = null;
-            //var response = instance.V1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel);
-            //Assert.IsType<DataProcessingAgreementDto>(response);
-        }
-
-        /// <summary>
-        /// Test V1DataAgreementsIdTerminatePut
-        /// </summary>
-        [Fact]
-        public void V1DataAgreementsIdTerminatePutTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid id = null;
-            //instance.V1DataAgreementsIdTerminatePut(id);
-        }
-
-        /// <summary>
-        /// Test V1DataAgreementsPost
-        /// </summary>
-        [Fact]
-        public void V1DataAgreementsPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null;
-            //var response = instance.V1DataAgreementsPost(createDataProcessingAgreementRequestModel);
+            //var response = instance.UpdateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel);
             //Assert.IsType<DataProcessingAgreementDto>(response);
         }
     }
