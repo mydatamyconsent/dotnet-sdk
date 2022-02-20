@@ -110,12 +110,12 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void GetAllConsentRequestsToIndividualsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? pageNo = null;
-            //int? pageSize = null;
             //DataConsentStatus? status = null;
             //DateTime? startDateTime = null;
             //DateTime? endDateTime = null;
-            //var response = instance.GetAllConsentRequestsToIndividuals(pageNo, pageSize, status, startDateTime, endDateTime);
+            //int? pageNo = null;
+            //int? pageSize = null;
+            //var response = instance.GetAllConsentRequestsToIndividuals(status, startDateTime, endDateTime, pageNo, pageSize);
             //Assert.IsType<UserDataConsentInfoDtoPaginatedList>(response);
         }
 
@@ -126,12 +126,12 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void GetAllConsentRequestsToOrganizationsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? pageNo = null;
-            //int? pageSize = null;
             //DataConsentStatus? status = null;
             //DateTime? startDateTime = null;
             //DateTime? endDateTime = null;
-            //var response = instance.GetAllConsentRequestsToOrganizations(pageNo, pageSize, status, startDateTime, endDateTime);
+            //int? pageNo = null;
+            //int? pageSize = null;
+            //var response = instance.GetAllConsentRequestsToOrganizations(status, startDateTime, endDateTime, pageNo, pageSize);
             //Assert.IsType<OrganizationDataConsentInfoDtoPaginatedList>(response);
         }
 

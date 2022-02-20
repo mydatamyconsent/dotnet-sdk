@@ -160,7 +160,7 @@ No authorization required
 
 <a name="createindividualdataconsentrequest"></a>
 # **CreateIndividualDataConsentRequest**
-> IndividualDataConsentRequestResponse CreateIndividualDataConsentRequest (CreateIndividualDataConsentRequest createIndividualDataConsentRequest = null)
+> IndividualDataConsentRequestResponse CreateIndividualDataConsentRequest (CreateIndividualDataConsentRequest createIndividualDataConsentRequest)
 
 Create a individual data consent request.
 
@@ -181,7 +181,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var createIndividualDataConsentRequest = new CreateIndividualDataConsentRequest(); // CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). (optional) 
+            var createIndividualDataConsentRequest = new CreateIndividualDataConsentRequest(); // CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
 
             try
             {
@@ -204,7 +204,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createIndividualDataConsentRequest** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). | [optional] 
+ **createIndividualDataConsentRequest** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). | 
 
 ### Return type
 
@@ -233,7 +233,7 @@ No authorization required
 
 <a name="createorganizationdataconsentrequest"></a>
 # **CreateOrganizationDataConsentRequest**
-> OrganizationDataConsentRequestResponse CreateOrganizationDataConsentRequest (CreateOrganizationDataConsentRequest createOrganizationDataConsentRequest = null)
+> OrganizationDataConsentRequestResponse CreateOrganizationDataConsentRequest (CreateOrganizationDataConsentRequest createOrganizationDataConsentRequest)
 
 Create a organization data consent request.
 
@@ -254,7 +254,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var createOrganizationDataConsentRequest = new CreateOrganizationDataConsentRequest(); // CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest). (optional) 
+            var createOrganizationDataConsentRequest = new CreateOrganizationDataConsentRequest(); // CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
 
             try
             {
@@ -277,7 +277,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrganizationDataConsentRequest** | [**CreateOrganizationDataConsentRequest**](CreateOrganizationDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest). | [optional] 
+ **createOrganizationDataConsentRequest** | [**CreateOrganizationDataConsentRequest**](CreateOrganizationDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest). | 
 
 ### Return type
 
@@ -306,7 +306,7 @@ No authorization required
 
 <a name="getallconsentrequeststoindividuals"></a>
 # **GetAllConsentRequestsToIndividuals**
-> UserDataConsentInfoDtoPaginatedList GetAllConsentRequestsToIndividuals (int? pageNo = null, int? pageSize = null, DataConsentStatus? status = null, DateTime? startDateTime = null, DateTime? endDateTime = null)
+> UserDataConsentInfoDtoPaginatedList GetAllConsentRequestsToIndividuals (DataConsentStatus? status = null, DateTime? startDateTime = null, DateTime? endDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get all Consent Requests sent to Individuals.
 
@@ -327,16 +327,16 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var pageNo = 56;  // int? | Page no. (optional) 
-            var pageSize = 56;  // int? | Page size. (optional) 
             var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
             var endDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | End date time. (optional) 
+            var pageNo = 1;  // int? | Page no. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
 
             try
             {
                 // Get all Consent Requests sent to Individuals.
-                UserDataConsentInfoDtoPaginatedList result = apiInstance.GetAllConsentRequestsToIndividuals(pageNo, pageSize, status, startDateTime, endDateTime);
+                UserDataConsentInfoDtoPaginatedList result = apiInstance.GetAllConsentRequestsToIndividuals(status, startDateTime, endDateTime, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -354,11 +354,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageNo** | **int?**| Page no. | [optional] 
- **pageSize** | **int?**| Page size. | [optional] 
  **status** | **DataConsentStatus?**| Data consent status. | [optional] 
  **startDateTime** | **DateTime?**| Start date time. | [optional] 
  **endDateTime** | **DateTime?**| End date time. | [optional] 
+ **pageNo** | **int?**| Page no. | [optional] [default to 1]
+ **pageSize** | **int?**| Page size. | [optional] [default to 25]
 
 ### Return type
 
@@ -385,7 +385,7 @@ No authorization required
 
 <a name="getallconsentrequeststoorganizations"></a>
 # **GetAllConsentRequestsToOrganizations**
-> OrganizationDataConsentInfoDtoPaginatedList GetAllConsentRequestsToOrganizations (int? pageNo = null, int? pageSize = null, DataConsentStatus? status = null, DateTime? startDateTime = null, DateTime? endDateTime = null)
+> OrganizationDataConsentInfoDtoPaginatedList GetAllConsentRequestsToOrganizations (DataConsentStatus? status = null, DateTime? startDateTime = null, DateTime? endDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get All Consent Requests sent to Organizations.
 
@@ -406,16 +406,16 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var pageNo = 56;  // int? | Page no. (optional) 
-            var pageSize = 56;  // int? | Page size. (optional) 
             var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
             var endDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | End date time. (optional) 
+            var pageNo = 1;  // int? | Page no. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
 
             try
             {
                 // Get All Consent Requests sent to Organizations.
-                OrganizationDataConsentInfoDtoPaginatedList result = apiInstance.GetAllConsentRequestsToOrganizations(pageNo, pageSize, status, startDateTime, endDateTime);
+                OrganizationDataConsentInfoDtoPaginatedList result = apiInstance.GetAllConsentRequestsToOrganizations(status, startDateTime, endDateTime, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -433,11 +433,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageNo** | **int?**| Page no. | [optional] 
- **pageSize** | **int?**| Page size. | [optional] 
  **status** | **DataConsentStatus?**| Data consent status. | [optional] 
  **startDateTime** | **DateTime?**| Start date time. | [optional] 
  **endDateTime** | **DateTime?**| End date time. | [optional] 
+ **pageNo** | **int?**| Page no. | [optional] [default to 1]
+ **pageSize** | **int?**| Page size. | [optional] [default to 25]
 
 ### Return type
 

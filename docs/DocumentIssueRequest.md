@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | **string** |  | 
 **Receiver** | [**Receiver**](Receiver.md) |  | 
-**ExpiresAtUtc** | **string** |  | [optional] 
+**ExpiresAtUtc** | **DateTime?** |  | [optional] 
 **Base64PdfDocument** | **string** |  | 
 **Metadata** | **Object** |  | [optional] 
 

@@ -56,6 +56,44 @@ namespace MyDataMyConsent.Sdk.Test.Api
         }
 
         /// <summary>
+        /// Test GetIssuedDocumentById
+        /// </summary>
+        [Fact]
+        public void GetIssuedDocumentByIdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid documentId = null;
+            //instance.GetIssuedDocumentById(documentId);
+        }
+
+        /// <summary>
+        /// Test GetIssuedDocuments
+        /// </summary>
+        [Fact]
+        public void GetIssuedDocumentsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid? documentTypeId = null;
+            //DateTime? fromDateTime = null;
+            //DateTime? toDateTime = null;
+            //int? pageSize = null;
+            //int? pageNo = null;
+            //instance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+        }
+
+        /// <summary>
+        /// Test GetRegisteredDocumentTypes
+        /// </summary>
+        [Fact]
+        public void GetRegisteredDocumentTypesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //int? pageSize = null;
+            //int? pageNo = null;
+            //instance.GetRegisteredDocumentTypes(pageSize, pageNo);
+        }
+
+        /// <summary>
         /// Test IssueDocument
         /// </summary>
         [Fact]
@@ -65,44 +103,6 @@ namespace MyDataMyConsent.Sdk.Test.Api
             //DocumentIssueRequest documentIssueRequest = null;
             //var response = instance.IssueDocument(documentIssueRequest);
             //Assert.IsType<bool>(response);
-        }
-
-        /// <summary>
-        /// Test V1DocumentsIssuedDocumentIdGet
-        /// </summary>
-        [Fact]
-        public void V1DocumentsIssuedDocumentIdGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid documentId = null;
-            //instance.V1DocumentsIssuedDocumentIdGet(documentId);
-        }
-
-        /// <summary>
-        /// Test V1DocumentsIssuedGet
-        /// </summary>
-        [Fact]
-        public void V1DocumentsIssuedGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid? documentTypeId = null;
-            //DateTime? fromDateTime = null;
-            //DateTime? toDateTime = null;
-            //int? pageSize = null;
-            //int? pageNo = null;
-            //instance.V1DocumentsIssuedGet(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
-        }
-
-        /// <summary>
-        /// Test V1DocumentsTypesGet
-        /// </summary>
-        [Fact]
-        public void V1DocumentsTypesGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //int? pageSize = null;
-            //int? pageNo = null;
-            //instance.V1DocumentsTypesGet(pageSize, pageNo);
         }
     }
 }

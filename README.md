@@ -133,10 +133,10 @@ Class | Method | HTTP request | Description
 *DataProviderDiscoveryApi* | [**V1DataProvidersGet**](docs/DataProviderDiscoveryApi.md#v1dataprovidersget) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 *DataProviderDiscoveryApi* | [**V1DataProvidersProviderIdGet**](docs/DataProviderDiscoveryApi.md#v1dataprovidersprovideridget) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details.
 *DigiLockerCompatIssuerApi* | [**IssuerIssuedoc1XmlPost**](docs/DigiLockerCompatIssuerApi.md#issuerissuedoc1xmlpost) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to Issue Documents.
+*DocumentsApi* | [**GetIssuedDocumentById**](docs/DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
+*DocumentsApi* | [**GetIssuedDocuments**](docs/DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued | Get issued documents.
+*DocumentsApi* | [**GetRegisteredDocumentTypes**](docs/DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get registered document types.
 *DocumentsApi* | [**IssueDocument**](docs/DocumentsApi.md#issuedocument) | **POST** /v1/documents/issue | Issue a new document.
-*DocumentsApi* | [**V1DocumentsIssuedDocumentIdGet**](docs/DocumentsApi.md#v1documentsissueddocumentidget) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-*DocumentsApi* | [**V1DocumentsIssuedGet**](docs/DocumentsApi.md#v1documentsissuedget) | **GET** /v1/documents/issued | Get issued documents.
-*DocumentsApi* | [**V1DocumentsTypesGet**](docs/DocumentsApi.md#v1documentstypesget) | **GET** /v1/documents/types | Get registered document types.
 
 
 <a name="documentation-for-models"></a>

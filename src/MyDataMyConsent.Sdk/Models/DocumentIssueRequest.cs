@@ -47,7 +47,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
         /// <param name="base64PdfDocument">base64PdfDocument (required).</param>
         /// <param name="metadata">metadata.</param>
-        public DocumentIssueRequest(string documentTypeId = default(string), string documentIdentifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), string expiresAtUtc = default(string), string base64PdfDocument = default(string), Object metadata = default(Object))
+        public DocumentIssueRequest(string documentTypeId = default(string), string documentIdentifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), DateTime? expiresAtUtc = default(DateTime?), string base64PdfDocument = default(string), Object metadata = default(Object))
         {
             // to ensure "documentTypeId" is required (not null)
             if (documentTypeId == null) {
@@ -117,7 +117,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ExpiresAtUtc
         /// </summary>
         [DataMember(Name = "expiresAtUtc", EmitDefaultValue = true)]
-        public string ExpiresAtUtc { get; set; }
+        public DateTime? ExpiresAtUtc { get; set; }
 
         /// <summary>
         /// Gets or Sets Base64PdfDocument
