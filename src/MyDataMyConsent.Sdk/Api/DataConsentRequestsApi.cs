@@ -106,8 +106,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>UserDataConsentInfoDtoPaginatedList</returns>
         UserDataConsentInfoDtoPaginatedList GetAllConsentRequestsToIndividuals(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
@@ -121,8 +121,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of UserDataConsentInfoDtoPaginatedList</returns>
         ApiResponse<UserDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToIndividualsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
@@ -132,8 +132,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>OrganizationDataConsentInfoDtoPaginatedList</returns>
         OrganizationDataConsentInfoDtoPaginatedList GetAllConsentRequestsToOrganizations(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
@@ -147,8 +147,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of OrganizationDataConsentInfoDtoPaginatedList</returns>
         ApiResponse<OrganizationDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToOrganizationsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
@@ -298,8 +298,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserDataConsentInfoDtoPaginatedList</returns>
         System.Threading.Tasks.Task<UserDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToIndividualsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -314,8 +314,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserDataConsentInfoDtoPaginatedList)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserDataConsentInfoDtoPaginatedList>> GetAllConsentRequestsToIndividualsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -329,8 +329,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationDataConsentInfoDtoPaginatedList</returns>
         System.Threading.Tasks.Task<OrganizationDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToOrganizationsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -345,8 +345,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationDataConsentInfoDtoPaginatedList)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationDataConsentInfoDtoPaginatedList>> GetAllConsentRequestsToOrganizationsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1039,8 +1039,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>UserDataConsentInfoDtoPaginatedList</returns>
         public UserDataConsentInfoDtoPaginatedList GetAllConsentRequestsToIndividuals(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
@@ -1055,8 +1055,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of UserDataConsentInfoDtoPaginatedList</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<UserDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToIndividualsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
@@ -1125,8 +1125,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserDataConsentInfoDtoPaginatedList</returns>
         public async System.Threading.Tasks.Task<UserDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToIndividualsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1142,8 +1142,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserDataConsentInfoDtoPaginatedList)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<UserDataConsentInfoDtoPaginatedList>> GetAllConsentRequestsToIndividualsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1215,8 +1215,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>OrganizationDataConsentInfoDtoPaginatedList</returns>
         public OrganizationDataConsentInfoDtoPaginatedList GetAllConsentRequestsToOrganizations(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
@@ -1231,8 +1231,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of OrganizationDataConsentInfoDtoPaginatedList</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToOrganizationsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
@@ -1301,8 +1301,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationDataConsentInfoDtoPaginatedList</returns>
         public async System.Threading.Tasks.Task<OrganizationDataConsentInfoDtoPaginatedList> GetAllConsentRequestsToOrganizationsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1318,8 +1318,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="status">Data consent status. (optional)</param>
         /// <param name="startDateTime">Start date time. (optional)</param>
         /// <param name="endDateTime">End date time. (optional)</param>
-        /// <param name="pageNo">Page no. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationDataConsentInfoDtoPaginatedList)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationDataConsentInfoDtoPaginatedList>> GetAllConsentRequestsToOrganizationsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? startDateTime = default(DateTime?), DateTime? endDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

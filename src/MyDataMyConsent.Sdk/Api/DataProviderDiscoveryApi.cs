@@ -53,7 +53,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
         DataProviderPaginatedList GetDataProviders(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
@@ -69,7 +69,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
         ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string));
@@ -116,7 +116,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
@@ -133,7 +133,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>
@@ -402,7 +402,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
         public DataProviderPaginatedList GetDataProviders(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
@@ -419,7 +419,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string accountType = default(string), string documentType = default(string), string organizationCategory = default(string), int? pageNo = default(int?), int? pageSize = default(int?), string country = default(string))
@@ -495,7 +495,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
@@ -513,7 +513,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="documentType">Document type. (optional)</param>
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
-        /// <param name="pageSize">Page size. (optional, default to 25)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>

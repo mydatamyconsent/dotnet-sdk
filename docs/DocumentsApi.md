@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getissueddocumentbyid"></a>
 # **GetIssuedDocumentById**
-> void GetIssuedDocumentById (Guid documentId)
+> IssuedDocument GetIssuedDocumentById (Guid documentId)
 
 Get issued document.
 
@@ -38,7 +38,8 @@ namespace Example
             try
             {
                 // Get issued document.
-                apiInstance.GetIssuedDocumentById(documentId);
+                IssuedDocument result = apiInstance.GetIssuedDocumentById(documentId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -59,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 
@@ -68,19 +69,23 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getissueddocuments"></a>
 # **GetIssuedDocuments**
-> void GetIssuedDocuments (Guid? documentTypeId = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageSize = null, int? pageNo = null)
+> IssuedDocumentPaginatedList GetIssuedDocuments (Guid? documentTypeId = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageSize = null, int? pageNo = null)
 
 Get issued documents.
 
@@ -110,7 +115,8 @@ namespace Example
             try
             {
                 // Get issued documents.
-                apiInstance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+                IssuedDocumentPaginatedList result = apiInstance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -135,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**IssuedDocumentPaginatedList**](IssuedDocumentPaginatedList.md)
 
 ### Authorization
 
@@ -144,19 +150,22 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getregistereddocumenttypes"></a>
 # **GetRegisteredDocumentTypes**
-> void GetRegisteredDocumentTypes (int? pageSize = null, int? pageNo = null)
+> DocumentTypeDetailsDtoPaginatedList GetRegisteredDocumentTypes (int? pageNo = null, int? pageSize = null)
 
 Get registered document types.
 
@@ -177,13 +186,14 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var pageSize = 25;  // int? |  (optional)  (default to 25)
-            var pageNo = 1;  // int? |  (optional)  (default to 1)
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
                 // Get registered document types.
-                apiInstance.GetRegisteredDocumentTypes(pageSize, pageNo);
+                DocumentTypeDetailsDtoPaginatedList result = apiInstance.GetRegisteredDocumentTypes(pageNo, pageSize);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -200,12 +210,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageSize** | **int?**|  | [optional] [default to 25]
- **pageNo** | **int?**|  | [optional] [default to 1]
+ **pageNo** | **int?**| Page number. | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 
-void (empty response body)
+[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
 
 ### Authorization
 
@@ -214,13 +224,16 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

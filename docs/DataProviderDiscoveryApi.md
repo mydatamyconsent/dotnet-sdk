@@ -74,6 +74,10 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **500** | Server Error |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -104,7 +108,7 @@ namespace Example
             var documentType = "documentType_example";  // string | Document type. (optional) 
             var organizationCategory = "organizationCategory_example";  // string | Organization category. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
             var country = "\"IN\"";  // string | ISO2 Country code. (optional)  (default to "IN")
 
             try
@@ -132,7 +136,7 @@ Name | Type | Description  | Notes
  **documentType** | **string**| Document type. | [optional] 
  **organizationCategory** | **string**| Organization category. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
- **pageSize** | **int?**| Page size. | [optional] [default to 25]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
  **country** | **string**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
 
 ### Return type
@@ -153,6 +157,9 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **500** | Server Error |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

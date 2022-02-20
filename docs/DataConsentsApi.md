@@ -770,8 +770,8 @@ namespace Example
             var filters = "filters_example";  // string | Filters. (optional) 
             var fromDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var toDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
-            var pageNo = 10;  // int? | Page no. (optional)  (default to 10)
-            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var pageNo = 10;  // int? | Page number. (optional)  (default to 10)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
@@ -799,8 +799,8 @@ Name | Type | Description  | Notes
  **filters** | **string**| Filters. | [optional] 
  **fromDateTimeUtc** | **DateTime?**| From date time in utc timezone. | [optional] 
  **toDateTimeUtc** | **DateTime?**| Til date time in utc timezone. | [optional] 
- **pageNo** | **int?**| Page no. | [optional] [default to 10]
- **pageSize** | **int?**| Page size. | [optional] [default to 25]
+ **pageNo** | **int?**| Page number. | [optional] [default to 10]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 
@@ -852,7 +852,7 @@ namespace Example
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
  **from** | **DateTime?**| From date time in utc timezone. | [optional] 
  **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
- **pageSize** | **int?**| Page size. | [optional] [default to 25]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 
@@ -931,7 +931,7 @@ namespace Example
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
@@ -958,7 +958,7 @@ Name | Type | Description  | Notes
  **from** | **DateTime?**| From date time in utc timezone. | [optional] 
  **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
- **pageSize** | **int?**| Page size. | [optional] [default to 25]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 
@@ -1011,8 +1011,8 @@ namespace Example
             var filters = "filters_example";  // string | Filters. (optional) 
             var fromDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var toDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
-            var pageNo = 1;  // int? | Page no. (optional)  (default to 1)
-            var pageSize = 25;  // int? | Page size. (optional)  (default to 25)
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
@@ -1040,8 +1040,8 @@ Name | Type | Description  | Notes
  **filters** | **string**| Filters. | [optional] 
  **fromDateTimeUtc** | **DateTime?**| From date time in utc timezone. | [optional] 
  **toDateTimeUtc** | **DateTime?**| Til date time in utc timezone. | [optional] 
- **pageNo** | **int?**| Page no. | [optional] [default to 1]
- **pageSize** | **int?**| Page size. | [optional] [default to 25]
+ **pageNo** | **int?**| Page number. | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 

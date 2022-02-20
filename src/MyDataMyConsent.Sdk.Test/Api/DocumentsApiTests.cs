@@ -63,7 +63,8 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid documentId = null;
-            //instance.GetIssuedDocumentById(documentId);
+            //var response = instance.GetIssuedDocumentById(documentId);
+            //Assert.IsType<IssuedDocument>(response);
         }
 
         /// <summary>
@@ -78,7 +79,8 @@ namespace MyDataMyConsent.Sdk.Test.Api
             //DateTime? toDateTime = null;
             //int? pageSize = null;
             //int? pageNo = null;
-            //instance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+            //var response = instance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+            //Assert.IsType<IssuedDocumentPaginatedList>(response);
         }
 
         /// <summary>
@@ -88,9 +90,10 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void GetRegisteredDocumentTypesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //int? pageSize = null;
             //int? pageNo = null;
-            //instance.GetRegisteredDocumentTypes(pageSize, pageNo);
+            //int? pageSize = null;
+            //var response = instance.GetRegisteredDocumentTypes(pageNo, pageSize);
+            //Assert.IsType<DocumentTypeDetailsDtoPaginatedList>(response);
         }
 
         /// <summary>
