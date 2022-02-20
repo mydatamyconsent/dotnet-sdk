@@ -33,7 +33,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>DataProcessingAgreementDto</returns>
-        DataProcessingAgreementDto CreateDataProcessingAgreement(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel));
+        DataProcessingAgreementDto CreateDataProcessingAgreement(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?));
 
         /// <summary>
         /// Create a data processing agreement.
@@ -44,7 +44,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
-        ApiResponse<DataProcessingAgreementDto> CreateDataProcessingAgreementWithHttpInfo(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel));
+        ApiResponse<DataProcessingAgreementDto> CreateDataProcessingAgreementWithHttpInfo(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?));
         /// <summary>
         /// Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
         /// </summary>
@@ -126,7 +126,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="id">Agreement id.</param>
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>DataProcessingAgreementDto</returns>
-        DataProcessingAgreementDto UpdateDataProcessingAgreement(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel));
+        DataProcessingAgreementDto UpdateDataProcessingAgreement(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?));
 
         /// <summary>
         /// Update a data processing agreement.
@@ -138,7 +138,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="id">Agreement id.</param>
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
-        ApiResponse<DataProcessingAgreementDto> UpdateDataProcessingAgreementWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel));
+        ApiResponse<DataProcessingAgreementDto> UpdateDataProcessingAgreementWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?));
         #endregion Synchronous Operations
     }
 
@@ -158,7 +158,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProcessingAgreementDto</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreementDto> CreateDataProcessingAgreementAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DataProcessingAgreementDto> CreateDataProcessingAgreementAsync(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a data processing agreement.
@@ -170,7 +170,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> CreateDataProcessingAgreementWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> CreateDataProcessingAgreementWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
         /// </summary>
@@ -276,7 +276,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProcessingAgreementDto</returns>
-        System.Threading.Tasks.Task<DataProcessingAgreementDto> UpdateDataProcessingAgreementAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DataProcessingAgreementDto> UpdateDataProcessingAgreementAsync(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update a data processing agreement.
@@ -289,7 +289,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> UpdateDataProcessingAgreementWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DataProcessingAgreementDto>> UpdateDataProcessingAgreementWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -416,7 +416,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>DataProcessingAgreementDto</returns>
-        public DataProcessingAgreementDto CreateDataProcessingAgreement(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel))
+        public DataProcessingAgreementDto CreateDataProcessingAgreement(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = CreateDataProcessingAgreementWithHttpInfo(createDataProcessingAgreementRequestModel);
             return localVarResponse.Data;
@@ -428,7 +428,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> CreateDataProcessingAgreementWithHttpInfo(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> CreateDataProcessingAgreementWithHttpInfo(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -477,7 +477,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProcessingAgreementDto</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> CreateDataProcessingAgreementAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> CreateDataProcessingAgreementAsync(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = await CreateDataProcessingAgreementWithHttpInfoAsync(createDataProcessingAgreementRequestModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -490,7 +490,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="createDataProcessingAgreementRequestModel">Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto>> CreateDataProcessingAgreementWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto>> CreateDataProcessingAgreementWithHttpInfoAsync(CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = default(CreateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -1043,7 +1043,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="id">Agreement id.</param>
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>DataProcessingAgreementDto</returns>
-        public DataProcessingAgreementDto UpdateDataProcessingAgreement(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel))
+        public DataProcessingAgreementDto UpdateDataProcessingAgreement(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = UpdateDataProcessingAgreementWithHttpInfo(id, updateDataProcessingAgreementRequestModel);
             return localVarResponse.Data;
@@ -1056,7 +1056,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="id">Agreement id.</param>
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <returns>ApiResponse of DataProcessingAgreementDto</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> UpdateDataProcessingAgreementWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> UpdateDataProcessingAgreementWithHttpInfo(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -1107,7 +1107,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProcessingAgreementDto</returns>
-        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> UpdateDataProcessingAgreementAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DataProcessingAgreementDto> UpdateDataProcessingAgreementAsync(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto> localVarResponse = await UpdateDataProcessingAgreementWithHttpInfoAsync(id, updateDataProcessingAgreementRequestModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1121,7 +1121,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="updateDataProcessingAgreementRequestModel">Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProcessingAgreementDto)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto>> UpdateDataProcessingAgreementWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProcessingAgreementDto>> UpdateDataProcessingAgreementWithHttpInfoAsync(Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = default(UpdateDataProcessingAgreementRequestModel?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();

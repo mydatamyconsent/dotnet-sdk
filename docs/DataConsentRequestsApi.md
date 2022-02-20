@@ -327,7 +327,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
             var endDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | End date time. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -354,7 +354,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **DataConsentStatus?**| Data consent status. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status. | [optional] 
  **startDateTime** | **DateTime?**| Start date time. | [optional] 
  **endDateTime** | **DateTime?**| End date time. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -406,7 +406,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentRequestsApi(config);
-            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
             var endDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | End date time. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -433,7 +433,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **DataConsentStatus?**| Data consent status. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status. | [optional] 
  **startDateTime** | **DateTime?**| Start date time. | [optional] 
  **endDateTime** | **DateTime?**| End date time. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]

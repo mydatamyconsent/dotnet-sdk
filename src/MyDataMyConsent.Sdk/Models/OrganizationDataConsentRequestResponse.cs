@@ -46,7 +46,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="requestExpiresAtUtc">requestExpiresAtUtc.</param>
         /// <param name="status">status.</param>
         /// <param name="transactionId">transactionId.</param>
-        public OrganizationDataConsentRequestResponse(Guid id = default(Guid), Guid templateId = default(Guid), DateTime requestedAtUtc = default(DateTime), DateTime requestExpiresAtUtc = default(DateTime), DataConsentStatus? status = default(DataConsentStatus?), string transactionId = default(string))
+        public OrganizationDataConsentRequestResponse(Guid id = default(Guid), Guid templateId = default(Guid), DateTime requestedAtUtc = default(DateTime), DateTime requestExpiresAtUtc = default(DateTime), DataConsentStatus? status = default(DataConsentStatus?), string? transactionId = default(string?))
         {
             this.Id = id;
             this.TemplateId = templateId;
@@ -84,7 +84,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets TransactionId
         /// </summary>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
-        public string TransactionId { get; set; }
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

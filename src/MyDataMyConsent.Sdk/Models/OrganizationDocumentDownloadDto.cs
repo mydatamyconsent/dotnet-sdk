@@ -37,7 +37,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="id">id.</param>
         /// <param name="storageUrl">storageUrl.</param>
         /// <param name="ownerId">ownerId.</param>
-        public OrganizationDocumentDownloadDto(Guid id = default(Guid), string storageUrl = default(string), Guid ownerId = default(Guid))
+        public OrganizationDocumentDownloadDto(Guid id = default(Guid), string? storageUrl = default(string?), Guid ownerId = default(Guid))
         {
             this.Id = id;
             this.StorageUrl = storageUrl;
@@ -54,7 +54,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets StorageUrl
         /// </summary>
         [DataMember(Name = "storageUrl", EmitDefaultValue = true)]
-        public string StorageUrl { get; set; }
+        public string? StorageUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets OwnerId

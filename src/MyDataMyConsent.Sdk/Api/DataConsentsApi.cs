@@ -229,7 +229,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 10)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get individual consented financial account transactions of an individual based on accountId.
@@ -246,7 +246,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 10)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Get the list of Consents Sent to Individuals.
         /// </summary>
@@ -311,7 +311,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get organization consented financial account transactions of an individual based on accountId.
@@ -328,7 +328,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Get all organization consent details by consent id.
         /// </summary>
@@ -632,7 +632,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        System.Threading.Tasks.Task<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get individual consented financial account transactions of an individual based on accountId.
@@ -650,7 +650,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserAccountFinancialTransactionsDtoPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList>> GetConsentedFinancialAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList>> GetConsentedFinancialAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the list of Consents Sent to Individuals.
         /// </summary>
@@ -729,7 +729,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        System.Threading.Tasks.Task<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get organization consented financial account transactions of an individual based on accountId.
@@ -747,7 +747,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationFinancialTransactionsDtoPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList>> GetOrgConsentedAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList>> GetOrgConsentedAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all organization consent details by consent id.
         /// </summary>
@@ -2178,7 +2178,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 10)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        public UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> localVarResponse = GetConsentedFinancialAccountTransactionsWithHttpInfo(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize);
             return localVarResponse.Data;
@@ -2196,7 +2196,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 10)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2271,7 +2271,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserAccountFinancialTransactionsDtoPaginatedList</returns>
-        public async System.Threading.Tasks.Task<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UserAccountFinancialTransactionsDtoPaginatedList> GetConsentedFinancialAccountTransactionsAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList> localVarResponse = await GetConsentedFinancialAccountTransactionsWithHttpInfoAsync(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2290,7 +2290,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserAccountFinancialTransactionsDtoPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList>> GetConsentedFinancialAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<UserAccountFinancialTransactionsDtoPaginatedList>> GetConsentedFinancialAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -2718,7 +2718,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        public OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> localVarResponse = GetOrgConsentedAccountTransactionsWithHttpInfo(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize);
             return localVarResponse.Data;
@@ -2736,7 +2736,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsWithHttpInfo(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2811,7 +2811,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationFinancialTransactionsDtoPaginatedList</returns>
-        public async System.Threading.Tasks.Task<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OrganizationFinancialTransactionsDtoPaginatedList> GetOrgConsentedAccountTransactionsAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList> localVarResponse = await GetOrgConsentedAccountTransactionsWithHttpInfoAsync(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2830,7 +2830,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationFinancialTransactionsDtoPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList>> GetOrgConsentedAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string filters = default(string), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<OrganizationFinancialTransactionsDtoPaginatedList>> GetOrgConsentedAccountTransactionsWithHttpInfoAsync(Guid consentId, Guid accountId, string? filters = default(string?), DateTime? fromDateTimeUtc = default(DateTime?), DateTime? toDateTimeUtc = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();

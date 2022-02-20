@@ -48,7 +48,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="status">status.</param>
         /// <param name="createdAtUtc">createdAtUtc.</param>
         /// <param name="consentSentToUser">consentSentToUser.</param>
-        public UserDataConsentInfoDto(Guid consentRequestId = default(Guid), Guid userId = default(Guid), Guid? consentTemplateId = default(Guid?), string consentPurpose = default(string), string consentDescription = default(string), DataConsentStatus? status = default(DataConsentStatus?), DateTime createdAtUtc = default(DateTime), string consentSentToUser = default(string))
+        public UserDataConsentInfoDto(Guid consentRequestId = default(Guid), Guid userId = default(Guid), Guid? consentTemplateId = default(Guid?), string? consentPurpose = default(string?), string? consentDescription = default(string?), DataConsentStatus? status = default(DataConsentStatus?), DateTime createdAtUtc = default(DateTime), string? consentSentToUser = default(string?))
         {
             this.ConsentRequestId = consentRequestId;
             this.UserId = userId;
@@ -82,13 +82,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ConsentPurpose
         /// </summary>
         [DataMember(Name = "consentPurpose", EmitDefaultValue = true)]
-        public string ConsentPurpose { get; set; }
+        public string? ConsentPurpose { get; set; }
 
         /// <summary>
         /// Gets or Sets ConsentDescription
         /// </summary>
         [DataMember(Name = "consentDescription", EmitDefaultValue = true)]
-        public string ConsentDescription { get; set; }
+        public string? ConsentDescription { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAtUtc
@@ -100,7 +100,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ConsentSentToUser
         /// </summary>
         [DataMember(Name = "consentSentToUser", EmitDefaultValue = true)]
-        public string ConsentSentToUser { get; set; }
+        public string? ConsentSentToUser { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

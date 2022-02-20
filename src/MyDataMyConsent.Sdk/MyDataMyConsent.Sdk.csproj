@@ -17,6 +17,7 @@
     <RepositoryUrl>https://github.com/mydatamyconsent/dotnet-sdk.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <Nullable>annotations</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

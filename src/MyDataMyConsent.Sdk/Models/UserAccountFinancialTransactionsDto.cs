@@ -42,7 +42,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="quantity">quantity.</param>
         /// <param name="averagePrice">averagePrice.</param>
         /// <param name="currency">currency.</param>
-        public UserAccountFinancialTransactionsDto(Guid id = default(Guid), Guid accountId = default(Guid), string name = default(string), Guid instrumentId = default(Guid), string transactionType = default(string), int quantity = default(int), double averagePrice = default(double), string currency = default(string))
+        public UserAccountFinancialTransactionsDto(Guid id = default(Guid), Guid accountId = default(Guid), string? name = default(string?), Guid instrumentId = default(Guid), string? transactionType = default(string?), int quantity = default(int), double averagePrice = default(double), string? currency = default(string?))
         {
             this.Id = id;
             this.AccountId = accountId;
@@ -70,7 +70,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets InstrumentId
@@ -82,7 +82,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets TransactionType
         /// </summary>
         [DataMember(Name = "transactionType", EmitDefaultValue = true)]
-        public string TransactionType { get; set; }
+        public string? TransactionType { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity
@@ -100,7 +100,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Currency
         /// </summary>
         [DataMember(Name = "currency", EmitDefaultValue = true)]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

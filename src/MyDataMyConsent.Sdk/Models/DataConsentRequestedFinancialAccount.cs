@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="drn">drn.</param>
         /// <param name="accountTypeId">accountTypeId.</param>
         /// <param name="accountIdentifier">accountIdentifier.</param>
-        public DataConsentRequestedFinancialAccount(string customKey = default(string), string drn = default(string), Guid? accountTypeId = default(Guid?), Guid? accountIdentifier = default(Guid?))
+        public DataConsentRequestedFinancialAccount(string? customKey = default(string?), string? drn = default(string?), Guid? accountTypeId = default(Guid?), Guid? accountIdentifier = default(Guid?))
         {
             this.CustomKey = customKey;
             this.Drn = drn;
@@ -50,13 +50,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets CustomKey
         /// </summary>
         [DataMember(Name = "custom_key", EmitDefaultValue = true)]
-        public string CustomKey { get; set; }
+        public string? CustomKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Drn
         /// </summary>
         [DataMember(Name = "drn", EmitDefaultValue = true)]
-        public string Drn { get; set; }
+        public string? Drn { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountTypeId

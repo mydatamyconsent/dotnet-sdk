@@ -62,7 +62,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void DigilockerCompatIssueDocumentTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //PushUriRequest pushUriRequest = null;
+            //PushUriRequest? pushUriRequest = null;
             //var response = instance.DigilockerCompatIssueDocument(pushUriRequest);
             //Assert.IsType<PushUriResponse>(response);
         }

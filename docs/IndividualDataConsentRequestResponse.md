@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **RequestedAtUtc** | **DateTime** |  | [optional] 
 **RequestExpiresAtUtc** | **DateTime** |  | [optional] 
 **Status** | **DataConsentStatus** |  | [optional] 
-**TransactionId** | **string** |  | [optional] 
+**TransactionId** | [**string?**](string?.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

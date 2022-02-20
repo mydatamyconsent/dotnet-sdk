@@ -74,39 +74,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="addedBy">addedBy (required).</param>
         /// <param name="payableAmount">payableAmount.</param>
         /// <param name="approvedAtUtc">approvedAtUtc.</param>
-        public DocumentTypeDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), Guid documentTypeCategoryId = default(Guid), string name = default(string), string slug = default(string), string description = default(string), string logoUrl = default(string), string countryIso2 = default(string), Guid countryId = default(Guid), Guid? searchServiceId = default(Guid?), Guid? repositoryServiceId = default(Guid?), SupportedEntityType supportedEntityType = default(SupportedEntityType), string addedBy = default(string), double? payableAmount = default(double?), DateTime? approvedAtUtc = default(DateTime?))
+        public DocumentTypeDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), Guid documentTypeCategoryId = default(Guid), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string countryIso2 = default(string), Guid countryId = default(Guid), Guid? searchServiceId = default(Guid?), Guid? repositoryServiceId = default(Guid?), SupportedEntityType supportedEntityType = default(SupportedEntityType), string addedBy = default(string), double? payableAmount = default(double?), DateTime? approvedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
             this.CategoryType = categoryType;
             this.SubCategoryType = subCategoryType;
             this.DocumentTypeCategoryId = documentTypeCategoryId;
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for DocumentTypeDetailsDto and cannot be null");
-            }
             this.Name = name;
-            // to ensure "slug" is required (not null)
-            if (slug == null) {
-                throw new ArgumentNullException("slug is a required property for DocumentTypeDetailsDto and cannot be null");
-            }
             this.Slug = slug;
-            // to ensure "logoUrl" is required (not null)
-            if (logoUrl == null) {
-                throw new ArgumentNullException("logoUrl is a required property for DocumentTypeDetailsDto and cannot be null");
-            }
             this.LogoUrl = logoUrl;
-            // to ensure "countryIso2" is required (not null)
-            if (countryIso2 == null) {
-                throw new ArgumentNullException("countryIso2 is a required property for DocumentTypeDetailsDto and cannot be null");
-            }
             this.CountryIso2 = countryIso2;
             this.CountryId = countryId;
             this.SupportedEntityType = supportedEntityType;
-            // to ensure "addedBy" is required (not null)
-            if (addedBy == null) {
-                throw new ArgumentNullException("addedBy is a required property for DocumentTypeDetailsDto and cannot be null");
-            }
             this.AddedBy = addedBy;
             this.Description = description;
             this.SearchServiceId = searchServiceId;
@@ -149,7 +129,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl

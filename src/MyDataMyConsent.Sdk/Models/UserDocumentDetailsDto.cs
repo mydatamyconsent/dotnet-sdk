@@ -54,7 +54,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="isOwner">isOwner.</param>
         /// <param name="digitalSignatureDetails">digitalSignatureDetails.</param>
         /// <param name="ownerId">ownerId.</param>
-        public UserDocumentDetailsDto(Guid id = default(Guid), DocumentCategoryType? categoryType = default(DocumentCategoryType?), Guid typeId = default(Guid), string typeName = default(string), string fullName = default(string), string identifier = default(string), Guid? accountId = default(Guid?), Guid issuerId = default(Guid), string issuerName = default(string), string storageUrl = default(string), bool isQuickAccessEnabled = default(bool), bool isOwner = default(bool), List<DigitalSignature> digitalSignatureDetails = default(List<DigitalSignature>), Guid ownerId = default(Guid))
+        public UserDocumentDetailsDto(Guid id = default(Guid), DocumentCategoryType? categoryType = default(DocumentCategoryType?), Guid typeId = default(Guid), string? typeName = default(string?), string? fullName = default(string?), string? identifier = default(string?), Guid? accountId = default(Guid?), Guid issuerId = default(Guid), string? issuerName = default(string?), string? storageUrl = default(string?), bool isQuickAccessEnabled = default(bool), bool isOwner = default(bool), List<DigitalSignature> digitalSignatureDetails = default(List<DigitalSignature>), Guid ownerId = default(Guid))
         {
             this.Id = id;
             this.CategoryType = categoryType;
@@ -88,19 +88,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets TypeName
         /// </summary>
         [DataMember(Name = "typeName", EmitDefaultValue = true)]
-        public string TypeName { get; set; }
+        public string? TypeName { get; set; }
 
         /// <summary>
         /// Gets or Sets FullName
         /// </summary>
         [DataMember(Name = "fullName", EmitDefaultValue = true)]
-        public string FullName { get; set; }
+        public string? FullName { get; set; }
 
         /// <summary>
         /// Gets or Sets Identifier
         /// </summary>
         [DataMember(Name = "identifier", EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        public string? Identifier { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountId
@@ -118,13 +118,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets IssuerName
         /// </summary>
         [DataMember(Name = "issuerName", EmitDefaultValue = true)]
-        public string IssuerName { get; set; }
+        public string? IssuerName { get; set; }
 
         /// <summary>
         /// Gets or Sets StorageUrl
         /// </summary>
         [DataMember(Name = "storageUrl", EmitDefaultValue = true)]
-        public string StorageUrl { get; set; }
+        public string? StorageUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets IsQuickAccessEnabled

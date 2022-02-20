@@ -189,7 +189,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid consentId = null;
             //Guid accountId = null;
-            //string filters = null;
+            //string? filters = null;
             //DateTime? fromDateTimeUtc = null;
             //DateTime? toDateTimeUtc = null;
             //int? pageNo = null;
@@ -239,7 +239,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid consentId = null;
             //Guid accountId = null;
-            //string filters = null;
+            //string? filters = null;
             //DateTime? fromDateTimeUtc = null;
             //DateTime? toDateTimeUtc = null;
             //int? pageNo = null;

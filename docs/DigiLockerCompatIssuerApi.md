@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="digilockercompatissuedocument"></a>
 # **DigilockerCompatIssueDocument**
-> PushUriResponse DigilockerCompatIssueDocument (PushUriRequest pushUriRequest = null)
+> PushUriResponse DigilockerCompatIssueDocument (PushUriRequest? pushUriRequest = null)
 
 Digilocker Compatible endpoint to issue document.
 
@@ -30,7 +30,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DigiLockerCompatIssuerApi(config);
-            var pushUriRequest = new PushUriRequest(); // PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional) 
+            var pushUriRequest = new PushUriRequest?(); // PushUriRequest? | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. (optional) 
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pushUriRequest** | [**PushUriRequest**](PushUriRequest.md)| Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional] 
+ **pushUriRequest** | [**PushUriRequest?**](PushUriRequest?.md)| Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional] 
 
 ### Return type
 

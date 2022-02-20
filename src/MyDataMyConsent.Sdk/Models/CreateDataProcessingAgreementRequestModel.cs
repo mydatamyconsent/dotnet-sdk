@@ -44,20 +44,8 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="attachmentUrl">attachmentUrl (required).</param>
         public CreateDataProcessingAgreementRequestModel(string version = default(string), string body = default(string), string attachmentUrl = default(string))
         {
-            // to ensure "version" is required (not null)
-            if (version == null) {
-                throw new ArgumentNullException("version is a required property for CreateDataProcessingAgreementRequestModel and cannot be null");
-            }
             this._Version = version;
-            // to ensure "body" is required (not null)
-            if (body == null) {
-                throw new ArgumentNullException("body is a required property for CreateDataProcessingAgreementRequestModel and cannot be null");
-            }
             this.Body = body;
-            // to ensure "attachmentUrl" is required (not null)
-            if (attachmentUrl == null) {
-                throw new ArgumentNullException("attachmentUrl is a required property for CreateDataProcessingAgreementRequestModel and cannot be null");
-            }
             this.AttachmentUrl = attachmentUrl;
         }
 

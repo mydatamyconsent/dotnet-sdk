@@ -239,7 +239,7 @@ No authorization required
 
 <a name="issuedocument"></a>
 # **IssueDocument**
-> bool IssueDocument (DocumentIssueRequest documentIssueRequest)
+> IssuedDocument IssueDocument (DocumentIssueRequest documentIssueRequest)
 
 Issue a new document.
 
@@ -265,7 +265,7 @@ namespace Example
             try
             {
                 // Issue a new document.
-                bool result = apiInstance.IssueDocument(documentIssueRequest);
+                IssuedDocument result = apiInstance.IssueDocument(documentIssueRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool**
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 

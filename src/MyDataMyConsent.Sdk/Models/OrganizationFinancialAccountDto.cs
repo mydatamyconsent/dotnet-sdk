@@ -59,7 +59,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="bankAccountType">bankAccountType.</param>
         /// <param name="bankAccountProofUrl">bankAccountProofUrl.</param>
         /// <param name="fileType">fileType.</param>
-        public OrganizationFinancialAccountDto(Guid id = default(Guid), Guid organizationId = default(Guid), string organizationName = default(string), string beneficiaryName = default(string), string accountNumber = default(string), string routingNumber = default(string), bool isPrimary = default(bool), bool isVerified = default(bool), string logoUrl = default(string), string bankName = default(string), BankAccountType? bankAccountType = default(BankAccountType?), string bankAccountProofUrl = default(string), FileType? fileType = default(FileType?))
+        public OrganizationFinancialAccountDto(Guid id = default(Guid), Guid organizationId = default(Guid), string? organizationName = default(string?), string? beneficiaryName = default(string?), string? accountNumber = default(string?), string? routingNumber = default(string?), bool isPrimary = default(bool), bool isVerified = default(bool), string? logoUrl = default(string?), string? bankName = default(string?), BankAccountType? bankAccountType = default(BankAccountType?), string? bankAccountProofUrl = default(string?), FileType? fileType = default(FileType?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -92,25 +92,25 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets OrganizationName
         /// </summary>
         [DataMember(Name = "organizationName", EmitDefaultValue = true)]
-        public string OrganizationName { get; set; }
+        public string? OrganizationName { get; set; }
 
         /// <summary>
         /// Gets or Sets BeneficiaryName
         /// </summary>
         [DataMember(Name = "beneficiaryName", EmitDefaultValue = true)]
-        public string BeneficiaryName { get; set; }
+        public string? BeneficiaryName { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountNumber
         /// </summary>
         [DataMember(Name = "accountNumber", EmitDefaultValue = true)]
-        public string AccountNumber { get; set; }
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets RoutingNumber
         /// </summary>
         [DataMember(Name = "routingNumber", EmitDefaultValue = true)]
-        public string RoutingNumber { get; set; }
+        public string? RoutingNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPrimary
@@ -128,19 +128,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string LogoUrl { get; set; }
+        public string? LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
         [DataMember(Name = "bankName", EmitDefaultValue = true)]
-        public string BankName { get; set; }
+        public string? BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountProofUrl
         /// </summary>
         [DataMember(Name = "bankAccountProofUrl", EmitDefaultValue = true)]
-        public string BankAccountProofUrl { get; set; }
+        public string? BankAccountProofUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -46,7 +46,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="dataProtectionOfficer">dataProtectionOfficer.</param>
         /// <param name="supportedAccountTypes">supportedAccountTypes.</param>
         /// <param name="supportedDocumentTypes">supportedDocumentTypes.</param>
-        public DataProvider(string id = default(string), string name = default(string), string logoUrl = default(string), string website = default(string), string email = default(string), string supportPhoneNumber = default(string), string privacyPolicy = default(string), string termOfService = default(string), string category = default(string), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedAccountTypes = default(List<string>), List<string> supportedDocumentTypes = default(List<string>))
+        public DataProvider(string? id = default(string?), string? name = default(string?), string? logoUrl = default(string?), string? website = default(string?), string? email = default(string?), string? supportPhoneNumber = default(string?), string? privacyPolicy = default(string?), string? termOfService = default(string?), string? category = default(string?), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedAccountTypes = default(List<string>), List<string> supportedDocumentTypes = default(List<string>))
         {
             this.Id = id;
             this.Name = name;
@@ -66,55 +66,55 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = true)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string LogoUrl { get; set; }
+        public string? LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Website
         /// </summary>
         [DataMember(Name = "website", EmitDefaultValue = true)]
-        public string Website { get; set; }
+        public string? Website { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = true)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// Gets or Sets SupportPhoneNumber
         /// </summary>
         [DataMember(Name = "supportPhoneNumber", EmitDefaultValue = true)]
-        public string SupportPhoneNumber { get; set; }
+        public string? SupportPhoneNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivacyPolicy
         /// </summary>
         [DataMember(Name = "privacyPolicy", EmitDefaultValue = true)]
-        public string PrivacyPolicy { get; set; }
+        public string? PrivacyPolicy { get; set; }
 
         /// <summary>
         /// Gets or Sets TermOfService
         /// </summary>
         [DataMember(Name = "termOfService", EmitDefaultValue = true)]
-        public string TermOfService { get; set; }
+        public string? TermOfService { get; set; }
 
         /// <summary>
         /// Gets or Sets Category
         /// </summary>
         [DataMember(Name = "category", EmitDefaultValue = true)]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         /// <summary>
         /// Gets or Sets DataProtectionOfficer

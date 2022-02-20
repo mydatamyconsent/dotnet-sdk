@@ -44,7 +44,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="customKey">customKey.</param>
         /// <param name="accounts">accounts.</param>
         /// <param name="requirement">requirement.</param>
-        public Financial(string fieldName = default(string), string customKey = default(string), List<FinancialAccounts> accounts = default(List<FinancialAccounts>), DocumentsRequired? requirement = default(DocumentsRequired?))
+        public Financial(string? fieldName = default(string?), string? customKey = default(string?), List<FinancialAccounts> accounts = default(List<FinancialAccounts>), DocumentsRequired? requirement = default(DocumentsRequired?))
         {
             this.FieldName = fieldName;
             this.CustomKey = customKey;
@@ -56,13 +56,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets FieldName
         /// </summary>
         [DataMember(Name = "field_name", EmitDefaultValue = true)]
-        public string FieldName { get; set; }
+        public string? FieldName { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomKey
         /// </summary>
         [DataMember(Name = "custom_key", EmitDefaultValue = true)]
-        public string CustomKey { get; set; }
+        public string? CustomKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Accounts

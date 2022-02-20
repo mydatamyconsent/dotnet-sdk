@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="drn">drn.</param>
         /// <param name="documentTypeId">documentTypeId.</param>
         /// <param name="documentIdentifier">documentIdentifier.</param>
-        public DataConsentRequestedDocument(string customKey = default(string), string drn = default(string), Guid? documentTypeId = default(Guid?), Guid? documentIdentifier = default(Guid?))
+        public DataConsentRequestedDocument(string? customKey = default(string?), string? drn = default(string?), Guid? documentTypeId = default(Guid?), Guid? documentIdentifier = default(Guid?))
         {
             this.CustomKey = customKey;
             this.Drn = drn;
@@ -50,13 +50,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets CustomKey
         /// </summary>
         [DataMember(Name = "custom_key", EmitDefaultValue = true)]
-        public string CustomKey { get; set; }
+        public string? CustomKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Drn
         /// </summary>
         [DataMember(Name = "drn", EmitDefaultValue = true)]
-        public string Drn { get; set; }
+        public string? Drn { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentTypeId

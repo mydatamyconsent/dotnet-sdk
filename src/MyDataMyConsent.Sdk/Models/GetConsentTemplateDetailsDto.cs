@@ -61,7 +61,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="identity">identity.</param>
         /// <param name="documents">documents.</param>
         /// <param name="financials">financials.</param>
-        public GetConsentTemplateDetailsDto(Guid id = default(Guid), string name = default(string), string description = default(string), string consentPurpose = default(string), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), FetchTypes? fetchType = default(FetchTypes?), string shortId = default(string), string createdBy = default(string), DateTime createdAtUtc = default(DateTime), string status = default(string), ConsentTemplateTypes? templateType = default(ConsentTemplateTypes?), Life frequency = default(Life), List<IdentitySupportedFields> identity = default(List<IdentitySupportedFields>), List<Document> documents = default(List<Document>), List<Financial> financials = default(List<Financial>))
+        public GetConsentTemplateDetailsDto(Guid id = default(Guid), string? name = default(string?), string? description = default(string?), string? consentPurpose = default(string?), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), FetchTypes? fetchType = default(FetchTypes?), string? shortId = default(string?), string? createdBy = default(string?), DateTime createdAtUtc = default(DateTime), string? status = default(string?), ConsentTemplateTypes? templateType = default(ConsentTemplateTypes?), Life frequency = default(Life), List<IdentitySupportedFields> identity = default(List<IdentitySupportedFields>), List<Document> documents = default(List<Document>), List<Financial> financials = default(List<Financial>))
         {
             this.Id = id;
             this.Name = name;
@@ -90,19 +90,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ConsentPurpose
         /// </summary>
         [DataMember(Name = "consentPurpose", EmitDefaultValue = true)]
-        public string ConsentPurpose { get; set; }
+        public string? ConsentPurpose { get; set; }
 
         /// <summary>
         /// Gets or Sets Collectables
@@ -114,13 +114,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ShortId
         /// </summary>
         [DataMember(Name = "shortId", EmitDefaultValue = true)]
-        public string ShortId { get; set; }
+        public string? ShortId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
         [DataMember(Name = "createdBy", EmitDefaultValue = true)]
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAtUtc
@@ -132,7 +132,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = true)]
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// Gets or Sets Frequency

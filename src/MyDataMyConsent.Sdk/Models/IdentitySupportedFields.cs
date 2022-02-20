@@ -44,23 +44,11 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="description">description.</param>
         /// <param name="key">key (required).</param>
         /// <param name="dataType">dataType (required).</param>
-        public IdentitySupportedFields(int icon = default(int), string title = default(string), string description = default(string), string key = default(string), string dataType = default(string))
+        public IdentitySupportedFields(int icon = default(int), string title = default(string), string? description = default(string?), string key = default(string), string dataType = default(string))
         {
             this.Icon = icon;
-            // to ensure "title" is required (not null)
-            if (title == null) {
-                throw new ArgumentNullException("title is a required property for IdentitySupportedFields and cannot be null");
-            }
             this.Title = title;
-            // to ensure "key" is required (not null)
-            if (key == null) {
-                throw new ArgumentNullException("key is a required property for IdentitySupportedFields and cannot be null");
-            }
             this.Key = key;
-            // to ensure "dataType" is required (not null)
-            if (dataType == null) {
-                throw new ArgumentNullException("dataType is a required property for IdentitySupportedFields and cannot be null");
-            }
             this.DataType = dataType;
             this.Description = description;
         }
@@ -81,7 +69,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Key

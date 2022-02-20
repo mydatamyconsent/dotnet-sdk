@@ -39,7 +39,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="status">status.</param>
         /// <param name="detail">detail.</param>
         /// <param name="instance">instance.</param>
-        public ProblemDetails(string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string))
+        public ProblemDetails(string? type = default(string?), string? title = default(string?), int? status = default(int?), string? detail = default(string?), string? instance = default(string?))
         {
             this.Type = type;
             this.Title = title;
@@ -52,13 +52,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = true)]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
         [DataMember(Name = "title", EmitDefaultValue = true)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -70,13 +70,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Detail
         /// </summary>
         [DataMember(Name = "detail", EmitDefaultValue = true)]
-        public string Detail { get; set; }
+        public string? Detail { get; set; }
 
         /// <summary>
         /// Gets or Sets Instance
         /// </summary>
         [DataMember(Name = "instance", EmitDefaultValue = true)]
-        public string Instance { get; set; }
+        public string? Instance { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -45,7 +45,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="countryIso2">countryIso2.</param>
         /// <param name="issuerId">issuerId.</param>
         /// <param name="issuerName">issuerName.</param>
-        public OrganizationDocumentDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), string organizationName = default(string), Guid typeId = default(Guid), string typeName = default(string), string name = default(string), string identifier = default(string), string storageUrl = default(string), string countryIso2 = default(string), Guid issuerId = default(Guid), string issuerName = default(string))
+        public OrganizationDocumentDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), string? organizationName = default(string?), Guid typeId = default(Guid), string? typeName = default(string?), string? name = default(string?), string? identifier = default(string?), string? storageUrl = default(string?), string? countryIso2 = default(string?), Guid issuerId = default(Guid), string? issuerName = default(string?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -76,7 +76,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets OrganizationName
         /// </summary>
         [DataMember(Name = "organizationName", EmitDefaultValue = true)]
-        public string OrganizationName { get; set; }
+        public string? OrganizationName { get; set; }
 
         /// <summary>
         /// Gets or Sets TypeId
@@ -88,31 +88,31 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets TypeName
         /// </summary>
         [DataMember(Name = "typeName", EmitDefaultValue = true)]
-        public string TypeName { get; set; }
+        public string? TypeName { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Identifier
         /// </summary>
         [DataMember(Name = "identifier", EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        public string? Identifier { get; set; }
 
         /// <summary>
         /// Gets or Sets StorageUrl
         /// </summary>
         [DataMember(Name = "storageUrl", EmitDefaultValue = true)]
-        public string StorageUrl { get; set; }
+        public string? StorageUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets CountryIso2
         /// </summary>
         [DataMember(Name = "countryIso2", EmitDefaultValue = true)]
-        public string CountryIso2 { get; set; }
+        public string? CountryIso2 { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuerId
@@ -124,7 +124,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets IssuerName
         /// </summary>
         [DataMember(Name = "issuerName", EmitDefaultValue = true)]
-        public string IssuerName { get; set; }
+        public string? IssuerName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

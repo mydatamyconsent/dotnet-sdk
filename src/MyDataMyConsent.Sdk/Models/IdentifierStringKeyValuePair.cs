@@ -42,7 +42,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="key">key.</param>
         /// <param name="value">value.</param>
-        public IdentifierStringKeyValuePair(Identifier? key = default(Identifier?), string value = default(string))
+        public IdentifierStringKeyValuePair(Identifier? key = default(Identifier?), string? value = default(string?))
         {
             this.Key = key;
             this.Value = value;
@@ -52,7 +52,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

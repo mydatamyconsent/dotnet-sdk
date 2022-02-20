@@ -41,7 +41,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="reason">reason.</param>
         /// <param name="location">location.</param>
         /// <param name="sha1Digest">sha1Digest.</param>
-        public DigitalSignature(string signedBy = default(string), string certIssuedBy = default(string), DateTime validFrom = default(DateTime), DateTime validTill = default(DateTime), string reason = default(string), string location = default(string), string sha1Digest = default(string))
+        public DigitalSignature(string? signedBy = default(string?), string? certIssuedBy = default(string?), DateTime validFrom = default(DateTime), DateTime validTill = default(DateTime), string? reason = default(string?), string? location = default(string?), string? sha1Digest = default(string?))
         {
             this.SignedBy = signedBy;
             this.CertIssuedBy = certIssuedBy;
@@ -56,13 +56,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets SignedBy
         /// </summary>
         [DataMember(Name = "signedBy", EmitDefaultValue = true)]
-        public string SignedBy { get; set; }
+        public string? SignedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets CertIssuedBy
         /// </summary>
         [DataMember(Name = "certIssuedBy", EmitDefaultValue = true)]
-        public string CertIssuedBy { get; set; }
+        public string? CertIssuedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
@@ -80,19 +80,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Reason
         /// </summary>
         [DataMember(Name = "reason", EmitDefaultValue = true)]
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name = "location", EmitDefaultValue = true)]
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// Gets or Sets Sha1Digest
         /// </summary>
         [DataMember(Name = "sha1Digest", EmitDefaultValue = true)]
-        public string Sha1Digest { get; set; }
+        public string? Sha1Digest { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomKey** | **string** |  | [optional] 
-**Drn** | **string** |  | [optional] 
+**CustomKey** | [**string?**](string?.md) |  | [optional] 
+**Drn** | [**string?**](string?.md) |  | [optional] 
 **DocumentTypeId** | **Guid?** |  | [optional] 
 **DocumentIdentifier** | **Guid?** |  | [optional] 
 

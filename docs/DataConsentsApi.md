@@ -744,7 +744,7 @@ No authorization required
 
 <a name="getconsentedfinancialaccounttransactions"></a>
 # **GetConsentedFinancialAccountTransactions**
-> UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions (Guid consentId, Guid accountId, string filters = null, DateTime? fromDateTimeUtc = null, DateTime? toDateTimeUtc = null, int? pageNo = null, int? pageSize = null)
+> UserAccountFinancialTransactionsDtoPaginatedList GetConsentedFinancialAccountTransactions (Guid consentId, Guid accountId, string? filters = null, DateTime? fromDateTimeUtc = null, DateTime? toDateTimeUtc = null, int? pageNo = null, int? pageSize = null)
 
 Get individual consented financial account transactions of an individual based on accountId.
 
@@ -767,7 +767,7 @@ namespace Example
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
-            var filters = "filters_example";  // string | Filters. (optional) 
+            var filters = "filters_example";  // string? | Filters. (optional) 
             var fromDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var toDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 10;  // int? | Page number. (optional)  (default to 10)
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consentId** | **Guid**| Consent id. | 
  **accountId** | **Guid**| Account id. | 
- **filters** | **string**| Filters. | [optional] 
+ **filters** | **string?**| Filters. | [optional] 
  **fromDateTimeUtc** | **DateTime?**| From date time in utc timezone. | [optional] 
  **toDateTimeUtc** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 10]
@@ -848,7 +848,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -875,7 +875,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **DataConsentStatus?**| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
  **from** | **DateTime?**| From date time in utc timezone. | [optional] 
  **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -927,7 +927,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataConsentsApi(config);
-            var status = (DataConsentStatus) "Pending";  // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -954,7 +954,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **DataConsentStatus?**| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
  **from** | **DateTime?**| From date time in utc timezone. | [optional] 
  **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -985,7 +985,7 @@ No authorization required
 
 <a name="getorgconsentedaccounttransactions"></a>
 # **GetOrgConsentedAccountTransactions**
-> OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions (Guid consentId, Guid accountId, string filters = null, DateTime? fromDateTimeUtc = null, DateTime? toDateTimeUtc = null, int? pageNo = null, int? pageSize = null)
+> OrganizationFinancialTransactionsDtoPaginatedList GetOrgConsentedAccountTransactions (Guid consentId, Guid accountId, string? filters = null, DateTime? fromDateTimeUtc = null, DateTime? toDateTimeUtc = null, int? pageNo = null, int? pageSize = null)
 
 Get organization consented financial account transactions of an individual based on accountId.
 
@@ -1008,7 +1008,7 @@ namespace Example
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
-            var filters = "filters_example";  // string | Filters. (optional) 
+            var filters = "filters_example";  // string? | Filters. (optional) 
             var fromDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
             var toDateTimeUtc = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consentId** | **Guid**| Consent id. | 
  **accountId** | **Guid**| Account id. | 
- **filters** | **string**| Filters. | [optional] 
+ **filters** | **string?**| Filters. | [optional] 
  **fromDateTimeUtc** | **DateTime?**| From date time in utc timezone. | [optional] 
  **toDateTimeUtc** | **DateTime?**| Til date time in utc timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]

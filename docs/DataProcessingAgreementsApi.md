@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="createdataprocessingagreement"></a>
 # **CreateDataProcessingAgreement**
-> DataProcessingAgreementDto CreateDataProcessingAgreement (CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null)
+> DataProcessingAgreementDto CreateDataProcessingAgreement (CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = null)
 
 Create a data processing agreement.
 
@@ -35,7 +35,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var createDataProcessingAgreementRequestModel = new CreateDataProcessingAgreementRequestModel(); // CreateDataProcessingAgreementRequestModel | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional) 
+            var createDataProcessingAgreementRequestModel = new CreateDataProcessingAgreementRequestModel?(); // CreateDataProcessingAgreementRequestModel? | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional) 
 
             try
             {
@@ -58,7 +58,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDataProcessingAgreementRequestModel** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md)| Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. | [optional] 
+ **createDataProcessingAgreementRequestModel** | [**CreateDataProcessingAgreementRequestModel?**](CreateDataProcessingAgreementRequestModel?.md)| Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. | [optional] 
 
 ### Return type
 
@@ -375,7 +375,7 @@ No authorization required
 
 <a name="updatedataprocessingagreement"></a>
 # **UpdateDataProcessingAgreement**
-> DataProcessingAgreementDto UpdateDataProcessingAgreement (Guid id, UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = null)
+> DataProcessingAgreementDto UpdateDataProcessingAgreement (Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = null)
 
 Update a data processing agreement.
 
@@ -397,7 +397,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
-            var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel(); // UpdateDataProcessingAgreementRequestModel | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional) 
+            var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel?(); // UpdateDataProcessingAgreementRequestModel? | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional) 
 
             try
             {
@@ -421,7 +421,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Guid**| Agreement id. | 
- **updateDataProcessingAgreementRequestModel** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md)| Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional] 
+ **updateDataProcessingAgreementRequestModel** | [**UpdateDataProcessingAgreementRequestModel?**](UpdateDataProcessingAgreementRequestModel?.md)| Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional] 
 
 ### Return type
 

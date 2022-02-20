@@ -39,7 +39,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="documentType">documentType.</param>
         /// <param name="issuedTo">issuedTo.</param>
         /// <param name="issuedAtUtc">issuedAtUtc.</param>
-        public IssuedDocument(Guid documentId = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime))
+        public IssuedDocument(Guid documentId = default(Guid), string? identifier = default(string?), string? documentType = default(string?), string? issuedTo = default(string?), DateTime issuedAtUtc = default(DateTime))
         {
             this.DocumentId = documentId;
             this.Identifier = identifier;
@@ -58,19 +58,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Identifier
         /// </summary>
         [DataMember(Name = "identifier", EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        public string? Identifier { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentType
         /// </summary>
         [DataMember(Name = "documentType", EmitDefaultValue = true)]
-        public string DocumentType { get; set; }
+        public string? DocumentType { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedTo
         /// </summary>
         [DataMember(Name = "issuedTo", EmitDefaultValue = true)]
-        public string IssuedTo { get; set; }
+        public string? IssuedTo { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedAtUtc

@@ -36,7 +36,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="unit">unit.</param>
         /// <param name="value">value.</param>
-        public Life(string unit = default(string), string value = default(string))
+        public Life(string? unit = default(string?), string? value = default(string?))
         {
             this.Unit = unit;
             this.Value = value;
@@ -46,13 +46,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Unit
         /// </summary>
         [DataMember(Name = "unit", EmitDefaultValue = true)]
-        public string Unit { get; set; }
+        public string? Unit { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

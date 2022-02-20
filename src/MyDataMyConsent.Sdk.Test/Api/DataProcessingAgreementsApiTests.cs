@@ -62,7 +62,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void CreateDataProcessingAgreementTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //CreateDataProcessingAgreementRequestModel createDataProcessingAgreementRequestModel = null;
+            //CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = null;
             //var response = instance.CreateDataProcessingAgreement(createDataProcessingAgreementRequestModel);
             //Assert.IsType<DataProcessingAgreementDto>(response);
         }
@@ -122,7 +122,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid id = null;
-            //UpdateDataProcessingAgreementRequestModel updateDataProcessingAgreementRequestModel = null;
+            //UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = null;
             //var response = instance.UpdateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel);
             //Assert.IsType<DataProcessingAgreementDto>(response);
         }

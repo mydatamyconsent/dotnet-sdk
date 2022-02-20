@@ -74,12 +74,12 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void GetDataProvidersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string accountType = null;
-            //string documentType = null;
-            //string organizationCategory = null;
+            //string? accountType = null;
+            //string? documentType = null;
+            //string? organizationCategory = null;
             //int? pageNo = null;
             //int? pageSize = null;
-            //string country = null;
+            //string? country = null;
             //var response = instance.GetDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country);
             //Assert.IsType<DataProviderPaginatedList>(response);
         }

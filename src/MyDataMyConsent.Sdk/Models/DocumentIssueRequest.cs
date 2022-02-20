@@ -49,35 +49,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="metadata">metadata.</param>
         public DocumentIssueRequest(string documentTypeId = default(string), string documentIdentifier = default(string), string name = default(string), string description = default(string), Receiver receiver = default(Receiver), DateTime? expiresAtUtc = default(DateTime?), string base64PdfDocument = default(string), Object metadata = default(Object))
         {
-            // to ensure "documentTypeId" is required (not null)
-            if (documentTypeId == null) {
-                throw new ArgumentNullException("documentTypeId is a required property for DocumentIssueRequest and cannot be null");
-            }
             this.DocumentTypeId = documentTypeId;
-            // to ensure "documentIdentifier" is required (not null)
-            if (documentIdentifier == null) {
-                throw new ArgumentNullException("documentIdentifier is a required property for DocumentIssueRequest and cannot be null");
-            }
             this.DocumentIdentifier = documentIdentifier;
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for DocumentIssueRequest and cannot be null");
-            }
             this.Name = name;
-            // to ensure "description" is required (not null)
-            if (description == null) {
-                throw new ArgumentNullException("description is a required property for DocumentIssueRequest and cannot be null");
-            }
             this.Description = description;
             // to ensure "receiver" is required (not null)
             if (receiver == null) {
                 throw new ArgumentNullException("receiver is a required property for DocumentIssueRequest and cannot be null");
             }
             this.Receiver = receiver;
-            // to ensure "base64PdfDocument" is required (not null)
-            if (base64PdfDocument == null) {
-                throw new ArgumentNullException("base64PdfDocument is a required property for DocumentIssueRequest and cannot be null");
-            }
             this.Base64PdfDocument = base64PdfDocument;
             this.ExpiresAtUtc = expiresAtUtc;
             this.Metadata = metadata;

@@ -83,7 +83,7 @@ No authorization required
 
 <a name="getdataproviders"></a>
 # **GetDataProviders**
-> DataProviderPaginatedList GetDataProviders (string accountType = null, string documentType = null, string organizationCategory = null, int? pageNo = null, int? pageSize = null, string country = null)
+> DataProviderPaginatedList GetDataProviders (string? accountType = null, string? documentType = null, string? organizationCategory = null, int? pageNo = null, int? pageSize = null, string? country = null)
 
 Discover all data providers in My Data My Consent by country and filters.
 
@@ -104,12 +104,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DataProviderDiscoveryApi(config);
-            var accountType = "accountType_example";  // string | Account type. (optional) 
-            var documentType = "documentType_example";  // string | Document type. (optional) 
-            var organizationCategory = "organizationCategory_example";  // string | Organization category. (optional) 
+            var accountType = "accountType_example";  // string? | Account type. (optional) 
+            var documentType = "documentType_example";  // string? | Document type. (optional) 
+            var organizationCategory = "organizationCategory_example";  // string? | Organization category. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
             var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
-            var country = "\"IN\"";  // string | ISO2 Country code. (optional)  (default to "IN")
+            var country = "\"IN\"";  // string? | ISO2 Country code. (optional)  (default to "IN")
 
             try
             {
@@ -132,12 +132,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountType** | **string**| Account type. | [optional] 
- **documentType** | **string**| Document type. | [optional] 
- **organizationCategory** | **string**| Organization category. | [optional] 
+ **accountType** | **string?**| Account type. | [optional] 
+ **documentType** | **string?**| Document type. | [optional] 
+ **organizationCategory** | **string?**| Organization category. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
  **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
- **country** | **string**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
+ **country** | **string?**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
 
 ### Return type
 

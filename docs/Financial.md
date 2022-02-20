@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FieldName** | **string** |  | [optional] 
-**CustomKey** | **string** |  | [optional] 
+**FieldName** | [**string?**](string?.md) |  | [optional] 
+**CustomKey** | [**string?**](string?.md) |  | [optional] 
 **Accounts** | [**List&lt;FinancialAccounts&gt;**](FinancialAccounts.md) |  | [optional] 
 **Requirement** | **DocumentsRequired** |  | [optional] 
 

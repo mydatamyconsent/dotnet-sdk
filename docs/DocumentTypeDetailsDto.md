@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **DocumentTypeCategoryId** | **Guid** |  | 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Description** | **string** |  | [optional] 
+**Description** | [**string?**](string?.md) |  | [optional] 
 **LogoUrl** | **string** |  | 
 **CountryIso2** | **string** |  | 
 **CountryId** | **Guid** |  | 

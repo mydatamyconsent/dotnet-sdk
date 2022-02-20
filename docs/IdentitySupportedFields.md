@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Icon** | **int** |  | 
 **Title** | **string** |  | 
-**Description** | **string** |  | [optional] 
+**Description** | [**string?**](string?.md) |  | [optional] 
 **Key** | **string** |  | 
 **DataType** | **string** |  | 
 

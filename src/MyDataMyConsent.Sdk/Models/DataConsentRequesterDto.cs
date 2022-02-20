@@ -40,7 +40,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="website">website.</param>
         /// <param name="supportEmail">supportEmail.</param>
         /// <param name="helpLineNumber">helpLineNumber.</param>
-        public DataConsentRequesterDto(string name = default(string), string logoUrl = default(string), string description = default(string), string website = default(string), string supportEmail = default(string), string helpLineNumber = default(string))
+        public DataConsentRequesterDto(string? name = default(string?), string? logoUrl = default(string?), string? description = default(string?), string? website = default(string?), string? supportEmail = default(string?), string? helpLineNumber = default(string?))
         {
             this.Name = name;
             this.LogoUrl = logoUrl;
@@ -54,37 +54,37 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string LogoUrl { get; set; }
+        public string? LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Website
         /// </summary>
         [DataMember(Name = "website", EmitDefaultValue = true)]
-        public string Website { get; set; }
+        public string? Website { get; set; }
 
         /// <summary>
         /// Gets or Sets SupportEmail
         /// </summary>
         [DataMember(Name = "supportEmail", EmitDefaultValue = true)]
-        public string SupportEmail { get; set; }
+        public string? SupportEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets HelpLineNumber
         /// </summary>
         [DataMember(Name = "helpLineNumber", EmitDefaultValue = true)]
-        public string HelpLineNumber { get; set; }
+        public string? HelpLineNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

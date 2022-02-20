@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="description">description.</param>
         /// <param name="actorProfileUrl">actorProfileUrl.</param>
         /// <param name="dateTimeUtc">dateTimeUtc.</param>
-        public Activity(string actorName = default(string), string description = default(string), string actorProfileUrl = default(string), DateTime dateTimeUtc = default(DateTime))
+        public Activity(string? actorName = default(string?), string? description = default(string?), string? actorProfileUrl = default(string?), DateTime dateTimeUtc = default(DateTime))
         {
             this.ActorName = actorName;
             this.Description = description;
@@ -50,19 +50,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ActorName
         /// </summary>
         [DataMember(Name = "actorName", EmitDefaultValue = true)]
-        public string ActorName { get; set; }
+        public string? ActorName { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ActorProfileUrl
         /// </summary>
         [DataMember(Name = "actorProfileUrl", EmitDefaultValue = true)]
-        public string ActorProfileUrl { get; set; }
+        public string? ActorProfileUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets DateTimeUtc

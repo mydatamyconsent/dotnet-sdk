@@ -44,7 +44,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="validTo">validTo.</param>
         /// <param name="timestamp">timestamp.</param>
         /// <param name="action">action.</param>
-        public UriDetails(string aadhaar = default(string), string uri = default(string), string docType = default(string), string docName = default(string), string docId = default(string), string issuedOn = default(string), string validFrom = default(string), string validTo = default(string), string timestamp = default(string), string action = default(string))
+        public UriDetails(string? aadhaar = default(string?), string? uri = default(string?), string? docType = default(string?), string? docName = default(string?), string? docId = default(string?), string? issuedOn = default(string?), string? validFrom = default(string?), string? validTo = default(string?), string? timestamp = default(string?), string? action = default(string?))
         {
             this.Aadhaar = aadhaar;
             this.Uri = uri;
@@ -62,61 +62,61 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Aadhaar
         /// </summary>
         [DataMember(Name = "aadhaar", EmitDefaultValue = true)]
-        public string Aadhaar { get; set; }
+        public string? Aadhaar { get; set; }
 
         /// <summary>
         /// Gets or Sets Uri
         /// </summary>
         [DataMember(Name = "uri", EmitDefaultValue = true)]
-        public string Uri { get; set; }
+        public string? Uri { get; set; }
 
         /// <summary>
         /// Gets or Sets DocType
         /// </summary>
         [DataMember(Name = "docType", EmitDefaultValue = true)]
-        public string DocType { get; set; }
+        public string? DocType { get; set; }
 
         /// <summary>
         /// Gets or Sets DocName
         /// </summary>
         [DataMember(Name = "docName", EmitDefaultValue = true)]
-        public string DocName { get; set; }
+        public string? DocName { get; set; }
 
         /// <summary>
         /// Gets or Sets DocId
         /// </summary>
         [DataMember(Name = "docId", EmitDefaultValue = true)]
-        public string DocId { get; set; }
+        public string? DocId { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedOn
         /// </summary>
         [DataMember(Name = "issuedOn", EmitDefaultValue = true)]
-        public string IssuedOn { get; set; }
+        public string? IssuedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
         /// </summary>
         [DataMember(Name = "validFrom", EmitDefaultValue = true)]
-        public string ValidFrom { get; set; }
+        public string? ValidFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidTo
         /// </summary>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
-        public string ValidTo { get; set; }
+        public string? ValidTo { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name = "timestamp", EmitDefaultValue = true)]
-        public string Timestamp { get; set; }
+        public string? Timestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
         [DataMember(Name = "action", EmitDefaultValue = true)]
-        public string Action { get; set; }
+        public string? Action { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

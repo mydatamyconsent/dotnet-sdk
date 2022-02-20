@@ -51,15 +51,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="requirement">requirement (required).</param>
         public Document(string fieldTitle = default(string), string fieldSlug = default(string), List<string> drn = default(List<string>), DocumentsRequired requirement = default(DocumentsRequired))
         {
-            // to ensure "fieldTitle" is required (not null)
-            if (fieldTitle == null) {
-                throw new ArgumentNullException("fieldTitle is a required property for Document and cannot be null");
-            }
             this.FieldTitle = fieldTitle;
-            // to ensure "fieldSlug" is required (not null)
-            if (fieldSlug == null) {
-                throw new ArgumentNullException("fieldSlug is a required property for Document and cannot be null");
-            }
             this.FieldSlug = fieldSlug;
             // to ensure "drn" is required (not null)
             if (drn == null) {

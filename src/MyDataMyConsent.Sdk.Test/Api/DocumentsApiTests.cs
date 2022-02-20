@@ -105,7 +105,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //DocumentIssueRequest documentIssueRequest = null;
             //var response = instance.IssueDocument(documentIssueRequest);
-            //Assert.IsType<bool>(response);
+            //Assert.IsType<IssuedDocument>(response);
         }
     }
 }
