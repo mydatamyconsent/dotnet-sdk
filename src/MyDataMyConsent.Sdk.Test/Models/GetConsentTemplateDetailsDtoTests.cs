@@ -146,6 +146,22 @@ namespace MyDataMyConsent.Sdk.Test.Model
             // TODO unit test for the property 'TemplateType'
         }
         /// <summary>
+        /// Test the property 'DataLife'
+        /// </summary>
+        [Fact]
+        public void DataLifeTest()
+        {
+            // TODO unit test for the property 'DataLife'
+        }
+        /// <summary>
+        /// Test the property 'RequestLife'
+        /// </summary>
+        [Fact]
+        public void RequestLifeTest()
+        {
+            // TODO unit test for the property 'RequestLife'
+        }
+        /// <summary>
         /// Test the property 'Frequency'
         /// </summary>
         [Fact]
@@ -176,6 +192,30 @@ namespace MyDataMyConsent.Sdk.Test.Model
         public void FinancialsTest()
         {
             // TODO unit test for the property 'Financials'
+        }
+        /// <summary>
+        /// Test the property 'HealthRecords'
+        /// </summary>
+        [Fact]
+        public void HealthRecordsTest()
+        {
+            // TODO unit test for the property 'HealthRecords'
+        }
+        /// <summary>
+        /// Test the property 'ApprovedBy'
+        /// </summary>
+        [Fact]
+        public void ApprovedByTest()
+        {
+            // TODO unit test for the property 'ApprovedBy'
+        }
+        /// <summary>
+        /// Test the property 'ApprovedAtUtc'
+        /// </summary>
+        [Fact]
+        public void ApprovedAtUtcTest()
+        {
+            // TODO unit test for the property 'ApprovedAtUtc'
         }
 
     }

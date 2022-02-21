@@ -82,6 +82,14 @@ namespace MyDataMyConsent.Sdk.Test.Model
             // TODO unit test for the property 'Description'
         }
         /// <summary>
+        /// Test the property 'Location'
+        /// </summary>
+        [Fact]
+        public void LocationTest()
+        {
+            // TODO unit test for the property 'Location'
+        }
+        /// <summary>
         /// Test the property 'Website'
         /// </summary>
         [Fact]

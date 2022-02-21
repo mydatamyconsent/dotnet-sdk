@@ -37,14 +37,16 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="name">name.</param>
         /// <param name="logoUrl">logoUrl.</param>
         /// <param name="description">description.</param>
+        /// <param name="location">location.</param>
         /// <param name="website">website.</param>
         /// <param name="supportEmail">supportEmail.</param>
         /// <param name="helpLineNumber">helpLineNumber.</param>
-        public DataConsentRequesterDto(string? name = default(string?), string? logoUrl = default(string?), string? description = default(string?), string? website = default(string?), string? supportEmail = default(string?), string? helpLineNumber = default(string?))
+        public DataConsentRequesterDto(string? name = default(string?), string? logoUrl = default(string?), string? description = default(string?), string? location = default(string?), string? website = default(string?), string? supportEmail = default(string?), string? helpLineNumber = default(string?))
         {
             this.Name = name;
             this.LogoUrl = logoUrl;
             this.Description = description;
+            this.Location = location;
             this.Website = website;
             this.SupportEmail = supportEmail;
             this.HelpLineNumber = helpLineNumber;
@@ -67,6 +69,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Location
+        /// </summary>
+        [DataMember(Name = "location", EmitDefaultValue = true)]
+        public string? Location { get; set; }
 
         /// <summary>
         /// Gets or Sets Website
@@ -97,6 +105,7 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Website: ").Append(Website).Append("\n");
             sb.Append("  SupportEmail: ").Append(SupportEmail).Append("\n");
             sb.Append("  HelpLineNumber: ").Append(HelpLineNumber).Append("\n");
@@ -151,6 +160,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.Location == input.Location ||
+                    (this.Location != null &&
+                    this.Location.Equals(input.Location))
+                ) && 
+                (
                     this.Website == input.Website ||
                     (this.Website != null &&
                     this.Website.Equals(input.Website))
@@ -187,6 +201,10 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Location != null)
+                {
+                    hashCode = (hashCode * 59) + this.Location.GetHashCode();
                 }
                 if (this.Website != null)
                 {

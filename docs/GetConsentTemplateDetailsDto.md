@@ -15,10 +15,15 @@ Name | Type | Description | Notes
 **CreatedAtUtc** | **DateTime** |  | [optional] 
 **Status** | [**string?**](string?.md) |  | [optional] 
 **TemplateType** | **ConsentTemplateTypes** |  | [optional] 
+**DataLife** | [**Life**](Life.md) |  | [optional] 
+**RequestLife** | [**Life**](Life.md) |  | [optional] 
 **Frequency** | [**Life**](Life.md) |  | [optional] 
 **Identity** | [**List&lt;IdentitySupportedFields&gt;**](IdentitySupportedFields.md) |  | [optional] 
 **Documents** | [**List&lt;Document&gt;**](Document.md) |  | [optional] 
 **Financials** | [**List&lt;Financial&gt;**](Financial.md) |  | [optional] 
+**HealthRecords** | **List&lt;Object&gt;** |  | [optional] 
+**ApprovedBy** | **Guid?** |  | [optional] 
+**ApprovedAtUtc** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

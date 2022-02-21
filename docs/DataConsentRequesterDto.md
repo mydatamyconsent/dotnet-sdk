@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | [**string?**](string?.md) |  | [optional] 
 **LogoUrl** | [**string?**](string?.md) |  | [optional] 
 **Description** | [**string?**](string?.md) |  | [optional] 
+**Location** | [**string?**](string?.md) |  | [optional] 
 **Website** | [**string?**](string?.md) |  | [optional] 
 **SupportEmail** | [**string?**](string?.md) |  | [optional] 
 **HelpLineNumber** | [**string?**](string?.md) |  | [optional] 

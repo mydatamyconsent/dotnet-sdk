@@ -57,11 +57,16 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="createdAtUtc">createdAtUtc.</param>
         /// <param name="status">status.</param>
         /// <param name="templateType">templateType.</param>
+        /// <param name="dataLife">dataLife.</param>
+        /// <param name="requestLife">requestLife.</param>
         /// <param name="frequency">frequency.</param>
         /// <param name="identity">identity.</param>
         /// <param name="documents">documents.</param>
         /// <param name="financials">financials.</param>
-        public GetConsentTemplateDetailsDto(Guid id = default(Guid), string? name = default(string?), string? description = default(string?), string? consentPurpose = default(string?), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), FetchTypes? fetchType = default(FetchTypes?), string? shortId = default(string?), string? createdBy = default(string?), DateTime createdAtUtc = default(DateTime), string? status = default(string?), ConsentTemplateTypes? templateType = default(ConsentTemplateTypes?), Life frequency = default(Life), List<IdentitySupportedFields> identity = default(List<IdentitySupportedFields>), List<Document> documents = default(List<Document>), List<Financial> financials = default(List<Financial>))
+        /// <param name="healthRecords">healthRecords.</param>
+        /// <param name="approvedBy">approvedBy.</param>
+        /// <param name="approvedAtUtc">approvedAtUtc.</param>
+        public GetConsentTemplateDetailsDto(Guid id = default(Guid), string? name = default(string?), string? description = default(string?), string? consentPurpose = default(string?), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), FetchTypes? fetchType = default(FetchTypes?), string? shortId = default(string?), string? createdBy = default(string?), DateTime createdAtUtc = default(DateTime), string? status = default(string?), ConsentTemplateTypes? templateType = default(ConsentTemplateTypes?), Life dataLife = default(Life), Life requestLife = default(Life), Life frequency = default(Life), List<IdentitySupportedFields> identity = default(List<IdentitySupportedFields>), List<Document> documents = default(List<Document>), List<Financial> financials = default(List<Financial>), List<Object> healthRecords = default(List<Object>), Guid? approvedBy = default(Guid?), DateTime? approvedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.Name = name;
@@ -74,10 +79,15 @@ namespace MyDataMyConsent.Sdk.Models
             this.CreatedAtUtc = createdAtUtc;
             this.Status = status;
             this.TemplateType = templateType;
+            this.DataLife = dataLife;
+            this.RequestLife = requestLife;
             this.Frequency = frequency;
             this.Identity = identity;
             this.Documents = documents;
             this.Financials = financials;
+            this.HealthRecords = healthRecords;
+            this.ApprovedBy = approvedBy;
+            this.ApprovedAtUtc = approvedAtUtc;
         }
 
         /// <summary>
@@ -135,6 +145,18 @@ namespace MyDataMyConsent.Sdk.Models
         public string? Status { get; set; }
 
         /// <summary>
+        /// Gets or Sets DataLife
+        /// </summary>
+        [DataMember(Name = "dataLife", EmitDefaultValue = false)]
+        public Life DataLife { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RequestLife
+        /// </summary>
+        [DataMember(Name = "requestLife", EmitDefaultValue = false)]
+        public Life RequestLife { get; set; }
+
+        /// <summary>
         /// Gets or Sets Frequency
         /// </summary>
         [DataMember(Name = "frequency", EmitDefaultValue = false)]
@@ -159,6 +181,24 @@ namespace MyDataMyConsent.Sdk.Models
         public List<Financial> Financials { get; set; }
 
         /// <summary>
+        /// Gets or Sets HealthRecords
+        /// </summary>
+        [DataMember(Name = "healthRecords", EmitDefaultValue = true)]
+        public List<Object> HealthRecords { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApprovedBy
+        /// </summary>
+        [DataMember(Name = "approvedBy", EmitDefaultValue = true)]
+        public Guid? ApprovedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApprovedAtUtc
+        /// </summary>
+        [DataMember(Name = "approvedAtUtc", EmitDefaultValue = true)]
+        public DateTime? ApprovedAtUtc { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -177,10 +217,15 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  CreatedAtUtc: ").Append(CreatedAtUtc).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TemplateType: ").Append(TemplateType).Append("\n");
+            sb.Append("  DataLife: ").Append(DataLife).Append("\n");
+            sb.Append("  RequestLife: ").Append(RequestLife).Append("\n");
             sb.Append("  Frequency: ").Append(Frequency).Append("\n");
             sb.Append("  Identity: ").Append(Identity).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  Financials: ").Append(Financials).Append("\n");
+            sb.Append("  HealthRecords: ").Append(HealthRecords).Append("\n");
+            sb.Append("  ApprovedBy: ").Append(ApprovedBy).Append("\n");
+            sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -271,6 +316,16 @@ namespace MyDataMyConsent.Sdk.Models
                     this.TemplateType.Equals(input.TemplateType)
                 ) && 
                 (
+                    this.DataLife == input.DataLife ||
+                    (this.DataLife != null &&
+                    this.DataLife.Equals(input.DataLife))
+                ) && 
+                (
+                    this.RequestLife == input.RequestLife ||
+                    (this.RequestLife != null &&
+                    this.RequestLife.Equals(input.RequestLife))
+                ) && 
+                (
                     this.Frequency == input.Frequency ||
                     (this.Frequency != null &&
                     this.Frequency.Equals(input.Frequency))
@@ -292,6 +347,22 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Financials != null &&
                     input.Financials != null &&
                     this.Financials.SequenceEqual(input.Financials)
+                ) && 
+                (
+                    this.HealthRecords == input.HealthRecords ||
+                    this.HealthRecords != null &&
+                    input.HealthRecords != null &&
+                    this.HealthRecords.SequenceEqual(input.HealthRecords)
+                ) && 
+                (
+                    this.ApprovedBy == input.ApprovedBy ||
+                    (this.ApprovedBy != null &&
+                    this.ApprovedBy.Equals(input.ApprovedBy))
+                ) && 
+                (
+                    this.ApprovedAtUtc == input.ApprovedAtUtc ||
+                    (this.ApprovedAtUtc != null &&
+                    this.ApprovedAtUtc.Equals(input.ApprovedAtUtc))
                 );
         }
 
@@ -342,6 +413,14 @@ namespace MyDataMyConsent.Sdk.Models
                     hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.TemplateType.GetHashCode();
+                if (this.DataLife != null)
+                {
+                    hashCode = (hashCode * 59) + this.DataLife.GetHashCode();
+                }
+                if (this.RequestLife != null)
+                {
+                    hashCode = (hashCode * 59) + this.RequestLife.GetHashCode();
+                }
                 if (this.Frequency != null)
                 {
                     hashCode = (hashCode * 59) + this.Frequency.GetHashCode();
@@ -357,6 +436,18 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.Financials != null)
                 {
                     hashCode = (hashCode * 59) + this.Financials.GetHashCode();
+                }
+                if (this.HealthRecords != null)
+                {
+                    hashCode = (hashCode * 59) + this.HealthRecords.GetHashCode();
+                }
+                if (this.ApprovedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovedBy.GetHashCode();
+                }
+                if (this.ApprovedAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovedAtUtc.GetHashCode();
                 }
                 return hashCode;
             }
