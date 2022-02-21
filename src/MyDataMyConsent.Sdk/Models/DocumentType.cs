@@ -26,10 +26,10 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// DocumentTypeDetailsDto
+    /// Issuable Document Type details.
     /// </summary>
-    [DataContract(Name = "DocumentTypeDetailsDto")]
-    public partial class DocumentTypeDetailsDto : IEquatable<DocumentTypeDetailsDto>
+    [DataContract(Name = "DocumentType")]
+    public partial class DocumentType : IEquatable<DocumentType>
     {
 
         /// <summary>
@@ -43,141 +43,142 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         [DataMember(Name = "subCategoryType", IsRequired = true, EmitDefaultValue = false)]
         public DocumentSubCategoryType SubCategoryType { get; set; }
-
         /// <summary>
-        /// Gets or Sets SupportedEntityType
-        /// </summary>
-        [DataMember(Name = "supportedEntityType", IsRequired = true, EmitDefaultValue = false)]
-        public SupportedEntityType SupportedEntityType { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentTypeDetailsDto" /> class.
+        /// Initializes a new instance of the <see cref="DocumentType" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected DocumentTypeDetailsDto() { }
+        protected DocumentType() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentTypeDetailsDto" /> class.
+        /// Initializes a new instance of the <see cref="DocumentType" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="organizationId">organizationId (required).</param>
+        /// <param name="id">Document Type Identifier. (required).</param>
         /// <param name="categoryType">categoryType (required).</param>
         /// <param name="subCategoryType">subCategoryType (required).</param>
-        /// <param name="documentTypeCategoryId">documentTypeCategoryId (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="slug">slug (required).</param>
-        /// <param name="description">description.</param>
-        /// <param name="logoUrl">logoUrl (required).</param>
-        /// <param name="countryIso2">countryIso2 (required).</param>
-        /// <param name="countryId">countryId (required).</param>
-        /// <param name="searchServiceId">searchServiceId.</param>
-        /// <param name="repositoryServiceId">repositoryServiceId.</param>
-        /// <param name="supportedEntityType">supportedEntityType (required).</param>
-        /// <param name="addedBy">addedBy (required).</param>
-        /// <param name="payableAmount">payableAmount.</param>
-        /// <param name="approvedAtUtc">approvedAtUtc.</param>
-        public DocumentTypeDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), Guid documentTypeCategoryId = default(Guid), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string countryIso2 = default(string), Guid countryId = default(Guid), Guid? searchServiceId = default(Guid?), Guid? repositoryServiceId = default(Guid?), SupportedEntityType supportedEntityType = default(SupportedEntityType), string addedBy = default(string), double? payableAmount = default(double?), DateTime? approvedAtUtc = default(DateTime?))
+        /// <param name="name">Document Type Name. eg: Driving License. (required).</param>
+        /// <param name="slug">Document Type Unique Slug. eg: \&quot;in.gov.gj.transport.dl\&quot;. (required).</param>
+        /// <param name="description">Document Type description. eg: Gujarat State Driving License..</param>
+        /// <param name="logoUrl">Logo URL of document type. (required).</param>
+        /// <param name="searchServiceName">Document search repository service name..</param>
+        /// <param name="repositoryServiceName">Document repository service name..</param>
+        /// <param name="supportedEntityTypes">Supported entity types. eg: Individual, Organization. (required).</param>
+        /// <param name="addedBy">Name of the document type creator. (required).</param>
+        /// <param name="payableAmount">Payable amount if document is chargeable. eg: 10.25..</param>
+        /// <param name="payableAmountCurrency">Payable amount currency. eg: INR, USD etc.,..</param>
+        /// <param name="approvedAtUtc">DateTime of approval in UTC timezone..</param>
+        /// <param name="approved">Document type approval status. (required).</param>
+        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double? payableAmount = default(double?), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?), bool approved = default(bool))
         {
             this.Id = id;
-            this.OrganizationId = organizationId;
             this.CategoryType = categoryType;
             this.SubCategoryType = subCategoryType;
-            this.DocumentTypeCategoryId = documentTypeCategoryId;
             this.Name = name;
             this.Slug = slug;
             this.LogoUrl = logoUrl;
-            this.CountryIso2 = countryIso2;
-            this.CountryId = countryId;
-            this.SupportedEntityType = supportedEntityType;
+            // to ensure "supportedEntityTypes" is required (not null)
+            if (supportedEntityTypes == null) {
+                throw new ArgumentNullException("supportedEntityTypes is a required property for DocumentType and cannot be null");
+            }
+            this.SupportedEntityTypes = supportedEntityTypes;
             this.AddedBy = addedBy;
+            this.Approved = approved;
             this.Description = description;
-            this.SearchServiceId = searchServiceId;
-            this.RepositoryServiceId = repositoryServiceId;
+            this.SearchServiceName = searchServiceName;
+            this.RepositoryServiceName = repositoryServiceName;
             this.PayableAmount = payableAmount;
+            this.PayableAmountCurrency = payableAmountCurrency;
             this.ApprovedAtUtc = approvedAtUtc;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Document Type Identifier.
         /// </summary>
+        /// <value>Document Type Identifier.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// Document Type Name. eg: Driving License.
         /// </summary>
-        [DataMember(Name = "organizationId", IsRequired = true, EmitDefaultValue = false)]
-        public Guid OrganizationId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DocumentTypeCategoryId
-        /// </summary>
-        [DataMember(Name = "documentTypeCategoryId", IsRequired = true, EmitDefaultValue = false)]
-        public Guid DocumentTypeCategoryId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
+        /// <value>Document Type Name. eg: Driving License.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Slug
+        /// Document Type Unique Slug. eg: \&quot;in.gov.gj.transport.dl\&quot;.
         /// </summary>
+        /// <value>Document Type Unique Slug. eg: \&quot;in.gov.gj.transport.dl\&quot;.</value>
         [DataMember(Name = "slug", IsRequired = true, EmitDefaultValue = false)]
         public string Slug { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Document Type description. eg: Gujarat State Driving License.
         /// </summary>
+        /// <value>Document Type description. eg: Gujarat State Driving License.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets LogoUrl
+        /// Logo URL of document type.
         /// </summary>
+        /// <value>Logo URL of document type.</value>
         [DataMember(Name = "logoUrl", IsRequired = true, EmitDefaultValue = false)]
         public string LogoUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryIso2
+        /// Document search repository service name.
         /// </summary>
-        [DataMember(Name = "countryIso2", IsRequired = true, EmitDefaultValue = false)]
-        public string CountryIso2 { get; set; }
+        /// <value>Document search repository service name.</value>
+        [DataMember(Name = "searchServiceName", EmitDefaultValue = true)]
+        public string? SearchServiceName { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryId
+        /// Document repository service name.
         /// </summary>
-        [DataMember(Name = "countryId", IsRequired = true, EmitDefaultValue = false)]
-        public Guid CountryId { get; set; }
+        /// <value>Document repository service name.</value>
+        [DataMember(Name = "repositoryServiceName", EmitDefaultValue = true)]
+        public string? RepositoryServiceName { get; set; }
 
         /// <summary>
-        /// Gets or Sets SearchServiceId
+        /// Supported entity types. eg: Individual, Organization.
         /// </summary>
-        [DataMember(Name = "searchServiceId", EmitDefaultValue = true)]
-        public Guid? SearchServiceId { get; set; }
+        /// <value>Supported entity types. eg: Individual, Organization.</value>
+        [DataMember(Name = "supportedEntityTypes", IsRequired = true, EmitDefaultValue = false)]
+        public List<SupportedEntityType> SupportedEntityTypes { get; set; }
 
         /// <summary>
-        /// Gets or Sets RepositoryServiceId
+        /// Name of the document type creator.
         /// </summary>
-        [DataMember(Name = "repositoryServiceId", EmitDefaultValue = true)]
-        public Guid? RepositoryServiceId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AddedBy
-        /// </summary>
+        /// <value>Name of the document type creator.</value>
         [DataMember(Name = "addedBy", IsRequired = true, EmitDefaultValue = false)]
         public string AddedBy { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayableAmount
+        /// Payable amount if document is chargeable. eg: 10.25.
         /// </summary>
+        /// <value>Payable amount if document is chargeable. eg: 10.25.</value>
         [DataMember(Name = "payableAmount", EmitDefaultValue = true)]
         public double? PayableAmount { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApprovedAtUtc
+        /// Payable amount currency. eg: INR, USD etc.,.
         /// </summary>
+        /// <value>Payable amount currency. eg: INR, USD etc.,.</value>
+        [DataMember(Name = "payableAmountCurrency", EmitDefaultValue = true)]
+        public string? PayableAmountCurrency { get; set; }
+
+        /// <summary>
+        /// DateTime of approval in UTC timezone.
+        /// </summary>
+        /// <value>DateTime of approval in UTC timezone.</value>
         [DataMember(Name = "approvedAtUtc", EmitDefaultValue = true)]
         public DateTime? ApprovedAtUtc { get; set; }
+
+        /// <summary>
+        /// Document type approval status.
+        /// </summary>
+        /// <value>Document type approval status.</value>
+        [DataMember(Name = "approved", IsRequired = true, EmitDefaultValue = true)]
+        public bool Approved { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -186,24 +187,22 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DocumentTypeDetailsDto {\n");
+            sb.Append("class DocumentType {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  CategoryType: ").Append(CategoryType).Append("\n");
             sb.Append("  SubCategoryType: ").Append(SubCategoryType).Append("\n");
-            sb.Append("  DocumentTypeCategoryId: ").Append(DocumentTypeCategoryId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Slug: ").Append(Slug).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
-            sb.Append("  CountryIso2: ").Append(CountryIso2).Append("\n");
-            sb.Append("  CountryId: ").Append(CountryId).Append("\n");
-            sb.Append("  SearchServiceId: ").Append(SearchServiceId).Append("\n");
-            sb.Append("  RepositoryServiceId: ").Append(RepositoryServiceId).Append("\n");
-            sb.Append("  SupportedEntityType: ").Append(SupportedEntityType).Append("\n");
+            sb.Append("  SearchServiceName: ").Append(SearchServiceName).Append("\n");
+            sb.Append("  RepositoryServiceName: ").Append(RepositoryServiceName).Append("\n");
+            sb.Append("  SupportedEntityTypes: ").Append(SupportedEntityTypes).Append("\n");
             sb.Append("  AddedBy: ").Append(AddedBy).Append("\n");
             sb.Append("  PayableAmount: ").Append(PayableAmount).Append("\n");
+            sb.Append("  PayableAmountCurrency: ").Append(PayableAmountCurrency).Append("\n");
             sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
+            sb.Append("  Approved: ").Append(Approved).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -224,15 +223,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DocumentTypeDetailsDto);
+            return this.Equals(input as DocumentType);
         }
 
         /// <summary>
-        /// Returns true if DocumentTypeDetailsDto instances are equal
+        /// Returns true if DocumentType instances are equal
         /// </summary>
-        /// <param name="input">Instance of DocumentTypeDetailsDto to be compared</param>
+        /// <param name="input">Instance of DocumentType to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DocumentTypeDetailsDto input)
+        public bool Equals(DocumentType input)
         {
             if (input == null)
             {
@@ -245,22 +244,12 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
                     this.CategoryType == input.CategoryType ||
                     this.CategoryType.Equals(input.CategoryType)
                 ) && 
                 (
                     this.SubCategoryType == input.SubCategoryType ||
                     this.SubCategoryType.Equals(input.SubCategoryType)
-                ) && 
-                (
-                    this.DocumentTypeCategoryId == input.DocumentTypeCategoryId ||
-                    (this.DocumentTypeCategoryId != null &&
-                    this.DocumentTypeCategoryId.Equals(input.DocumentTypeCategoryId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -283,28 +272,20 @@ namespace MyDataMyConsent.Sdk.Models
                     this.LogoUrl.Equals(input.LogoUrl))
                 ) && 
                 (
-                    this.CountryIso2 == input.CountryIso2 ||
-                    (this.CountryIso2 != null &&
-                    this.CountryIso2.Equals(input.CountryIso2))
+                    this.SearchServiceName == input.SearchServiceName ||
+                    (this.SearchServiceName != null &&
+                    this.SearchServiceName.Equals(input.SearchServiceName))
                 ) && 
                 (
-                    this.CountryId == input.CountryId ||
-                    (this.CountryId != null &&
-                    this.CountryId.Equals(input.CountryId))
+                    this.RepositoryServiceName == input.RepositoryServiceName ||
+                    (this.RepositoryServiceName != null &&
+                    this.RepositoryServiceName.Equals(input.RepositoryServiceName))
                 ) && 
                 (
-                    this.SearchServiceId == input.SearchServiceId ||
-                    (this.SearchServiceId != null &&
-                    this.SearchServiceId.Equals(input.SearchServiceId))
-                ) && 
-                (
-                    this.RepositoryServiceId == input.RepositoryServiceId ||
-                    (this.RepositoryServiceId != null &&
-                    this.RepositoryServiceId.Equals(input.RepositoryServiceId))
-                ) && 
-                (
-                    this.SupportedEntityType == input.SupportedEntityType ||
-                    this.SupportedEntityType.Equals(input.SupportedEntityType)
+                    this.SupportedEntityTypes == input.SupportedEntityTypes ||
+                    this.SupportedEntityTypes != null &&
+                    input.SupportedEntityTypes != null &&
+                    this.SupportedEntityTypes.SequenceEqual(input.SupportedEntityTypes)
                 ) && 
                 (
                     this.AddedBy == input.AddedBy ||
@@ -317,9 +298,18 @@ namespace MyDataMyConsent.Sdk.Models
                     this.PayableAmount.Equals(input.PayableAmount))
                 ) && 
                 (
+                    this.PayableAmountCurrency == input.PayableAmountCurrency ||
+                    (this.PayableAmountCurrency != null &&
+                    this.PayableAmountCurrency.Equals(input.PayableAmountCurrency))
+                ) && 
+                (
                     this.ApprovedAtUtc == input.ApprovedAtUtc ||
                     (this.ApprovedAtUtc != null &&
                     this.ApprovedAtUtc.Equals(input.ApprovedAtUtc))
+                ) && 
+                (
+                    this.Approved == input.Approved ||
+                    this.Approved.Equals(input.Approved)
                 );
         }
 
@@ -336,16 +326,8 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.OrganizationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.CategoryType.GetHashCode();
                 hashCode = (hashCode * 59) + this.SubCategoryType.GetHashCode();
-                if (this.DocumentTypeCategoryId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DocumentTypeCategoryId.GetHashCode();
-                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
@@ -362,23 +344,18 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.LogoUrl.GetHashCode();
                 }
-                if (this.CountryIso2 != null)
+                if (this.SearchServiceName != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountryIso2.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SearchServiceName.GetHashCode();
                 }
-                if (this.CountryId != null)
+                if (this.RepositoryServiceName != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountryId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RepositoryServiceName.GetHashCode();
                 }
-                if (this.SearchServiceId != null)
+                if (this.SupportedEntityTypes != null)
                 {
-                    hashCode = (hashCode * 59) + this.SearchServiceId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SupportedEntityTypes.GetHashCode();
                 }
-                if (this.RepositoryServiceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RepositoryServiceId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SupportedEntityType.GetHashCode();
                 if (this.AddedBy != null)
                 {
                     hashCode = (hashCode * 59) + this.AddedBy.GetHashCode();
@@ -387,10 +364,15 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.PayableAmount.GetHashCode();
                 }
+                if (this.PayableAmountCurrency != null)
+                {
+                    hashCode = (hashCode * 59) + this.PayableAmountCurrency.GetHashCode();
+                }
                 if (this.ApprovedAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.ApprovedAtUtc.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Approved.GetHashCode();
                 return hashCode;
             }
         }

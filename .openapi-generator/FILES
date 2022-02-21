@@ -32,8 +32,8 @@ docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
 docs/DocumentSubCategoryType.md
-docs/DocumentTypeDetailsDto.md
-docs/DocumentTypeDetailsDtoPaginatedList.md
+docs/DocumentType.md
+docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
 docs/FetchTypes.md
@@ -106,8 +106,8 @@ src/MyDataMyConsent.Sdk.Test/Models/DocumentCategoryTypeTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentIssueRequestTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentSubCategoryTypeTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentTests.cs
-src/MyDataMyConsent.Sdk.Test/Models/DocumentTypeDetailsDtoPaginatedListTests.cs
-src/MyDataMyConsent.Sdk.Test/Models/DocumentTypeDetailsDtoTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/DocumentTypePaginatedListTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/DocumentTypeTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentsRequiredTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/FetchTypesTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/FileTypeTests.cs
@@ -197,8 +197,8 @@ src/MyDataMyConsent.Sdk/Models/Document.cs
 src/MyDataMyConsent.Sdk/Models/DocumentCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequest.cs
 src/MyDataMyConsent.Sdk/Models/DocumentSubCategoryType.cs
-src/MyDataMyConsent.Sdk/Models/DocumentTypeDetailsDto.cs
-src/MyDataMyConsent.Sdk/Models/DocumentTypeDetailsDtoPaginatedList.cs
+src/MyDataMyConsent.Sdk/Models/DocumentType.cs
+src/MyDataMyConsent.Sdk/Models/DocumentTypePaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/DocumentsRequired.cs
 src/MyDataMyConsent.Sdk/Models/FetchTypes.cs
 src/MyDataMyConsent.Sdk/Models/FileType.cs

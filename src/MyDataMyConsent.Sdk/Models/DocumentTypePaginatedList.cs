@@ -26,19 +26,19 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// DocumentTypeDetailsDtoPaginatedList
+    /// DocumentTypePaginatedList
     /// </summary>
-    [DataContract(Name = "DocumentTypeDetailsDtoPaginatedList")]
-    public partial class DocumentTypeDetailsDtoPaginatedList : IEquatable<DocumentTypeDetailsDtoPaginatedList>
+    [DataContract(Name = "DocumentTypePaginatedList")]
+    public partial class DocumentTypePaginatedList : IEquatable<DocumentTypePaginatedList>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentTypeDetailsDtoPaginatedList" /> class.
+        /// Initializes a new instance of the <see cref="DocumentTypePaginatedList" /> class.
         /// </summary>
         /// <param name="pageIndex">pageIndex.</param>
         /// <param name="pageSize">pageSize.</param>
         /// <param name="totalItems">totalItems.</param>
         /// <param name="items">items.</param>
-        public DocumentTypeDetailsDtoPaginatedList(int pageIndex = default(int), int pageSize = default(int), long totalItems = default(long), List<DocumentTypeDetailsDto> items = default(List<DocumentTypeDetailsDto>))
+        public DocumentTypePaginatedList(int pageIndex = default(int), int pageSize = default(int), long totalItems = default(long), List<DocumentType> items = default(List<DocumentType>))
         {
             this.PageIndex = pageIndex;
             this.PageSize = pageSize;
@@ -82,7 +82,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name = "items", EmitDefaultValue = true)]
-        public List<DocumentTypeDetailsDto> Items { get; set; }
+        public List<DocumentType> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,7 +91,7 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DocumentTypeDetailsDtoPaginatedList {\n");
+            sb.Append("class DocumentTypePaginatedList {\n");
             sb.Append("  PageIndex: ").Append(PageIndex).Append("\n");
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
@@ -117,15 +117,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DocumentTypeDetailsDtoPaginatedList);
+            return this.Equals(input as DocumentTypePaginatedList);
         }
 
         /// <summary>
-        /// Returns true if DocumentTypeDetailsDtoPaginatedList instances are equal
+        /// Returns true if DocumentTypePaginatedList instances are equal
         /// </summary>
-        /// <param name="input">Instance of DocumentTypeDetailsDtoPaginatedList to be compared</param>
+        /// <param name="input">Instance of DocumentTypePaginatedList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DocumentTypeDetailsDtoPaginatedList input)
+        public bool Equals(DocumentTypePaginatedList input)
         {
             if (input == null)
             {

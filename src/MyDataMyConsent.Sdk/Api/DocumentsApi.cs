@@ -77,8 +77,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>DocumentTypeDetailsDtoPaginatedList</returns>
-        DocumentTypeDetailsDtoPaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>DocumentTypePaginatedList</returns>
+        DocumentTypePaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get registered document types.
@@ -89,8 +89,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of DocumentTypeDetailsDtoPaginatedList</returns>
-        ApiResponse<DocumentTypeDetailsDtoPaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>ApiResponse of DocumentTypePaginatedList</returns>
+        ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Issue a new document.
         /// </summary>
@@ -182,8 +182,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DocumentTypeDetailsDtoPaginatedList</returns>
-        System.Threading.Tasks.Task<DocumentTypeDetailsDtoPaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DocumentTypePaginatedList</returns>
+        System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get registered document types.
@@ -195,8 +195,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DocumentTypeDetailsDtoPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentTypeDetailsDtoPaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DocumentTypePaginatedList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Issue a new document.
         /// </summary>
@@ -644,10 +644,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>DocumentTypeDetailsDtoPaginatedList</returns>
-        public DocumentTypeDetailsDtoPaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>DocumentTypePaginatedList</returns>
+        public DocumentTypePaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypeDetailsDtoPaginatedList> localVarResponse = GetRegisteredDocumentTypesWithHttpInfo(pageNo, pageSize);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = GetRegisteredDocumentTypesWithHttpInfo(pageNo, pageSize);
             return localVarResponse.Data;
         }
 
@@ -657,8 +657,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of DocumentTypeDetailsDtoPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypeDetailsDtoPaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>ApiResponse of DocumentTypePaginatedList</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -693,7 +693,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DocumentTypeDetailsDtoPaginatedList>("/v1/documents/types", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DocumentTypePaginatedList>("/v1/documents/types", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegisteredDocumentTypes", localVarResponse);
@@ -713,10 +713,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DocumentTypeDetailsDtoPaginatedList</returns>
-        public async System.Threading.Tasks.Task<DocumentTypeDetailsDtoPaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DocumentTypePaginatedList</returns>
+        public async System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypeDetailsDtoPaginatedList> localVarResponse = await GetRegisteredDocumentTypesWithHttpInfoAsync(pageNo, pageSize, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = await GetRegisteredDocumentTypesWithHttpInfoAsync(pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -727,8 +727,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DocumentTypeDetailsDtoPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypeDetailsDtoPaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DocumentTypePaginatedList)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -764,7 +764,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DocumentTypeDetailsDtoPaginatedList>("/v1/documents/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DocumentTypePaginatedList>("/v1/documents/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -165,7 +165,7 @@ No authorization required
 
 <a name="getregistereddocumenttypes"></a>
 # **GetRegisteredDocumentTypes**
-> DocumentTypeDetailsDtoPaginatedList GetRegisteredDocumentTypes (int? pageNo = null, int? pageSize = null)
+> DocumentTypePaginatedList GetRegisteredDocumentTypes (int? pageNo = null, int? pageSize = null)
 
 Get registered document types.
 
@@ -192,7 +192,7 @@ namespace Example
             try
             {
                 // Get registered document types.
-                DocumentTypeDetailsDtoPaginatedList result = apiInstance.GetRegisteredDocumentTypes(pageNo, pageSize);
+                DocumentTypePaginatedList result = apiInstance.GetRegisteredDocumentTypes(pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
+[**DocumentTypePaginatedList**](DocumentTypePaginatedList.md)
 
 ### Authorization
 

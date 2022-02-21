@@ -93,7 +93,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
             //int? pageNo = null;
             //int? pageSize = null;
             //var response = instance.GetRegisteredDocumentTypes(pageNo, pageSize);
-            //Assert.IsType<DocumentTypeDetailsDtoPaginatedList>(response);
+            //Assert.IsType<DocumentTypePaginatedList>(response);
         }
 
         /// <summary>
