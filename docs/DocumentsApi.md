@@ -386,7 +386,7 @@ No authorization required
 
 <a name="uploaddocumentforindividual"></a>
 # **UploadDocumentForIndividual**
-> string UploadDocumentForIndividual (Guid issueRequestId, InlineObject? inlineObject = null)
+> string UploadDocumentForIndividual (Guid issueRequestId)
 
 Upload a document for issuance request of individual.
 
@@ -408,12 +408,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
             var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
-            var inlineObject = new InlineObject?(); // InlineObject? |  (optional) 
 
             try
             {
                 // Upload a document for issuance request of individual.
-                string result = apiInstance.UploadDocumentForIndividual(issueRequestId, inlineObject);
+                string result = apiInstance.UploadDocumentForIndividual(issueRequestId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -432,7 +431,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
- **inlineObject** | [**InlineObject?**](InlineObject?.md)|  | [optional] 
 
 ### Return type
 
@@ -444,7 +442,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 
@@ -460,7 +458,7 @@ No authorization required
 
 <a name="uploaddocumentfororganization"></a>
 # **UploadDocumentForOrganization**
-> string UploadDocumentForOrganization (Guid issueRequestId, InlineObject1? inlineObject1 = null)
+> string UploadDocumentForOrganization (Guid issueRequestId)
 
 Upload a document for issuance request of organization.
 
@@ -482,12 +480,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
             var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
-            var inlineObject1 = new InlineObject1?(); // InlineObject1? |  (optional) 
 
             try
             {
                 // Upload a document for issuance request of organization.
-                string result = apiInstance.UploadDocumentForOrganization(issueRequestId, inlineObject1);
+                string result = apiInstance.UploadDocumentForOrganization(issueRequestId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -506,7 +503,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
- **inlineObject1** | [**InlineObject1?**](InlineObject1?.md)|  | [optional] 
 
 ### Return type
 
@@ -518,7 +514,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 

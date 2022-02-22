@@ -189,8 +189,6 @@ Class | Method | HTTP request | Description
  - [Models.IdentifierStringKeyValuePair](docs/IdentifierStringKeyValuePair.md)
  - [Models.IdentitySupportedFields](docs/IdentitySupportedFields.md)
  - [Models.IndividualDataConsentRequestResponse](docs/IndividualDataConsentRequestResponse.md)
- - [Models.InlineObject](docs/InlineObject.md)
- - [Models.InlineObject1](docs/InlineObject1.md)
  - [Models.IssuedDocument](docs/IssuedDocument.md)
  - [Models.IssuedDocumentPaginatedList](docs/IssuedDocumentPaginatedList.md)
  - [Models.Life](docs/Life.md)

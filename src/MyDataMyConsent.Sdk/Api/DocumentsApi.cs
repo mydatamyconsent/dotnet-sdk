@@ -132,9 +132,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <returns>string</returns>
-        string UploadDocumentForIndividual(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?));
+        string UploadDocumentForIndividual(Guid issueRequestId);
 
         /// <summary>
         /// Upload a document for issuance request of individual.
@@ -144,17 +143,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?));
+        ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId);
         /// <summary>
         /// Upload a document for issuance request of organization.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <returns>string</returns>
-        string UploadDocumentForOrganization(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?));
+        string UploadDocumentForOrganization(Guid issueRequestId);
 
         /// <summary>
         /// Upload a document for issuance request of organization.
@@ -164,9 +161,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?));
+        ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId);
         #endregion Synchronous Operations
     }
 
@@ -309,10 +305,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload a document for issuance request of individual.
@@ -322,10 +317,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload a document for issuance request of organization.
         /// </summary>
@@ -334,10 +328,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload a document for issuance request of organization.
@@ -347,10 +340,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1180,11 +1172,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <returns>string</returns>
-        public string UploadDocumentForIndividual(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?))
+        public string UploadDocumentForIndividual(Guid issueRequestId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForIndividualWithHttpInfo(issueRequestId, inlineObject);
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForIndividualWithHttpInfo(issueRequestId);
             return localVarResponse.Data;
         }
 
@@ -1193,13 +1184,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <returns>ApiResponse of string</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data",
                 "application/json"
             };
 
@@ -1221,7 +1212,6 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            localVarRequestOptions.Data = inlineObject;
 
 
             // make the HTTP request
@@ -1243,12 +1233,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForIndividualWithHttpInfoAsync(issueRequestId, inlineObject, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForIndividualWithHttpInfoAsync(issueRequestId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1257,15 +1246,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data", 
                 "application/json"
             };
 
@@ -1287,7 +1276,6 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            localVarRequestOptions.Data = inlineObject;
 
 
             // make the HTTP request
@@ -1310,11 +1298,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <returns>string</returns>
-        public string UploadDocumentForOrganization(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?))
+        public string UploadDocumentForOrganization(Guid issueRequestId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForOrganizationWithHttpInfo(issueRequestId, inlineObject1);
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForOrganizationWithHttpInfo(issueRequestId);
             return localVarResponse.Data;
         }
 
@@ -1323,13 +1310,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <returns>ApiResponse of string</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data",
                 "application/json"
             };
 
@@ -1351,7 +1338,6 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            localVarRequestOptions.Data = inlineObject1;
 
 
             // make the HTTP request
@@ -1373,12 +1359,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForOrganizationWithHttpInfoAsync(issueRequestId, inlineObject1, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForOrganizationWithHttpInfoAsync(issueRequestId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1387,15 +1372,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="inlineObject1"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data", 
                 "application/json"
             };
 
@@ -1417,7 +1402,6 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            localVarRequestOptions.Data = inlineObject1;
 
 
             // make the HTTP request

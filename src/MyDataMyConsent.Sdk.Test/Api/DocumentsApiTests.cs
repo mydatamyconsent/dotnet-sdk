@@ -128,8 +128,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid issueRequestId = null;
-            //InlineObject? inlineObject = null;
-            //var response = instance.UploadDocumentForIndividual(issueRequestId, inlineObject);
+            //var response = instance.UploadDocumentForIndividual(issueRequestId);
             //Assert.IsType<string>(response);
         }
 
@@ -141,8 +140,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid issueRequestId = null;
-            //InlineObject1? inlineObject1 = null;
-            //var response = instance.UploadDocumentForOrganization(issueRequestId, inlineObject1);
+            //var response = instance.UploadDocumentForOrganization(issueRequestId);
             //Assert.IsType<string>(response);
         }
     }

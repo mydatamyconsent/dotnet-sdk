@@ -50,8 +50,6 @@ docs/Identifier.md
 docs/IdentifierStringKeyValuePair.md
 docs/IdentitySupportedFields.md
 docs/IndividualDataConsentRequestResponse.md
-docs/InlineObject.md
-docs/InlineObject1.md
 docs/IssuedDocument.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
@@ -132,8 +130,6 @@ src/MyDataMyConsent.Sdk.Test/Models/IdentifierStringKeyValuePairTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IdentifierTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IdentitySupportedFieldsTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IndividualDataConsentRequestResponseTests.cs
-src/MyDataMyConsent.Sdk.Test/Models/InlineObject1Tests.cs
-src/MyDataMyConsent.Sdk.Test/Models/InlineObjectTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IssuedDocumentPaginatedListTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IssuedDocumentTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/LifeTests.cs
@@ -231,8 +227,6 @@ src/MyDataMyConsent.Sdk/Models/Identifier.cs
 src/MyDataMyConsent.Sdk/Models/IdentifierStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/IdentitySupportedFields.cs
 src/MyDataMyConsent.Sdk/Models/IndividualDataConsentRequestResponse.cs
-src/MyDataMyConsent.Sdk/Models/InlineObject.cs
-src/MyDataMyConsent.Sdk/Models/InlineObject1.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocument.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocumentPaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/Life.cs
