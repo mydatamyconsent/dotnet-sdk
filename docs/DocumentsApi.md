@@ -78,8 +78,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
+| **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **0** | Error |  -  |
@@ -88,7 +88,7 @@ No authorization required
 
 <a name="getissueddocuments"></a>
 # **GetIssuedDocuments**
-> IssuedDocumentPaginatedList GetIssuedDocuments (Guid documentTypeId, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageSize = null, int? pageNo = null)
+> IssuedDocumentPaginatedList GetIssuedDocuments (Guid documentTypeId, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get paginated list of issued documents of given document type.
 
@@ -112,13 +112,13 @@ namespace Example
             var documentTypeId = "documentTypeId_example";  // Guid | Document type id.
             var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From DateTime. (optional) 
             var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To DateTime. (optional) 
-            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
                 // Get paginated list of issued documents of given document type.
-                IssuedDocumentPaginatedList result = apiInstance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+                IssuedDocumentPaginatedList result = apiInstance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -139,8 +139,8 @@ Name | Type | Description  | Notes
  **documentTypeId** | **Guid**| Document type id. | 
  **fromDateTime** | **DateTime?**| From DateTime. | [optional] 
  **toDateTime** | **DateTime?**| To DateTime. | [optional] 
- **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
 ### Return type
 
@@ -159,8 +159,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
+| **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
 | **0** | Error |  -  |
 
@@ -233,8 +233,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
+| **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
 | **0** | Error |  -  |
 
@@ -305,9 +305,9 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **500** | Server Error |  -  |
 | **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -377,16 +377,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **500** | Server Error |  -  |
 | **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="uploaddocumentforindividual"></a>
 # **UploadDocumentForIndividual**
-> string UploadDocumentForIndividual (Guid issueRequestId)
+> string UploadDocumentForIndividual (Guid issueRequestId, System.IO.Stream? formFile = null)
 
 Upload a document for issuance request of individual.
 
@@ -408,11 +408,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
             var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
 
             try
             {
                 // Upload a document for issuance request of individual.
-                string result = apiInstance.UploadDocumentForIndividual(issueRequestId);
+                string result = apiInstance.UploadDocumentForIndividual(issueRequestId, formFile);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -431,6 +432,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **formFile** | **System.IO.Stream?****System.IO.Stream?**|  | [optional] 
 
 ### Return type
 
@@ -442,23 +444,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **500** | Server Error |  -  |
 | **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="uploaddocumentfororganization"></a>
 # **UploadDocumentForOrganization**
-> string UploadDocumentForOrganization (Guid issueRequestId)
+> string UploadDocumentForOrganization (Guid issueRequestId, System.IO.Stream? formFile = null)
 
 Upload a document for issuance request of organization.
 
@@ -480,11 +482,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
             var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
 
             try
             {
                 // Upload a document for issuance request of organization.
-                string result = apiInstance.UploadDocumentForOrganization(issueRequestId);
+                string result = apiInstance.UploadDocumentForOrganization(issueRequestId, formFile);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -503,6 +506,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **formFile** | **System.IO.Stream?****System.IO.Stream?**|  | [optional] 
 
 ### Return type
 
@@ -514,16 +518,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Server Error |  -  |
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
+| **500** | Server Error |  -  |
 | **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

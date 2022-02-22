@@ -89,14 +89,6 @@ namespace MyDataMyConsent.Sdk.Test.Model
         {
             // TODO unit test for the property 'Detail'
         }
-        /// <summary>
-        /// Test the property 'Instance'
-        /// </summary>
-        [Fact]
-        public void InstanceTest()
-        {
-            // TODO unit test for the property 'Instance'
-        }
 
     }
 

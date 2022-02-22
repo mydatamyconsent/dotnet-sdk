@@ -38,14 +38,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="title">title.</param>
         /// <param name="status">status.</param>
         /// <param name="detail">detail.</param>
-        /// <param name="instance">instance.</param>
-        public ProblemDetails(string? type = default(string?), string? title = default(string?), int? status = default(int?), string? detail = default(string?), string? instance = default(string?))
+        public ProblemDetails(string? type = default(string?), string? title = default(string?), int? status = default(int?), string? detail = default(string?))
         {
             this.Type = type;
             this.Title = title;
             this.Status = status;
             this.Detail = detail;
-            this.Instance = instance;
         }
 
         /// <summary>
@@ -73,12 +71,6 @@ namespace MyDataMyConsent.Sdk.Models
         public string? Detail { get; set; }
 
         /// <summary>
-        /// Gets or Sets Instance
-        /// </summary>
-        [DataMember(Name = "instance", EmitDefaultValue = true)]
-        public string? Instance { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,7 +82,6 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Detail: ").Append(Detail).Append("\n");
-            sb.Append("  Instance: ").Append(Instance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,11 +136,6 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Detail == input.Detail ||
                     (this.Detail != null &&
                     this.Detail.Equals(input.Detail))
-                ) && 
-                (
-                    this.Instance == input.Instance ||
-                    (this.Instance != null &&
-                    this.Instance.Equals(input.Instance))
                 );
         }
 
@@ -177,10 +163,6 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.Detail != null)
                 {
                     hashCode = (hashCode * 59) + this.Detail.GetHashCode();
-                }
-                if (this.Instance != null)
-                {
-                    hashCode = (hashCode * 59) + this.Instance.GetHashCode();
                 }
                 return hashCode;
             }

@@ -77,9 +77,9 @@ namespace MyDataMyConsent.Sdk.Test.Api
             //Guid documentTypeId = null;
             //DateTime? fromDateTime = null;
             //DateTime? toDateTime = null;
-            //int? pageSize = null;
             //int? pageNo = null;
-            //var response = instance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
+            //int? pageSize = null;
+            //var response = instance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize);
             //Assert.IsType<IssuedDocumentPaginatedList>(response);
         }
 
@@ -128,7 +128,8 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid issueRequestId = null;
-            //var response = instance.UploadDocumentForIndividual(issueRequestId);
+            //System.IO.Stream? formFile = null;
+            //var response = instance.UploadDocumentForIndividual(issueRequestId, formFile);
             //Assert.IsType<string>(response);
         }
 
@@ -140,7 +141,8 @@ namespace MyDataMyConsent.Sdk.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid issueRequestId = null;
-            //var response = instance.UploadDocumentForOrganization(issueRequestId);
+            //System.IO.Stream? formFile = null;
+            //var response = instance.UploadDocumentForOrganization(issueRequestId, formFile);
             //Assert.IsType<string>(response);
         }
     }
