@@ -71,7 +71,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var requestId = "requestId_example";  // Guid | Individual consent request id.
 

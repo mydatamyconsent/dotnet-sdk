@@ -1,6 +1,6 @@
 # MyDataMyConsent.Sdk.Api.DataConsentsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -43,7 +43,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var documentId = "documentId_example";  // Guid | Document id.
@@ -116,7 +116,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var documentId = "documentId_example";  // Guid | Document id.
@@ -189,7 +189,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -260,7 +260,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -331,7 +331,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -402,7 +402,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -473,7 +473,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -544,7 +544,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
@@ -617,7 +617,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var documentId = "documentId_example";  // Guid | Document Id.
@@ -690,7 +690,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
@@ -763,7 +763,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
@@ -846,7 +846,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
@@ -925,7 +925,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
             var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
@@ -1004,7 +1004,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var accountId = "accountId_example";  // Guid | Account id.
@@ -1087,7 +1087,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
 
@@ -1158,7 +1158,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
             var consentId = "consentId_example";  // Guid | Consent id.
             var documentId = "documentId_example";  // Guid | Document Id.

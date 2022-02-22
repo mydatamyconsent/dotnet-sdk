@@ -1,6 +1,6 @@
 # MyDataMyConsent.Sdk.Api.DataProviderDiscoveryApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProviderDiscoveryApi(config);
             var providerId = "providerId_example";  // string | Provider id.
 
@@ -102,7 +102,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProviderDiscoveryApi(config);
             var accountType = "accountType_example";  // string? | Account type. (optional) 
             var documentType = "documentType_example";  // string? | Document type. (optional) 

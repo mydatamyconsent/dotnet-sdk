@@ -1,6 +1,6 @@
 # MyDataMyConsent.Sdk.Api.DataConsentRequestsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var requestId = "requestId_example";  // Guid | Individual consent request id.
 
@@ -107,7 +107,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var requestId = "requestId_example";  // Guid | Organization consent request id.
 
@@ -179,7 +179,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var createIndividualDataConsentRequest = new CreateIndividualDataConsentRequest(); // CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
 
@@ -252,7 +252,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var createOrganizationDataConsentRequest = new CreateOrganizationDataConsentRequest(); // CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
 
@@ -325,7 +325,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
@@ -404,7 +404,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var startDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start date time. (optional) 
@@ -483,7 +483,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var requestId = "requestId_example";  // Guid | Individual consent request id.
 
@@ -554,7 +554,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
             var requestId = "requestId_example";  // Guid | Organization consent request id.
 

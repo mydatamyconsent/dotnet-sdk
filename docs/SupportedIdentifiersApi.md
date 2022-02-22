@@ -1,6 +1,6 @@
 # MyDataMyConsent.Sdk.Api.SupportedIdentifiersApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,7 +28,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new SupportedIdentifiersApi(config);
             var countryIso2Code = "countryIso2Code_example";  // string | Country ISO 2 code.
 

@@ -1,6 +1,6 @@
 # MyDataMyConsent.Sdk.Api.DataProcessingAgreementsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var createDataProcessingAgreementRequestModel = new CreateDataProcessingAgreementRequestModel?(); // CreateDataProcessingAgreementRequestModel? | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional) 
 
@@ -104,7 +104,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
 
@@ -176,7 +176,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
 
@@ -249,7 +249,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
             var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
@@ -322,7 +322,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
 
@@ -394,7 +394,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
+            config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
             var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel?(); // UpdateDataProcessingAgreementRequestModel? | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional) 

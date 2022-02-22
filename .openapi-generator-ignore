@@ -1,3 +1,4 @@
 # OpenAPI Generator Ignore
 appveyor.yml
 git_push.sh
+src/MyDataMyConsent.Sdk.Test/
