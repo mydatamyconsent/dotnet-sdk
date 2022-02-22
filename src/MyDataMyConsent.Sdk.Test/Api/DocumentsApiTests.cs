@@ -74,7 +74,7 @@ namespace MyDataMyConsent.Sdk.Test.Api
         public void GetIssuedDocumentsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Guid? documentTypeId = null;
+            //Guid documentTypeId = null;
             //DateTime? fromDateTime = null;
             //DateTime? toDateTime = null;
             //int? pageSize = null;
@@ -97,15 +97,53 @@ namespace MyDataMyConsent.Sdk.Test.Api
         }
 
         /// <summary>
-        /// Test IssueDocument
+        /// Test IssueDocumentToIndividual
         /// </summary>
         [Fact]
-        public void IssueDocumentTest()
+        public void IssueDocumentToIndividualTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //DocumentIssueRequest documentIssueRequest = null;
-            //var response = instance.IssueDocument(documentIssueRequest);
-            //Assert.IsType<IssuedDocument>(response);
+            //var response = instance.IssueDocumentToIndividual(documentIssueRequest);
+            //Assert.IsType<DocumentIssueRequestDetails>(response);
+        }
+
+        /// <summary>
+        /// Test IssueDocumentToOrganization
+        /// </summary>
+        [Fact]
+        public void IssueDocumentToOrganizationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //DocumentIssueRequest documentIssueRequest = null;
+            //var response = instance.IssueDocumentToOrganization(documentIssueRequest);
+            //Assert.IsType<DocumentIssueRequestDetails>(response);
+        }
+
+        /// <summary>
+        /// Test UploadDocumentForIndividual
+        /// </summary>
+        [Fact]
+        public void UploadDocumentForIndividualTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid issueRequestId = null;
+            //InlineObject? inlineObject = null;
+            //var response = instance.UploadDocumentForIndividual(issueRequestId, inlineObject);
+            //Assert.IsType<string>(response);
+        }
+
+        /// <summary>
+        /// Test UploadDocumentForOrganization
+        /// </summary>
+        [Fact]
+        public void UploadDocumentForOrganizationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid issueRequestId = null;
+            //InlineObject1? inlineObject1 = null;
+            //var response = instance.UploadDocumentForOrganization(issueRequestId, inlineObject1);
+            //Assert.IsType<string>(response);
         }
     }
 }

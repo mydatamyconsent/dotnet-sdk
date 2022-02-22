@@ -26,7 +26,7 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// IssuedDocument
+    /// Issued Document Identifier.
     /// </summary>
     [DataContract(Name = "IssuedDocument")]
     public partial class IssuedDocument : IEquatable<IssuedDocument>
@@ -34,14 +34,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="IssuedDocument" /> class.
         /// </summary>
-        /// <param name="documentId">documentId.</param>
-        /// <param name="identifier">identifier.</param>
-        /// <param name="documentType">documentType.</param>
-        /// <param name="issuedTo">issuedTo.</param>
-        /// <param name="issuedAtUtc">issuedAtUtc.</param>
-        public IssuedDocument(Guid documentId = default(Guid), string? identifier = default(string?), string? documentType = default(string?), string? issuedTo = default(string?), DateTime issuedAtUtc = default(DateTime))
+        [JsonConstructorAttribute]
+        protected IssuedDocument() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuedDocument" /> class.
+        /// </summary>
+        /// <param name="id">Document Identifier. (required).</param>
+        /// <param name="identifier">Document Identifier. eg: GJ05FG67866586. (required).</param>
+        /// <param name="documentType">Document type name. eg: Driving License. (required).</param>
+        /// <param name="issuedTo">issuedTo (required).</param>
+        /// <param name="issuedAtUtc">issuedAtUtc (required).</param>
+        public IssuedDocument(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime))
         {
-            this.DocumentId = documentId;
+            this.Id = id;
             this.Identifier = identifier;
             this.DocumentType = documentType;
             this.IssuedTo = issuedTo;
@@ -49,33 +54,36 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Gets or Sets DocumentId
+        /// Document Identifier.
         /// </summary>
-        [DataMember(Name = "documentId", EmitDefaultValue = false)]
-        public Guid DocumentId { get; set; }
+        /// <value>Document Identifier.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Document Identifier. eg: GJ05FG67866586.
         /// </summary>
-        [DataMember(Name = "identifier", EmitDefaultValue = true)]
-        public string? Identifier { get; set; }
+        /// <value>Document Identifier. eg: GJ05FG67866586.</value>
+        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
+        public string Identifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentType
+        /// Document type name. eg: Driving License.
         /// </summary>
-        [DataMember(Name = "documentType", EmitDefaultValue = true)]
-        public string? DocumentType { get; set; }
+        /// <value>Document type name. eg: Driving License.</value>
+        [DataMember(Name = "documentType", IsRequired = true, EmitDefaultValue = false)]
+        public string DocumentType { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedTo
         /// </summary>
-        [DataMember(Name = "issuedTo", EmitDefaultValue = true)]
-        public string? IssuedTo { get; set; }
+        [DataMember(Name = "issuedTo", IsRequired = true, EmitDefaultValue = false)]
+        public string IssuedTo { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedAtUtc
         /// </summary>
-        [DataMember(Name = "issuedAtUtc", EmitDefaultValue = false)]
+        [DataMember(Name = "issuedAtUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime IssuedAtUtc { get; set; }
 
         /// <summary>
@@ -86,7 +94,7 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class IssuedDocument {\n");
-            sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Identifier: ").Append(Identifier).Append("\n");
             sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
             sb.Append("  IssuedTo: ").Append(IssuedTo).Append("\n");
@@ -127,9 +135,9 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
-                    this.DocumentId == input.DocumentId ||
-                    (this.DocumentId != null &&
-                    this.DocumentId.Equals(input.DocumentId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.Identifier == input.Identifier ||
@@ -162,9 +170,9 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DocumentId != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 if (this.Identifier != null)
                 {

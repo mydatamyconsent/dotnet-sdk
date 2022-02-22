@@ -31,6 +31,8 @@ docs/DigitalSignature.md
 docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
+docs/DocumentIssueRequestDetails.md
+docs/DocumentReceiver.md
 docs/DocumentSubCategoryType.md
 docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
@@ -48,6 +50,8 @@ docs/Identifier.md
 docs/IdentifierStringKeyValuePair.md
 docs/IdentitySupportedFields.md
 docs/IndividualDataConsentRequestResponse.md
+docs/InlineObject.md
+docs/InlineObject1.md
 docs/IssuedDocument.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
@@ -65,7 +69,11 @@ docs/PushUriResponse.md
 docs/Receiver.md
 docs/ReceiverType.md
 docs/SharedWith.md
+docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
+docs/SupportedIdentifier.md
+docs/SupportedIdentifiersApi.md
+docs/SupportedIdentifiersByCountry.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -80,6 +88,7 @@ src/MyDataMyConsent.Sdk.Test/Api/DataProcessingAgreementsApiTests.cs
 src/MyDataMyConsent.Sdk.Test/Api/DataProviderDiscoveryApiTests.cs
 src/MyDataMyConsent.Sdk.Test/Api/DigiLockerCompatIssuerApiTests.cs
 src/MyDataMyConsent.Sdk.Test/Api/DocumentsApiTests.cs
+src/MyDataMyConsent.Sdk.Test/Api/SupportedIdentifiersApiTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/ActivityTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/ApprovedConsentRequestTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/BankAccountTypeTests.cs
@@ -103,7 +112,9 @@ src/MyDataMyConsent.Sdk.Test/Models/DataProviderPaginatedListTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DataProviderTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DigitalSignatureTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentCategoryTypeTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/DocumentIssueRequestDetailsTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentIssueRequestTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/DocumentReceiverTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentSubCategoryTypeTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/DocumentTypePaginatedListTests.cs
@@ -121,6 +132,8 @@ src/MyDataMyConsent.Sdk.Test/Models/IdentifierStringKeyValuePairTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IdentifierTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IdentitySupportedFieldsTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IndividualDataConsentRequestResponseTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/InlineObject1Tests.cs
+src/MyDataMyConsent.Sdk.Test/Models/InlineObjectTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IssuedDocumentPaginatedListTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/IssuedDocumentTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/LifeTests.cs
@@ -138,7 +151,10 @@ src/MyDataMyConsent.Sdk.Test/Models/PushUriResponseTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/ReceiverTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/ReceiverTypeTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/SharedWithTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/StringStringKeyValuePairTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/SupportedEntityTypeTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/SupportedIdentifierTests.cs
+src/MyDataMyConsent.Sdk.Test/Models/SupportedIdentifiersByCountryTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/UpdateDataProcessingAgreementRequestModelTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/UriDetailsTests.cs
 src/MyDataMyConsent.Sdk.Test/Models/UserAccountFinancialTransactionsDtoPaginatedListTests.cs
@@ -154,6 +170,7 @@ src/MyDataMyConsent.Sdk/Api/DataProcessingAgreementsApi.cs
 src/MyDataMyConsent.Sdk/Api/DataProviderDiscoveryApi.cs
 src/MyDataMyConsent.Sdk/Api/DigiLockerCompatIssuerApi.cs
 src/MyDataMyConsent.Sdk/Api/DocumentsApi.cs
+src/MyDataMyConsent.Sdk/Api/SupportedIdentifiersApi.cs
 src/MyDataMyConsent.Sdk/Client/ApiClient.cs
 src/MyDataMyConsent.Sdk/Client/ApiException.cs
 src/MyDataMyConsent.Sdk/Client/ApiResponse.cs
@@ -196,6 +213,8 @@ src/MyDataMyConsent.Sdk/Models/DigitalSignature.cs
 src/MyDataMyConsent.Sdk/Models/Document.cs
 src/MyDataMyConsent.Sdk/Models/DocumentCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequest.cs
+src/MyDataMyConsent.Sdk/Models/DocumentIssueRequestDetails.cs
+src/MyDataMyConsent.Sdk/Models/DocumentReceiver.cs
 src/MyDataMyConsent.Sdk/Models/DocumentSubCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentTypePaginatedList.cs
@@ -212,6 +231,8 @@ src/MyDataMyConsent.Sdk/Models/Identifier.cs
 src/MyDataMyConsent.Sdk/Models/IdentifierStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/IdentitySupportedFields.cs
 src/MyDataMyConsent.Sdk/Models/IndividualDataConsentRequestResponse.cs
+src/MyDataMyConsent.Sdk/Models/InlineObject.cs
+src/MyDataMyConsent.Sdk/Models/InlineObject1.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocument.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocumentPaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/Life.cs
@@ -229,7 +250,10 @@ src/MyDataMyConsent.Sdk/Models/PushUriResponse.cs
 src/MyDataMyConsent.Sdk/Models/Receiver.cs
 src/MyDataMyConsent.Sdk/Models/ReceiverType.cs
 src/MyDataMyConsent.Sdk/Models/SharedWith.cs
+src/MyDataMyConsent.Sdk/Models/StringStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/SupportedEntityType.cs
+src/MyDataMyConsent.Sdk/Models/SupportedIdentifier.cs
+src/MyDataMyConsent.Sdk/Models/SupportedIdentifiersByCountry.cs
 src/MyDataMyConsent.Sdk/Models/UpdateDataProcessingAgreementRequestModel.cs
 src/MyDataMyConsent.Sdk/Models/UriDetails.cs
 src/MyDataMyConsent.Sdk/Models/UserAccountFinancialTransactionsDto.cs

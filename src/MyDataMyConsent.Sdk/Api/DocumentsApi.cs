@@ -46,31 +46,31 @@ namespace MyDataMyConsent.Sdk.Api
         /// <returns>ApiResponse of IssuedDocument</returns>
         ApiResponse<IssuedDocument> GetIssuedDocumentByIdWithHttpInfo(Guid documentId);
         /// <summary>
-        /// Get issued documents.
+        /// Get paginated list of issued documents of given document type.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <returns>IssuedDocumentPaginatedList</returns>
-        IssuedDocumentPaginatedList GetIssuedDocuments(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?));
+        IssuedDocumentPaginatedList GetIssuedDocuments(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?));
 
         /// <summary>
-        /// Get issued documents.
+        /// Get paginated list of issued documents of given document type.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <returns>ApiResponse of IssuedDocumentPaginatedList</returns>
-        ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?));
+        ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?));
         /// <summary>
         /// Get registered document types.
         /// </summary>
@@ -92,23 +92,81 @@ namespace MyDataMyConsent.Sdk.Api
         /// <returns>ApiResponse of DocumentTypePaginatedList</returns>
         ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
-        /// Issue a new document.
+        /// Issue a new document to an individual user.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
-        /// <returns>IssuedDocument</returns>
-        IssuedDocument IssueDocument(DocumentIssueRequest documentIssueRequest);
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>DocumentIssueRequestDetails</returns>
+        DocumentIssueRequestDetails IssueDocumentToIndividual(DocumentIssueRequest documentIssueRequest);
 
         /// <summary>
-        /// Issue a new document.
+        /// Issue a new document to an individual user.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
-        /// <returns>ApiResponse of IssuedDocument</returns>
-        ApiResponse<IssuedDocument> IssueDocumentWithHttpInfo(DocumentIssueRequest documentIssueRequest);
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
+        ApiResponse<DocumentIssueRequestDetails> IssueDocumentToIndividualWithHttpInfo(DocumentIssueRequest documentIssueRequest);
+        /// <summary>
+        /// Issue a new document to an organization.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>DocumentIssueRequestDetails</returns>
+        DocumentIssueRequestDetails IssueDocumentToOrganization(DocumentIssueRequest documentIssueRequest);
+
+        /// <summary>
+        /// Issue a new document to an organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
+        ApiResponse<DocumentIssueRequestDetails> IssueDocumentToOrganizationWithHttpInfo(DocumentIssueRequest documentIssueRequest);
+        /// <summary>
+        /// Upload a document for issuance request of individual.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>string</returns>
+        string UploadDocumentForIndividual(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?));
+
+        /// <summary>
+        /// Upload a document for issuance request of individual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?));
+        /// <summary>
+        /// Upload a document for issuance request of organization.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <returns>string</returns>
+        string UploadDocumentForOrganization(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?));
+
+        /// <summary>
+        /// Upload a document for issuance request of organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?));
         #endregion Synchronous Operations
     }
 
@@ -142,36 +200,36 @@ namespace MyDataMyConsent.Sdk.Api
         /// <returns>Task of ApiResponse (IssuedDocument)</returns>
         System.Threading.Tasks.Task<ApiResponse<IssuedDocument>> GetIssuedDocumentByIdWithHttpInfoAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get issued documents.
+        /// Get paginated list of issued documents of given document type.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IssuedDocumentPaginatedList</returns>
-        System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get issued documents.
+        /// Get paginated list of issued documents of given document type.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IssuedDocumentPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get registered document types.
         /// </summary>
@@ -198,28 +256,101 @@ namespace MyDataMyConsent.Sdk.Api
         /// <returns>Task of ApiResponse (DocumentTypePaginatedList)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Issue a new document.
+        /// Issue a new document to an individual user.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IssuedDocument</returns>
-        System.Threading.Tasks.Task<IssuedDocument> IssueDocumentAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DocumentIssueRequestDetails</returns>
+        System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToIndividualAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Issue a new document.
+        /// Issue a new document to an individual user.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IssuedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedDocument>> IssueDocumentWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToIndividualWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Issue a new document to an organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentIssueRequestDetails</returns>
+        System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToOrganizationAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Issue a new document to an organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToOrganizationWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Upload a document for issuance request of individual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Upload a document for issuance request of individual.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Upload a document for issuance request of organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Upload a document for issuance request of organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -463,32 +594,32 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get issued documents. 
+        /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <returns>IssuedDocumentPaginatedList</returns>
-        public IssuedDocumentPaginatedList GetIssuedDocuments(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?))
+        public IssuedDocumentPaginatedList GetIssuedDocuments(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> localVarResponse = GetIssuedDocumentsWithHttpInfo(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get issued documents. 
+        /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <returns>ApiResponse of IssuedDocumentPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -512,10 +643,7 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (documentTypeId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "documentTypeId", documentTypeId));
-            }
+            localVarRequestOptions.PathParameters.Add("documentTypeId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentTypeId)); // path parameter
             if (fromDateTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "fromDateTime", fromDateTime));
@@ -535,7 +663,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<IssuedDocumentPaginatedList>("/v1/documents/issued", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<IssuedDocumentPaginatedList>("/v1/documents/issued/{documentTypeId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIssuedDocuments", localVarResponse);
@@ -549,34 +677,34 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get issued documents. 
+        /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IssuedDocumentPaginatedList</returns>
-        public async System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> localVarResponse = await GetIssuedDocumentsWithHttpInfoAsync(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get issued documents. 
+        /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId"> (optional)</param>
-        /// <param name="fromDateTime"> (optional)</param>
-        /// <param name="toDateTime"> (optional)</param>
-        /// <param name="pageSize"> (optional, default to 25)</param>
-        /// <param name="pageNo"> (optional, default to 1)</param>
+        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="fromDateTime">From DateTime. (optional)</param>
+        /// <param name="toDateTime">To DateTime. (optional)</param>
+        /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
+        /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IssuedDocumentPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageSize = default(int?), int? pageNo = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -601,10 +729,7 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (documentTypeId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "documentTypeId", documentTypeId));
-            }
+            localVarRequestOptions.PathParameters.Add("documentTypeId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentTypeId)); // path parameter
             if (fromDateTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "fromDateTime", fromDateTime));
@@ -624,7 +749,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocumentPaginatedList>("/v1/documents/issued", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocumentPaginatedList>("/v1/documents/issued/{documentTypeId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -779,29 +904,29 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Issue a new document. 
+        /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
-        /// <returns>IssuedDocument</returns>
-        public IssuedDocument IssueDocument(DocumentIssueRequest documentIssueRequest)
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>DocumentIssueRequestDetails</returns>
+        public DocumentIssueRequestDetails IssueDocumentToIndividual(DocumentIssueRequest documentIssueRequest)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> localVarResponse = IssueDocumentWithHttpInfo(documentIssueRequest);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> localVarResponse = IssueDocumentToIndividualWithHttpInfo(documentIssueRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Issue a new document. 
+        /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
-        /// <returns>ApiResponse of IssuedDocument</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> IssueDocumentWithHttpInfo(DocumentIssueRequest documentIssueRequest)
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> IssueDocumentToIndividualWithHttpInfo(DocumentIssueRequest documentIssueRequest)
         {
             // verify the required parameter 'documentIssueRequest' is set
             if (documentIssueRequest == null)
             {
-                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocument");
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocumentToIndividual");
             }
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -831,10 +956,10 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IssuedDocument>("/v1/documents/issue", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DocumentIssueRequestDetails>("/v1/documents/issue/individual", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IssueDocument", localVarResponse);
+                Exception _exception = this.ExceptionFactory("IssueDocumentToIndividual", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -845,31 +970,31 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Issue a new document. 
+        /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IssuedDocument</returns>
-        public async System.Threading.Tasks.Task<IssuedDocument> IssueDocumentAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DocumentIssueRequestDetails</returns>
+        public async System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToIndividualAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> localVarResponse = await IssueDocumentWithHttpInfoAsync(documentIssueRequest, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> localVarResponse = await IssueDocumentToIndividualWithHttpInfoAsync(documentIssueRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Issue a new document. 
+        /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IssuedDocument)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument>> IssueDocumentWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToIndividualWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'documentIssueRequest' is set
             if (documentIssueRequest == null)
             {
-                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocument");
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocumentToIndividual");
             }
 
 
@@ -900,11 +1025,407 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IssuedDocument>("/v1/documents/issue", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DocumentIssueRequestDetails>("/v1/documents/issue/individual", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("IssueDocument", localVarResponse);
+                Exception _exception = this.ExceptionFactory("IssueDocumentToIndividual", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Issue a new document to an organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>DocumentIssueRequestDetails</returns>
+        public DocumentIssueRequestDetails IssueDocumentToOrganization(DocumentIssueRequest documentIssueRequest)
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> localVarResponse = IssueDocumentToOrganizationWithHttpInfo(documentIssueRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Issue a new document to an organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> IssueDocumentToOrganizationWithHttpInfo(DocumentIssueRequest documentIssueRequest)
+        {
+            // verify the required parameter 'documentIssueRequest' is set
+            if (documentIssueRequest == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocumentToOrganization");
+            }
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = documentIssueRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DocumentIssueRequestDetails>("/v1/documents/issue/organization", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("IssueDocumentToOrganization", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Issue a new document to an organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DocumentIssueRequestDetails</returns>
+        public async System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToOrganizationAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> localVarResponse = await IssueDocumentToOrganizationWithHttpInfoAsync(documentIssueRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Issue a new document to an organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToOrganizationWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'documentIssueRequest' is set
+            if (documentIssueRequest == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'documentIssueRequest' when calling DocumentsApi->IssueDocumentToOrganization");
+            }
+
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = documentIssueRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DocumentIssueRequestDetails>("/v1/documents/issue/organization", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("IssueDocumentToOrganization", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of individual. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>string</returns>
+        public string UploadDocumentForIndividual(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForIndividualWithHttpInfo(issueRequestId, inlineObject);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of individual. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <returns>ApiResponse of string</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?))
+        {
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
+            localVarRequestOptions.Data = inlineObject;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<string>("/v1/documents/issue/individual/upload/{issueRequestId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadDocumentForIndividual", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of individual. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForIndividualWithHttpInfoAsync(issueRequestId, inlineObject, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of individual. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, InlineObject? inlineObject = default(InlineObject?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
+            localVarRequestOptions.Data = inlineObject;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/v1/documents/issue/individual/upload/{issueRequestId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadDocumentForIndividual", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <returns>string</returns>
+        public string UploadDocumentForOrganization(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForOrganizationWithHttpInfo(issueRequestId, inlineObject1);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <returns>ApiResponse of string</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForOrganizationWithHttpInfo(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?))
+        {
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
+            localVarRequestOptions.Data = inlineObject1;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<string>("/v1/documents/issue/organization/upload/{issueRequestId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadDocumentForOrganization", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UploadDocumentForOrganizationAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForOrganizationWithHttpInfoAsync(issueRequestId, inlineObject1, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a document for issuance request of organization. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
+        /// <param name="inlineObject1"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForOrganizationWithHttpInfoAsync(Guid issueRequestId, InlineObject1? inlineObject1 = default(InlineObject1?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
+            localVarRequestOptions.Data = inlineObject1;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/v1/documents/issue/organization/upload/{issueRequestId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadDocumentForOrganization", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

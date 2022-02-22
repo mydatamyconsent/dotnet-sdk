@@ -5,9 +5,12 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetIssuedDocumentById**](DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-[**GetIssuedDocuments**](DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued | Get issued documents.
+[**GetIssuedDocuments**](DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
 [**GetRegisteredDocumentTypes**](DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get registered document types.
-[**IssueDocument**](DocumentsApi.md#issuedocument) | **POST** /v1/documents/issue | Issue a new document.
+[**IssueDocumentToIndividual**](DocumentsApi.md#issuedocumenttoindividual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
+[**IssueDocumentToOrganization**](DocumentsApi.md#issuedocumenttoorganization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
+[**UploadDocumentForIndividual**](DocumentsApi.md#uploaddocumentforindividual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
+[**UploadDocumentForOrganization**](DocumentsApi.md#uploaddocumentfororganization) | **POST** /v1/documents/issue/organization/upload/{issueRequestId} | Upload a document for issuance request of organization.
 
 
 <a name="getissueddocumentbyid"></a>
@@ -85,9 +88,9 @@ No authorization required
 
 <a name="getissueddocuments"></a>
 # **GetIssuedDocuments**
-> IssuedDocumentPaginatedList GetIssuedDocuments (Guid? documentTypeId = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageSize = null, int? pageNo = null)
+> IssuedDocumentPaginatedList GetIssuedDocuments (Guid documentTypeId, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageSize = null, int? pageNo = null)
 
-Get issued documents.
+Get paginated list of issued documents of given document type.
 
 ### Example
 ```csharp
@@ -106,15 +109,15 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentTypeId = "documentTypeId_example";  // Guid? |  (optional) 
-            var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? |  (optional) 
-            var pageSize = 25;  // int? |  (optional)  (default to 25)
-            var pageNo = 1;  // int? |  (optional)  (default to 1)
+            var documentTypeId = "documentTypeId_example";  // Guid | Document type id.
+            var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From DateTime. (optional) 
+            var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To DateTime. (optional) 
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
 
             try
             {
-                // Get issued documents.
+                // Get paginated list of issued documents of given document type.
                 IssuedDocumentPaginatedList result = apiInstance.GetIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo);
                 Debug.WriteLine(result);
             }
@@ -133,11 +136,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentTypeId** | **Guid?**|  | [optional] 
- **fromDateTime** | **DateTime?**|  | [optional] 
- **toDateTime** | **DateTime?**|  | [optional] 
- **pageSize** | **int?**|  | [optional] [default to 25]
- **pageNo** | **int?**|  | [optional] [default to 1]
+ **documentTypeId** | **Guid**| Document type id. | 
+ **fromDateTime** | **DateTime?**| From DateTime. | [optional] 
+ **toDateTime** | **DateTime?**| To DateTime. | [optional] 
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
+ **pageNo** | **int?**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -237,11 +240,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="issuedocument"></a>
-# **IssueDocument**
-> IssuedDocument IssueDocument (DocumentIssueRequest documentIssueRequest)
+<a name="issuedocumenttoindividual"></a>
+# **IssueDocumentToIndividual**
+> DocumentIssueRequestDetails IssueDocumentToIndividual (DocumentIssueRequest documentIssueRequest)
 
-Issue a new document.
+Issue a new document to an individual user.
 
 ### Example
 ```csharp
@@ -253,24 +256,24 @@ using MyDataMyConsent.Sdk.Models;
 
 namespace Example
 {
-    public class IssueDocumentExample
+    public class IssueDocumentToIndividualExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new DocumentsApi(config);
-            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
             try
             {
-                // Issue a new document.
-                IssuedDocument result = apiInstance.IssueDocument(documentIssueRequest);
+                // Issue a new document to an individual user.
+                DocumentIssueRequestDetails result = apiInstance.IssueDocumentToIndividual(documentIssueRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DocumentsApi.IssueDocument: " + e.Message );
+                Debug.Print("Exception when calling DocumentsApi.IssueDocumentToIndividual: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -283,11 +286,231 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest. | 
+ **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | 
 
 ### Return type
 
-[**IssuedDocument**](IssuedDocument.md)
+[**DocumentIssueRequestDetails**](DocumentIssueRequestDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="issuedocumenttoorganization"></a>
+# **IssueDocumentToOrganization**
+> DocumentIssueRequestDetails IssueDocumentToOrganization (DocumentIssueRequest documentIssueRequest)
+
+Issue a new document to an organization.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class IssueDocumentToOrganizationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new DocumentsApi(config);
+            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+
+            try
+            {
+                // Issue a new document to an organization.
+                DocumentIssueRequestDetails result = apiInstance.IssueDocumentToOrganization(documentIssueRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DocumentsApi.IssueDocumentToOrganization: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | 
+
+### Return type
+
+[**DocumentIssueRequestDetails**](DocumentIssueRequestDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploaddocumentforindividual"></a>
+# **UploadDocumentForIndividual**
+> string UploadDocumentForIndividual (Guid issueRequestId, InlineObject? inlineObject = null)
+
+Upload a document for issuance request of individual.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class UploadDocumentForIndividualExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new DocumentsApi(config);
+            var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var inlineObject = new InlineObject?(); // InlineObject? |  (optional) 
+
+            try
+            {
+                // Upload a document for issuance request of individual.
+                string result = apiInstance.UploadDocumentForIndividual(issueRequestId, inlineObject);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DocumentsApi.UploadDocumentForIndividual: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **inlineObject** | [**InlineObject?**](InlineObject?.md)|  | [optional] 
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | Server Error |  -  |
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploaddocumentfororganization"></a>
+# **UploadDocumentForOrganization**
+> string UploadDocumentForOrganization (Guid issueRequestId, InlineObject1? inlineObject1 = null)
+
+Upload a document for issuance request of organization.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class UploadDocumentForOrganizationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new DocumentsApi(config);
+            var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var inlineObject1 = new InlineObject1?(); // InlineObject1? |  (optional) 
+
+            try
+            {
+                // Upload a document for issuance request of organization.
+                string result = apiInstance.UploadDocumentForOrganization(issueRequestId, inlineObject1);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DocumentsApi.UploadDocumentForOrganization: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **inlineObject1** | [**InlineObject1?**](InlineObject1?.md)|  | [optional] 
+
+### Return type
+
+**string**
 
 ### Authorization
 

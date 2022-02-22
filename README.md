@@ -134,9 +134,13 @@ Class | Method | HTTP request | Description
 *DataProviderDiscoveryApi* | [**GetDataProviders**](docs/DataProviderDiscoveryApi.md#getdataproviders) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 *DigiLockerCompatIssuerApi* | [**DigilockerCompatIssueDocument**](docs/DigiLockerCompatIssuerApi.md#digilockercompatissuedocument) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document.
 *DocumentsApi* | [**GetIssuedDocumentById**](docs/DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-*DocumentsApi* | [**GetIssuedDocuments**](docs/DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued | Get issued documents.
+*DocumentsApi* | [**GetIssuedDocuments**](docs/DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
 *DocumentsApi* | [**GetRegisteredDocumentTypes**](docs/DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get registered document types.
-*DocumentsApi* | [**IssueDocument**](docs/DocumentsApi.md#issuedocument) | **POST** /v1/documents/issue | Issue a new document.
+*DocumentsApi* | [**IssueDocumentToIndividual**](docs/DocumentsApi.md#issuedocumenttoindividual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
+*DocumentsApi* | [**IssueDocumentToOrganization**](docs/DocumentsApi.md#issuedocumenttoorganization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
+*DocumentsApi* | [**UploadDocumentForIndividual**](docs/DocumentsApi.md#uploaddocumentforindividual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
+*DocumentsApi* | [**UploadDocumentForOrganization**](docs/DocumentsApi.md#uploaddocumentfororganization) | **POST** /v1/documents/issue/organization/upload/{issueRequestId} | Upload a document for issuance request of organization.
+*SupportedIdentifiersApi* | [**GetAllSupportedIdentifiers**](docs/SupportedIdentifiersApi.md#getallsupportedidentifiers) | **GET** /v1/supported-identifiers/{countryIso2Code} | Get all supported identifiers by country.
 
 
 <a name="documentation-for-models"></a>
@@ -167,6 +171,8 @@ Class | Method | HTTP request | Description
  - [Models.Document](docs/Document.md)
  - [Models.DocumentCategoryType](docs/DocumentCategoryType.md)
  - [Models.DocumentIssueRequest](docs/DocumentIssueRequest.md)
+ - [Models.DocumentIssueRequestDetails](docs/DocumentIssueRequestDetails.md)
+ - [Models.DocumentReceiver](docs/DocumentReceiver.md)
  - [Models.DocumentSubCategoryType](docs/DocumentSubCategoryType.md)
  - [Models.DocumentType](docs/DocumentType.md)
  - [Models.DocumentTypePaginatedList](docs/DocumentTypePaginatedList.md)
@@ -183,6 +189,8 @@ Class | Method | HTTP request | Description
  - [Models.IdentifierStringKeyValuePair](docs/IdentifierStringKeyValuePair.md)
  - [Models.IdentitySupportedFields](docs/IdentitySupportedFields.md)
  - [Models.IndividualDataConsentRequestResponse](docs/IndividualDataConsentRequestResponse.md)
+ - [Models.InlineObject](docs/InlineObject.md)
+ - [Models.InlineObject1](docs/InlineObject1.md)
  - [Models.IssuedDocument](docs/IssuedDocument.md)
  - [Models.IssuedDocumentPaginatedList](docs/IssuedDocumentPaginatedList.md)
  - [Models.Life](docs/Life.md)
@@ -200,7 +208,10 @@ Class | Method | HTTP request | Description
  - [Models.Receiver](docs/Receiver.md)
  - [Models.ReceiverType](docs/ReceiverType.md)
  - [Models.SharedWith](docs/SharedWith.md)
+ - [Models.StringStringKeyValuePair](docs/StringStringKeyValuePair.md)
  - [Models.SupportedEntityType](docs/SupportedEntityType.md)
+ - [Models.SupportedIdentifier](docs/SupportedIdentifier.md)
+ - [Models.SupportedIdentifiersByCountry](docs/SupportedIdentifiersByCountry.md)
  - [Models.UpdateDataProcessingAgreementRequestModel](docs/UpdateDataProcessingAgreementRequestModel.md)
  - [Models.UriDetails](docs/UriDetails.md)
  - [Models.UserAccountFinancialTransactionsDto](docs/UserAccountFinancialTransactionsDto.md)
