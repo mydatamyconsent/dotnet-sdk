@@ -9,7 +9,9 @@ Method | HTTP request | Description
 
 <a name="getallsupportedidentifiers"></a>
 # **GetAllSupportedIdentifiers**
-> SupportedIdentifiersByCountry GetAllSupportedIdentifiers (string countryIso2Code)
+> SupportedIdentifier GetAllSupportedIdentifiers (string countryIso2Code)
+
+Get all supported identifiers by country.
 
 Get all supported identifiers by country.
 
@@ -35,7 +37,7 @@ namespace Example
             try
             {
                 // Get all supported identifiers by country.
-                SupportedIdentifiersByCountry result = apiInstance.GetAllSupportedIdentifiers(countryIso2Code);
+                SupportedIdentifier result = apiInstance.GetAllSupportedIdentifiers(countryIso2Code);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupportedIdentifiersByCountry**](SupportedIdentifiersByCountry.md)
+[**SupportedIdentifier**](SupportedIdentifier.md)
 
 ### Authorization
 
@@ -74,7 +76,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **404** | Not Found |  -  |
-| **0** | Error |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

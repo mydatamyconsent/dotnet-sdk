@@ -66,8 +66,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// <summary>
         /// Create a individual data consent request.
         /// </summary>
+        /// <remarks>
+        /// Create a individual data consent request.
+        /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <returns>IndividualDataConsentRequestResponse</returns>
         IndividualDataConsentRequestResponse CreateIndividualDataConsentRequest(CreateIndividualDataConsentRequest createIndividualDataConsentRequest);
 
@@ -75,15 +78,18 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a individual data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a individual data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <returns>ApiResponse of IndividualDataConsentRequestResponse</returns>
         ApiResponse<IndividualDataConsentRequestResponse> CreateIndividualDataConsentRequestWithHttpInfo(CreateIndividualDataConsentRequest createIndividualDataConsentRequest);
         /// <summary>
         /// Create a organization data consent request.
         /// </summary>
+        /// <remarks>
+        /// Create a organization data consent request.
+        /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
         /// <returns>OrganizationDataConsentRequestResponse</returns>
@@ -93,7 +99,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a organization data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a organization data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -246,10 +252,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a individual data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a individual data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IndividualDataConsentRequestResponse</returns>
         System.Threading.Tasks.Task<IndividualDataConsentRequestResponse> CreateIndividualDataConsentRequestAsync(CreateIndividualDataConsentRequest createIndividualDataConsentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -258,10 +264,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a individual data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a individual data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IndividualDataConsentRequestResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<IndividualDataConsentRequestResponse>> CreateIndividualDataConsentRequestWithHttpInfoAsync(CreateIndividualDataConsentRequest createIndividualDataConsentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -269,7 +275,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a organization data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a organization data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -281,7 +287,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Create a organization data consent request.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a organization data consent request.
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -761,10 +767,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a individual data consent request. 
+        /// Create a individual data consent request. Create a individual data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <returns>IndividualDataConsentRequestResponse</returns>
         public IndividualDataConsentRequestResponse CreateIndividualDataConsentRequest(CreateIndividualDataConsentRequest createIndividualDataConsentRequest)
         {
@@ -773,10 +779,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a individual data consent request. 
+        /// Create a individual data consent request. Create a individual data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <returns>ApiResponse of IndividualDataConsentRequestResponse</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<IndividualDataConsentRequestResponse> CreateIndividualDataConsentRequestWithHttpInfo(CreateIndividualDataConsentRequest createIndividualDataConsentRequest)
         {
@@ -827,10 +833,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a individual data consent request. 
+        /// Create a individual data consent request. Create a individual data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IndividualDataConsentRequestResponse</returns>
         public async System.Threading.Tasks.Task<IndividualDataConsentRequestResponse> CreateIndividualDataConsentRequestAsync(CreateIndividualDataConsentRequest createIndividualDataConsentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -840,10 +846,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a individual data consent request. 
+        /// Create a individual data consent request. Create a individual data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createIndividualDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).</param>
+        /// <param name="createIndividualDataConsentRequest">The Individual data consent request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IndividualDataConsentRequestResponse)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IndividualDataConsentRequestResponse>> CreateIndividualDataConsentRequestWithHttpInfoAsync(CreateIndividualDataConsentRequest createIndividualDataConsentRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -897,7 +903,7 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a organization data consent request. 
+        /// Create a organization data consent request. Create a organization data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -909,7 +915,7 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a organization data consent request. 
+        /// Create a organization data consent request. Create a organization data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -963,7 +969,7 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a organization data consent request. 
+        /// Create a organization data consent request. Create a organization data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>
@@ -976,7 +982,7 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Create a organization data consent request. 
+        /// Create a organization data consent request. Create a organization data consent request.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createOrganizationDataConsentRequest">M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).</param>

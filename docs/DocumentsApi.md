@@ -82,7 +82,6 @@ No authorization required
 | **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -162,7 +161,6 @@ No authorization required
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,7 +234,6 @@ No authorization required
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
 | **400** | Bad Request |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -308,7 +305,6 @@ No authorization required
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -380,7 +376,6 @@ No authorization required
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -454,7 +449,6 @@ No authorization required
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -528,7 +522,6 @@ No authorization required
 | **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

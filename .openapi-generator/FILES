@@ -48,7 +48,6 @@ docs/FinancialAccounts.md
 docs/GetConsentTemplateDetailsDto.md
 docs/IdentificationStrategy.md
 docs/Identifier.md
-docs/IdentifierStringKeyValuePair.md
 docs/IdentitySupportedFields.md
 docs/IndividualDataConsentRequestResponse.md
 docs/IssuedDocument.md
@@ -72,7 +71,6 @@ docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
-docs/SupportedIdentifiersByCountry.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -146,7 +144,6 @@ src/MyDataMyConsent.Sdk/Models/FinancialAccounts.cs
 src/MyDataMyConsent.Sdk/Models/GetConsentTemplateDetailsDto.cs
 src/MyDataMyConsent.Sdk/Models/IdentificationStrategy.cs
 src/MyDataMyConsent.Sdk/Models/Identifier.cs
-src/MyDataMyConsent.Sdk/Models/IdentifierStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/IdentitySupportedFields.cs
 src/MyDataMyConsent.Sdk/Models/IndividualDataConsentRequestResponse.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocument.cs
@@ -169,7 +166,6 @@ src/MyDataMyConsent.Sdk/Models/SharedWith.cs
 src/MyDataMyConsent.Sdk/Models/StringStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/SupportedEntityType.cs
 src/MyDataMyConsent.Sdk/Models/SupportedIdentifier.cs
-src/MyDataMyConsent.Sdk/Models/SupportedIdentifiersByCountry.cs
 src/MyDataMyConsent.Sdk/Models/UpdateDataProcessingAgreementRequestModel.cs
 src/MyDataMyConsent.Sdk/Models/UriDetails.cs
 src/MyDataMyConsent.Sdk/Models/UserAccountFinancialTransactionsDto.cs

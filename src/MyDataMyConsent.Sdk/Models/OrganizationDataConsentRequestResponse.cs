@@ -26,7 +26,7 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// Organization Data Consent Request Response.
+    /// OrganizationDataConsentRequestResponse
     /// </summary>
     [DataContract(Name = "OrganizationDataConsentRequestResponse")]
     public partial class OrganizationDataConsentRequestResponse : IEquatable<OrganizationDataConsentRequestResponse>

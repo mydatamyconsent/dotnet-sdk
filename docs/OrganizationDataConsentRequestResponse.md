@@ -1,5 +1,5 @@
 # MyDataMyConsent.Sdk.Models.OrganizationDataConsentRequestResponse
-Organization Data Consent Request Response.
+OrganizationDataConsentRequestResponse
 
 ## Properties
 

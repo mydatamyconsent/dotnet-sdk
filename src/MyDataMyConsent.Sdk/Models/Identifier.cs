@@ -26,52 +26,147 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// Defines Identifier
+    /// Identifier
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Identifier
+    [DataContract(Name = "Identifier")]
+    public partial class Identifier : IEquatable<Identifier>
     {
         /// <summary>
-        /// Enum Email for value: Email
+        /// Initializes a new instance of the <see cref="Identifier" /> class.
         /// </summary>
-        [EnumMember(Value = "Email")]
-        Email = 1,
+        /// <param name="key">key.</param>
+        /// <param name="name">name.</param>
+        /// <param name="description">description.</param>
+        /// <param name="exampleValue">exampleValue.</param>
+        public Identifier(string? key = default(string?), string? name = default(string?), string? description = default(string?), string? exampleValue = default(string?))
+        {
+            this.Key = key;
+            this.Name = name;
+            this.Description = description;
+            this.ExampleValue = exampleValue;
+        }
 
         /// <summary>
-        /// Enum PermanentAccountNumber for value: PermanentAccountNumber
+        /// Gets or Sets Key
         /// </summary>
-        [EnumMember(Value = "PermanentAccountNumber")]
-        PermanentAccountNumber = 2,
+        [DataMember(Name = "key", EmitDefaultValue = true)]
+        public string? Key { get; set; }
 
         /// <summary>
-        /// Enum AadhaarNumber for value: AadhaarNumber
+        /// Gets or Sets Name
         /// </summary>
-        [EnumMember(Value = "AadhaarNumber")]
-        AadhaarNumber = 3,
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string? Name { get; set; }
 
         /// <summary>
-        /// Enum MobileNumber for value: MobileNumber
+        /// Gets or Sets Description
         /// </summary>
-        [EnumMember(Value = "MobileNumber")]
-        MobileNumber = 4,
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string? Description { get; set; }
 
         /// <summary>
-        /// Enum CorporateIdentificationNumber for value: CorporateIdentificationNumber
+        /// Gets or Sets ExampleValue
         /// </summary>
-        [EnumMember(Value = "CorporateIdentificationNumber")]
-        CorporateIdentificationNumber = 5,
+        [DataMember(Name = "exampleValue", EmitDefaultValue = true)]
+        public string? ExampleValue { get; set; }
 
         /// <summary>
-        /// Enum TaxDeductionAccountNumber for value: TaxDeductionAccountNumber
+        /// Returns the string presentation of the object
         /// </summary>
-        [EnumMember(Value = "TaxDeductionAccountNumber")]
-        TaxDeductionAccountNumber = 6,
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("class Identifier {\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  ExampleValue: ").Append(ExampleValue).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
 
         /// <summary>
-        /// Enum GoodsAndServicesTaxIdentificationNumber for value: GoodsAndServicesTaxIdentificationNumber
+        /// Returns the JSON string presentation of the object
         /// </summary>
-        [EnumMember(Value = "GoodsAndServicesTaxIdentificationNumber")]
-        GoodsAndServicesTaxIdentificationNumber = 7
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as Identifier);
+        }
+
+        /// <summary>
+        /// Returns true if Identifier instances are equal
+        /// </summary>
+        /// <param name="input">Instance of Identifier to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(Identifier input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.ExampleValue == input.ExampleValue ||
+                    (this.ExampleValue != null &&
+                    this.ExampleValue.Equals(input.ExampleValue))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Key != null)
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.ExampleValue != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExampleValue.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
 
     }
 

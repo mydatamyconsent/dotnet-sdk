@@ -49,7 +49,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="type">type.</param>
         /// <param name="identifiers">Consent request receiver identifiers.</param>
         /// <param name="identificationStrategy">identificationStrategy.</param>
-        public Receiver(ReceiverType? type = default(ReceiverType?), List<IdentifierStringKeyValuePair> identifiers = default(List<IdentifierStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
+        public Receiver(ReceiverType? type = default(ReceiverType?), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
         {
             this.Type = type;
             this.Identifiers = identifiers;
@@ -61,7 +61,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Consent request receiver identifiers</value>
         [DataMember(Name = "identifiers", EmitDefaultValue = true)]
-        public List<IdentifierStringKeyValuePair> Identifiers { get; set; }
+        public List<StringStringKeyValuePair> Identifiers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

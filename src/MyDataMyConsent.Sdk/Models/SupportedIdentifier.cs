@@ -34,23 +34,23 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="SupportedIdentifier" /> class.
         /// </summary>
-        /// <param name="key">key.</param>
+        /// <param name="iso2">iso2.</param>
         /// <param name="name">name.</param>
-        /// <param name="description">description.</param>
-        /// <param name="exampleValue">exampleValue.</param>
-        public SupportedIdentifier(string? key = default(string?), string? name = default(string?), string? description = default(string?), string? exampleValue = default(string?))
+        /// <param name="individualIdentifiers">individualIdentifiers.</param>
+        /// <param name="organizationIdentifiers">organizationIdentifiers.</param>
+        public SupportedIdentifier(string? iso2 = default(string?), string? name = default(string?), List<Identifier> individualIdentifiers = default(List<Identifier>), List<Identifier> organizationIdentifiers = default(List<Identifier>))
         {
-            this.Key = key;
+            this.Iso2 = iso2;
             this.Name = name;
-            this.Description = description;
-            this.ExampleValue = exampleValue;
+            this.IndividualIdentifiers = individualIdentifiers;
+            this.OrganizationIdentifiers = organizationIdentifiers;
         }
 
         /// <summary>
-        /// Gets or Sets Key
+        /// Gets or Sets Iso2
         /// </summary>
-        [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string? Key { get; set; }
+        [DataMember(Name = "iso2", EmitDefaultValue = true)]
+        public string? Iso2 { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -59,16 +59,16 @@ namespace MyDataMyConsent.Sdk.Models
         public string? Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets IndividualIdentifiers
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string? Description { get; set; }
+        [DataMember(Name = "individualIdentifiers", EmitDefaultValue = true)]
+        public List<Identifier> IndividualIdentifiers { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExampleValue
+        /// Gets or Sets OrganizationIdentifiers
         /// </summary>
-        [DataMember(Name = "exampleValue", EmitDefaultValue = true)]
-        public string? ExampleValue { get; set; }
+        [DataMember(Name = "organizationIdentifiers", EmitDefaultValue = true)]
+        public List<Identifier> OrganizationIdentifiers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,10 +78,10 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SupportedIdentifier {\n");
-            sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  Iso2: ").Append(Iso2).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  ExampleValue: ").Append(ExampleValue).Append("\n");
+            sb.Append("  IndividualIdentifiers: ").Append(IndividualIdentifiers).Append("\n");
+            sb.Append("  OrganizationIdentifiers: ").Append(OrganizationIdentifiers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,9 +118,9 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
+                    this.Iso2 == input.Iso2 ||
+                    (this.Iso2 != null &&
+                    this.Iso2.Equals(input.Iso2))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -128,14 +128,16 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.IndividualIdentifiers == input.IndividualIdentifiers ||
+                    this.IndividualIdentifiers != null &&
+                    input.IndividualIdentifiers != null &&
+                    this.IndividualIdentifiers.SequenceEqual(input.IndividualIdentifiers)
                 ) && 
                 (
-                    this.ExampleValue == input.ExampleValue ||
-                    (this.ExampleValue != null &&
-                    this.ExampleValue.Equals(input.ExampleValue))
+                    this.OrganizationIdentifiers == input.OrganizationIdentifiers ||
+                    this.OrganizationIdentifiers != null &&
+                    input.OrganizationIdentifiers != null &&
+                    this.OrganizationIdentifiers.SequenceEqual(input.OrganizationIdentifiers)
                 );
         }
 
@@ -148,21 +150,21 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Key != null)
+                if (this.Iso2 != null)
                 {
-                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Iso2.GetHashCode();
                 }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Description != null)
+                if (this.IndividualIdentifiers != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IndividualIdentifiers.GetHashCode();
                 }
-                if (this.ExampleValue != null)
+                if (this.OrganizationIdentifiers != null)
                 {
-                    hashCode = (hashCode * 59) + this.ExampleValue.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OrganizationIdentifiers.GetHashCode();
                 }
                 return hashCode;
             }

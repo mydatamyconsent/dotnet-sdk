@@ -82,7 +82,6 @@ No authorization required
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
 | **404** | Not Found |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -154,13 +153,14 @@ No authorization required
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
 | **404** | Not Found |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createindividualdataconsentrequest"></a>
 # **CreateIndividualDataConsentRequest**
 > IndividualDataConsentRequestResponse CreateIndividualDataConsentRequest (CreateIndividualDataConsentRequest createIndividualDataConsentRequest)
+
+Create a individual data consent request.
 
 Create a individual data consent request.
 
@@ -181,7 +181,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentRequestsApi(config);
-            var createIndividualDataConsentRequest = new CreateIndividualDataConsentRequest(); // CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+            var createIndividualDataConsentRequest = new CreateIndividualDataConsentRequest(); // CreateIndividualDataConsentRequest | The Individual data consent request payload
 
             try
             {
@@ -204,7 +204,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createIndividualDataConsentRequest** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). | 
+ **createIndividualDataConsentRequest** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md)| The Individual data consent request payload | 
 
 ### Return type
 
@@ -227,13 +227,14 @@ No authorization required
 | **500** | Server Error |  -  |
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createorganizationdataconsentrequest"></a>
 # **CreateOrganizationDataConsentRequest**
 > OrganizationDataConsentRequestResponse CreateOrganizationDataConsentRequest (CreateOrganizationDataConsentRequest createOrganizationDataConsentRequest)
+
+Create a organization data consent request.
 
 Create a organization data consent request.
 
@@ -300,7 +301,6 @@ No authorization required
 | **500** | Server Error |  -  |
 | **404** | Not Found |  -  |
 | **400** | Bad Request |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -379,7 +379,6 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -458,7 +457,6 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -529,7 +527,6 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -600,7 +597,6 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 | **500** | Server Error |  -  |
-| **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

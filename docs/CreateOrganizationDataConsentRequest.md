@@ -1,5 +1,5 @@
 # MyDataMyConsent.Sdk.Models.CreateOrganizationDataConsentRequest
-Organization Data Consent Request.
+Create organization data consent request
 
 ## Properties
 
