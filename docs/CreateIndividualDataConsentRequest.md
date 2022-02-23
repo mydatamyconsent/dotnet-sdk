@@ -5,7 +5,7 @@ Individual Data Consent Request.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConsentTemplateId** | **Guid** |  | [optional] 
+**ConsentTemplateId** | **Guid** | Consent template id | [optional] 
 **Receiver** | [**Receiver**](Receiver.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -103,7 +103,7 @@ namespace MyDataMyConsent.Sdk.Client
         {
             Proxy = null;
             UserAgent = "MDMC-DotNet-SDK";
-            BasePath = "http://localhost";
+            BasePath = "https://api.mydatamyconsent.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -111,7 +111,7 @@ namespace MyDataMyConsent.Sdk.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", ""},
+                        {"url", "https://api.mydatamyconsent.com"},
                         {"description", "No description provided"},
                     }
                 }
@@ -129,7 +129,7 @@ namespace MyDataMyConsent.Sdk.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://localhost") : this()
+            string basePath = "https://api.mydatamyconsent.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

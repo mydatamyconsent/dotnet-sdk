@@ -8,15 +8,15 @@ Method | HTTP request | Description
 [**DownloadOrgConsentedDocumentById**](DataConsentsApi.md#downloadorgconsenteddocumentbyid) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
 [**GetAllConsentedDocuments**](DataConsentsApi.md#getallconsenteddocuments) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
 [**GetAllConsentedFinancialAccounts**](DataConsentsApi.md#getallconsentedfinancialaccounts) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual consented financial accounts.
-[**GetAllOrganizationConsentedAccounts**](DataConsentsApi.md#getallorganizationconsentedaccounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts.
 [**GetAllOrganizationConsentedDocuments**](DataConsentsApi.md#getallorganizationconsenteddocuments) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId.
 [**GetConsentDetailsById**](DataConsentsApi.md#getconsentdetailsbyid) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id.
+[**GetConsentFinancialAccounts**](DataConsentsApi.md#getconsentfinancialaccounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts.
 [**GetConsentedAccountById**](DataConsentsApi.md#getconsentedaccountbyid) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
 [**GetConsentedDocumentById**](DataConsentsApi.md#getconsenteddocumentbyid) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
 [**GetConsentedFinancialAccount**](DataConsentsApi.md#getconsentedfinancialaccount) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get organization consented financial account details based on account id.
 [**GetConsentedFinancialAccountTransactions**](DataConsentsApi.md#getconsentedfinancialaccounttransactions) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
-[**GetConsents**](DataConsentsApi.md#getconsents) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
 [**GetConsentsForOrganizations**](DataConsentsApi.md#getconsentsfororganizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
+[**GetConsentsSentToIndividuals**](DataConsentsApi.md#getconsentssenttoindividuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
 [**GetOrgConsentedAccountTransactions**](DataConsentsApi.md#getorgconsentedaccounttransactions) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
 [**GetOrganizationConsentDetailsById**](DataConsentsApi.md#getorganizationconsentdetailsbyid) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**GetOrganizationConsentedDocumentById**](DataConsentsApi.md#getorganizationconsenteddocumentbyid) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
@@ -310,77 +310,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallorganizationconsentedaccounts"></a>
-# **GetAllOrganizationConsentedAccounts**
-> DataConsentFinancialsDto GetAllOrganizationConsentedAccounts (Guid consentId)
-
-Get all organizational consented financial accounts.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
-
-namespace Example
-{
-    public class GetAllOrganizationConsentedAccountsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.mydatamyconsent.com";
-            var apiInstance = new DataConsentsApi(config);
-            var consentId = "consentId_example";  // Guid | Consent id.
-
-            try
-            {
-                // Get all organizational consented financial accounts.
-                DataConsentFinancialsDto result = apiInstance.GetAllOrganizationConsentedAccounts(consentId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DataConsentsApi.GetAllOrganizationConsentedAccounts: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consentId** | **Guid**| Consent id. | 
-
-### Return type
-
-[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **500** | Server Error |  -  |
-| **0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getallorganizationconsenteddocuments"></a>
 # **GetAllOrganizationConsentedDocuments**
 > DataConsentDocumentsDto GetAllOrganizationConsentedDocuments (Guid consentId)
@@ -503,6 +432,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DataConsentDetailsDto**](DataConsentDetailsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **500** | Server Error |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getconsentfinancialaccounts"></a>
+# **GetConsentFinancialAccounts**
+> DataConsentFinancialsDto GetConsentFinancialAccounts (Guid consentId)
+
+Get all organizational consented financial accounts.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class GetConsentFinancialAccountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.mydatamyconsent.com";
+            var apiInstance = new DataConsentsApi(config);
+            var consentId = "consentId_example";  // Guid | Consent id.
+
+            try
+            {
+                // Get all organizational consented financial accounts.
+                DataConsentFinancialsDto result = apiInstance.GetConsentFinancialAccounts(consentId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataConsentsApi.GetConsentFinancialAccounts: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentId** | **Guid**| Consent id. | 
+
+### Return type
+
+[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
 
 ### Authorization
 
@@ -825,85 +825,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getconsents"></a>
-# **GetConsents**
-> UserDataConsentInfoDtoPaginatedList GetConsents (DataConsentStatus? status = null, DateTime? from = null, DateTime? to = null, int? pageNo = null, int? pageSize = null)
-
-Get the list of Consents Sent to Individuals.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
-
-namespace Example
-{
-    public class GetConsentsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.mydatamyconsent.com";
-            var apiInstance = new DataConsentsApi(config);
-            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
-            var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
-            var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
-            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
-            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
-
-            try
-            {
-                // Get the list of Consents Sent to Individuals.
-                UserDataConsentInfoDtoPaginatedList result = apiInstance.GetConsents(status, from, to, pageNo, pageSize);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DataConsentsApi.GetConsents: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
- **from** | **DateTime?**| From date time in utc timezone. | [optional] 
- **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
- **pageNo** | **int?**| Page number. | [optional] [default to 1]
- **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
-
-### Return type
-
-[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **500** | Server Error |  -  |
-| **0** | Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getconsentsfororganizations"></a>
 # **GetConsentsForOrganizations**
 > OrganizationDataConsentInfoDtoPaginatedList GetConsentsForOrganizations (DataConsentStatus? status = null, DateTime? from = null, DateTime? to = null, int? pageNo = null, int? pageSize = null)
@@ -963,6 +884,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrganizationDataConsentInfoDtoPaginatedList**](OrganizationDataConsentInfoDtoPaginatedList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **500** | Server Error |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getconsentssenttoindividuals"></a>
+# **GetConsentsSentToIndividuals**
+> UserDataConsentInfoDtoPaginatedList GetConsentsSentToIndividuals (DataConsentStatus? status = null, DateTime? from = null, DateTime? to = null, int? pageNo = null, int? pageSize = null)
+
+Get the list of Consents Sent to Individuals.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class GetConsentsSentToIndividualsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.mydatamyconsent.com";
+            var apiInstance = new DataConsentsApi(config);
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
+            var from = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From date time in utc timezone. (optional) 
+            var to = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Til date time in utc timezone. (optional) 
+            var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
+            var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
+
+            try
+            {
+                // Get the list of Consents Sent to Individuals.
+                UserDataConsentInfoDtoPaginatedList result = apiInstance.GetConsentsSentToIndividuals(status, from, to, pageNo, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataConsentsApi.GetConsentsSentToIndividuals: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
+ **from** | **DateTime?**| From date time in utc timezone. | [optional] 
+ **to** | **DateTime?**| Til date time in utc timezone. | [optional] 
+ **pageNo** | **int?**| Page number. | [optional] [default to 1]
+ **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
+
+### Return type
+
+[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
 
 ### Authorization
 

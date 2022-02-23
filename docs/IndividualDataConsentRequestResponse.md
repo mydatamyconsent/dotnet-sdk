@@ -5,12 +5,12 @@ Individual Data Consent Request Response.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
-**TemplateId** | **Guid** |  | [optional] 
-**RequestedAtUtc** | **DateTime** |  | [optional] 
-**RequestExpiresAtUtc** | **DateTime** |  | [optional] 
+**Id** | **Guid** | Consent request id | [optional] 
+**TemplateId** | **Guid** | Consent request template id | [optional] 
+**RequestedAtUtc** | **DateTime** | Requested date time in utc zone | [optional] 
+**RequestExpiresAtUtc** | **DateTime** | Request expires date time in utc zone | [optional] 
 **Status** | **DataConsentStatus** |  | [optional] 
-**TransactionId** | [**string?**](string?.md) |  | [optional] 
+**TransactionId** | [**string?**](string?.md) | Requested transaction id | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

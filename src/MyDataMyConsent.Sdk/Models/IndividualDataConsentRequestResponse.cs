@@ -40,12 +40,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="IndividualDataConsentRequestResponse" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="templateId">templateId.</param>
-        /// <param name="requestedAtUtc">requestedAtUtc.</param>
-        /// <param name="requestExpiresAtUtc">requestExpiresAtUtc.</param>
+        /// <param name="id">Consent request id.</param>
+        /// <param name="templateId">Consent request template id.</param>
+        /// <param name="requestedAtUtc">Requested date time in utc zone.</param>
+        /// <param name="requestExpiresAtUtc">Request expires date time in utc zone.</param>
         /// <param name="status">status.</param>
-        /// <param name="transactionId">transactionId.</param>
+        /// <param name="transactionId">Requested transaction id.</param>
         public IndividualDataConsentRequestResponse(Guid id = default(Guid), Guid templateId = default(Guid), DateTime requestedAtUtc = default(DateTime), DateTime requestExpiresAtUtc = default(DateTime), DataConsentStatus? status = default(DataConsentStatus?), string? transactionId = default(string?))
         {
             this.Id = id;
@@ -57,32 +57,37 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Consent request id
         /// </summary>
+        /// <value>Consent request id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets TemplateId
+        /// Consent request template id
         /// </summary>
+        /// <value>Consent request template id</value>
         [DataMember(Name = "templateId", EmitDefaultValue = false)]
         public Guid TemplateId { get; set; }
 
         /// <summary>
-        /// Gets or Sets RequestedAtUtc
+        /// Requested date time in utc zone
         /// </summary>
+        /// <value>Requested date time in utc zone</value>
         [DataMember(Name = "requestedAtUtc", EmitDefaultValue = false)]
         public DateTime RequestedAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets RequestExpiresAtUtc
+        /// Request expires date time in utc zone
         /// </summary>
+        /// <value>Request expires date time in utc zone</value>
         [DataMember(Name = "requestExpiresAtUtc", EmitDefaultValue = false)]
         public DateTime RequestExpiresAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets TransactionId
+        /// Requested transaction id
         /// </summary>
+        /// <value>Requested transaction id</value>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
         public string? TransactionId { get; set; }
 

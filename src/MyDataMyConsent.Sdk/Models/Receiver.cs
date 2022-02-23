@@ -26,7 +26,7 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// Receiver
+    /// Consent request receiver details
     /// </summary>
     [DataContract(Name = "Receiver")]
     public partial class Receiver : IEquatable<Receiver>
@@ -47,7 +47,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Initializes a new instance of the <see cref="Receiver" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="identifiers">identifiers.</param>
+        /// <param name="identifiers">Consent request receiver identifiers.</param>
         /// <param name="identificationStrategy">identificationStrategy.</param>
         public Receiver(ReceiverType? type = default(ReceiverType?), List<IdentifierStringKeyValuePair> identifiers = default(List<IdentifierStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
         {
@@ -57,8 +57,9 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Gets or Sets Identifiers
+        /// Consent request receiver identifiers
         /// </summary>
+        /// <value>Consent request receiver identifiers</value>
         [DataMember(Name = "identifiers", EmitDefaultValue = true)]
         public List<IdentifierStringKeyValuePair> Identifiers { get; set; }
 

@@ -39,7 +39,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrganizationDataConsentRequest" /> class.
         /// </summary>
-        /// <param name="consentTemplateId">consentTemplateId.</param>
+        /// <param name="consentTemplateId">Consent template id.</param>
         /// <param name="receiver">receiver (required).</param>
         public CreateOrganizationDataConsentRequest(Guid consentTemplateId = default(Guid), Receiver receiver = default(Receiver))
         {
@@ -52,8 +52,9 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Gets or Sets ConsentTemplateId
+        /// Consent template id
         /// </summary>
+        /// <value>Consent template id</value>
         [DataMember(Name = "consentTemplateId", EmitDefaultValue = false)]
         public Guid ConsentTemplateId { get; set; }
 
