@@ -5,9 +5,11 @@ Document issue request details.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **Guid** | Request Id. | 
 **DocumentTypeId** | **Guid** |  | 
 **DocumentTypeName** | **string** |  | 
 **DocumentIdentifier** | **string** |  | 
+**Status** | **DocumentIssueRequestStatus** |  | [optional] 
 **Description** | **string** |  | 
 **Receiver** | **Object** |  | 
 **ExpiresAtUtc** | **DateTime?** |  | [optional] 

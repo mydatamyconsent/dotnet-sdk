@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
  - [Models.DocumentCategoryType](docs/DocumentCategoryType.md)
  - [Models.DocumentIssueRequest](docs/DocumentIssueRequest.md)
  - [Models.DocumentIssueRequestDetails](docs/DocumentIssueRequestDetails.md)
+ - [Models.DocumentIssueRequestStatus](docs/DocumentIssueRequestStatus.md)
  - [Models.DocumentReceiver](docs/DocumentReceiver.md)
  - [Models.DocumentSubCategoryType](docs/DocumentSubCategoryType.md)
  - [Models.DocumentType](docs/DocumentType.md)

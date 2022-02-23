@@ -32,6 +32,7 @@ docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
 docs/DocumentIssueRequestDetails.md
+docs/DocumentIssueRequestStatus.md
 docs/DocumentReceiver.md
 docs/DocumentSubCategoryType.md
 docs/DocumentType.md
@@ -130,6 +131,7 @@ src/MyDataMyConsent.Sdk/Models/Document.cs
 src/MyDataMyConsent.Sdk/Models/DocumentCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequest.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequestDetails.cs
+src/MyDataMyConsent.Sdk/Models/DocumentIssueRequestStatus.cs
 src/MyDataMyConsent.Sdk/Models/DocumentReceiver.cs
 src/MyDataMyConsent.Sdk/Models/DocumentSubCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentType.cs

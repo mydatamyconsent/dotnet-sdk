@@ -31,6 +31,12 @@ namespace MyDataMyConsent.Sdk.Models
     [DataContract(Name = "DocumentIssueRequestDetails")]
     public partial class DocumentIssueRequestDetails : IEquatable<DocumentIssueRequestDetails>
     {
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public DocumentIssueRequestStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentIssueRequestDetails" /> class.
         /// </summary>
@@ -39,16 +45,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentIssueRequestDetails" /> class.
         /// </summary>
+        /// <param name="id">Request Id. (required).</param>
         /// <param name="documentTypeId">documentTypeId (required).</param>
         /// <param name="documentTypeName">documentTypeName (required).</param>
         /// <param name="documentIdentifier">documentIdentifier (required).</param>
+        /// <param name="status">status.</param>
         /// <param name="description">description (required).</param>
         /// <param name="receiver">receiver (required).</param>
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="createdAtUtc">createdAtUtc (required).</param>
-        public DocumentIssueRequestDetails(Guid documentTypeId = default(Guid), string documentTypeName = default(string), string documentIdentifier = default(string), string description = default(string), Object receiver = default(Object), DateTime? expiresAtUtc = default(DateTime?), Object metadata = default(Object), DateTime createdAtUtc = default(DateTime))
+        public DocumentIssueRequestDetails(Guid id = default(Guid), Guid documentTypeId = default(Guid), string documentTypeName = default(string), string documentIdentifier = default(string), DocumentIssueRequestStatus? status = default(DocumentIssueRequestStatus?), string description = default(string), Object receiver = default(Object), DateTime? expiresAtUtc = default(DateTime?), Object metadata = default(Object), DateTime createdAtUtc = default(DateTime))
         {
+            this.Id = id;
             this.DocumentTypeId = documentTypeId;
             this.DocumentTypeName = documentTypeName;
             this.DocumentIdentifier = documentIdentifier;
@@ -59,9 +68,17 @@ namespace MyDataMyConsent.Sdk.Models
             }
             this.Receiver = receiver;
             this.CreatedAtUtc = createdAtUtc;
+            this.Status = status;
             this.ExpiresAtUtc = expiresAtUtc;
             this.Metadata = metadata;
         }
+
+        /// <summary>
+        /// Request Id.
+        /// </summary>
+        /// <value>Request Id.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentTypeId
@@ -119,9 +136,11 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DocumentIssueRequestDetails {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DocumentTypeId: ").Append(DocumentTypeId).Append("\n");
             sb.Append("  DocumentTypeName: ").Append(DocumentTypeName).Append("\n");
             sb.Append("  DocumentIdentifier: ").Append(DocumentIdentifier).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
@@ -163,6 +182,11 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.DocumentTypeId == input.DocumentTypeId ||
                     (this.DocumentTypeId != null &&
                     this.DocumentTypeId.Equals(input.DocumentTypeId))
@@ -176,6 +200,10 @@ namespace MyDataMyConsent.Sdk.Models
                     this.DocumentIdentifier == input.DocumentIdentifier ||
                     (this.DocumentIdentifier != null &&
                     this.DocumentIdentifier.Equals(input.DocumentIdentifier))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
                 ) && 
                 (
                     this.Description == input.Description ||
@@ -213,6 +241,10 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.DocumentTypeId != null)
                 {
                     hashCode = (hashCode * 59) + this.DocumentTypeId.GetHashCode();
@@ -225,6 +257,7 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.DocumentIdentifier.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
