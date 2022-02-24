@@ -4,17 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** |  | [optional] 
+**Id** | **Guid** |  | 
+**Title** | [**string?**](string?.md) |  | [optional] 
+**Description** | [**string?**](string?.md) |  | [optional] 
+**DataLife** | [**Life**](Life.md) |  | [optional] 
+**RequesterName** | [**string?**](string?.md) |  | [optional] 
+**RequesterLogo** | [**string?**](string?.md) |  | [optional] 
+**Location** | [**string?**](string?.md) |  | [optional] 
 **Status** | **DataConsentStatus** |  | [optional] 
 **ApprovedAtUtc** | **DateTime?** |  | [optional] 
 **RejectedAtUtc** | **DateTime?** |  | [optional] 
 **ExpiresAtUtc** | **DateTime** |  | [optional] 
 **RequestedAtUtc** | **DateTime** |  | [optional] 
-**Requester** | [**DataConsentRequesterDto**](DataConsentRequesterDto.md) |  | [optional] 
-**ConsentDetails** | [**GetConsentTemplateDetailsDto**](GetConsentTemplateDetailsDto.md) |  | [optional] 
-**Identifiers** | [**List&lt;DataConsentIdentifier&gt;**](DataConsentIdentifier.md) |  | [optional] 
-**ApprovedDocuments** | [**List&lt;DataConsentRequestedDocument&gt;**](DataConsentRequestedDocument.md) |  | [optional] 
-**ApprovedFinancials** | [**List&lt;DataConsentRequestedFinancialAccount&gt;**](DataConsentRequestedFinancialAccount.md) |  | [optional] 
+**Identifiers** | [**JsonSchema**](JsonSchema.md) |  | [optional] 
+**Documents** | [**string?**](string?.md) |  | [optional] 
+**Financials** | [**string?**](string?.md) |  | [optional] 
+**HealthRecords** | [**string?**](string?.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

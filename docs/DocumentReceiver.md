@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CountryIso2Code** | **string** |  | 
 **Identifiers** | [**List&lt;StringStringKeyValuePair&gt;**](StringStringKeyValuePair.md) |  | 
 **IdentificationStrategy** | **IdentificationStrategy** |  | 
 

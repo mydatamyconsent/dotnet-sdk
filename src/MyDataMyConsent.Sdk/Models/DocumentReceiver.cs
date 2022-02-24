@@ -45,10 +45,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentReceiver" /> class.
         /// </summary>
+        /// <param name="countryIso2Code">countryIso2Code (required).</param>
         /// <param name="identifiers">identifiers (required).</param>
         /// <param name="identificationStrategy">identificationStrategy (required).</param>
-        public DocumentReceiver(List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy identificationStrategy = default(IdentificationStrategy))
+        public DocumentReceiver(string countryIso2Code = default(string), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy identificationStrategy = default(IdentificationStrategy))
         {
+            this.CountryIso2Code = countryIso2Code;
             // to ensure "identifiers" is required (not null)
             if (identifiers == null) {
                 throw new ArgumentNullException("identifiers is a required property for DocumentReceiver and cannot be null");
@@ -56,6 +58,12 @@ namespace MyDataMyConsent.Sdk.Models
             this.Identifiers = identifiers;
             this.IdentificationStrategy = identificationStrategy;
         }
+
+        /// <summary>
+        /// Gets or Sets CountryIso2Code
+        /// </summary>
+        [DataMember(Name = "countryIso2Code", IsRequired = true, EmitDefaultValue = false)]
+        public string CountryIso2Code { get; set; }
 
         /// <summary>
         /// Gets or Sets Identifiers
@@ -71,6 +79,7 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DocumentReceiver {\n");
+            sb.Append("  CountryIso2Code: ").Append(CountryIso2Code).Append("\n");
             sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
             sb.Append("  IdentificationStrategy: ").Append(IdentificationStrategy).Append("\n");
             sb.Append("}\n");
@@ -109,6 +118,11 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
+                    this.CountryIso2Code == input.CountryIso2Code ||
+                    (this.CountryIso2Code != null &&
+                    this.CountryIso2Code.Equals(input.CountryIso2Code))
+                ) && 
+                (
                     this.Identifiers == input.Identifiers ||
                     this.Identifiers != null &&
                     input.Identifiers != null &&
@@ -129,6 +143,10 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CountryIso2Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.CountryIso2Code.GetHashCode();
+                }
                 if (this.Identifiers != null)
                 {
                     hashCode = (hashCode * 59) + this.Identifiers.GetHashCode();
