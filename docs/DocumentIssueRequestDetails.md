@@ -7,13 +7,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** | Request Id. | 
 **DocumentTypeId** | **Guid** |  | 
-**DocumentTypeName** | **string** |  | 
-**DocumentIdentifier** | **string** |  | 
-**Status** | **DocumentIssueRequestStatus** |  | [optional] 
+**TypeName** | **string** |  | 
+**Identifier** | **string** |  | 
+**Status** | **DocumentIssueRequestStatus** |  | 
 **Description** | **string** |  | 
 **Receiver** | **Object** |  | 
+**IssuedAtUtc** | **DateTime** |  | 
+**ValidFromUtc** | **DateTime** |  | 
 **ExpiresAtUtc** | **DateTime?** |  | [optional] 
-**Metadata** | **Object** |  | [optional] 
+**MetaData** | **Object** |  | [optional] 
 **CreatedAtUtc** | **DateTime** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

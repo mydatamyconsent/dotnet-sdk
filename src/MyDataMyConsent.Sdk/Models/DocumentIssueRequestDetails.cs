@@ -35,8 +35,8 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public DocumentIssueRequestStatus? Status { get; set; }
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
+        public DocumentIssueRequestStatus Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentIssueRequestDetails" /> class.
         /// </summary>
@@ -47,30 +47,34 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="id">Request Id. (required).</param>
         /// <param name="documentTypeId">documentTypeId (required).</param>
-        /// <param name="documentTypeName">documentTypeName (required).</param>
-        /// <param name="documentIdentifier">documentIdentifier (required).</param>
-        /// <param name="status">status.</param>
+        /// <param name="typeName">typeName (required).</param>
+        /// <param name="identifier">identifier (required).</param>
+        /// <param name="status">status (required).</param>
         /// <param name="description">description (required).</param>
         /// <param name="receiver">receiver (required).</param>
+        /// <param name="issuedAtUtc">issuedAtUtc (required).</param>
+        /// <param name="validFromUtc">validFromUtc (required).</param>
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
-        /// <param name="metadata">metadata.</param>
+        /// <param name="metaData">metaData.</param>
         /// <param name="createdAtUtc">createdAtUtc (required).</param>
-        public DocumentIssueRequestDetails(Guid id = default(Guid), Guid documentTypeId = default(Guid), string documentTypeName = default(string), string documentIdentifier = default(string), DocumentIssueRequestStatus? status = default(DocumentIssueRequestStatus?), string description = default(string), Object receiver = default(Object), DateTime? expiresAtUtc = default(DateTime?), Object metadata = default(Object), DateTime createdAtUtc = default(DateTime))
+        public DocumentIssueRequestDetails(Guid id = default(Guid), Guid documentTypeId = default(Guid), string typeName = default(string), string identifier = default(string), DocumentIssueRequestStatus status = default(DocumentIssueRequestStatus), string description = default(string), Object receiver = default(Object), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), Object metaData = default(Object), DateTime createdAtUtc = default(DateTime))
         {
             this.Id = id;
             this.DocumentTypeId = documentTypeId;
-            this.DocumentTypeName = documentTypeName;
-            this.DocumentIdentifier = documentIdentifier;
+            this.TypeName = typeName;
+            this.Identifier = identifier;
+            this.Status = status;
             this.Description = description;
             // to ensure "receiver" is required (not null)
             if (receiver == null) {
                 throw new ArgumentNullException("receiver is a required property for DocumentIssueRequestDetails and cannot be null");
             }
             this.Receiver = receiver;
+            this.IssuedAtUtc = issuedAtUtc;
+            this.ValidFromUtc = validFromUtc;
             this.CreatedAtUtc = createdAtUtc;
-            this.Status = status;
             this.ExpiresAtUtc = expiresAtUtc;
-            this.Metadata = metadata;
+            this.MetaData = metaData;
         }
 
         /// <summary>
@@ -87,16 +91,16 @@ namespace MyDataMyConsent.Sdk.Models
         public Guid DocumentTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentTypeName
+        /// Gets or Sets TypeName
         /// </summary>
-        [DataMember(Name = "documentTypeName", IsRequired = true, EmitDefaultValue = false)]
-        public string DocumentTypeName { get; set; }
+        [DataMember(Name = "typeName", IsRequired = true, EmitDefaultValue = false)]
+        public string TypeName { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentIdentifier
+        /// Gets or Sets Identifier
         /// </summary>
-        [DataMember(Name = "documentIdentifier", IsRequired = true, EmitDefaultValue = false)]
-        public string DocumentIdentifier { get; set; }
+        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
+        public string Identifier { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -111,16 +115,28 @@ namespace MyDataMyConsent.Sdk.Models
         public Object Receiver { get; set; }
 
         /// <summary>
+        /// Gets or Sets IssuedAtUtc
+        /// </summary>
+        [DataMember(Name = "issuedAtUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime IssuedAtUtc { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ValidFromUtc
+        /// </summary>
+        [DataMember(Name = "validFromUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime ValidFromUtc { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExpiresAtUtc
         /// </summary>
         [DataMember(Name = "expiresAtUtc", EmitDefaultValue = true)]
         public DateTime? ExpiresAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Gets or Sets MetaData
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = true)]
-        public Object Metadata { get; set; }
+        [DataMember(Name = "metaData", EmitDefaultValue = true)]
+        public Object MetaData { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAtUtc
@@ -138,13 +154,15 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("class DocumentIssueRequestDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DocumentTypeId: ").Append(DocumentTypeId).Append("\n");
-            sb.Append("  DocumentTypeName: ").Append(DocumentTypeName).Append("\n");
-            sb.Append("  DocumentIdentifier: ").Append(DocumentIdentifier).Append("\n");
+            sb.Append("  TypeName: ").Append(TypeName).Append("\n");
+            sb.Append("  Identifier: ").Append(Identifier).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
+            sb.Append("  IssuedAtUtc: ").Append(IssuedAtUtc).Append("\n");
+            sb.Append("  ValidFromUtc: ").Append(ValidFromUtc).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  MetaData: ").Append(MetaData).Append("\n");
             sb.Append("  CreatedAtUtc: ").Append(CreatedAtUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -192,14 +210,14 @@ namespace MyDataMyConsent.Sdk.Models
                     this.DocumentTypeId.Equals(input.DocumentTypeId))
                 ) && 
                 (
-                    this.DocumentTypeName == input.DocumentTypeName ||
-                    (this.DocumentTypeName != null &&
-                    this.DocumentTypeName.Equals(input.DocumentTypeName))
+                    this.TypeName == input.TypeName ||
+                    (this.TypeName != null &&
+                    this.TypeName.Equals(input.TypeName))
                 ) && 
                 (
-                    this.DocumentIdentifier == input.DocumentIdentifier ||
-                    (this.DocumentIdentifier != null &&
-                    this.DocumentIdentifier.Equals(input.DocumentIdentifier))
+                    this.Identifier == input.Identifier ||
+                    (this.Identifier != null &&
+                    this.Identifier.Equals(input.Identifier))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -216,14 +234,24 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Receiver.Equals(input.Receiver))
                 ) && 
                 (
+                    this.IssuedAtUtc == input.IssuedAtUtc ||
+                    (this.IssuedAtUtc != null &&
+                    this.IssuedAtUtc.Equals(input.IssuedAtUtc))
+                ) && 
+                (
+                    this.ValidFromUtc == input.ValidFromUtc ||
+                    (this.ValidFromUtc != null &&
+                    this.ValidFromUtc.Equals(input.ValidFromUtc))
+                ) && 
+                (
                     this.ExpiresAtUtc == input.ExpiresAtUtc ||
                     (this.ExpiresAtUtc != null &&
                     this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
                 ) && 
                 (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
+                    this.MetaData == input.MetaData ||
+                    (this.MetaData != null &&
+                    this.MetaData.Equals(input.MetaData))
                 ) && 
                 (
                     this.CreatedAtUtc == input.CreatedAtUtc ||
@@ -249,13 +277,13 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.DocumentTypeId.GetHashCode();
                 }
-                if (this.DocumentTypeName != null)
+                if (this.TypeName != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentTypeName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TypeName.GetHashCode();
                 }
-                if (this.DocumentIdentifier != null)
+                if (this.Identifier != null)
                 {
-                    hashCode = (hashCode * 59) + this.DocumentIdentifier.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.Description != null)
@@ -266,13 +294,21 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
                 }
+                if (this.IssuedAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.IssuedAtUtc.GetHashCode();
+                }
+                if (this.ValidFromUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.ValidFromUtc.GetHashCode();
+                }
                 if (this.ExpiresAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
                 }
-                if (this.Metadata != null)
+                if (this.MetaData != null)
                 {
-                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                    hashCode = (hashCode * 59) + this.MetaData.GetHashCode();
                 }
                 if (this.CreatedAtUtc != null)
                 {
