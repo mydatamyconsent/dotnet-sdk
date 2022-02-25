@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
@@ -58,8 +59,6 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
-docs/Receiver.md
-docs/ReceiverType.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
@@ -100,6 +99,7 @@ src/MyDataMyConsent.Sdk/Models/AbstractOpenAPISchema.cs
 src/MyDataMyConsent.Sdk/Models/Activity.cs
 src/MyDataMyConsent.Sdk/Models/ApprovedConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/BankAccountType.cs
+src/MyDataMyConsent.Sdk/Models/ConsentRequestReceiver.cs
 src/MyDataMyConsent.Sdk/Models/CreateDataProcessingAgreementRequestModel.cs
 src/MyDataMyConsent.Sdk/Models/CreateIndividualDataConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/CreateOrganizationDataConsentRequest.cs
@@ -148,8 +148,6 @@ src/MyDataMyConsent.Sdk/Models/OrganizationFinancialTransactionsDtoPaginatedList
 src/MyDataMyConsent.Sdk/Models/ProblemDetails.cs
 src/MyDataMyConsent.Sdk/Models/PushUriRequest.cs
 src/MyDataMyConsent.Sdk/Models/PushUriResponse.cs
-src/MyDataMyConsent.Sdk/Models/Receiver.cs
-src/MyDataMyConsent.Sdk/Models/ReceiverType.cs
 src/MyDataMyConsent.Sdk/Models/SharedWith.cs
 src/MyDataMyConsent.Sdk/Models/StringStringKeyValuePair.cs
 src/MyDataMyConsent.Sdk/Models/SupportedEntityType.cs

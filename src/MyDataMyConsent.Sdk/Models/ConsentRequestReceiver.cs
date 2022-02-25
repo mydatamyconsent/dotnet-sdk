@@ -28,15 +28,9 @@ namespace MyDataMyConsent.Sdk.Models
     /// <summary>
     /// Consent request receiver details
     /// </summary>
-    [DataContract(Name = "Receiver")]
-    public partial class Receiver : IEquatable<Receiver>
+    [DataContract(Name = "ConsentRequestReceiver")]
+    public partial class ConsentRequestReceiver : IEquatable<ConsentRequestReceiver>
     {
-
-        /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public ReceiverType? Type { get; set; }
 
         /// <summary>
         /// Gets or Sets IdentificationStrategy
@@ -44,14 +38,12 @@ namespace MyDataMyConsent.Sdk.Models
         [DataMember(Name = "identificationStrategy", EmitDefaultValue = false)]
         public IdentificationStrategy? IdentificationStrategy { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Receiver" /> class.
+        /// Initializes a new instance of the <see cref="ConsentRequestReceiver" /> class.
         /// </summary>
-        /// <param name="type">type.</param>
         /// <param name="identifiers">Consent request receiver identifiers.</param>
         /// <param name="identificationStrategy">identificationStrategy.</param>
-        public Receiver(ReceiverType? type = default(ReceiverType?), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
+        public ConsentRequestReceiver(List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
         {
-            this.Type = type;
             this.Identifiers = identifiers;
             this.IdentificationStrategy = identificationStrategy;
         }
@@ -70,8 +62,7 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Receiver {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("class ConsentRequestReceiver {\n");
             sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
             sb.Append("  IdentificationStrategy: ").Append(IdentificationStrategy).Append("\n");
             sb.Append("}\n");
@@ -94,25 +85,21 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Receiver);
+            return this.Equals(input as ConsentRequestReceiver);
         }
 
         /// <summary>
-        /// Returns true if Receiver instances are equal
+        /// Returns true if ConsentRequestReceiver instances are equal
         /// </summary>
-        /// <param name="input">Instance of Receiver to be compared</param>
+        /// <param name="input">Instance of ConsentRequestReceiver to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Receiver input)
+        public bool Equals(ConsentRequestReceiver input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
                 (
                     this.Identifiers == input.Identifiers ||
                     this.Identifiers != null &&
@@ -134,7 +121,6 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.Identifiers != null)
                 {
                     hashCode = (hashCode * 59) + this.Identifiers.GetHashCode();

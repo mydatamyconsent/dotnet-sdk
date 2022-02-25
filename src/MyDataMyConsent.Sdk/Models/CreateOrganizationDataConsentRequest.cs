@@ -41,7 +41,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="consentTemplateId">Consent template id.</param>
         /// <param name="receiver">receiver (required).</param>
-        public CreateOrganizationDataConsentRequest(Guid consentTemplateId = default(Guid), Receiver receiver = default(Receiver))
+        public CreateOrganizationDataConsentRequest(Guid consentTemplateId = default(Guid), ConsentRequestReceiver receiver = default(ConsentRequestReceiver))
         {
             // to ensure "receiver" is required (not null)
             if (receiver == null) {
@@ -62,7 +62,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Receiver
         /// </summary>
         [DataMember(Name = "receiver", IsRequired = true, EmitDefaultValue = false)]
-        public Receiver Receiver { get; set; }
+        public ConsentRequestReceiver Receiver { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
