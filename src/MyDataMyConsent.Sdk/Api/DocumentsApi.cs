@@ -132,9 +132,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <returns>string</returns>
-        string UploadDocumentForIndividual(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?));
+        string UploadDocumentForIndividual(Guid issueRequestId, System.IO.Stream formFile);
 
         /// <summary>
         /// Upload a document for issuance request of individual.
@@ -144,9 +144,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?));
+        ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, System.IO.Stream formFile);
         /// <summary>
         /// Upload a document for issuance request of organization.
         /// </summary>
@@ -309,10 +309,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.IO.Stream formFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload a document for issuance request of individual.
@@ -322,10 +322,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.IO.Stream formFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload a document for issuance request of organization.
         /// </summary>
@@ -1180,9 +1180,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <returns>string</returns>
-        public string UploadDocumentForIndividual(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?))
+        public string UploadDocumentForIndividual(Guid issueRequestId, System.IO.Stream formFile)
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = UploadDocumentForIndividualWithHttpInfo(issueRequestId, formFile);
             return localVarResponse.Data;
@@ -1193,10 +1193,16 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <returns>ApiResponse of string</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<string> UploadDocumentForIndividualWithHttpInfo(Guid issueRequestId, System.IO.Stream formFile)
         {
+            // verify the required parameter 'formFile' is set
+            if (formFile == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'formFile' when calling DocumentsApi->UploadDocumentForIndividual");
+            }
+
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1221,10 +1227,7 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            if (formFile != null)
-            {
-                localVarRequestOptions.FileParameters.Add("formFile", formFile);
-            }
+            localVarRequestOptions.FileParameters.Add("formFile", formFile);
 
 
             // make the HTTP request
@@ -1246,10 +1249,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> UploadDocumentForIndividualAsync(Guid issueRequestId, System.IO.Stream formFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<string> localVarResponse = await UploadDocumentForIndividualWithHttpInfoAsync(issueRequestId, formFile, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1260,11 +1263,17 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="issueRequestId">Issue Request Id System.Guid.</param>
-        /// <param name="formFile"> (optional)</param>
+        /// <param name="formFile"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.IO.Stream? formFile = default(System.IO.Stream?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<string>> UploadDocumentForIndividualWithHttpInfoAsync(Guid issueRequestId, System.IO.Stream formFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'formFile' is set
+            if (formFile == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'formFile' when calling DocumentsApi->UploadDocumentForIndividual");
+            }
+
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -1290,10 +1299,7 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("issueRequestId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(issueRequestId)); // path parameter
-            if (formFile != null)
-            {
-                localVarRequestOptions.FileParameters.Add("formFile", formFile);
-            }
+            localVarRequestOptions.FileParameters.Add("formFile", formFile);
 
 
             // make the HTTP request
