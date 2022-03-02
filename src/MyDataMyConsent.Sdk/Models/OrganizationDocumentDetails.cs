@@ -26,13 +26,13 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// OrganizationDocumentDetailsDto
+    /// OrganizationDocumentDetails
     /// </summary>
-    [DataContract(Name = "OrganizationDocumentDetailsDto")]
-    public partial class OrganizationDocumentDetailsDto : IEquatable<OrganizationDocumentDetailsDto>
+    [DataContract(Name = "OrganizationDocumentDetails")]
+    public partial class OrganizationDocumentDetails : IEquatable<OrganizationDocumentDetails>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationDocumentDetailsDto" /> class.
+        /// Initializes a new instance of the <see cref="OrganizationDocumentDetails" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="organizationId">organizationId.</param>
@@ -45,7 +45,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="countryIso2">countryIso2.</param>
         /// <param name="issuerId">issuerId.</param>
         /// <param name="issuerName">issuerName.</param>
-        public OrganizationDocumentDetailsDto(Guid id = default(Guid), Guid organizationId = default(Guid), string? organizationName = default(string?), Guid typeId = default(Guid), string? typeName = default(string?), string? name = default(string?), string? identifier = default(string?), string? storageUrl = default(string?), string? countryIso2 = default(string?), Guid issuerId = default(Guid), string? issuerName = default(string?))
+        public OrganizationDocumentDetails(Guid id = default(Guid), Guid organizationId = default(Guid), string? organizationName = default(string?), Guid typeId = default(Guid), string? typeName = default(string?), string? name = default(string?), string? identifier = default(string?), string? storageUrl = default(string?), string? countryIso2 = default(string?), Guid issuerId = default(Guid), string? issuerName = default(string?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -133,7 +133,7 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OrganizationDocumentDetailsDto {\n");
+            sb.Append("class OrganizationDocumentDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  OrganizationName: ").Append(OrganizationName).Append("\n");
@@ -165,15 +165,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrganizationDocumentDetailsDto);
+            return this.Equals(input as OrganizationDocumentDetails);
         }
 
         /// <summary>
-        /// Returns true if OrganizationDocumentDetailsDto instances are equal
+        /// Returns true if OrganizationDocumentDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrganizationDocumentDetailsDto to be compared</param>
+        /// <param name="input">Instance of OrganizationDocumentDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrganizationDocumentDetailsDto input)
+        public bool Equals(OrganizationDocumentDetails input)
         {
             if (input == null)
             {

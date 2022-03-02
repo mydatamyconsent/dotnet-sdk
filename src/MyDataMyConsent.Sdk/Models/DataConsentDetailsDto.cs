@@ -45,47 +45,41 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DataConsentDetailsDto" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
+        /// <param name="consentRequestId">consentRequestId (required).</param>
         /// <param name="title">title.</param>
         /// <param name="description">description.</param>
         /// <param name="dataLife">dataLife.</param>
-        /// <param name="requesterName">requesterName.</param>
-        /// <param name="requesterLogo">requesterLogo.</param>
-        /// <param name="location">location.</param>
+        /// <param name="requestedByOrg">requestedByOrg.</param>
         /// <param name="status">status.</param>
         /// <param name="approvedAtUtc">approvedAtUtc.</param>
         /// <param name="rejectedAtUtc">rejectedAtUtc.</param>
-        /// <param name="expiresAtUtc">expiresAtUtc.</param>
+        /// <param name="revokedAtUtc">revokedAtUtc.</param>
+        /// <param name="requestedExpiresAtUtc">requestedExpiresAtUtc.</param>
         /// <param name="requestedAtUtc">requestedAtUtc.</param>
         /// <param name="identifiers">identifiers.</param>
         /// <param name="documents">documents.</param>
-        /// <param name="financials">financials.</param>
-        /// <param name="healthRecords">healthRecords.</param>
-        public DataConsentDetailsDto(Guid id = default(Guid), string? title = default(string?), string? description = default(string?), Life dataLife = default(Life), string? requesterName = default(string?), string? requesterLogo = default(string?), string? location = default(string?), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime expiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), JsonSchema identifiers = default(JsonSchema), string? documents = default(string?), string? financials = default(string?), string? healthRecords = default(string?))
+        public DataConsentDetailsDto(Guid consentRequestId = default(Guid), string? title = default(string?), string? description = default(string?), Life dataLife = default(Life), Requester requestedByOrg = default(Requester), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?), DateTime requestedExpiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), Object identifiers = default(Object), List<DataConsentDocumentDetailsDto> documents = default(List<DataConsentDocumentDetailsDto>))
         {
-            this.Id = id;
+            this.ConsentRequestId = consentRequestId;
             this.Title = title;
             this.Description = description;
             this.DataLife = dataLife;
-            this.RequesterName = requesterName;
-            this.RequesterLogo = requesterLogo;
-            this.Location = location;
+            this.RequestedByOrg = requestedByOrg;
             this.Status = status;
             this.ApprovedAtUtc = approvedAtUtc;
             this.RejectedAtUtc = rejectedAtUtc;
-            this.ExpiresAtUtc = expiresAtUtc;
+            this.RevokedAtUtc = revokedAtUtc;
+            this.RequestedExpiresAtUtc = requestedExpiresAtUtc;
             this.RequestedAtUtc = requestedAtUtc;
             this.Identifiers = identifiers;
             this.Documents = documents;
-            this.Financials = financials;
-            this.HealthRecords = healthRecords;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets ConsentRequestId
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "consentRequestId", IsRequired = true, EmitDefaultValue = false)]
+        public Guid ConsentRequestId { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -106,22 +100,10 @@ namespace MyDataMyConsent.Sdk.Models
         public Life DataLife { get; set; }
 
         /// <summary>
-        /// Gets or Sets RequesterName
+        /// Gets or Sets RequestedByOrg
         /// </summary>
-        [DataMember(Name = "requesterName", EmitDefaultValue = true)]
-        public string? RequesterName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RequesterLogo
-        /// </summary>
-        [DataMember(Name = "requesterLogo", EmitDefaultValue = true)]
-        public string? RequesterLogo { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Location
-        /// </summary>
-        [DataMember(Name = "location", EmitDefaultValue = true)]
-        public string? Location { get; set; }
+        [DataMember(Name = "requestedByOrg", EmitDefaultValue = false)]
+        public Requester RequestedByOrg { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovedAtUtc
@@ -136,10 +118,16 @@ namespace MyDataMyConsent.Sdk.Models
         public DateTime? RejectedAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiresAtUtc
+        /// Gets or Sets RevokedAtUtc
         /// </summary>
-        [DataMember(Name = "expiresAtUtc", EmitDefaultValue = false)]
-        public DateTime ExpiresAtUtc { get; set; }
+        [DataMember(Name = "revokedAtUtc", EmitDefaultValue = true)]
+        public DateTime? RevokedAtUtc { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RequestedExpiresAtUtc
+        /// </summary>
+        [DataMember(Name = "requestedExpiresAtUtc", EmitDefaultValue = false)]
+        public DateTime RequestedExpiresAtUtc { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestedAtUtc
@@ -150,26 +138,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets Identifiers
         /// </summary>
-        [DataMember(Name = "identifiers", EmitDefaultValue = false)]
-        public JsonSchema Identifiers { get; set; }
+        [DataMember(Name = "identifiers", EmitDefaultValue = true)]
+        public Object Identifiers { get; set; }
 
         /// <summary>
         /// Gets or Sets Documents
         /// </summary>
         [DataMember(Name = "documents", EmitDefaultValue = true)]
-        public string? Documents { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Financials
-        /// </summary>
-        [DataMember(Name = "financials", EmitDefaultValue = true)]
-        public string? Financials { get; set; }
-
-        /// <summary>
-        /// Gets or Sets HealthRecords
-        /// </summary>
-        [DataMember(Name = "healthRecords", EmitDefaultValue = true)]
-        public string? HealthRecords { get; set; }
+        public List<DataConsentDocumentDetailsDto> Documents { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -179,22 +155,19 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DataConsentDetailsDto {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  ConsentRequestId: ").Append(ConsentRequestId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  DataLife: ").Append(DataLife).Append("\n");
-            sb.Append("  RequesterName: ").Append(RequesterName).Append("\n");
-            sb.Append("  RequesterLogo: ").Append(RequesterLogo).Append("\n");
-            sb.Append("  Location: ").Append(Location).Append("\n");
+            sb.Append("  RequestedByOrg: ").Append(RequestedByOrg).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
             sb.Append("  RejectedAtUtc: ").Append(RejectedAtUtc).Append("\n");
-            sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
+            sb.Append("  RevokedAtUtc: ").Append(RevokedAtUtc).Append("\n");
+            sb.Append("  RequestedExpiresAtUtc: ").Append(RequestedExpiresAtUtc).Append("\n");
             sb.Append("  RequestedAtUtc: ").Append(RequestedAtUtc).Append("\n");
             sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
-            sb.Append("  Financials: ").Append(Financials).Append("\n");
-            sb.Append("  HealthRecords: ").Append(HealthRecords).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -231,9 +204,9 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.ConsentRequestId == input.ConsentRequestId ||
+                    (this.ConsentRequestId != null &&
+                    this.ConsentRequestId.Equals(input.ConsentRequestId))
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -251,19 +224,9 @@ namespace MyDataMyConsent.Sdk.Models
                     this.DataLife.Equals(input.DataLife))
                 ) && 
                 (
-                    this.RequesterName == input.RequesterName ||
-                    (this.RequesterName != null &&
-                    this.RequesterName.Equals(input.RequesterName))
-                ) && 
-                (
-                    this.RequesterLogo == input.RequesterLogo ||
-                    (this.RequesterLogo != null &&
-                    this.RequesterLogo.Equals(input.RequesterLogo))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
+                    this.RequestedByOrg == input.RequestedByOrg ||
+                    (this.RequestedByOrg != null &&
+                    this.RequestedByOrg.Equals(input.RequestedByOrg))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -280,9 +243,14 @@ namespace MyDataMyConsent.Sdk.Models
                     this.RejectedAtUtc.Equals(input.RejectedAtUtc))
                 ) && 
                 (
-                    this.ExpiresAtUtc == input.ExpiresAtUtc ||
-                    (this.ExpiresAtUtc != null &&
-                    this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
+                    this.RevokedAtUtc == input.RevokedAtUtc ||
+                    (this.RevokedAtUtc != null &&
+                    this.RevokedAtUtc.Equals(input.RevokedAtUtc))
+                ) && 
+                (
+                    this.RequestedExpiresAtUtc == input.RequestedExpiresAtUtc ||
+                    (this.RequestedExpiresAtUtc != null &&
+                    this.RequestedExpiresAtUtc.Equals(input.RequestedExpiresAtUtc))
                 ) && 
                 (
                     this.RequestedAtUtc == input.RequestedAtUtc ||
@@ -296,18 +264,9 @@ namespace MyDataMyConsent.Sdk.Models
                 ) && 
                 (
                     this.Documents == input.Documents ||
-                    (this.Documents != null &&
-                    this.Documents.Equals(input.Documents))
-                ) && 
-                (
-                    this.Financials == input.Financials ||
-                    (this.Financials != null &&
-                    this.Financials.Equals(input.Financials))
-                ) && 
-                (
-                    this.HealthRecords == input.HealthRecords ||
-                    (this.HealthRecords != null &&
-                    this.HealthRecords.Equals(input.HealthRecords))
+                    this.Documents != null &&
+                    input.Documents != null &&
+                    this.Documents.SequenceEqual(input.Documents)
                 );
         }
 
@@ -320,9 +279,9 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.ConsentRequestId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConsentRequestId.GetHashCode();
                 }
                 if (this.Title != null)
                 {
@@ -336,17 +295,9 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.DataLife.GetHashCode();
                 }
-                if (this.RequesterName != null)
+                if (this.RequestedByOrg != null)
                 {
-                    hashCode = (hashCode * 59) + this.RequesterName.GetHashCode();
-                }
-                if (this.RequesterLogo != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequesterLogo.GetHashCode();
-                }
-                if (this.Location != null)
-                {
-                    hashCode = (hashCode * 59) + this.Location.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RequestedByOrg.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.ApprovedAtUtc != null)
@@ -357,9 +308,13 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.RejectedAtUtc.GetHashCode();
                 }
-                if (this.ExpiresAtUtc != null)
+                if (this.RevokedAtUtc != null)
                 {
-                    hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RevokedAtUtc.GetHashCode();
+                }
+                if (this.RequestedExpiresAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.RequestedExpiresAtUtc.GetHashCode();
                 }
                 if (this.RequestedAtUtc != null)
                 {
@@ -372,14 +327,6 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.Documents != null)
                 {
                     hashCode = (hashCode * 59) + this.Documents.GetHashCode();
-                }
-                if (this.Financials != null)
-                {
-                    hashCode = (hashCode * 59) + this.Financials.GetHashCode();
-                }
-                if (this.HealthRecords != null)
-                {
-                    hashCode = (hashCode * 59) + this.HealthRecords.GetHashCode();
                 }
                 return hashCode;
             }

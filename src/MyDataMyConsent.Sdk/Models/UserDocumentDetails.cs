@@ -26,10 +26,10 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// UserDocumentDetailsDto
+    /// UserDocumentDetails
     /// </summary>
-    [DataContract(Name = "UserDocumentDetailsDto")]
-    public partial class UserDocumentDetailsDto : IEquatable<UserDocumentDetailsDto>
+    [DataContract(Name = "UserDocumentDetails")]
+    public partial class UserDocumentDetails : IEquatable<UserDocumentDetails>
     {
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         [DataMember(Name = "categoryType", EmitDefaultValue = false)]
         public DocumentCategoryType? CategoryType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserDocumentDetailsDto" /> class.
+        /// Initializes a new instance of the <see cref="UserDocumentDetails" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="categoryType">categoryType.</param>
@@ -54,7 +54,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="isOwner">isOwner.</param>
         /// <param name="digitalSignatureDetails">digitalSignatureDetails.</param>
         /// <param name="ownerId">ownerId.</param>
-        public UserDocumentDetailsDto(Guid id = default(Guid), DocumentCategoryType? categoryType = default(DocumentCategoryType?), Guid typeId = default(Guid), string? typeName = default(string?), string? fullName = default(string?), string? identifier = default(string?), Guid? accountId = default(Guid?), Guid issuerId = default(Guid), string? issuerName = default(string?), string? storageUrl = default(string?), bool isQuickAccessEnabled = default(bool), bool isOwner = default(bool), List<DigitalSignature> digitalSignatureDetails = default(List<DigitalSignature>), Guid ownerId = default(Guid))
+        public UserDocumentDetails(Guid id = default(Guid), DocumentCategoryType? categoryType = default(DocumentCategoryType?), Guid typeId = default(Guid), string? typeName = default(string?), string? fullName = default(string?), string? identifier = default(string?), Guid? accountId = default(Guid?), Guid issuerId = default(Guid), string? issuerName = default(string?), string? storageUrl = default(string?), bool isQuickAccessEnabled = default(bool), bool isOwner = default(bool), List<DigitalSignature> digitalSignatureDetails = default(List<DigitalSignature>), Guid ownerId = default(Guid))
         {
             this.Id = id;
             this.CategoryType = categoryType;
@@ -157,7 +157,7 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UserDocumentDetailsDto {\n");
+            sb.Append("class UserDocumentDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CategoryType: ").Append(CategoryType).Append("\n");
             sb.Append("  TypeId: ").Append(TypeId).Append("\n");
@@ -192,15 +192,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UserDocumentDetailsDto);
+            return this.Equals(input as UserDocumentDetails);
         }
 
         /// <summary>
-        /// Returns true if UserDocumentDetailsDto instances are equal
+        /// Returns true if UserDocumentDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserDocumentDetailsDto to be compared</param>
+        /// <param name="input">Instance of UserDocumentDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserDocumentDetailsDto input)
+        public bool Equals(UserDocumentDetails input)
         {
             if (input == null)
             {

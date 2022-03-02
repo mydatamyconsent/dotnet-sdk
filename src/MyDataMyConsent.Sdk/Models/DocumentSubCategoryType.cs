@@ -38,10 +38,10 @@ namespace MyDataMyConsent.Sdk.Models
         Identity = 1,
 
         /// <summary>
-        /// Enum House for value: House
+        /// Enum Property for value: Property
         /// </summary>
-        [EnumMember(Value = "House")]
-        House = 2,
+        [EnumMember(Value = "Property")]
+        Property = 2,
 
         /// <summary>
         /// Enum Vehicle for value: Vehicle
@@ -50,76 +50,124 @@ namespace MyDataMyConsent.Sdk.Models
         Vehicle = 3,
 
         /// <summary>
-        /// Enum MarksMemos for value: MarksMemos
+        /// Enum AdmitAndIdCards for value: AdmitAndIdCards
         /// </summary>
-        [EnumMember(Value = "MarksMemos")]
-        MarksMemos = 4,
+        [EnumMember(Value = "AdmitAndIdCards")]
+        AdmitAndIdCards = 4,
+
+        /// <summary>
+        /// Enum Marksheets for value: Marksheets
+        /// </summary>
+        [EnumMember(Value = "Marksheets")]
+        Marksheets = 5,
 
         /// <summary>
         /// Enum Transcripts for value: Transcripts
         /// </summary>
         [EnumMember(Value = "Transcripts")]
-        Transcripts = 5,
+        Transcripts = 6,
 
         /// <summary>
         /// Enum Certificates for value: Certificates
         /// </summary>
         [EnumMember(Value = "Certificates")]
-        Certificates = 6,
+        Certificates = 7,
 
         /// <summary>
         /// Enum Prescriptions for value: Prescriptions
         /// </summary>
         [EnumMember(Value = "Prescriptions")]
-        Prescriptions = 7,
+        Prescriptions = 8,
 
         /// <summary>
         /// Enum MedicalReports for value: MedicalReports
         /// </summary>
         [EnumMember(Value = "MedicalReports")]
-        MedicalReports = 8,
+        MedicalReports = 9,
 
         /// <summary>
         /// Enum DischargeSummary for value: DischargeSummary
         /// </summary>
         [EnumMember(Value = "DischargeSummary")]
-        DischargeSummary = 9,
+        DischargeSummary = 10,
 
         /// <summary>
-        /// Enum Bills for value: Bills
+        /// Enum AccountAndCertificates for value: AccountAndCertificates
         /// </summary>
-        [EnumMember(Value = "Bills")]
-        Bills = 10,
+        [EnumMember(Value = "AccountAndCertificates")]
+        AccountAndCertificates = 11,
 
         /// <summary>
-        /// Enum Invoices for value: Invoices
+        /// Enum BillsAndInvoices for value: BillsAndInvoices
         /// </summary>
-        [EnumMember(Value = "Invoices")]
-        Invoices = 11,
+        [EnumMember(Value = "BillsAndInvoices")]
+        BillsAndInvoices = 12,
+
+        /// <summary>
+        /// Enum Insurance for value: Insurance
+        /// </summary>
+        [EnumMember(Value = "Insurance")]
+        Insurance = 13,
+
+        /// <summary>
+        /// Enum ReceiptsAndSubscriptions for value: ReceiptsAndSubscriptions
+        /// </summary>
+        [EnumMember(Value = "ReceiptsAndSubscriptions")]
+        ReceiptsAndSubscriptions = 14,
 
         /// <summary>
         /// Enum Taxes for value: Taxes
         /// </summary>
         [EnumMember(Value = "Taxes")]
-        Taxes = 12,
+        Taxes = 15,
+
+        /// <summary>
+        /// Enum LicencesAndCertificates for value: LicencesAndCertificates
+        /// </summary>
+        [EnumMember(Value = "LicencesAndCertificates")]
+        LicencesAndCertificates = 16,
 
         /// <summary>
         /// Enum Corporates for value: Corporates
         /// </summary>
         [EnumMember(Value = "Corporates")]
-        Corporates = 13,
+        Corporates = 17,
 
         /// <summary>
         /// Enum Competitions for value: Competitions
         /// </summary>
         [EnumMember(Value = "Competitions")]
-        Competitions = 14,
+        Competitions = 18,
 
         /// <summary>
         /// Enum IntellectualProperties for value: IntellectualProperties
         /// </summary>
         [EnumMember(Value = "IntellectualProperties")]
-        IntellectualProperties = 15
+        IntellectualProperties = 19,
+
+        /// <summary>
+        /// Enum Others for value: Others
+        /// </summary>
+        [EnumMember(Value = "Others")]
+        Others = 20,
+
+        /// <summary>
+        /// Enum ApplicationsAndCertificates for value: ApplicationsAndCertificates
+        /// </summary>
+        [EnumMember(Value = "ApplicationsAndCertificates")]
+        ApplicationsAndCertificates = 21,
+
+        /// <summary>
+        /// Enum Licenses for value: Licenses
+        /// </summary>
+        [EnumMember(Value = "Licenses")]
+        Licenses = 22,
+
+        /// <summary>
+        /// Enum OrganizationIds for value: OrganizationIds
+        /// </summary>
+        [EnumMember(Value = "OrganizationIds")]
+        OrganizationIds = 23
 
     }
 

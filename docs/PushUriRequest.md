@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UriDetails** | [**UriDetails**](UriDetails.md) |  | [optional] 
+**UriDetails** | [**UriDetails**](UriDetails.md) |  | 
 **Ns2** | [**string?**](string?.md) |  | [optional] 
 **Ver** | [**string?**](string?.md) |  | [optional] 
 **Ts** | [**string?**](string?.md) |  | [optional] 

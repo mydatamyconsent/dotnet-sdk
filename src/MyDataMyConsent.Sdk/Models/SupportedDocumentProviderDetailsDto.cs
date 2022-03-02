@@ -26,41 +26,46 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// UserDocumentDownloadDto
+    /// SupportedDocumentProviderDetailsDto
     /// </summary>
-    [DataContract(Name = "UserDocumentDownloadDto")]
-    public partial class UserDocumentDownloadDto : IEquatable<UserDocumentDownloadDto>
+    [DataContract(Name = "SupportedDocumentProviderDetailsDto")]
+    public partial class SupportedDocumentProviderDetailsDto : IEquatable<SupportedDocumentProviderDetailsDto>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserDocumentDownloadDto" /> class.
+        /// Initializes a new instance of the <see cref="SupportedDocumentProviderDetailsDto" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="storageUrl">storageUrl.</param>
-        /// <param name="ownerId">ownerId.</param>
-        public UserDocumentDownloadDto(Guid id = default(Guid), string? storageUrl = default(string?), Guid ownerId = default(Guid))
+        [JsonConstructorAttribute]
+        protected SupportedDocumentProviderDetailsDto() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SupportedDocumentProviderDetailsDto" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="logoUrl">logoUrl.</param>
+        public SupportedDocumentProviderDetailsDto(Guid id = default(Guid), string name = default(string), string? logoUrl = default(string?))
         {
             this.Id = id;
-            this.StorageUrl = storageUrl;
-            this.OwnerId = ownerId;
+            this.Name = name;
+            this.LogoUrl = logoUrl;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets StorageUrl
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "storageUrl", EmitDefaultValue = true)]
-        public string? StorageUrl { get; set; }
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets OwnerId
+        /// Gets or Sets LogoUrl
         /// </summary>
-        [DataMember(Name = "ownerId", EmitDefaultValue = false)]
-        public Guid OwnerId { get; set; }
+        [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
+        public string? LogoUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,10 +74,10 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UserDocumentDownloadDto {\n");
+            sb.Append("class SupportedDocumentProviderDetailsDto {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  StorageUrl: ").Append(StorageUrl).Append("\n");
-            sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +98,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UserDocumentDownloadDto);
+            return this.Equals(input as SupportedDocumentProviderDetailsDto);
         }
 
         /// <summary>
-        /// Returns true if UserDocumentDownloadDto instances are equal
+        /// Returns true if SupportedDocumentProviderDetailsDto instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserDocumentDownloadDto to be compared</param>
+        /// <param name="input">Instance of SupportedDocumentProviderDetailsDto to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserDocumentDownloadDto input)
+        public bool Equals(SupportedDocumentProviderDetailsDto input)
         {
             if (input == null)
             {
@@ -114,14 +119,14 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.StorageUrl == input.StorageUrl ||
-                    (this.StorageUrl != null &&
-                    this.StorageUrl.Equals(input.StorageUrl))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.OwnerId == input.OwnerId ||
-                    (this.OwnerId != null &&
-                    this.OwnerId.Equals(input.OwnerId))
+                    this.LogoUrl == input.LogoUrl ||
+                    (this.LogoUrl != null &&
+                    this.LogoUrl.Equals(input.LogoUrl))
                 );
         }
 
@@ -138,13 +143,13 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.StorageUrl != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.StorageUrl.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.OwnerId != null)
+                if (this.LogoUrl != null)
                 {
-                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LogoUrl.GetHashCode();
                 }
                 return hashCode;
             }

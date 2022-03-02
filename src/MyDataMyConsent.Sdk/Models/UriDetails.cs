@@ -34,17 +34,22 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="UriDetails" /> class.
         /// </summary>
-        /// <param name="aadhaar">aadhaar.</param>
-        /// <param name="uri">uri.</param>
-        /// <param name="docType">docType.</param>
-        /// <param name="docName">docName.</param>
-        /// <param name="docId">docId.</param>
-        /// <param name="issuedOn">issuedOn.</param>
-        /// <param name="validFrom">validFrom.</param>
+        [JsonConstructorAttribute]
+        protected UriDetails() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UriDetails" /> class.
+        /// </summary>
+        /// <param name="aadhaar">aadhaar (required).</param>
+        /// <param name="uri">uri (required).</param>
+        /// <param name="docType">docType (required).</param>
+        /// <param name="docName">docName (required).</param>
+        /// <param name="docId">docId (required).</param>
+        /// <param name="issuedOn">issuedOn (required).</param>
+        /// <param name="validFrom">validFrom (required).</param>
         /// <param name="validTo">validTo.</param>
         /// <param name="timestamp">timestamp.</param>
         /// <param name="action">action.</param>
-        public UriDetails(string? aadhaar = default(string?), string? uri = default(string?), string? docType = default(string?), string? docName = default(string?), string? docId = default(string?), string? issuedOn = default(string?), string? validFrom = default(string?), string? validTo = default(string?), string? timestamp = default(string?), string? action = default(string?))
+        public UriDetails(string aadhaar = default(string), string uri = default(string), string docType = default(string), string docName = default(string), string docId = default(string), string issuedOn = default(string), string validFrom = default(string), string? validTo = default(string?), string? timestamp = default(string?), string? action = default(string?))
         {
             this.Aadhaar = aadhaar;
             this.Uri = uri;
@@ -61,44 +66,44 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets Aadhaar
         /// </summary>
-        [DataMember(Name = "aadhaar", EmitDefaultValue = true)]
-        public string? Aadhaar { get; set; }
+        [DataMember(Name = "aadhaar", IsRequired = true, EmitDefaultValue = false)]
+        public string Aadhaar { get; set; }
 
         /// <summary>
         /// Gets or Sets Uri
         /// </summary>
-        [DataMember(Name = "uri", EmitDefaultValue = true)]
-        public string? Uri { get; set; }
+        [DataMember(Name = "uri", IsRequired = true, EmitDefaultValue = false)]
+        public string Uri { get; set; }
 
         /// <summary>
         /// Gets or Sets DocType
         /// </summary>
-        [DataMember(Name = "docType", EmitDefaultValue = true)]
-        public string? DocType { get; set; }
+        [DataMember(Name = "docType", IsRequired = true, EmitDefaultValue = false)]
+        public string DocType { get; set; }
 
         /// <summary>
         /// Gets or Sets DocName
         /// </summary>
-        [DataMember(Name = "docName", EmitDefaultValue = true)]
-        public string? DocName { get; set; }
+        [DataMember(Name = "docName", IsRequired = true, EmitDefaultValue = false)]
+        public string DocName { get; set; }
 
         /// <summary>
         /// Gets or Sets DocId
         /// </summary>
-        [DataMember(Name = "docId", EmitDefaultValue = true)]
-        public string? DocId { get; set; }
+        [DataMember(Name = "docId", IsRequired = true, EmitDefaultValue = false)]
+        public string DocId { get; set; }
 
         /// <summary>
         /// Gets or Sets IssuedOn
         /// </summary>
-        [DataMember(Name = "issuedOn", EmitDefaultValue = true)]
-        public string? IssuedOn { get; set; }
+        [DataMember(Name = "issuedOn", IsRequired = true, EmitDefaultValue = false)]
+        public string IssuedOn { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidFrom
         /// </summary>
-        [DataMember(Name = "validFrom", EmitDefaultValue = true)]
-        public string? ValidFrom { get; set; }
+        [DataMember(Name = "validFrom", IsRequired = true, EmitDefaultValue = false)]
+        public string ValidFrom { get; set; }
 
         /// <summary>
         /// Gets or Sets ValidTo

@@ -34,7 +34,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PushUriRequest" /> class.
         /// </summary>
-        /// <param name="uriDetails">uriDetails.</param>
+        [JsonConstructorAttribute]
+        protected PushUriRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PushUriRequest" /> class.
+        /// </summary>
+        /// <param name="uriDetails">uriDetails (required).</param>
         /// <param name="ns2">ns2.</param>
         /// <param name="ver">ver.</param>
         /// <param name="ts">ts.</param>
@@ -43,6 +48,10 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="keyhash">keyhash.</param>
         public PushUriRequest(UriDetails uriDetails = default(UriDetails), string? ns2 = default(string?), string? ver = default(string?), string? ts = default(string?), string? txn = default(string?), string? orgId = default(string?), string? keyhash = default(string?))
         {
+            // to ensure "uriDetails" is required (not null)
+            if (uriDetails == null) {
+                throw new ArgumentNullException("uriDetails is a required property for PushUriRequest and cannot be null");
+            }
             this.UriDetails = uriDetails;
             this.Ns2 = ns2;
             this.Ver = ver;
@@ -55,7 +64,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets UriDetails
         /// </summary>
-        [DataMember(Name = "uriDetails", EmitDefaultValue = false)]
+        [DataMember(Name = "uriDetails", IsRequired = true, EmitDefaultValue = false)]
         public UriDetails UriDetails { get; set; }
 
         /// <summary>
