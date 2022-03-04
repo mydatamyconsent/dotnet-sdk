@@ -52,13 +52,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="requestedByOrg">requestedByOrg.</param>
         /// <param name="status">status.</param>
         /// <param name="approvedAtUtc">approvedAtUtc.</param>
+        /// <param name="approvedExpiresAtUtc">approvedExpiresAtUtc.</param>
         /// <param name="rejectedAtUtc">rejectedAtUtc.</param>
         /// <param name="revokedAtUtc">revokedAtUtc.</param>
         /// <param name="requestedExpiresAtUtc">requestedExpiresAtUtc.</param>
         /// <param name="requestedAtUtc">requestedAtUtc.</param>
         /// <param name="identifiers">identifiers.</param>
         /// <param name="documents">documents.</param>
-        public DataConsentDetailsDto(Guid consentRequestId = default(Guid), string? title = default(string?), string? description = default(string?), Life dataLife = default(Life), Requester requestedByOrg = default(Requester), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?), DateTime requestedExpiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), Object identifiers = default(Object), List<DataConsentDocumentDetailsDto> documents = default(List<DataConsentDocumentDetailsDto>))
+        public DataConsentDetailsDto(Guid consentRequestId = default(Guid), string? title = default(string?), string? description = default(string?), Life dataLife = default(Life), Requester requestedByOrg = default(Requester), DataConsentStatus? status = default(DataConsentStatus?), DateTime? approvedAtUtc = default(DateTime?), DateTime? approvedExpiresAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?), DateTime requestedExpiresAtUtc = default(DateTime), DateTime requestedAtUtc = default(DateTime), Object identifiers = default(Object), List<DataConsentDocumentDetailsDto> documents = default(List<DataConsentDocumentDetailsDto>))
         {
             this.ConsentRequestId = consentRequestId;
             this.Title = title;
@@ -67,6 +68,7 @@ namespace MyDataMyConsent.Sdk.Models
             this.RequestedByOrg = requestedByOrg;
             this.Status = status;
             this.ApprovedAtUtc = approvedAtUtc;
+            this.ApprovedExpiresAtUtc = approvedExpiresAtUtc;
             this.RejectedAtUtc = rejectedAtUtc;
             this.RevokedAtUtc = revokedAtUtc;
             this.RequestedExpiresAtUtc = requestedExpiresAtUtc;
@@ -110,6 +112,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         [DataMember(Name = "approvedAtUtc", EmitDefaultValue = true)]
         public DateTime? ApprovedAtUtc { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApprovedExpiresAtUtc
+        /// </summary>
+        [DataMember(Name = "approvedExpiresAtUtc", EmitDefaultValue = true)]
+        public DateTime? ApprovedExpiresAtUtc { get; set; }
 
         /// <summary>
         /// Gets or Sets RejectedAtUtc
@@ -162,6 +170,7 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  RequestedByOrg: ").Append(RequestedByOrg).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
+            sb.Append("  ApprovedExpiresAtUtc: ").Append(ApprovedExpiresAtUtc).Append("\n");
             sb.Append("  RejectedAtUtc: ").Append(RejectedAtUtc).Append("\n");
             sb.Append("  RevokedAtUtc: ").Append(RevokedAtUtc).Append("\n");
             sb.Append("  RequestedExpiresAtUtc: ").Append(RequestedExpiresAtUtc).Append("\n");
@@ -238,6 +247,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.ApprovedAtUtc.Equals(input.ApprovedAtUtc))
                 ) && 
                 (
+                    this.ApprovedExpiresAtUtc == input.ApprovedExpiresAtUtc ||
+                    (this.ApprovedExpiresAtUtc != null &&
+                    this.ApprovedExpiresAtUtc.Equals(input.ApprovedExpiresAtUtc))
+                ) && 
+                (
                     this.RejectedAtUtc == input.RejectedAtUtc ||
                     (this.RejectedAtUtc != null &&
                     this.RejectedAtUtc.Equals(input.RejectedAtUtc))
@@ -303,6 +317,10 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.ApprovedAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.ApprovedAtUtc.GetHashCode();
+                }
+                if (this.ApprovedExpiresAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.ApprovedExpiresAtUtc.GetHashCode();
                 }
                 if (this.RejectedAtUtc != null)
                 {

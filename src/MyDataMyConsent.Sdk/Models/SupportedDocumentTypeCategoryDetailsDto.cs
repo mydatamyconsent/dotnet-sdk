@@ -42,7 +42,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="documentTypeCategoryId">documentTypeCategoryId (required).</param>
         /// <param name="documentTypeCategoryName">documentTypeCategoryName (required).</param>
         /// <param name="supportedDocuments">supportedDocuments (required).</param>
-        /// <param name="supportedDocumentProviderDetails">supportedDocumentProviderDetails (required).</param>
+        /// <param name="supportedDocumentProviderDetails">supportedDocumentProviderDetails.</param>
         public SupportedDocumentTypeCategoryDetailsDto(Guid documentTypeCategoryId = default(Guid), string documentTypeCategoryName = default(string), List<SupportedDocumentDetailsDto> supportedDocuments = default(List<SupportedDocumentDetailsDto>), List<SupportedDocumentProviderDetailsDto> supportedDocumentProviderDetails = default(List<SupportedDocumentProviderDetailsDto>))
         {
             this.DocumentTypeCategoryId = documentTypeCategoryId;
@@ -52,10 +52,6 @@ namespace MyDataMyConsent.Sdk.Models
                 throw new ArgumentNullException("supportedDocuments is a required property for SupportedDocumentTypeCategoryDetailsDto and cannot be null");
             }
             this.SupportedDocuments = supportedDocuments;
-            // to ensure "supportedDocumentProviderDetails" is required (not null)
-            if (supportedDocumentProviderDetails == null) {
-                throw new ArgumentNullException("supportedDocumentProviderDetails is a required property for SupportedDocumentTypeCategoryDetailsDto and cannot be null");
-            }
             this.SupportedDocumentProviderDetails = supportedDocumentProviderDetails;
         }
 
@@ -80,7 +76,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets SupportedDocumentProviderDetails
         /// </summary>
-        [DataMember(Name = "supportedDocumentProviderDetails", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "supportedDocumentProviderDetails", EmitDefaultValue = true)]
         public List<SupportedDocumentProviderDetailsDto> SupportedDocumentProviderDetails { get; set; }
 
         /// <summary>

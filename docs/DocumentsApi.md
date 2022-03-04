@@ -457,7 +457,7 @@ No authorization required
 
 <a name="uploaddocumentfororganization"></a>
 # **UploadDocumentForOrganization**
-> string UploadDocumentForOrganization (Guid issueRequestId, System.IO.Stream? formFile = null)
+> string UploadDocumentForOrganization (Guid issueRequestId, System.IO.Stream formFile)
 
 Upload a document for issuance request of organization.
 
@@ -479,7 +479,7 @@ namespace Example
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
             var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
-            var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
+            var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
             {
@@ -503,7 +503,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
- **formFile** | **System.IO.Stream?****System.IO.Stream?**|  | [optional] 
+ **formFile** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 

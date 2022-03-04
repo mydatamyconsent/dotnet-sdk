@@ -62,10 +62,16 @@ namespace MyDataMyConsent.Sdk.Models
         Expired = 5,
 
         /// <summary>
+        /// Enum Timeout for value: Timeout
+        /// </summary>
+        [EnumMember(Value = "Timeout")]
+        Timeout = 6,
+
+        /// <summary>
         /// Enum Canceled for value: Canceled
         /// </summary>
         [EnumMember(Value = "Canceled")]
-        Canceled = 6
+        Canceled = 7
 
     }
 

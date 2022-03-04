@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **RequestedByOrg** | [**Requester**](Requester.md) |  | [optional] 
 **Status** | **DataConsentStatus** |  | [optional] 
 **ApprovedAtUtc** | **DateTime?** |  | [optional] 
+**ApprovedExpiresAtUtc** | **DateTime?** |  | [optional] 
 **RejectedAtUtc** | **DateTime?** |  | [optional] 
 **RevokedAtUtc** | **DateTime?** |  | [optional] 
 **RequestedExpiresAtUtc** | **DateTime** |  | [optional] 
