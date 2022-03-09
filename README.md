@@ -149,6 +149,7 @@ Class | Method | HTTP request | Description
  - [Models.Activity](docs/Activity.md)
  - [Models.ApprovedConsentRequest](docs/ApprovedConsentRequest.md)
  - [Models.BankAccountType](docs/BankAccountType.md)
+ - [Models.CollectibleTypes](docs/CollectibleTypes.md)
  - [Models.ConsentRequestReceiver](docs/ConsentRequestReceiver.md)
  - [Models.CreateDataProcessingAgreementRequestModel](docs/CreateDataProcessingAgreementRequestModel.md)
  - [Models.CreateIndividualDataConsentRequest](docs/CreateIndividualDataConsentRequest.md)

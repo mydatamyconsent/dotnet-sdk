@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
@@ -103,6 +104,7 @@ src/MyDataMyConsent.Sdk/Models/AbstractOpenAPISchema.cs
 src/MyDataMyConsent.Sdk/Models/Activity.cs
 src/MyDataMyConsent.Sdk/Models/ApprovedConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/BankAccountType.cs
+src/MyDataMyConsent.Sdk/Models/CollectibleTypes.cs
 src/MyDataMyConsent.Sdk/Models/ConsentRequestReceiver.cs
 src/MyDataMyConsent.Sdk/Models/CreateDataProcessingAgreementRequestModel.cs
 src/MyDataMyConsent.Sdk/Models/CreateIndividualDataConsentRequest.cs

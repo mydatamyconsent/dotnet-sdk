@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | [**string?**](string?.md) |  | [optional] 
 **DataLife** | [**Life**](Life.md) |  | [optional] 
 **RequestedByOrg** | [**Requester**](Requester.md) |  | [optional] 
+**Collectables** | [**List&lt;CollectibleTypes&gt;**](CollectibleTypes.md) |  | 
 **Status** | **DataConsentStatus** |  | [optional] 
 **ApprovedAtUtc** | **DateTime?** |  | [optional] 
 **ApprovedExpiresAtUtc** | **DateTime?** |  | [optional] 
