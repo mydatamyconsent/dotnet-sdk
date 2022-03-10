@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DownloadConsentedDocumentAnalysis**](DataConsentsApi.md#downloadconsenteddocumentanalysis) | **GET** /v1/consents/{consentId}/documents/{documentId}/analysis | Get analysis of a consented document.
 [**DownloadConsentedDocumentById**](DataConsentsApi.md#downloadconsenteddocumentbyid) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
 [**DownloadOrgConsentedDocumentById**](DataConsentsApi.md#downloadorgconsenteddocumentbyid) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
 [**GetAllConsentedDocuments**](DataConsentsApi.md#getallconsenteddocuments) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
@@ -14,6 +15,7 @@ Method | HTTP request | Description
 [**GetConsentedAccountById**](DataConsentsApi.md#getconsentedaccountbyid) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id.
 [**GetConsentedDocumentById**](DataConsentsApi.md#getconsenteddocumentbyid) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
 [**GetConsentedFinancialAccount**](DataConsentsApi.md#getconsentedfinancialaccount) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id.
+[**GetConsentedFinancialAccountInsights**](DataConsentsApi.md#getconsentedfinancialaccountinsights) | **GET** /v1/consents/{consentId}/financial-accounts/{accountId}/insights | Get consented financial account insights.
 [**GetConsentedFinancialAccountTransactions**](DataConsentsApi.md#getconsentedfinancialaccounttransactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
 [**GetConsentsForOrganizations**](DataConsentsApi.md#getconsentsfororganizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
 [**GetConsentsSentToIndividuals**](DataConsentsApi.md#getconsentssenttoindividuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
@@ -21,6 +23,77 @@ Method | HTTP request | Description
 [**GetOrganizationConsentDetailsById**](DataConsentsApi.md#getorganizationconsentdetailsbyid) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**GetOrganizationConsentedDocumentById**](DataConsentsApi.md#getorganizationconsenteddocumentbyid) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
 
+
+<a name="downloadconsenteddocumentanalysis"></a>
+# **DownloadConsentedDocumentAnalysis**
+> void DownloadConsentedDocumentAnalysis (string consentId, string documentId)
+
+Get analysis of a consented document.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class DownloadConsentedDocumentAnalysisExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.mydatamyconsent.com";
+            var apiInstance = new DataConsentsApi(config);
+            var consentId = "consentId_example";  // string | 
+            var documentId = "documentId_example";  // string | Document Id.
+
+            try
+            {
+                // Get analysis of a consented document.
+                apiInstance.DownloadConsentedDocumentAnalysis(consentId, documentId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataConsentsApi.DownloadConsentedDocumentAnalysis: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentId** | **string**|  | 
+ **documentId** | **string**| Document Id. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="downloadconsenteddocumentbyid"></a>
 # **DownloadConsentedDocumentById**
@@ -713,6 +786,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrganizationFinancialAccountDto**](OrganizationFinancialAccountDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getconsentedfinancialaccountinsights"></a>
+# **GetConsentedFinancialAccountInsights**
+> void GetConsentedFinancialAccountInsights (string consentId, string accountId)
+
+Get consented financial account insights.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using MyDataMyConsent.Sdk.Api;
+using MyDataMyConsent.Sdk.Client;
+using MyDataMyConsent.Sdk.Models;
+
+namespace Example
+{
+    public class GetConsentedFinancialAccountInsightsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.mydatamyconsent.com";
+            var apiInstance = new DataConsentsApi(config);
+            var consentId = "consentId_example";  // string | 
+            var accountId = "accountId_example";  // string | 
+
+            try
+            {
+                // Get consented financial account insights.
+                apiInstance.GetConsentedFinancialAccountInsights(consentId, accountId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataConsentsApi.GetConsentedFinancialAccountInsights: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consentId** | **string**|  | 
+ **accountId** | **string**|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

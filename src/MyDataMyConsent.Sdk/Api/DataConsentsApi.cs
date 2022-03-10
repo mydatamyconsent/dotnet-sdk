@@ -28,6 +28,26 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Get analysis of a consented document.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <returns></returns>
+        void DownloadConsentedDocumentAnalysis(string consentId, string documentId);
+
+        /// <summary>
+        /// Get analysis of a consented document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DownloadConsentedDocumentAnalysisWithHttpInfo(string consentId, string documentId);
+        /// <summary>
         /// Download a individuals consented document.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
@@ -218,6 +238,26 @@ namespace MyDataMyConsent.Sdk.Api
         /// <returns>ApiResponse of OrganizationFinancialAccountDto</returns>
         ApiResponse<OrganizationFinancialAccountDto> GetConsentedFinancialAccountWithHttpInfo(Guid consentId, Guid accountId);
         /// <summary>
+        /// Get consented financial account insights.
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        void GetConsentedFinancialAccountInsights(string consentId, string accountId);
+
+        /// <summary>
+        /// Get consented financial account insights.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GetConsentedFinancialAccountInsightsWithHttpInfo(string consentId, string accountId);
+        /// <summary>
         /// Get individual consented financial account transactions of an individual based on accountId.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
@@ -376,6 +416,31 @@ namespace MyDataMyConsent.Sdk.Api
     public interface IDataConsentsApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Get analysis of a consented document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get analysis of a consented document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadConsentedDocumentAnalysisWithHttpInfoAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download a individuals consented document.
         /// </summary>
@@ -616,6 +681,31 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationFinancialAccountDto)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationFinancialAccountDto>> GetConsentedFinancialAccountWithHttpInfoAsync(Guid consentId, Guid accountId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get consented financial account insights.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GetConsentedFinancialAccountInsightsAsync(string consentId, string accountId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get consented financial account insights.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetConsentedFinancialAccountInsightsWithHttpInfoAsync(string consentId, string accountId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get individual consented financial account transactions of an individual based on accountId.
         /// </summary>
@@ -914,6 +1004,132 @@ namespace MyDataMyConsent.Sdk.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Get analysis of a consented document. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <returns></returns>
+        public void DownloadConsentedDocumentAnalysis(string consentId, string documentId)
+        {
+            DownloadConsentedDocumentAnalysisWithHttpInfo(consentId, documentId);
+        }
+
+        /// <summary>
+        /// Get analysis of a consented document. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> DownloadConsentedDocumentAnalysisWithHttpInfo(string consentId, string documentId)
+        {
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("consentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(consentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<Object>("/v1/consents/{consentId}/documents/{documentId}/analysis", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadConsentedDocumentAnalysis", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get analysis of a consented document. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DownloadConsentedDocumentAnalysisWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get analysis of a consented document. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="documentId">Document Id.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> DownloadConsentedDocumentAnalysisWithHttpInfoAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("consentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(consentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("documentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/{consentId}/documents/{documentId}/analysis", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadConsentedDocumentAnalysis", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2157,6 +2373,132 @@ namespace MyDataMyConsent.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetConsentedFinancialAccount", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get consented financial account insights. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public void GetConsentedFinancialAccountInsights(string consentId, string accountId)
+        {
+            GetConsentedFinancialAccountInsightsWithHttpInfo(consentId, accountId);
+        }
+
+        /// <summary>
+        /// Get consented financial account insights. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetConsentedFinancialAccountInsightsWithHttpInfo(string consentId, string accountId)
+        {
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("consentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(consentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("accountId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<Object>("/v1/consents/{consentId}/financial-accounts/{accountId}/insights", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetConsentedFinancialAccountInsights", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get consented financial account insights. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GetConsentedFinancialAccountInsightsAsync(string consentId, string accountId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await GetConsentedFinancialAccountInsightsWithHttpInfoAsync(consentId, accountId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get consented financial account insights. 
+        /// </summary>
+        /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consentId"></param>
+        /// <param name="accountId"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetConsentedFinancialAccountInsightsWithHttpInfoAsync(string consentId, string accountId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = MyDataMyConsent.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("consentId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(consentId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("accountId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/{consentId}/financial-accounts/{accountId}/insights", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetConsentedFinancialAccountInsights", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
