@@ -39,14 +39,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentIssueRequest" /> class.
         /// </summary>
-        /// <param name="documentTypeId">documentTypeId (required).</param>
-        /// <param name="identifier">identifier (required).</param>
-        /// <param name="description">description (required).</param>
+        /// <param name="documentTypeId">Document type id. (required).</param>
+        /// <param name="identifier">Document identifier. (required).</param>
+        /// <param name="description">Document description. (required).</param>
         /// <param name="receiver">receiver (required).</param>
-        /// <param name="issuedAtUtc">issuedAtUtc (required).</param>
-        /// <param name="validFromUtc">validFromUtc (required).</param>
-        /// <param name="expiresAtUtc">expiresAtUtc.</param>
-        /// <param name="metadata">metadata.</param>
+        /// <param name="issuedAtUtc">Datetime of issue in UTC timezone. (required).</param>
+        /// <param name="validFromUtc">Valid from datetime in UTC timezone. (required).</param>
+        /// <param name="expiresAtUtc">Datetime of expiry in UTC timezone..</param>
+        /// <param name="metadata">Metadata..</param>
         public DocumentIssueRequest(Guid documentTypeId = default(Guid), string identifier = default(string), string description = default(string), DocumentReceiver receiver = default(DocumentReceiver), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             this.DocumentTypeId = documentTypeId;
@@ -64,20 +64,23 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Gets or Sets DocumentTypeId
+        /// Document type id.
         /// </summary>
+        /// <value>Document type id.</value>
         [DataMember(Name = "documentTypeId", IsRequired = true, EmitDefaultValue = false)]
         public Guid DocumentTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Document identifier.
         /// </summary>
+        /// <value>Document identifier.</value>
         [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Document description.
         /// </summary>
+        /// <value>Document description.</value>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = false)]
         public string Description { get; set; }
 
@@ -88,26 +91,30 @@ namespace MyDataMyConsent.Sdk.Models
         public DocumentReceiver Receiver { get; set; }
 
         /// <summary>
-        /// Gets or Sets IssuedAtUtc
+        /// Datetime of issue in UTC timezone.
         /// </summary>
+        /// <value>Datetime of issue in UTC timezone.</value>
         [DataMember(Name = "issuedAtUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime IssuedAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFromUtc
+        /// Valid from datetime in UTC timezone.
         /// </summary>
+        /// <value>Valid from datetime in UTC timezone.</value>
         [DataMember(Name = "validFromUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime ValidFromUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiresAtUtc
+        /// Datetime of expiry in UTC timezone.
         /// </summary>
+        /// <value>Datetime of expiry in UTC timezone.</value>
         [DataMember(Name = "expiresAtUtc", EmitDefaultValue = true)]
         public DateTime? ExpiresAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Metadata
+        /// Metadata.
         /// </summary>
+        /// <value>Metadata.</value>
         [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
 

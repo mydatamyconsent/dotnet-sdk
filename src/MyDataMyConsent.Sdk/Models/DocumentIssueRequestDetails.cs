@@ -45,18 +45,18 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentIssueRequestDetails" /> class.
         /// </summary>
-        /// <param name="id">Request Id. (required).</param>
-        /// <param name="documentTypeId">documentTypeId (required).</param>
-        /// <param name="typeName">typeName (required).</param>
-        /// <param name="identifier">identifier (required).</param>
+        /// <param name="id">Document issue request Id. (required).</param>
+        /// <param name="documentTypeId">Document type Id. (required).</param>
+        /// <param name="typeName">Document type name. (required).</param>
+        /// <param name="identifier">Document identifier. (required).</param>
         /// <param name="status">status (required).</param>
-        /// <param name="description">description (required).</param>
-        /// <param name="receiver">receiver (required).</param>
-        /// <param name="issuedAtUtc">issuedAtUtc (required).</param>
-        /// <param name="validFromUtc">validFromUtc (required).</param>
-        /// <param name="expiresAtUtc">expiresAtUtc.</param>
-        /// <param name="metaData">metaData.</param>
-        /// <param name="createdAtUtc">createdAtUtc (required).</param>
+        /// <param name="description">Document description. (required).</param>
+        /// <param name="receiver">Document receiver details. (required).</param>
+        /// <param name="issuedAtUtc">Datetime of issue in UTC timezone. (required).</param>
+        /// <param name="validFromUtc">Valid from datetime in UTC timezone. (required).</param>
+        /// <param name="expiresAtUtc">Datetime of expiry in UTC timezone..</param>
+        /// <param name="metaData">Metadata..</param>
+        /// <param name="createdAtUtc">Creation datetime of issue request in UTC timezone. (required).</param>
         public DocumentIssueRequestDetails(Guid id = default(Guid), Guid documentTypeId = default(Guid), string typeName = default(string), string identifier = default(string), DocumentIssueRequestStatus status = default(DocumentIssueRequestStatus), string description = default(string), Object receiver = default(Object), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), Object metaData = default(Object), DateTime createdAtUtc = default(DateTime))
         {
             this.Id = id;
@@ -78,69 +78,79 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Request Id.
+        /// Document issue request Id.
         /// </summary>
-        /// <value>Request Id.</value>
+        /// <value>Document issue request Id.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentTypeId
+        /// Document type Id.
         /// </summary>
+        /// <value>Document type Id.</value>
         [DataMember(Name = "documentTypeId", IsRequired = true, EmitDefaultValue = false)]
         public Guid DocumentTypeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TypeName
+        /// Document type name.
         /// </summary>
+        /// <value>Document type name.</value>
         [DataMember(Name = "typeName", IsRequired = true, EmitDefaultValue = false)]
         public string TypeName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Document identifier.
         /// </summary>
+        /// <value>Document identifier.</value>
         [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Document description.
         /// </summary>
+        /// <value>Document description.</value>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Receiver
+        /// Document receiver details.
         /// </summary>
+        /// <value>Document receiver details.</value>
         [DataMember(Name = "receiver", IsRequired = true, EmitDefaultValue = true)]
         public Object Receiver { get; set; }
 
         /// <summary>
-        /// Gets or Sets IssuedAtUtc
+        /// Datetime of issue in UTC timezone.
         /// </summary>
+        /// <value>Datetime of issue in UTC timezone.</value>
         [DataMember(Name = "issuedAtUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime IssuedAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValidFromUtc
+        /// Valid from datetime in UTC timezone.
         /// </summary>
+        /// <value>Valid from datetime in UTC timezone.</value>
         [DataMember(Name = "validFromUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime ValidFromUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpiresAtUtc
+        /// Datetime of expiry in UTC timezone.
         /// </summary>
+        /// <value>Datetime of expiry in UTC timezone.</value>
         [DataMember(Name = "expiresAtUtc", EmitDefaultValue = true)]
         public DateTime? ExpiresAtUtc { get; set; }
 
         /// <summary>
-        /// Gets or Sets MetaData
+        /// Metadata.
         /// </summary>
+        /// <value>Metadata.</value>
         [DataMember(Name = "metaData", EmitDefaultValue = true)]
         public Object MetaData { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedAtUtc
+        /// Creation datetime of issue request in UTC timezone.
         /// </summary>
+        /// <value>Creation datetime of issue request in UTC timezone.</value>
         [DataMember(Name = "createdAtUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime CreatedAtUtc { get; set; }
 

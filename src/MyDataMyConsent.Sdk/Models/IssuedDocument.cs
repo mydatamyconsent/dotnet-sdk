@@ -39,11 +39,11 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="IssuedDocument" /> class.
         /// </summary>
-        /// <param name="id">Document Identifier. (required).</param>
-        /// <param name="identifier">Document Identifier. eg: GJ05FG67866586. (required).</param>
-        /// <param name="documentType">Document type name. eg: Driving License. (required).</param>
-        /// <param name="issuedTo">issuedTo (required).</param>
-        /// <param name="issuedAtUtc">issuedAtUtc (required).</param>
+        /// <param name="id">Document Id. (required).</param>
+        /// <param name="identifier">Document Identifier. (required).</param>
+        /// <param name="documentType">Document type name. (required).</param>
+        /// <param name="issuedTo">User name. (required).</param>
+        /// <param name="issuedAtUtc">Issued datetime in UTC timezone. (required).</param>
         public IssuedDocument(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime))
         {
             this.Id = id;
@@ -54,35 +54,37 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Document Identifier.
+        /// Document Id.
         /// </summary>
-        /// <value>Document Identifier.</value>
+        /// <value>Document Id.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Document Identifier. eg: GJ05FG67866586.
+        /// Document Identifier.
         /// </summary>
-        /// <value>Document Identifier. eg: GJ05FG67866586.</value>
+        /// <value>Document Identifier.</value>
         [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// Document type name. eg: Driving License.
+        /// Document type name.
         /// </summary>
-        /// <value>Document type name. eg: Driving License.</value>
+        /// <value>Document type name.</value>
         [DataMember(Name = "documentType", IsRequired = true, EmitDefaultValue = false)]
         public string DocumentType { get; set; }
 
         /// <summary>
-        /// Gets or Sets IssuedTo
+        /// User name.
         /// </summary>
+        /// <value>User name.</value>
         [DataMember(Name = "issuedTo", IsRequired = true, EmitDefaultValue = false)]
         public string IssuedTo { get; set; }
 
         /// <summary>
-        /// Gets or Sets IssuedAtUtc
+        /// Issued datetime in UTC timezone.
         /// </summary>
+        /// <value>Issued datetime in UTC timezone.</value>
         [DataMember(Name = "issuedAtUtc", IsRequired = true, EmitDefaultValue = false)]
         public DateTime IssuedAtUtc { get; set; }
 

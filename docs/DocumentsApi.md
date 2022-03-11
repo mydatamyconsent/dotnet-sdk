@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetIssuedDocumentById**](DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
 [**GetIssuedDocuments**](DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
-[**GetRegisteredDocumentTypes**](DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get registered document types.
+[**GetRegisteredDocumentTypes**](DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get paginated list of registered document types.
 [**IssueDocumentToIndividual**](DocumentsApi.md#issuedocumenttoindividual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 [**IssueDocumentToOrganization**](DocumentsApi.md#issuedocumenttoorganization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
 [**UploadDocumentForIndividual**](DocumentsApi.md#uploaddocumentforindividual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
@@ -109,8 +109,8 @@ namespace Example
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
             var documentTypeId = "documentTypeId_example";  // Guid | Document type id.
-            var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From DateTime. (optional) 
-            var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To DateTime. (optional) 
+            var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From DateTime in UTC timezone. (optional) 
+            var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To DateTime in UTC timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
             var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
@@ -136,8 +136,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **documentTypeId** | **Guid**| Document type id. | 
- **fromDateTime** | **DateTime?**| From DateTime. | [optional] 
- **toDateTime** | **DateTime?**| To DateTime. | [optional] 
+ **fromDateTime** | **DateTime?**| From DateTime in UTC timezone. | [optional] 
+ **toDateTime** | **DateTime?**| To DateTime in UTC timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
  **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 
@@ -168,7 +168,7 @@ No authorization required
 # **GetRegisteredDocumentTypes**
 > DocumentTypePaginatedList GetRegisteredDocumentTypes (int? pageNo = null, int? pageSize = null)
 
-Get registered document types.
+Get paginated list of registered document types.
 
 ### Example
 ```csharp
@@ -192,7 +192,7 @@ namespace Example
 
             try
             {
-                // Get registered document types.
+                // Get paginated list of registered document types.
                 DocumentTypePaginatedList result = apiInstance.GetRegisteredDocumentTypes(pageNo, pageSize);
                 Debug.WriteLine(result);
             }
@@ -384,7 +384,7 @@ No authorization required
 
 <a name="uploaddocumentforindividual"></a>
 # **UploadDocumentForIndividual**
-> string UploadDocumentForIndividual (Guid issueRequestId, System.IO.Stream formFile)
+> void UploadDocumentForIndividual (Guid issueRequestId, System.IO.Stream formFile)
 
 Upload a document for issuance request of individual.
 
@@ -405,14 +405,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
-            var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var issueRequestId = "issueRequestId_example";  // Guid | Document issue request id.
             var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
             {
                 // Upload a document for issuance request of individual.
-                string result = apiInstance.UploadDocumentForIndividual(issueRequestId, formFile);
-                Debug.WriteLine(result);
+                apiInstance.UploadDocumentForIndividual(issueRequestId, formFile);
             }
             catch (ApiException  e)
             {
@@ -429,12 +428,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **issueRequestId** | **Guid**| Document issue request id. | 
  **formFile** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
-**string**
+void (empty response body)
 
 ### Authorization
 
@@ -457,7 +456,7 @@ No authorization required
 
 <a name="uploaddocumentfororganization"></a>
 # **UploadDocumentForOrganization**
-> string UploadDocumentForOrganization (Guid issueRequestId, System.IO.Stream formFile)
+> void UploadDocumentForOrganization (Guid issueRequestId, System.IO.Stream formFile)
 
 Upload a document for issuance request of organization.
 
@@ -478,14 +477,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
-            var issueRequestId = "issueRequestId_example";  // Guid | Issue Request Id System.Guid.
+            var issueRequestId = "issueRequestId_example";  // Guid | Document issue request id System.Guid.
             var formFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
             {
                 // Upload a document for issuance request of organization.
-                string result = apiInstance.UploadDocumentForOrganization(issueRequestId, formFile);
-                Debug.WriteLine(result);
+                apiInstance.UploadDocumentForOrganization(issueRequestId, formFile);
             }
             catch (ApiException  e)
             {
@@ -502,12 +500,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **issueRequestId** | **Guid**| Issue Request Id System.Guid. | 
+ **issueRequestId** | **Guid**| Document issue request id System.Guid. | 
  **formFile** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
-**string**
+void (empty response body)
 
 ### Authorization
 
