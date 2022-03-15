@@ -95,7 +95,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an individual user.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>DocumentIssueRequestDetails</returns>
         DocumentIssueRequestDetails IssueDocumentToIndividual(DocumentIssueRequest documentIssueRequest);
 
@@ -106,14 +106,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
         ApiResponse<DocumentIssueRequestDetails> IssueDocumentToIndividualWithHttpInfo(DocumentIssueRequest documentIssueRequest);
         /// <summary>
         /// Issue a new document to an organization.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>DocumentIssueRequestDetails</returns>
         DocumentIssueRequestDetails IssueDocumentToOrganization(DocumentIssueRequest documentIssueRequest);
 
@@ -124,7 +124,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
         ApiResponse<DocumentIssueRequestDetails> IssueDocumentToOrganizationWithHttpInfo(DocumentIssueRequest documentIssueRequest);
         /// <summary>
@@ -262,7 +262,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentIssueRequestDetails</returns>
         System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToIndividualAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -274,7 +274,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToIndividualWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -285,7 +285,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentIssueRequestDetails</returns>
         System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToOrganizationAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -297,7 +297,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToOrganizationWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -907,7 +907,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>DocumentIssueRequestDetails</returns>
         public DocumentIssueRequestDetails IssueDocumentToIndividual(DocumentIssueRequest documentIssueRequest)
         {
@@ -919,7 +919,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> IssueDocumentToIndividualWithHttpInfo(DocumentIssueRequest documentIssueRequest)
         {
@@ -973,7 +973,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentIssueRequestDetails</returns>
         public async System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToIndividualAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -986,7 +986,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an individual user. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToIndividualWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1043,7 +1043,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an organization. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>DocumentIssueRequestDetails</returns>
         public DocumentIssueRequestDetails IssueDocumentToOrganization(DocumentIssueRequest documentIssueRequest)
         {
@@ -1055,7 +1055,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an organization. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <returns>ApiResponse of DocumentIssueRequestDetails</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails> IssueDocumentToOrganizationWithHttpInfo(DocumentIssueRequest documentIssueRequest)
         {
@@ -1109,7 +1109,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an organization. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentIssueRequestDetails</returns>
         public async System.Threading.Tasks.Task<DocumentIssueRequestDetails> IssueDocumentToOrganizationAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1122,7 +1122,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// Issue a new document to an organization. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentIssueRequest">Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.</param>
+        /// <param name="documentIssueRequest">Document issue request payload</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentIssueRequestDetails)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentIssueRequestDetails>> IssueDocumentToOrganizationWithHttpInfoAsync(DocumentIssueRequest documentIssueRequest, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

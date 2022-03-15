@@ -34,45 +34,60 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="DataProvider" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
+        [JsonConstructorAttribute]
+        protected DataProvider() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataProvider" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="category">category (required).</param>
         /// <param name="logoUrl">logoUrl.</param>
         /// <param name="website">website.</param>
-        /// <param name="email">email.</param>
-        /// <param name="supportPhoneNumber">supportPhoneNumber.</param>
+        /// <param name="supportEmail">supportEmail.</param>
+        /// <param name="helpLineNumber">helpLineNumber.</param>
         /// <param name="privacyPolicy">privacyPolicy.</param>
         /// <param name="termOfService">termOfService.</param>
-        /// <param name="category">category.</param>
         /// <param name="dataProtectionOfficer">dataProtectionOfficer.</param>
+        /// <param name="supportedDocumentTypes">supportedDocumentTypes (required).</param>
         /// <param name="supportedAccountTypes">supportedAccountTypes.</param>
-        /// <param name="supportedDocumentTypes">supportedDocumentTypes.</param>
-        public DataProvider(string? id = default(string?), string? name = default(string?), string? logoUrl = default(string?), string? website = default(string?), string? email = default(string?), string? supportPhoneNumber = default(string?), string? privacyPolicy = default(string?), string? termOfService = default(string?), string? category = default(string?), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedAccountTypes = default(List<string>), List<string> supportedDocumentTypes = default(List<string>))
+        public DataProvider(string id = default(string), string name = default(string), string category = default(string), string? logoUrl = default(string?), string? website = default(string?), string? supportEmail = default(string?), string? helpLineNumber = default(string?), string? privacyPolicy = default(string?), string? termOfService = default(string?), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedDocumentTypes = default(List<string>), List<string> supportedAccountTypes = default(List<string>))
         {
             this.Id = id;
             this.Name = name;
+            this.Category = category;
+            // to ensure "supportedDocumentTypes" is required (not null)
+            if (supportedDocumentTypes == null) {
+                throw new ArgumentNullException("supportedDocumentTypes is a required property for DataProvider and cannot be null");
+            }
+            this.SupportedDocumentTypes = supportedDocumentTypes;
             this.LogoUrl = logoUrl;
             this.Website = website;
-            this.Email = email;
-            this.SupportPhoneNumber = supportPhoneNumber;
+            this.SupportEmail = supportEmail;
+            this.HelpLineNumber = helpLineNumber;
             this.PrivacyPolicy = privacyPolicy;
             this.TermOfService = termOfService;
-            this.Category = category;
             this.DataProtectionOfficer = dataProtectionOfficer;
             this.SupportedAccountTypes = supportedAccountTypes;
-            this.SupportedDocumentTypes = supportedDocumentTypes;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
-        public string? Id { get; set; }
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Category
+        /// </summary>
+        [DataMember(Name = "category", IsRequired = true, EmitDefaultValue = false)]
+        public string Category { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
@@ -87,16 +102,16 @@ namespace MyDataMyConsent.Sdk.Models
         public string? Website { get; set; }
 
         /// <summary>
-        /// Gets or Sets Email
+        /// Gets or Sets SupportEmail
         /// </summary>
-        [DataMember(Name = "email", EmitDefaultValue = true)]
-        public string? Email { get; set; }
+        [DataMember(Name = "supportEmail", EmitDefaultValue = true)]
+        public string? SupportEmail { get; set; }
 
         /// <summary>
-        /// Gets or Sets SupportPhoneNumber
+        /// Gets or Sets HelpLineNumber
         /// </summary>
-        [DataMember(Name = "supportPhoneNumber", EmitDefaultValue = true)]
-        public string? SupportPhoneNumber { get; set; }
+        [DataMember(Name = "helpLineNumber", EmitDefaultValue = true)]
+        public string? HelpLineNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivacyPolicy
@@ -111,28 +126,22 @@ namespace MyDataMyConsent.Sdk.Models
         public string? TermOfService { get; set; }
 
         /// <summary>
-        /// Gets or Sets Category
-        /// </summary>
-        [DataMember(Name = "category", EmitDefaultValue = true)]
-        public string? Category { get; set; }
-
-        /// <summary>
         /// Gets or Sets DataProtectionOfficer
         /// </summary>
         [DataMember(Name = "dataProtectionOfficer", EmitDefaultValue = false)]
         public DataProtectionOfficer DataProtectionOfficer { get; set; }
 
         /// <summary>
+        /// Gets or Sets SupportedDocumentTypes
+        /// </summary>
+        [DataMember(Name = "supportedDocumentTypes", IsRequired = true, EmitDefaultValue = false)]
+        public List<string> SupportedDocumentTypes { get; set; }
+
+        /// <summary>
         /// Gets or Sets SupportedAccountTypes
         /// </summary>
         [DataMember(Name = "supportedAccountTypes", EmitDefaultValue = true)]
         public List<string> SupportedAccountTypes { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SupportedDocumentTypes
-        /// </summary>
-        [DataMember(Name = "supportedDocumentTypes", EmitDefaultValue = true)]
-        public List<string> SupportedDocumentTypes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -144,16 +153,16 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("class DataProvider {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("  Website: ").Append(Website).Append("\n");
-            sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  SupportPhoneNumber: ").Append(SupportPhoneNumber).Append("\n");
+            sb.Append("  SupportEmail: ").Append(SupportEmail).Append("\n");
+            sb.Append("  HelpLineNumber: ").Append(HelpLineNumber).Append("\n");
             sb.Append("  PrivacyPolicy: ").Append(PrivacyPolicy).Append("\n");
             sb.Append("  TermOfService: ").Append(TermOfService).Append("\n");
-            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  DataProtectionOfficer: ").Append(DataProtectionOfficer).Append("\n");
-            sb.Append("  SupportedAccountTypes: ").Append(SupportedAccountTypes).Append("\n");
             sb.Append("  SupportedDocumentTypes: ").Append(SupportedDocumentTypes).Append("\n");
+            sb.Append("  SupportedAccountTypes: ").Append(SupportedAccountTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -200,6 +209,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Category == input.Category ||
+                    (this.Category != null &&
+                    this.Category.Equals(input.Category))
+                ) && 
+                (
                     this.LogoUrl == input.LogoUrl ||
                     (this.LogoUrl != null &&
                     this.LogoUrl.Equals(input.LogoUrl))
@@ -210,14 +224,14 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Website.Equals(input.Website))
                 ) && 
                 (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
+                    this.SupportEmail == input.SupportEmail ||
+                    (this.SupportEmail != null &&
+                    this.SupportEmail.Equals(input.SupportEmail))
                 ) && 
                 (
-                    this.SupportPhoneNumber == input.SupportPhoneNumber ||
-                    (this.SupportPhoneNumber != null &&
-                    this.SupportPhoneNumber.Equals(input.SupportPhoneNumber))
+                    this.HelpLineNumber == input.HelpLineNumber ||
+                    (this.HelpLineNumber != null &&
+                    this.HelpLineNumber.Equals(input.HelpLineNumber))
                 ) && 
                 (
                     this.PrivacyPolicy == input.PrivacyPolicy ||
@@ -230,26 +244,21 @@ namespace MyDataMyConsent.Sdk.Models
                     this.TermOfService.Equals(input.TermOfService))
                 ) && 
                 (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
                     this.DataProtectionOfficer == input.DataProtectionOfficer ||
                     (this.DataProtectionOfficer != null &&
                     this.DataProtectionOfficer.Equals(input.DataProtectionOfficer))
-                ) && 
-                (
-                    this.SupportedAccountTypes == input.SupportedAccountTypes ||
-                    this.SupportedAccountTypes != null &&
-                    input.SupportedAccountTypes != null &&
-                    this.SupportedAccountTypes.SequenceEqual(input.SupportedAccountTypes)
                 ) && 
                 (
                     this.SupportedDocumentTypes == input.SupportedDocumentTypes ||
                     this.SupportedDocumentTypes != null &&
                     input.SupportedDocumentTypes != null &&
                     this.SupportedDocumentTypes.SequenceEqual(input.SupportedDocumentTypes)
+                ) && 
+                (
+                    this.SupportedAccountTypes == input.SupportedAccountTypes ||
+                    this.SupportedAccountTypes != null &&
+                    input.SupportedAccountTypes != null &&
+                    this.SupportedAccountTypes.SequenceEqual(input.SupportedAccountTypes)
                 );
         }
 
@@ -270,6 +279,10 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                if (this.Category != null)
+                {
+                    hashCode = (hashCode * 59) + this.Category.GetHashCode();
+                }
                 if (this.LogoUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.LogoUrl.GetHashCode();
@@ -278,13 +291,13 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Website.GetHashCode();
                 }
-                if (this.Email != null)
+                if (this.SupportEmail != null)
                 {
-                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SupportEmail.GetHashCode();
                 }
-                if (this.SupportPhoneNumber != null)
+                if (this.HelpLineNumber != null)
                 {
-                    hashCode = (hashCode * 59) + this.SupportPhoneNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.HelpLineNumber.GetHashCode();
                 }
                 if (this.PrivacyPolicy != null)
                 {
@@ -294,21 +307,17 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.TermOfService.GetHashCode();
                 }
-                if (this.Category != null)
-                {
-                    hashCode = (hashCode * 59) + this.Category.GetHashCode();
-                }
                 if (this.DataProtectionOfficer != null)
                 {
                     hashCode = (hashCode * 59) + this.DataProtectionOfficer.GetHashCode();
                 }
-                if (this.SupportedAccountTypes != null)
-                {
-                    hashCode = (hashCode * 59) + this.SupportedAccountTypes.GetHashCode();
-                }
                 if (this.SupportedDocumentTypes != null)
                 {
                     hashCode = (hashCode * 59) + this.SupportedDocumentTypes.GetHashCode();
+                }
+                if (this.SupportedAccountTypes != null)
+                {
+                    hashCode = (hashCode * 59) + this.SupportedAccountTypes.GetHashCode();
                 }
                 return hashCode;
             }

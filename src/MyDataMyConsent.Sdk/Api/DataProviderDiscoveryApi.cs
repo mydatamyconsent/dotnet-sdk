@@ -28,21 +28,21 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a Data Provider details based on provider id.
+        /// Get a Data Provider details by provider id.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <returns>DataProvider</returns>
         DataProvider GetDataProviderById(string providerId);
 
         /// <summary>
-        /// Get a Data Provider details based on provider id.
+        /// Get a Data Provider details by provider id.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <returns>ApiResponse of DataProvider</returns>
         ApiResponse<DataProvider> GetDataProviderByIdWithHttpInfo(string providerId);
         /// <summary>
@@ -54,9 +54,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
-        DataProviderPaginatedList GetDataProviders(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?));
+        DataProviderPaginatedList GetDataProviders(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?));
 
         /// <summary>
         /// Discover all data providers in My Data My Consent by country and filters.
@@ -70,9 +70,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
-        ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?));
+        ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?));
         #endregion Synchronous Operations
     }
 
@@ -83,25 +83,25 @@ namespace MyDataMyConsent.Sdk.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a Data Provider details based on provider id.
+        /// Get a Data Provider details by provider id.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProvider</returns>
         System.Threading.Tasks.Task<DataProvider> GetDataProviderByIdAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get a Data Provider details based on provider id.
+        /// Get a Data Provider details by provider id.
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProvider)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataProvider>> GetDataProviderByIdWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -117,10 +117,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
-        System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Discover all data providers in My Data My Consent by country and filters.
@@ -134,10 +134,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -259,10 +259,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get a Data Provider details based on provider id. 
+        /// Get a Data Provider details by provider id. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <returns>DataProvider</returns>
         public DataProvider GetDataProviderById(string providerId)
         {
@@ -271,10 +271,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get a Data Provider details based on provider id. 
+        /// Get a Data Provider details by provider id. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <returns>ApiResponse of DataProvider</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider> GetDataProviderByIdWithHttpInfo(string providerId)
         {
@@ -319,10 +319,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get a Data Provider details based on provider id. 
+        /// Get a Data Provider details by provider id. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProvider</returns>
         public async System.Threading.Tasks.Task<DataProvider> GetDataProviderByIdAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -332,10 +332,10 @@ namespace MyDataMyConsent.Sdk.Api
         }
 
         /// <summary>
-        /// Get a Data Provider details based on provider id. 
+        /// Get a Data Provider details by provider id. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="providerId">Provider id.</param>
+        /// <param name="providerId">Data provider id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProvider)</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProvider>> GetDataProviderByIdWithHttpInfoAsync(string providerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -391,11 +391,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>DataProviderPaginatedList</returns>
-        public DataProviderPaginatedList GetDataProviders(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?))
+        public DataProviderPaginatedList GetDataProviders(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = GetDataProvidersWithHttpInfo(accountType, documentType, organizationCategory, pageNo, pageSize, country);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = GetDataProvidersWithHttpInfo(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code);
             return localVarResponse.Data;
         }
 
@@ -408,9 +408,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <returns>ApiResponse of DataProviderPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> GetDataProvidersWithHttpInfo(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -455,9 +455,9 @@ namespace MyDataMyConsent.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
-            if (country != null)
+            if (countryIso2Code != null)
             {
-                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "country", country));
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "countryIso2Code", countryIso2Code));
             }
 
 
@@ -484,12 +484,12 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataProviderPaginatedList</returns>
-        public async System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DataProviderPaginatedList> GetDataProvidersAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = await GetDataProvidersWithHttpInfoAsync(accountType, documentType, organizationCategory, pageNo, pageSize, country, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList> localVarResponse = await GetDataProvidersWithHttpInfoAsync(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -502,10 +502,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="organizationCategory">Organization category. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <param name="country">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
+        /// <param name="countryIso2Code">ISO2 Country code. (optional, default to &quot;IN&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataProviderPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? country = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataProviderPaginatedList>> GetDataProvidersWithHttpInfoAsync(string? accountType = default(string?), string? documentType = default(string?), string? organizationCategory = default(string?), int? pageNo = default(int?), int? pageSize = default(int?), string? countryIso2Code = default(string?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -551,9 +551,9 @@ namespace MyDataMyConsent.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
-            if (country != null)
+            if (countryIso2Code != null)
             {
-                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "country", country));
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "countryIso2Code", countryIso2Code));
             }
 
 

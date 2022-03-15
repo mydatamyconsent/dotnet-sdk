@@ -4,7 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDataProviderById**](DataProviderDiscoveryApi.md#getdataproviderbyid) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details based on provider id.
+[**GetDataProviderById**](DataProviderDiscoveryApi.md#getdataproviderbyid) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details by provider id.
 [**GetDataProviders**](DataProviderDiscoveryApi.md#getdataproviders) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **GetDataProviderById**
 > DataProvider GetDataProviderById (string providerId)
 
-Get a Data Provider details based on provider id.
+Get a Data Provider details by provider id.
 
 ### Example
 ```csharp
@@ -31,11 +31,11 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProviderDiscoveryApi(config);
-            var providerId = "providerId_example";  // string | Provider id.
+            var providerId = "providerId_example";  // string | Data provider id.
 
             try
             {
-                // Get a Data Provider details based on provider id.
+                // Get a Data Provider details by provider id.
                 DataProvider result = apiInstance.GetDataProviderById(providerId);
                 Debug.WriteLine(result);
             }
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **providerId** | **string**| Provider id. | 
+ **providerId** | **string**| Data provider id. | 
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 
 <a name="getdataproviders"></a>
 # **GetDataProviders**
-> DataProviderPaginatedList GetDataProviders (string? accountType = null, string? documentType = null, string? organizationCategory = null, int? pageNo = null, int? pageSize = null, string? country = null)
+> DataProviderPaginatedList GetDataProviders (string? accountType = null, string? documentType = null, string? organizationCategory = null, int? pageNo = null, int? pageSize = null, string? countryIso2Code = null)
 
 Discover all data providers in My Data My Consent by country and filters.
 
@@ -108,12 +108,12 @@ namespace Example
             var organizationCategory = "organizationCategory_example";  // string? | Organization category. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
             var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
-            var country = "\"IN\"";  // string? | ISO2 Country code. (optional)  (default to "IN")
+            var countryIso2Code = "\"IN\"";  // string? | ISO2 Country code. (optional)  (default to "IN")
 
             try
             {
                 // Discover all data providers in My Data My Consent by country and filters.
-                DataProviderPaginatedList result = apiInstance.GetDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country);
+                DataProviderPaginatedList result = apiInstance.GetDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
  **organizationCategory** | **string?**| Organization category. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
  **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
- **country** | **string?**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
+ **countryIso2Code** | **string?**| ISO2 Country code. | [optional] [default to &quot;IN&quot;]
 
 ### Return type
 

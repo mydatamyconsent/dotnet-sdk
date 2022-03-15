@@ -260,7 +260,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
-            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request payload
 
             try
             {
@@ -283,7 +283,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | 
+ **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request payload | 
 
 ### Return type
 
@@ -332,7 +332,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
-            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+            var documentIssueRequest = new DocumentIssueRequest(); // DocumentIssueRequest | Document issue request payload
 
             try
             {
@@ -355,7 +355,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | 
+ **documentIssueRequest** | [**DocumentIssueRequest**](DocumentIssueRequest.md)| Document issue request payload | 
 
 ### Return type
 

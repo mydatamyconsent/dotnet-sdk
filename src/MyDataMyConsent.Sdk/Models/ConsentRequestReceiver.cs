@@ -35,24 +35,42 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Gets or Sets IdentificationStrategy
         /// </summary>
-        [DataMember(Name = "identificationStrategy", EmitDefaultValue = false)]
-        public IdentificationStrategy? IdentificationStrategy { get; set; }
+        [DataMember(Name = "identificationStrategy", IsRequired = true, EmitDefaultValue = false)]
+        public IdentificationStrategy IdentificationStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsentRequestReceiver" /> class.
         /// </summary>
-        /// <param name="identifiers">Consent request receiver identifiers.</param>
-        /// <param name="identificationStrategy">identificationStrategy.</param>
-        public ConsentRequestReceiver(List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy? identificationStrategy = default(IdentificationStrategy?))
+        [JsonConstructorAttribute]
+        protected ConsentRequestReceiver() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConsentRequestReceiver" /> class.
+        /// </summary>
+        /// <param name="countryIso2Code">Consent request receiver country ISO 2 code (required).</param>
+        /// <param name="identifiers">Consent request receiver identifiers (required).</param>
+        /// <param name="identificationStrategy">identificationStrategy (required).</param>
+        public ConsentRequestReceiver(string countryIso2Code = default(string), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy identificationStrategy = default(IdentificationStrategy))
         {
+            this.CountryIso2Code = countryIso2Code;
+            // to ensure "identifiers" is required (not null)
+            if (identifiers == null) {
+                throw new ArgumentNullException("identifiers is a required property for ConsentRequestReceiver and cannot be null");
+            }
             this.Identifiers = identifiers;
             this.IdentificationStrategy = identificationStrategy;
         }
 
         /// <summary>
+        /// Consent request receiver country ISO 2 code
+        /// </summary>
+        /// <value>Consent request receiver country ISO 2 code</value>
+        [DataMember(Name = "countryIso2Code", IsRequired = true, EmitDefaultValue = false)]
+        public string CountryIso2Code { get; set; }
+
+        /// <summary>
         /// Consent request receiver identifiers
         /// </summary>
         /// <value>Consent request receiver identifiers</value>
-        [DataMember(Name = "identifiers", EmitDefaultValue = true)]
+        [DataMember(Name = "identifiers", IsRequired = true, EmitDefaultValue = false)]
         public List<StringStringKeyValuePair> Identifiers { get; set; }
 
         /// <summary>
@@ -63,6 +81,7 @@ namespace MyDataMyConsent.Sdk.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConsentRequestReceiver {\n");
+            sb.Append("  CountryIso2Code: ").Append(CountryIso2Code).Append("\n");
             sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
             sb.Append("  IdentificationStrategy: ").Append(IdentificationStrategy).Append("\n");
             sb.Append("}\n");
@@ -101,6 +120,11 @@ namespace MyDataMyConsent.Sdk.Models
             }
             return 
                 (
+                    this.CountryIso2Code == input.CountryIso2Code ||
+                    (this.CountryIso2Code != null &&
+                    this.CountryIso2Code.Equals(input.CountryIso2Code))
+                ) && 
+                (
                     this.Identifiers == input.Identifiers ||
                     this.Identifiers != null &&
                     input.Identifiers != null &&
@@ -121,6 +145,10 @@ namespace MyDataMyConsent.Sdk.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CountryIso2Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.CountryIso2Code.GetHashCode();
+                }
                 if (this.Identifiers != null)
                 {
                     hashCode = (hashCode * 59) + this.Identifiers.GetHashCode();

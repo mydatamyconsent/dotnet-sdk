@@ -7,14 +7,14 @@ Method | HTTP request | Description
 [**CreateDataProcessingAgreement**](DataProcessingAgreementsApi.md#createdataprocessingagreement) | **POST** /v1/data-agreements | Create a data processing agreement.
 [**DeleteDataProcessingAgreementById**](DataProcessingAgreementsApi.md#deletedataprocessingagreementbyid) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
 [**GetDataProcessingAgreementById**](DataProcessingAgreementsApi.md#getdataprocessingagreementbyid) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id.
-[**GetDataProcessingAgreements**](DataProcessingAgreementsApi.md#getdataprocessingagreements) | **GET** /v1/data-agreements | Get all data processing agreements.
+[**GetDataProcessingAgreements**](DataProcessingAgreementsApi.md#getdataprocessingagreements) | **GET** /v1/data-agreements | Get paginated data processing agreements.
 [**TerminateDataProcessingAgreementById**](DataProcessingAgreementsApi.md#terminatedataprocessingagreementbyid) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement.
 [**UpdateDataProcessingAgreement**](DataProcessingAgreementsApi.md#updatedataprocessingagreement) | **PUT** /v1/data-agreements/{id} | Update a data processing agreement.
 
 
 <a name="createdataprocessingagreement"></a>
 # **CreateDataProcessingAgreement**
-> DataProcessingAgreementDto CreateDataProcessingAgreement (CreateDataProcessingAgreementRequestModel? createDataProcessingAgreementRequestModel = null)
+> DataProcessingAgreement CreateDataProcessingAgreement (CreateDataProcessingAgreement createDataProcessingAgreement)
 
 Create a data processing agreement.
 
@@ -35,12 +35,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
-            var createDataProcessingAgreementRequestModel = new CreateDataProcessingAgreementRequestModel?(); // CreateDataProcessingAgreementRequestModel? | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. (optional) 
+            var createDataProcessingAgreement = new CreateDataProcessingAgreement(); // CreateDataProcessingAgreement | Create data processing agreement payload
 
             try
             {
                 // Create a data processing agreement.
-                DataProcessingAgreementDto result = apiInstance.CreateDataProcessingAgreement(createDataProcessingAgreementRequestModel);
+                DataProcessingAgreement result = apiInstance.CreateDataProcessingAgreement(createDataProcessingAgreement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -58,11 +58,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDataProcessingAgreementRequestModel** | [**CreateDataProcessingAgreementRequestModel?**](CreateDataProcessingAgreementRequestModel?.md)| Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. | [optional] 
+ **createDataProcessingAgreement** | [**CreateDataProcessingAgreement**](CreateDataProcessingAgreement.md)| Create data processing agreement payload | 
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -78,6 +78,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -155,7 +156,7 @@ No authorization required
 
 <a name="getdataprocessingagreementbyid"></a>
 # **GetDataProcessingAgreementById**
-> DataProcessingAgreementDto GetDataProcessingAgreementById (Guid id)
+> DataProcessingAgreement GetDataProcessingAgreementById (Guid id)
 
 Get data processing agreement by id.
 
@@ -181,7 +182,7 @@ namespace Example
             try
             {
                 // Get data processing agreement by id.
-                DataProcessingAgreementDto result = apiInstance.GetDataProcessingAgreementById(id);
+                DataProcessingAgreement result = apiInstance.GetDataProcessingAgreementById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -203,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -227,9 +228,9 @@ No authorization required
 
 <a name="getdataprocessingagreements"></a>
 # **GetDataProcessingAgreements**
-> DataProcessingAgreementDtoPaginatedList GetDataProcessingAgreements (int? pageNo = null, int? pageSize = null)
+> DataProcessingAgreementPaginatedList GetDataProcessingAgreements (int? pageNo = null, int? pageSize = null)
 
-Get all data processing agreements.
+Get paginated data processing agreements.
 
 ### Example
 ```csharp
@@ -253,8 +254,8 @@ namespace Example
 
             try
             {
-                // Get all data processing agreements.
-                DataProcessingAgreementDtoPaginatedList result = apiInstance.GetDataProcessingAgreements(pageNo, pageSize);
+                // Get paginated data processing agreements.
+                DataProcessingAgreementPaginatedList result = apiInstance.GetDataProcessingAgreements(pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -277,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataProcessingAgreementDtoPaginatedList**](DataProcessingAgreementDtoPaginatedList.md)
+[**DataProcessingAgreementPaginatedList**](DataProcessingAgreementPaginatedList.md)
 
 ### Authorization
 
@@ -293,6 +294,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 | **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -370,7 +372,7 @@ No authorization required
 
 <a name="updatedataprocessingagreement"></a>
 # **UpdateDataProcessingAgreement**
-> DataProcessingAgreementDto UpdateDataProcessingAgreement (Guid id, UpdateDataProcessingAgreementRequestModel? updateDataProcessingAgreementRequestModel = null)
+> DataProcessingAgreement UpdateDataProcessingAgreement (Guid id, UpdateDataProcessingAgreement updateDataProcessingAgreement)
 
 Update a data processing agreement.
 
@@ -392,12 +394,12 @@ namespace Example
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataProcessingAgreementsApi(config);
             var id = "id_example";  // Guid | Agreement id.
-            var updateDataProcessingAgreementRequestModel = new UpdateDataProcessingAgreementRequestModel?(); // UpdateDataProcessingAgreementRequestModel? | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. (optional) 
+            var updateDataProcessingAgreement = new UpdateDataProcessingAgreement(); // UpdateDataProcessingAgreement | Update data processing agreement payload
 
             try
             {
                 // Update a data processing agreement.
-                DataProcessingAgreementDto result = apiInstance.UpdateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel);
+                DataProcessingAgreement result = apiInstance.UpdateDataProcessingAgreement(id, updateDataProcessingAgreement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -416,11 +418,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Guid**| Agreement id. | 
- **updateDataProcessingAgreementRequestModel** | [**UpdateDataProcessingAgreementRequestModel?**](UpdateDataProcessingAgreementRequestModel?.md)| Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional] 
+ **updateDataProcessingAgreement** | [**UpdateDataProcessingAgreement**](UpdateDataProcessingAgreement.md)| Update data processing agreement payload | 
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
