@@ -56,10 +56,10 @@ namespace MyDataMyConsent.Sdk.Models
         Finance = 4,
 
         /// <summary>
-        /// Enum WorkAndAwards for value: WorkAndAwards
+        /// Enum Professional for value: Professional
         /// </summary>
-        [EnumMember(Value = "WorkAndAwards")]
-        WorkAndAwards = 5,
+        [EnumMember(Value = "Professional")]
+        Professional = 5,
 
         /// <summary>
         /// Enum LicencesAndCertificates for value: LicencesAndCertificates
