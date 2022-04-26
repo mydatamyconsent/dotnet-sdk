@@ -8,6 +8,11 @@ docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
 docs/CreateDataProcessingAgreement.md
+docs/DataConsent.md
+docs/DataConsentDetails.md
+docs/DataConsentDetailsPaginatedList.md
+docs/DataConsentDocument.md
+docs/DataConsentDocumentIssuer.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequest.md
 docs/DataConsentRequestDetails.md
@@ -25,6 +30,7 @@ docs/DataProviderDiscoveryApi.md
 docs/DataProviderPaginatedList.md
 docs/DigiLockerCompatIssuerApi.md
 docs/DocumentCategoryType.md
+docs/DocumentDigitalSignature.md
 docs/DocumentIssueRequest.md
 docs/DocumentIssueRequestDetails.md
 docs/DocumentIssueRequestStatus.md
@@ -44,6 +50,7 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestDetails.md
 docs/IndividualDataConsentRequestDetailsPaginatedList.md
 docs/IssuedDocument.md
+docs/IssuedDocumentDetails.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentRequestDetails.md
@@ -94,6 +101,11 @@ src/MyDataMyConsent.Sdk/Models/CollectibleTypes.cs
 src/MyDataMyConsent.Sdk/Models/ConsentRequestReceiver.cs
 src/MyDataMyConsent.Sdk/Models/CreateDataConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/CreateDataProcessingAgreement.cs
+src/MyDataMyConsent.Sdk/Models/DataConsent.cs
+src/MyDataMyConsent.Sdk/Models/DataConsentDetails.cs
+src/MyDataMyConsent.Sdk/Models/DataConsentDetailsPaginatedList.cs
+src/MyDataMyConsent.Sdk/Models/DataConsentDocument.cs
+src/MyDataMyConsent.Sdk/Models/DataConsentDocumentIssuer.cs
 src/MyDataMyConsent.Sdk/Models/DataConsentFinancialsDto.cs
 src/MyDataMyConsent.Sdk/Models/DataConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/DataConsentRequestDetails.cs
@@ -106,6 +118,7 @@ src/MyDataMyConsent.Sdk/Models/DataProtectionOfficer.cs
 src/MyDataMyConsent.Sdk/Models/DataProvider.cs
 src/MyDataMyConsent.Sdk/Models/DataProviderPaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/DocumentCategoryType.cs
+src/MyDataMyConsent.Sdk/Models/DocumentDigitalSignature.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequest.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequestDetails.cs
 src/MyDataMyConsent.Sdk/Models/DocumentIssueRequestStatus.cs
@@ -124,6 +137,7 @@ src/MyDataMyConsent.Sdk/Models/Identifier.cs
 src/MyDataMyConsent.Sdk/Models/IndividualDataConsentRequestDetails.cs
 src/MyDataMyConsent.Sdk/Models/IndividualDataConsentRequestDetailsPaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocument.cs
+src/MyDataMyConsent.Sdk/Models/IssuedDocumentDetails.cs
 src/MyDataMyConsent.Sdk/Models/IssuedDocumentPaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/Life.cs
 src/MyDataMyConsent.Sdk/Models/OrganizationDataConsentRequestDetails.cs

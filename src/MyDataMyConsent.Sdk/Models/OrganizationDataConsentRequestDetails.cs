@@ -48,13 +48,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="receiver">Name of request receiver organization. (required).</param>
         /// <param name="id">Consent request id (required).</param>
         /// <param name="templateId">Consent request template id.</param>
+        /// <param name="consentId">Data Consent id.</param>
         /// <param name="title">Consent request title. (required).</param>
         /// <param name="description">Consent request description. (required).</param>
         /// <param name="purpose">Consent request purpose..</param>
         /// <param name="status">status (required).</param>
         /// <param name="transactionId">Transaction id.</param>
         /// <param name="createdAtUtc">Request creation datetime in UTC timezone (required).</param>
-        public OrganizationDataConsentRequestDetails(string receiver = default(string), Guid id = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime createdAtUtc = default(DateTime))
+        /// <param name="expiresAtUtc">Request expiration datetime in UTC timezone (required).</param>
+        public OrganizationDataConsentRequestDetails(string receiver = default(string), Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime))
         {
             this.Receiver = receiver;
             this.Id = id;
@@ -62,7 +64,9 @@ namespace MyDataMyConsent.Sdk.Models
             this.Description = description;
             this.Status = status;
             this.CreatedAtUtc = createdAtUtc;
+            this.ExpiresAtUtc = expiresAtUtc;
             this.TemplateId = templateId;
+            this.ConsentId = consentId;
             this.Purpose = purpose;
             this.TransactionId = transactionId;
         }
@@ -87,6 +91,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// <value>Consent request template id</value>
         [DataMember(Name = "templateId", EmitDefaultValue = true)]
         public Guid? TemplateId { get; set; }
+
+        /// <summary>
+        /// Data Consent id
+        /// </summary>
+        /// <value>Data Consent id</value>
+        [DataMember(Name = "consentId", EmitDefaultValue = true)]
+        public Guid? ConsentId { get; set; }
 
         /// <summary>
         /// Consent request title.
@@ -124,6 +135,13 @@ namespace MyDataMyConsent.Sdk.Models
         public DateTime CreatedAtUtc { get; set; }
 
         /// <summary>
+        /// Request expiration datetime in UTC timezone
+        /// </summary>
+        /// <value>Request expiration datetime in UTC timezone</value>
+        [DataMember(Name = "expiresAtUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime ExpiresAtUtc { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -134,12 +152,14 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  ConsentId: ").Append(ConsentId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Purpose: ").Append(Purpose).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  CreatedAtUtc: ").Append(CreatedAtUtc).Append("\n");
+            sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +211,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.TemplateId.Equals(input.TemplateId))
                 ) && 
                 (
+                    this.ConsentId == input.ConsentId ||
+                    (this.ConsentId != null &&
+                    this.ConsentId.Equals(input.ConsentId))
+                ) && 
+                (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
@@ -218,6 +243,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.CreatedAtUtc == input.CreatedAtUtc ||
                     (this.CreatedAtUtc != null &&
                     this.CreatedAtUtc.Equals(input.CreatedAtUtc))
+                ) && 
+                (
+                    this.ExpiresAtUtc == input.ExpiresAtUtc ||
+                    (this.ExpiresAtUtc != null &&
+                    this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
                 );
         }
 
@@ -242,6 +272,10 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.TemplateId.GetHashCode();
                 }
+                if (this.ConsentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ConsentId.GetHashCode();
+                }
                 if (this.Title != null)
                 {
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();
@@ -262,6 +296,10 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.CreatedAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAtUtc.GetHashCode();
+                }
+                if (this.ExpiresAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
                 }
                 return hashCode;
             }

@@ -26,18 +26,18 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// Issued Document Identifier.
+    /// IssuedDocumentDetails
     /// </summary>
-    [DataContract(Name = "IssuedDocument")]
-    public partial class IssuedDocument : IEquatable<IssuedDocument>
+    [DataContract(Name = "IssuedDocumentDetails")]
+    public partial class IssuedDocumentDetails : IEquatable<IssuedDocumentDetails>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="IssuedDocument" /> class.
+        /// Initializes a new instance of the <see cref="IssuedDocumentDetails" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected IssuedDocument() { }
+        protected IssuedDocumentDetails() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="IssuedDocument" /> class.
+        /// Initializes a new instance of the <see cref="IssuedDocumentDetails" /> class.
         /// </summary>
         /// <param name="id">Document Id. (required).</param>
         /// <param name="identifier">Document Identifier. (required).</param>
@@ -46,15 +46,29 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="issuedAtUtc">Issued datetime in UTC timezone. (required).</param>
         /// <param name="expiresAtUtc">Expires datetime in UTC timezone..</param>
         /// <param name="acceptedAtUtc">Accepted datetime in UTC timezone..</param>
-        public IssuedDocument(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), DateTime? acceptedAtUtc = default(DateTime?))
+        /// <param name="receiver">receiver (required).</param>
+        /// <param name="metadata">Metadata..</param>
+        /// <param name="digitalSignatures">Digital signatures. (required).</param>
+        public IssuedDocumentDetails(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), DateTime? acceptedAtUtc = default(DateTime?), DocumentReceiver receiver = default(DocumentReceiver), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<DocumentDigitalSignature> digitalSignatures = default(List<DocumentDigitalSignature>))
         {
             this.Id = id;
             this.Identifier = identifier;
             this.DocumentType = documentType;
             this.IssuedTo = issuedTo;
             this.IssuedAtUtc = issuedAtUtc;
+            // to ensure "receiver" is required (not null)
+            if (receiver == null) {
+                throw new ArgumentNullException("receiver is a required property for IssuedDocumentDetails and cannot be null");
+            }
+            this.Receiver = receiver;
+            // to ensure "digitalSignatures" is required (not null)
+            if (digitalSignatures == null) {
+                throw new ArgumentNullException("digitalSignatures is a required property for IssuedDocumentDetails and cannot be null");
+            }
+            this.DigitalSignatures = digitalSignatures;
             this.ExpiresAtUtc = expiresAtUtc;
             this.AcceptedAtUtc = acceptedAtUtc;
+            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -107,13 +121,33 @@ namespace MyDataMyConsent.Sdk.Models
         public DateTime? AcceptedAtUtc { get; set; }
 
         /// <summary>
+        /// Gets or Sets Receiver
+        /// </summary>
+        [DataMember(Name = "receiver", IsRequired = true, EmitDefaultValue = false)]
+        public DocumentReceiver Receiver { get; set; }
+
+        /// <summary>
+        /// Metadata.
+        /// </summary>
+        /// <value>Metadata.</value>
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
+        public Dictionary<string, string> Metadata { get; set; }
+
+        /// <summary>
+        /// Digital signatures.
+        /// </summary>
+        /// <value>Digital signatures.</value>
+        [DataMember(Name = "digitalSignatures", IsRequired = true, EmitDefaultValue = false)]
+        public List<DocumentDigitalSignature> DigitalSignatures { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class IssuedDocument {\n");
+            sb.Append("class IssuedDocumentDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Identifier: ").Append(Identifier).Append("\n");
             sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
@@ -121,6 +155,9 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  IssuedAtUtc: ").Append(IssuedAtUtc).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
             sb.Append("  AcceptedAtUtc: ").Append(AcceptedAtUtc).Append("\n");
+            sb.Append("  Receiver: ").Append(Receiver).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  DigitalSignatures: ").Append(DigitalSignatures).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,15 +178,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IssuedDocument);
+            return this.Equals(input as IssuedDocumentDetails);
         }
 
         /// <summary>
-        /// Returns true if IssuedDocument instances are equal
+        /// Returns true if IssuedDocumentDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of IssuedDocument to be compared</param>
+        /// <param name="input">Instance of IssuedDocumentDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IssuedDocument input)
+        public bool Equals(IssuedDocumentDetails input)
         {
             if (input == null)
             {
@@ -190,6 +227,23 @@ namespace MyDataMyConsent.Sdk.Models
                     this.AcceptedAtUtc == input.AcceptedAtUtc ||
                     (this.AcceptedAtUtc != null &&
                     this.AcceptedAtUtc.Equals(input.AcceptedAtUtc))
+                ) && 
+                (
+                    this.Receiver == input.Receiver ||
+                    (this.Receiver != null &&
+                    this.Receiver.Equals(input.Receiver))
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
+                    this.DigitalSignatures == input.DigitalSignatures ||
+                    this.DigitalSignatures != null &&
+                    input.DigitalSignatures != null &&
+                    this.DigitalSignatures.SequenceEqual(input.DigitalSignatures)
                 );
         }
 
@@ -229,6 +283,18 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.AcceptedAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.AcceptedAtUtc.GetHashCode();
+                }
+                if (this.Receiver != null)
+                {
+                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
+                if (this.DigitalSignatures != null)
+                {
+                    hashCode = (hashCode * 59) + this.DigitalSignatures.GetHashCode();
                 }
                 return hashCode;
             }

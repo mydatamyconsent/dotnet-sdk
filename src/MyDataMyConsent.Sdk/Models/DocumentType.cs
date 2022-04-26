@@ -65,8 +65,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="payableAmount">Payable amount if document is chargeable. eg: 10.25..</param>
         /// <param name="payableAmountCurrency">Payable amount currency. eg: INR, USD etc.,..</param>
         /// <param name="approvedAtUtc">DateTime of approval in UTC timezone..</param>
-        /// <param name="approved">Document type approval status. (required).</param>
-        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double? payableAmount = default(double?), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?), bool approved = default(bool))
+        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double? payableAmount = default(double?), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.CategoryType = categoryType;
@@ -80,7 +79,6 @@ namespace MyDataMyConsent.Sdk.Models
             }
             this.SupportedEntityTypes = supportedEntityTypes;
             this.AddedBy = addedBy;
-            this.Approved = approved;
             this.Description = description;
             this.SearchServiceName = searchServiceName;
             this.RepositoryServiceName = repositoryServiceName;
@@ -174,13 +172,6 @@ namespace MyDataMyConsent.Sdk.Models
         public DateTime? ApprovedAtUtc { get; set; }
 
         /// <summary>
-        /// Document type approval status.
-        /// </summary>
-        /// <value>Document type approval status.</value>
-        [DataMember(Name = "approved", IsRequired = true, EmitDefaultValue = true)]
-        public bool Approved { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -202,7 +193,6 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  PayableAmount: ").Append(PayableAmount).Append("\n");
             sb.Append("  PayableAmountCurrency: ").Append(PayableAmountCurrency).Append("\n");
             sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
-            sb.Append("  Approved: ").Append(Approved).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -306,10 +296,6 @@ namespace MyDataMyConsent.Sdk.Models
                     this.ApprovedAtUtc == input.ApprovedAtUtc ||
                     (this.ApprovedAtUtc != null &&
                     this.ApprovedAtUtc.Equals(input.ApprovedAtUtc))
-                ) && 
-                (
-                    this.Approved == input.Approved ||
-                    this.Approved.Equals(input.Approved)
                 );
         }
 
@@ -372,7 +358,6 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.ApprovedAtUtc.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Approved.GetHashCode();
                 return hashCode;
             }
         }

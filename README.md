@@ -135,7 +135,7 @@ Class | Method | HTTP request | Description
 *DataProviderDiscoveryApi* | [**GetDataProviders**](docs/DataProviderDiscoveryApi.md#getdataproviders) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 *DigiLockerCompatIssuerApi* | [**DigilockerCompatIssueDocument**](docs/DigiLockerCompatIssuerApi.md#digilockercompatissuedocument) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document.
 *DocumentsApi* | [**GetIssuedDocumentById**](docs/DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-*DocumentsApi* | [**GetIssuedDocuments**](docs/DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
+*DocumentsApi* | [**GetIssuedDocuments**](docs/DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued | Get paginated list of issued documents of given document type.
 *DocumentsApi* | [**GetRegisteredDocumentTypes**](docs/DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get paginated list of registered document types.
 *DocumentsApi* | [**IssueDocumentToIndividual**](docs/DocumentsApi.md#issuedocumenttoindividual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 *DocumentsApi* | [**IssueDocumentToOrganization**](docs/DocumentsApi.md#issuedocumenttoorganization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
@@ -154,6 +154,11 @@ Class | Method | HTTP request | Description
  - [Models.ConsentRequestReceiver](docs/ConsentRequestReceiver.md)
  - [Models.CreateDataConsentRequest](docs/CreateDataConsentRequest.md)
  - [Models.CreateDataProcessingAgreement](docs/CreateDataProcessingAgreement.md)
+ - [Models.DataConsent](docs/DataConsent.md)
+ - [Models.DataConsentDetails](docs/DataConsentDetails.md)
+ - [Models.DataConsentDetailsPaginatedList](docs/DataConsentDetailsPaginatedList.md)
+ - [Models.DataConsentDocument](docs/DataConsentDocument.md)
+ - [Models.DataConsentDocumentIssuer](docs/DataConsentDocumentIssuer.md)
  - [Models.DataConsentFinancialsDto](docs/DataConsentFinancialsDto.md)
  - [Models.DataConsentRequest](docs/DataConsentRequest.md)
  - [Models.DataConsentRequestDetails](docs/DataConsentRequestDetails.md)
@@ -166,6 +171,7 @@ Class | Method | HTTP request | Description
  - [Models.DataProvider](docs/DataProvider.md)
  - [Models.DataProviderPaginatedList](docs/DataProviderPaginatedList.md)
  - [Models.DocumentCategoryType](docs/DocumentCategoryType.md)
+ - [Models.DocumentDigitalSignature](docs/DocumentDigitalSignature.md)
  - [Models.DocumentIssueRequest](docs/DocumentIssueRequest.md)
  - [Models.DocumentIssueRequestDetails](docs/DocumentIssueRequestDetails.md)
  - [Models.DocumentIssueRequestStatus](docs/DocumentIssueRequestStatus.md)
@@ -184,6 +190,7 @@ Class | Method | HTTP request | Description
  - [Models.IndividualDataConsentRequestDetails](docs/IndividualDataConsentRequestDetails.md)
  - [Models.IndividualDataConsentRequestDetailsPaginatedList](docs/IndividualDataConsentRequestDetailsPaginatedList.md)
  - [Models.IssuedDocument](docs/IssuedDocument.md)
+ - [Models.IssuedDocumentDetails](docs/IssuedDocumentDetails.md)
  - [Models.IssuedDocumentPaginatedList](docs/IssuedDocumentPaginatedList.md)
  - [Models.Life](docs/Life.md)
  - [Models.OrganizationDataConsentRequestDetails](docs/OrganizationDataConsentRequestDetails.md)

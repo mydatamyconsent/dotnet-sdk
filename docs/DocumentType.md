@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **PayableAmount** | **double?** | Payable amount if document is chargeable. eg: 10.25. | [optional] 
 **PayableAmountCurrency** | [**string?**](string?.md) | Payable amount currency. eg: INR, USD etc.,. | [optional] 
 **ApprovedAtUtc** | **DateTime?** | DateTime of approval in UTC timezone. | [optional] 
-**Approved** | **bool** | Document type approval status. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

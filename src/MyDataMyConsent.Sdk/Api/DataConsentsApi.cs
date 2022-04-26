@@ -33,8 +33,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
-        /// <returns>Object</returns>
-        Object DownloadConsentedDocumentAnalysis(string consentId, string documentId);
+        /// <returns></returns>
+        void DownloadConsentedDocumentAnalysis(string consentId, string documentId);
 
         /// <summary>
         /// Get analysis of a consented document.
@@ -45,7 +45,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DownloadConsentedDocumentAnalysisWithHttpInfo(string consentId, string documentId);
         /// <summary>
         /// Download individual consented document by document id.
@@ -53,8 +53,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>Object</returns>
-        Object DownloadIndividualConsentedDocumentById(Guid consentId, string documentId);
+        /// <returns></returns>
+        void DownloadIndividualConsentedDocumentById(Guid consentId, string documentId);
 
         /// <summary>
         /// Download individual consented document by document id.
@@ -65,7 +65,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DownloadIndividualConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
         /// <summary>
         /// Download organization consent document based on document id.
@@ -73,8 +73,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>Object</returns>
-        Object DownloadOrganizationConsentedDocumentById(Guid consentId, string documentId);
+        /// <returns></returns>
+        void DownloadOrganizationConsentedDocumentById(Guid consentId, string documentId);
 
         /// <summary>
         /// Download organization consent document based on document id.
@@ -85,7 +85,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DownloadOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
         /// <summary>
         /// Get all individual consented financial accounts.
@@ -149,8 +149,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>Object</returns>
-        Object GetConsentedDocumentById(Guid consentId, string documentId);
+        /// <returns>DataConsentDocument</returns>
+        DataConsentDocument GetConsentedDocumentById(Guid consentId, string documentId);
 
         /// <summary>
         /// Get individual consented document by document id.
@@ -161,8 +161,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
+        /// <returns>ApiResponse of DataConsentDocument</returns>
+        ApiResponse<DataConsentDocument> GetConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
         /// <summary>
         /// Get organization consented financial account details based on account id.
         /// </summary>
@@ -240,13 +240,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// GetIndividualDataConsents
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>Object</returns>
-        Object GetConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>DataConsentDetailsPaginatedList</returns>
+        DataConsentDetailsPaginatedList GetConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get the paginated list of individual data consents.
@@ -255,20 +255,20 @@ namespace MyDataMyConsent.Sdk.Api
         /// GetIndividualDataConsents
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>ApiResponse of DataConsentDetailsPaginatedList</returns>
+        ApiResponse<DataConsentDetailsPaginatedList> GetConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Get individual consented documents by consent id.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>Object</returns>
-        Object GetIndividualConsentedDocuments(Guid consentId);
+        /// <returns>List&lt;DataConsentDocument&gt;</returns>
+        List<DataConsentDocument> GetIndividualConsentedDocuments(Guid consentId);
 
         /// <summary>
         /// Get individual consented documents by consent id.
@@ -278,15 +278,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetIndividualConsentedDocumentsWithHttpInfo(Guid consentId);
+        /// <returns>ApiResponse of List&lt;DataConsentDocument&gt;</returns>
+        ApiResponse<List<DataConsentDocument>> GetIndividualConsentedDocumentsWithHttpInfo(Guid consentId);
         /// <summary>
         /// Get individuals data consent details by consent id.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>Object</returns>
-        Object GetIndividualDataConsentById(Guid consentId);
+        /// <returns>DataConsent</returns>
+        DataConsent GetIndividualDataConsentById(Guid consentId);
 
         /// <summary>
         /// Get individuals data consent details by consent id.
@@ -296,8 +296,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetIndividualDataConsentByIdWithHttpInfo(Guid consentId);
+        /// <returns>ApiResponse of DataConsent</returns>
+        ApiResponse<DataConsent> GetIndividualDataConsentByIdWithHttpInfo(Guid consentId);
         /// <summary>
         /// Get organization consented financial account transactions of an individual based on accountId.
         /// </summary>
@@ -334,8 +334,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>Object</returns>
-        Object GetOrganizationConsentedDocumentById(Guid consentId, string documentId);
+        /// <returns>DataConsentDocument</returns>
+        DataConsentDocument GetOrganizationConsentedDocumentById(Guid consentId, string documentId);
 
         /// <summary>
         /// Get organization consent document based on document id.
@@ -346,15 +346,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
+        /// <returns>ApiResponse of DataConsentDocument</returns>
+        ApiResponse<DataConsentDocument> GetOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId);
         /// <summary>
         /// Get organization consented documents by consent id.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>Object</returns>
-        Object GetOrganizationConsentedDocuments(Guid consentId);
+        /// <returns>List&lt;DataConsentDocument&gt;</returns>
+        List<DataConsentDocument> GetOrganizationConsentedDocuments(Guid consentId);
 
         /// <summary>
         /// Get organization consented documents by consent id.
@@ -364,15 +364,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetOrganizationConsentedDocumentsWithHttpInfo(Guid consentId);
+        /// <returns>ApiResponse of List&lt;DataConsentDocument&gt;</returns>
+        ApiResponse<List<DataConsentDocument>> GetOrganizationConsentedDocumentsWithHttpInfo(Guid consentId);
         /// <summary>
         /// Get organizations data consent details by consent id.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>Object</returns>
-        Object GetOrganizationDataConsentById(Guid consentId);
+        /// <returns>DataConsent</returns>
+        DataConsent GetOrganizationDataConsentById(Guid consentId);
 
         /// <summary>
         /// Get organizations data consent details by consent id.
@@ -382,19 +382,19 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetOrganizationDataConsentByIdWithHttpInfo(Guid consentId);
+        /// <returns>ApiResponse of DataConsent</returns>
+        ApiResponse<DataConsent> GetOrganizationDataConsentByIdWithHttpInfo(Guid consentId);
         /// <summary>
         /// Get the paginated list of organization data consents.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>Object</returns>
-        Object GetOrganizationDataConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>DataConsentDetailsPaginatedList</returns>
+        DataConsentDetailsPaginatedList GetOrganizationDataConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get the paginated list of organization data consents.
@@ -403,13 +403,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> GetOrganizationDataConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        /// <returns>ApiResponse of DataConsentDetailsPaginatedList</returns>
+        ApiResponse<DataConsentDetailsPaginatedList> GetOrganizationDataConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -429,8 +429,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get analysis of a consented document.
@@ -442,7 +442,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DownloadConsentedDocumentAnalysisWithHttpInfoAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download individual consented document by document id.
@@ -454,8 +454,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DownloadIndividualConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadIndividualConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download individual consented document by document id.
@@ -467,7 +467,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DownloadIndividualConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download organization consent document based on document id.
@@ -479,8 +479,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DownloadOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download organization consent document based on document id.
@@ -492,7 +492,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DownloadOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all individual consented financial accounts.
@@ -575,8 +575,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsentDocument</returns>
+        System.Threading.Tasks.Task<DataConsentDocument> GetConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get individual consented document by document id.
@@ -588,8 +588,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsentDocument)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsentDocument>> GetConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get organization consented financial account details based on account id.
         /// </summary>
@@ -682,14 +682,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// GetIndividualDataConsents
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsentDetailsPaginatedList</returns>
+        System.Threading.Tasks.Task<DataConsentDetailsPaginatedList> GetConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the paginated list of individual data consents.
@@ -698,14 +698,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// GetIndividualDataConsents
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsentDetailsPaginatedList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsentDetailsPaginatedList>> GetConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get individual consented documents by consent id.
         /// </summary>
@@ -715,8 +715,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetIndividualConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;DataConsentDocument&gt;</returns>
+        System.Threading.Tasks.Task<List<DataConsentDocument>> GetIndividualConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get individual consented documents by consent id.
@@ -727,8 +727,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetIndividualConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;DataConsentDocument&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DataConsentDocument>>> GetIndividualConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get individuals data consent details by consent id.
         /// </summary>
@@ -738,8 +738,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetIndividualDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsent</returns>
+        System.Threading.Tasks.Task<DataConsent> GetIndividualDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get individuals data consent details by consent id.
@@ -750,8 +750,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetIndividualDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsent)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsent>> GetIndividualDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get organization consented financial account transactions of an individual based on accountId.
         /// </summary>
@@ -797,8 +797,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsentDocument</returns>
+        System.Threading.Tasks.Task<DataConsentDocument> GetOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get organization consent document based on document id.
@@ -810,8 +810,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsentDocument)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsentDocument>> GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get organization consented documents by consent id.
         /// </summary>
@@ -821,8 +821,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetOrganizationConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;DataConsentDocument&gt;</returns>
+        System.Threading.Tasks.Task<List<DataConsentDocument>> GetOrganizationConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get organization consented documents by consent id.
@@ -833,8 +833,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetOrganizationConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;DataConsentDocument&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<DataConsentDocument>>> GetOrganizationConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get organizations data consent details by consent id.
         /// </summary>
@@ -844,8 +844,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetOrganizationDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsent</returns>
+        System.Threading.Tasks.Task<DataConsent> GetOrganizationDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get organizations data consent details by consent id.
@@ -856,8 +856,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetOrganizationDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsent)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsent>> GetOrganizationDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the paginated list of organization data consents.
         /// </summary>
@@ -865,14 +865,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> GetOrganizationDataConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DataConsentDetailsPaginatedList</returns>
+        System.Threading.Tasks.Task<DataConsentDetailsPaginatedList> GetOrganizationDataConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the paginated list of organization data consents.
@@ -881,14 +881,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetOrganizationDataConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DataConsentDetailsPaginatedList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DataConsentDetailsPaginatedList>> GetOrganizationDataConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1015,11 +1015,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
-        /// <returns>Object</returns>
-        public Object DownloadConsentedDocumentAnalysis(string consentId, string documentId)
+        /// <returns></returns>
+        public void DownloadConsentedDocumentAnalysis(string consentId, string documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = DownloadConsentedDocumentAnalysisWithHttpInfo(consentId, documentId);
-            return localVarResponse.Data;
+            DownloadConsentedDocumentAnalysisWithHttpInfo(consentId, documentId);
         }
 
         /// <summary>
@@ -1028,7 +1027,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<Object> DownloadConsentedDocumentAnalysisWithHttpInfo(string consentId, string documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -1078,11 +1077,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadConsentedDocumentAnalysisAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await DownloadConsentedDocumentAnalysisWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DownloadConsentedDocumentAnalysisWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1092,7 +1090,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Data consent id.</param>
         /// <param name="documentId">Consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> DownloadConsentedDocumentAnalysisWithHttpInfoAsync(string consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
@@ -1143,11 +1141,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>Object</returns>
-        public Object DownloadIndividualConsentedDocumentById(Guid consentId, string documentId)
+        /// <returns></returns>
+        public void DownloadIndividualConsentedDocumentById(Guid consentId, string documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = DownloadIndividualConsentedDocumentByIdWithHttpInfo(consentId, documentId);
-            return localVarResponse.Data;
+            DownloadIndividualConsentedDocumentByIdWithHttpInfo(consentId, documentId);
         }
 
         /// <summary>
@@ -1156,7 +1153,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<Object> DownloadIndividualConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -1206,11 +1203,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DownloadIndividualConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadIndividualConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await DownloadIndividualConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DownloadIndividualConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1220,7 +1216,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> DownloadIndividualConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
@@ -1271,11 +1267,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>Object</returns>
-        public Object DownloadOrganizationConsentedDocumentById(Guid consentId, string documentId)
+        /// <returns></returns>
+        public void DownloadOrganizationConsentedDocumentById(Guid consentId, string documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = DownloadOrganizationConsentedDocumentByIdWithHttpInfo(consentId, documentId);
-            return localVarResponse.Data;
+            DownloadOrganizationConsentedDocumentByIdWithHttpInfo(consentId, documentId);
         }
 
         /// <summary>
@@ -1284,7 +1279,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         public MyDataMyConsent.Sdk.Client.ApiResponse<Object> DownloadOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -1334,11 +1329,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DownloadOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await DownloadOrganizationConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DownloadOrganizationConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1348,7 +1342,7 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
+        /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> DownloadOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
@@ -1771,10 +1765,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>Object</returns>
-        public Object GetConsentedDocumentById(Guid consentId, string documentId)
+        /// <returns>DataConsentDocument</returns>
+        public DataConsentDocument GetConsentedDocumentById(Guid consentId, string documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetConsentedDocumentByIdWithHttpInfo(consentId, documentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> localVarResponse = GetConsentedDocumentByIdWithHttpInfo(consentId, documentId);
             return localVarResponse.Data;
         }
 
@@ -1784,8 +1778,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
+        /// <returns>ApiResponse of DataConsentDocument</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> GetConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -1814,7 +1808,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/individuals/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsentDocument>("/v1/consents/individuals/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetConsentedDocumentById", localVarResponse);
@@ -1834,10 +1828,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsentDocument</returns>
+        public async System.Threading.Tasks.Task<DataConsentDocument> GetConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> localVarResponse = await GetConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1848,8 +1842,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="documentId">Consented document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsentDocument)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument>> GetConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -1879,7 +1873,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/individuals/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsentDocument>("/v1/consents/individuals/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2339,15 +2333,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of individual data consents. GetIndividualDataConsents
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>Object</returns>
-        public Object GetConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>DataConsentDetailsPaginatedList</returns>
+        public DataConsentDetailsPaginatedList GetConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetConsentsWithHttpInfo(status, fromDateTime, toDateTime, pageNo, pageSize);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> localVarResponse = GetConsentsWithHttpInfo(status, fromDateTime, toDateTime, pageNo, pageSize);
             return localVarResponse.Data;
         }
 
@@ -2355,13 +2349,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of individual data consents. GetIndividualDataConsents
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>ApiResponse of DataConsentDetailsPaginatedList</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> GetConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2408,7 +2402,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/individuals", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsentDetailsPaginatedList>("/v1/consents/individuals", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetConsents", localVarResponse);
@@ -2425,16 +2419,16 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of individual data consents. GetIndividualDataConsents
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsentDetailsPaginatedList</returns>
+        public async System.Threading.Tasks.Task<DataConsentDetailsPaginatedList> GetConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetConsentsWithHttpInfoAsync(status, fromDateTime, toDateTime, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> localVarResponse = await GetConsentsWithHttpInfoAsync(status, fromDateTime, toDateTime, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2442,14 +2436,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of individual data consents. GetIndividualDataConsents
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsentDetailsPaginatedList)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList>> GetConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -2497,7 +2491,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/individuals", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsentDetailsPaginatedList>("/v1/consents/individuals", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2516,10 +2510,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>Object</returns>
-        public Object GetIndividualConsentedDocuments(Guid consentId)
+        /// <returns>List&lt;DataConsentDocument&gt;</returns>
+        public List<DataConsentDocument> GetIndividualConsentedDocuments(Guid consentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetIndividualConsentedDocumentsWithHttpInfo(consentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> localVarResponse = GetIndividualConsentedDocumentsWithHttpInfo(consentId);
             return localVarResponse.Data;
         }
 
@@ -2528,8 +2522,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetIndividualConsentedDocumentsWithHttpInfo(Guid consentId)
+        /// <returns>ApiResponse of List&lt;DataConsentDocument&gt;</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> GetIndividualConsentedDocumentsWithHttpInfo(Guid consentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2557,7 +2551,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/individuals/{consentId}/documents", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<DataConsentDocument>>("/v1/consents/individuals/{consentId}/documents", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIndividualConsentedDocuments", localVarResponse);
@@ -2576,10 +2570,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetIndividualConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;DataConsentDocument&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DataConsentDocument>> GetIndividualConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetIndividualConsentedDocumentsWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> localVarResponse = await GetIndividualConsentedDocumentsWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2589,8 +2583,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetIndividualConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;DataConsentDocument&gt;)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>>> GetIndividualConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -2619,7 +2613,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/individuals/{consentId}/documents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DataConsentDocument>>("/v1/consents/individuals/{consentId}/documents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2638,10 +2632,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>Object</returns>
-        public Object GetIndividualDataConsentById(Guid consentId)
+        /// <returns>DataConsent</returns>
+        public DataConsent GetIndividualDataConsentById(Guid consentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetIndividualDataConsentByIdWithHttpInfo(consentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> localVarResponse = GetIndividualDataConsentByIdWithHttpInfo(consentId);
             return localVarResponse.Data;
         }
 
@@ -2650,8 +2644,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetIndividualDataConsentByIdWithHttpInfo(Guid consentId)
+        /// <returns>ApiResponse of DataConsent</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> GetIndividualDataConsentByIdWithHttpInfo(Guid consentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2679,7 +2673,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/individuals/{consentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsent>("/v1/consents/individuals/{consentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIndividualDataConsentById", localVarResponse);
@@ -2698,10 +2692,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetIndividualDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsent</returns>
+        public async System.Threading.Tasks.Task<DataConsent> GetIndividualDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetIndividualDataConsentByIdWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> localVarResponse = await GetIndividualDataConsentByIdWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2711,8 +2705,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Individual data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetIndividualDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsent)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent>> GetIndividualDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -2741,7 +2735,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/individuals/{consentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsent>("/v1/consents/individuals/{consentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2949,10 +2943,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>Object</returns>
-        public Object GetOrganizationConsentedDocumentById(Guid consentId, string documentId)
+        /// <returns>DataConsentDocument</returns>
+        public DataConsentDocument GetOrganizationConsentedDocumentById(Guid consentId, string documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetOrganizationConsentedDocumentByIdWithHttpInfo(consentId, documentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> localVarResponse = GetOrganizationConsentedDocumentByIdWithHttpInfo(consentId, documentId);
             return localVarResponse.Data;
         }
 
@@ -2962,8 +2956,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
+        /// <returns>ApiResponse of DataConsentDocument</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> GetOrganizationConsentedDocumentByIdWithHttpInfo(Guid consentId, string documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -2992,7 +2986,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/organizations/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsentDocument>("/v1/consents/organizations/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetOrganizationConsentedDocumentById", localVarResponse);
@@ -3012,10 +3006,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsentDocument</returns>
+        public async System.Threading.Tasks.Task<DataConsentDocument> GetOrganizationConsentedDocumentByIdAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument> localVarResponse = await GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(consentId, documentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3026,8 +3020,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="documentId">Organization consented document Id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsentDocument)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDocument>> GetOrganizationConsentedDocumentByIdWithHttpInfoAsync(Guid consentId, string documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -3057,7 +3051,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/organizations/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsentDocument>("/v1/consents/organizations/{consentId}/documents/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3076,10 +3070,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>Object</returns>
-        public Object GetOrganizationConsentedDocuments(Guid consentId)
+        /// <returns>List&lt;DataConsentDocument&gt;</returns>
+        public List<DataConsentDocument> GetOrganizationConsentedDocuments(Guid consentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetOrganizationConsentedDocumentsWithHttpInfo(consentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> localVarResponse = GetOrganizationConsentedDocumentsWithHttpInfo(consentId);
             return localVarResponse.Data;
         }
 
@@ -3088,8 +3082,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetOrganizationConsentedDocumentsWithHttpInfo(Guid consentId)
+        /// <returns>ApiResponse of List&lt;DataConsentDocument&gt;</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> GetOrganizationConsentedDocumentsWithHttpInfo(Guid consentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -3117,7 +3111,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/organizations/{consentId}/documents", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<DataConsentDocument>>("/v1/consents/organizations/{consentId}/documents", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetOrganizationConsentedDocuments", localVarResponse);
@@ -3136,10 +3130,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetOrganizationConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;DataConsentDocument&gt;</returns>
+        public async System.Threading.Tasks.Task<List<DataConsentDocument>> GetOrganizationConsentedDocumentsAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetOrganizationConsentedDocumentsWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>> localVarResponse = await GetOrganizationConsentedDocumentsWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3149,8 +3143,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetOrganizationConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;DataConsentDocument&gt;)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<List<DataConsentDocument>>> GetOrganizationConsentedDocumentsWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -3179,7 +3173,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/organizations/{consentId}/documents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<DataConsentDocument>>("/v1/consents/organizations/{consentId}/documents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3198,10 +3192,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>Object</returns>
-        public Object GetOrganizationDataConsentById(Guid consentId)
+        /// <returns>DataConsent</returns>
+        public DataConsent GetOrganizationDataConsentById(Guid consentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetOrganizationDataConsentByIdWithHttpInfo(consentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> localVarResponse = GetOrganizationDataConsentByIdWithHttpInfo(consentId);
             return localVarResponse.Data;
         }
 
@@ -3210,8 +3204,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetOrganizationDataConsentByIdWithHttpInfo(Guid consentId)
+        /// <returns>ApiResponse of DataConsent</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> GetOrganizationDataConsentByIdWithHttpInfo(Guid consentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -3239,7 +3233,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/organizations/{consentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsent>("/v1/consents/organizations/{consentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetOrganizationDataConsentById", localVarResponse);
@@ -3258,10 +3252,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetOrganizationDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsent</returns>
+        public async System.Threading.Tasks.Task<DataConsent> GetOrganizationDataConsentByIdAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetOrganizationDataConsentByIdWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent> localVarResponse = await GetOrganizationDataConsentByIdWithHttpInfoAsync(consentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3271,8 +3265,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="consentId">Organization data consent id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetOrganizationDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsent)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsent>> GetOrganizationDataConsentByIdWithHttpInfoAsync(Guid consentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -3301,7 +3295,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/organizations/{consentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsent>("/v1/consents/organizations/{consentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3319,15 +3313,15 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of organization data consents. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>Object</returns>
-        public Object GetOrganizationDataConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>DataConsentDetailsPaginatedList</returns>
+        public DataConsentDetailsPaginatedList GetOrganizationDataConsents(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = GetOrganizationDataConsentsWithHttpInfo(status, fromDateTime, toDateTime, pageNo, pageSize);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> localVarResponse = GetOrganizationDataConsentsWithHttpInfo(status, fromDateTime, toDateTime, pageNo, pageSize);
             return localVarResponse.Data;
         }
 
@@ -3335,13 +3329,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of organization data consents. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
-        /// <returns>ApiResponse of Object</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<Object> GetOrganizationDataConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        /// <returns>ApiResponse of DataConsentDetailsPaginatedList</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> GetOrganizationDataConsentsWithHttpInfo(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -3388,7 +3382,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/consents/organizations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DataConsentDetailsPaginatedList>("/v1/consents/organizations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetOrganizationDataConsents", localVarResponse);
@@ -3405,16 +3399,16 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of organization data consents. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> GetOrganizationDataConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DataConsentDetailsPaginatedList</returns>
+        public async System.Threading.Tasks.Task<DataConsentDetailsPaginatedList> GetOrganizationDataConsentsAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<Object> localVarResponse = await GetOrganizationDataConsentsWithHttpInfoAsync(status, fromDateTime, toDateTime, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList> localVarResponse = await GetOrganizationDataConsentsWithHttpInfoAsync(status, fromDateTime, toDateTime, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3422,14 +3416,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get the paginated list of organization data consents. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="status">Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional)</param>
+        /// <param name="status">Data consent status. (optional)</param>
         /// <param name="fromDateTime">From datetime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To datetime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<Object>> GetOrganizationDataConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DataConsentDetailsPaginatedList)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DataConsentDetailsPaginatedList>> GetOrganizationDataConsentsWithHttpInfoAsync(DataConsentStatus? status = default(DataConsentStatus?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -3477,7 +3471,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/consents/organizations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DataConsentDetailsPaginatedList>("/v1/consents/organizations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

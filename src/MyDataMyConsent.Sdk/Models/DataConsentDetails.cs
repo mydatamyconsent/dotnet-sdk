@@ -26,10 +26,10 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// DataConsentRequestResponse
+    /// Data Consent details.
     /// </summary>
-    [DataContract(Name = "DataConsentRequestDetails")]
-    public partial class DataConsentRequestDetails : IEquatable<DataConsentRequestDetails>
+    [DataContract(Name = "DataConsentDetails")]
+    public partial class DataConsentDetails : IEquatable<DataConsentDetails>
     {
 
         /// <summary>
@@ -38,99 +38,117 @@ namespace MyDataMyConsent.Sdk.Models
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public DataConsentStatus Status { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataConsentRequestDetails" /> class.
+        /// Initializes a new instance of the <see cref="DataConsentDetails" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected DataConsentRequestDetails() { }
+        protected DataConsentDetails() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataConsentRequestDetails" /> class.
+        /// Initializes a new instance of the <see cref="DataConsentDetails" /> class.
         /// </summary>
-        /// <param name="id">Consent request id (required).</param>
-        /// <param name="templateId">Consent request template id.</param>
-        /// <param name="consentId">Data Consent id.</param>
-        /// <param name="title">Consent request title. (required).</param>
-        /// <param name="description">Consent request description. (required).</param>
-        /// <param name="purpose">Consent request purpose..</param>
+        /// <param name="id">Data consent id. (required).</param>
+        /// <param name="requestId">Consent request id. (required).</param>
+        /// <param name="templateId">Consent template id..</param>
+        /// <param name="title">Consent title. (required).</param>
+        /// <param name="description">Consent description. (required).</param>
+        /// <param name="purpose">Consent purpose..</param>
         /// <param name="status">status (required).</param>
-        /// <param name="transactionId">Transaction id.</param>
-        /// <param name="createdAtUtc">Request creation datetime in UTC timezone (required).</param>
-        /// <param name="expiresAtUtc">Request expiration datetime in UTC timezone (required).</param>
-        public DataConsentRequestDetails(Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime))
+        /// <param name="transactionId">Transaction id..</param>
+        /// <param name="requestedAtUtc">Consent requested datetime in UTC timezone. (required).</param>
+        /// <param name="approvedAtUtc">Consent approval datetime in UTC timezone. (required).</param>
+        /// <param name="dataAccessExpiresAtUtc">Data access expiration datetime in UTC timezone. (required).</param>
+        /// <param name="revokedAtUtc">Consent revocation datetime in UTC timezone..</param>
+        public DataConsentDetails(Guid id = default(Guid), Guid requestId = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime requestedAtUtc = default(DateTime), DateTime approvedAtUtc = default(DateTime), DateTime dataAccessExpiresAtUtc = default(DateTime), DateTime? revokedAtUtc = default(DateTime?))
         {
             this.Id = id;
+            this.RequestId = requestId;
             this.Title = title;
             this.Description = description;
             this.Status = status;
-            this.CreatedAtUtc = createdAtUtc;
-            this.ExpiresAtUtc = expiresAtUtc;
+            this.RequestedAtUtc = requestedAtUtc;
+            this.ApprovedAtUtc = approvedAtUtc;
+            this.DataAccessExpiresAtUtc = dataAccessExpiresAtUtc;
             this.TemplateId = templateId;
-            this.ConsentId = consentId;
             this.Purpose = purpose;
             this.TransactionId = transactionId;
+            this.RevokedAtUtc = revokedAtUtc;
         }
 
         /// <summary>
-        /// Consent request id
+        /// Data consent id.
         /// </summary>
-        /// <value>Consent request id</value>
+        /// <value>Data consent id.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Consent request template id
+        /// Consent request id.
         /// </summary>
-        /// <value>Consent request template id</value>
+        /// <value>Consent request id.</value>
+        [DataMember(Name = "requestId", IsRequired = true, EmitDefaultValue = false)]
+        public Guid RequestId { get; set; }
+
+        /// <summary>
+        /// Consent template id.
+        /// </summary>
+        /// <value>Consent template id.</value>
         [DataMember(Name = "templateId", EmitDefaultValue = true)]
         public Guid? TemplateId { get; set; }
 
         /// <summary>
-        /// Data Consent id
+        /// Consent title.
         /// </summary>
-        /// <value>Data Consent id</value>
-        [DataMember(Name = "consentId", EmitDefaultValue = true)]
-        public Guid? ConsentId { get; set; }
-
-        /// <summary>
-        /// Consent request title.
-        /// </summary>
-        /// <value>Consent request title.</value>
+        /// <value>Consent title.</value>
         [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Consent request description.
+        /// Consent description.
         /// </summary>
-        /// <value>Consent request description.</value>
+        /// <value>Consent description.</value>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Consent request purpose.
+        /// Consent purpose.
         /// </summary>
-        /// <value>Consent request purpose.</value>
+        /// <value>Consent purpose.</value>
         [DataMember(Name = "purpose", EmitDefaultValue = true)]
         public string? Purpose { get; set; }
 
         /// <summary>
-        /// Transaction id
+        /// Transaction id.
         /// </summary>
-        /// <value>Transaction id</value>
+        /// <value>Transaction id.</value>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
         public string? TransactionId { get; set; }
 
         /// <summary>
-        /// Request creation datetime in UTC timezone
+        /// Consent requested datetime in UTC timezone.
         /// </summary>
-        /// <value>Request creation datetime in UTC timezone</value>
-        [DataMember(Name = "createdAtUtc", IsRequired = true, EmitDefaultValue = false)]
-        public DateTime CreatedAtUtc { get; set; }
+        /// <value>Consent requested datetime in UTC timezone.</value>
+        [DataMember(Name = "requestedAtUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime RequestedAtUtc { get; set; }
 
         /// <summary>
-        /// Request expiration datetime in UTC timezone
+        /// Consent approval datetime in UTC timezone.
         /// </summary>
-        /// <value>Request expiration datetime in UTC timezone</value>
-        [DataMember(Name = "expiresAtUtc", IsRequired = true, EmitDefaultValue = false)]
-        public DateTime ExpiresAtUtc { get; set; }
+        /// <value>Consent approval datetime in UTC timezone.</value>
+        [DataMember(Name = "approvedAtUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime ApprovedAtUtc { get; set; }
+
+        /// <summary>
+        /// Data access expiration datetime in UTC timezone.
+        /// </summary>
+        /// <value>Data access expiration datetime in UTC timezone.</value>
+        [DataMember(Name = "dataAccessExpiresAtUtc", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime DataAccessExpiresAtUtc { get; set; }
+
+        /// <summary>
+        /// Consent revocation datetime in UTC timezone.
+        /// </summary>
+        /// <value>Consent revocation datetime in UTC timezone.</value>
+        [DataMember(Name = "revokedAtUtc", EmitDefaultValue = true)]
+        public DateTime? RevokedAtUtc { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -139,17 +157,19 @@ namespace MyDataMyConsent.Sdk.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DataConsentRequestDetails {\n");
+            sb.Append("class DataConsentDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  RequestId: ").Append(RequestId).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
-            sb.Append("  ConsentId: ").Append(ConsentId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Purpose: ").Append(Purpose).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
-            sb.Append("  CreatedAtUtc: ").Append(CreatedAtUtc).Append("\n");
-            sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
+            sb.Append("  RequestedAtUtc: ").Append(RequestedAtUtc).Append("\n");
+            sb.Append("  ApprovedAtUtc: ").Append(ApprovedAtUtc).Append("\n");
+            sb.Append("  DataAccessExpiresAtUtc: ").Append(DataAccessExpiresAtUtc).Append("\n");
+            sb.Append("  RevokedAtUtc: ").Append(RevokedAtUtc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -170,15 +190,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DataConsentRequestDetails);
+            return this.Equals(input as DataConsentDetails);
         }
 
         /// <summary>
-        /// Returns true if DataConsentRequestDetails instances are equal
+        /// Returns true if DataConsentDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of DataConsentRequestDetails to be compared</param>
+        /// <param name="input">Instance of DataConsentDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DataConsentRequestDetails input)
+        public bool Equals(DataConsentDetails input)
         {
             if (input == null)
             {
@@ -191,14 +211,14 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
+                ) && 
+                (
                     this.TemplateId == input.TemplateId ||
                     (this.TemplateId != null &&
                     this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.ConsentId == input.ConsentId ||
-                    (this.ConsentId != null &&
-                    this.ConsentId.Equals(input.ConsentId))
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -225,14 +245,24 @@ namespace MyDataMyConsent.Sdk.Models
                     this.TransactionId.Equals(input.TransactionId))
                 ) && 
                 (
-                    this.CreatedAtUtc == input.CreatedAtUtc ||
-                    (this.CreatedAtUtc != null &&
-                    this.CreatedAtUtc.Equals(input.CreatedAtUtc))
+                    this.RequestedAtUtc == input.RequestedAtUtc ||
+                    (this.RequestedAtUtc != null &&
+                    this.RequestedAtUtc.Equals(input.RequestedAtUtc))
                 ) && 
                 (
-                    this.ExpiresAtUtc == input.ExpiresAtUtc ||
-                    (this.ExpiresAtUtc != null &&
-                    this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
+                    this.ApprovedAtUtc == input.ApprovedAtUtc ||
+                    (this.ApprovedAtUtc != null &&
+                    this.ApprovedAtUtc.Equals(input.ApprovedAtUtc))
+                ) && 
+                (
+                    this.DataAccessExpiresAtUtc == input.DataAccessExpiresAtUtc ||
+                    (this.DataAccessExpiresAtUtc != null &&
+                    this.DataAccessExpiresAtUtc.Equals(input.DataAccessExpiresAtUtc))
+                ) && 
+                (
+                    this.RevokedAtUtc == input.RevokedAtUtc ||
+                    (this.RevokedAtUtc != null &&
+                    this.RevokedAtUtc.Equals(input.RevokedAtUtc))
                 );
         }
 
@@ -249,13 +279,13 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.RequestId != null)
+                {
+                    hashCode = (hashCode * 59) + this.RequestId.GetHashCode();
+                }
                 if (this.TemplateId != null)
                 {
                     hashCode = (hashCode * 59) + this.TemplateId.GetHashCode();
-                }
-                if (this.ConsentId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConsentId.GetHashCode();
                 }
                 if (this.Title != null)
                 {
@@ -274,13 +304,21 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.TransactionId.GetHashCode();
                 }
-                if (this.CreatedAtUtc != null)
+                if (this.RequestedAtUtc != null)
                 {
-                    hashCode = (hashCode * 59) + this.CreatedAtUtc.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RequestedAtUtc.GetHashCode();
                 }
-                if (this.ExpiresAtUtc != null)
+                if (this.ApprovedAtUtc != null)
                 {
-                    hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ApprovedAtUtc.GetHashCode();
+                }
+                if (this.DataAccessExpiresAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.DataAccessExpiresAtUtc.GetHashCode();
+                }
+                if (this.RevokedAtUtc != null)
+                {
+                    hashCode = (hashCode * 59) + this.RevokedAtUtc.GetHashCode();
                 }
                 return hashCode;
             }

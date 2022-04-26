@@ -32,8 +32,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
-        /// <returns>IssuedDocument</returns>
-        IssuedDocument GetIssuedDocumentById(Guid documentId);
+        /// <returns>IssuedDocumentDetails</returns>
+        IssuedDocumentDetails GetIssuedDocumentById(Guid documentId);
 
         /// <summary>
         /// Get issued document.
@@ -43,19 +43,19 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
-        /// <returns>ApiResponse of IssuedDocument</returns>
-        ApiResponse<IssuedDocument> GetIssuedDocumentByIdWithHttpInfo(Guid documentId);
+        /// <returns>ApiResponse of IssuedDocumentDetails</returns>
+        ApiResponse<IssuedDocumentDetails> GetIssuedDocumentByIdWithHttpInfo(Guid documentId);
         /// <summary>
         /// Get paginated list of issued documents of given document type.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>IssuedDocumentPaginatedList</returns>
-        IssuedDocumentPaginatedList GetIssuedDocuments(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        IssuedDocumentPaginatedList GetIssuedDocuments(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get paginated list of issued documents of given document type.
@@ -64,21 +64,22 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of IssuedDocumentPaginatedList</returns>
-        ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
+        ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Get paginated list of registered document types.
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>DocumentTypePaginatedList</returns>
-        DocumentTypePaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?));
+        DocumentTypePaginatedList GetRegisteredDocumentTypes(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?));
 
         /// <summary>
         /// Get paginated list of registered document types.
@@ -87,10 +88,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of DocumentTypePaginatedList</returns>
-        ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?));
+        ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?));
         /// <summary>
         /// Issue a new document to an individual user.
         /// </summary>
@@ -185,8 +187,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IssuedDocument</returns>
-        System.Threading.Tasks.Task<IssuedDocument> GetIssuedDocumentByIdAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of IssuedDocumentDetails</returns>
+        System.Threading.Tasks.Task<IssuedDocumentDetails> GetIssuedDocumentByIdAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get issued document.
@@ -197,8 +199,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IssuedDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedDocument>> GetIssuedDocumentByIdWithHttpInfoAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (IssuedDocumentDetails)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IssuedDocumentDetails>> GetIssuedDocumentByIdWithHttpInfoAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get paginated list of issued documents of given document type.
         /// </summary>
@@ -206,14 +208,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IssuedDocumentPaginatedList</returns>
-        System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get paginated list of issued documents of given document type.
@@ -222,14 +224,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IssuedDocumentPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get paginated list of registered document types.
         /// </summary>
@@ -237,11 +239,12 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentTypePaginatedList</returns>
-        System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get paginated list of registered document types.
@@ -250,11 +253,12 @@ namespace MyDataMyConsent.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentTypePaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Issue a new document to an individual user.
         /// </summary>
@@ -476,10 +480,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
-        /// <returns>IssuedDocument</returns>
-        public IssuedDocument GetIssuedDocumentById(Guid documentId)
+        /// <returns>IssuedDocumentDetails</returns>
+        public IssuedDocumentDetails GetIssuedDocumentById(Guid documentId)
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> localVarResponse = GetIssuedDocumentByIdWithHttpInfo(documentId);
+            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentDetails> localVarResponse = GetIssuedDocumentByIdWithHttpInfo(documentId);
             return localVarResponse.Data;
         }
 
@@ -488,8 +492,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
-        /// <returns>ApiResponse of IssuedDocument</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> GetIssuedDocumentByIdWithHttpInfo(Guid documentId)
+        /// <returns>ApiResponse of IssuedDocumentDetails</returns>
+        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentDetails> GetIssuedDocumentByIdWithHttpInfo(Guid documentId)
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -517,7 +521,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<IssuedDocument>("/v1/documents/issued/{documentId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<IssuedDocumentDetails>("/v1/documents/issued/{documentId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIssuedDocumentById", localVarResponse);
@@ -536,10 +540,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IssuedDocument</returns>
-        public async System.Threading.Tasks.Task<IssuedDocument> GetIssuedDocumentByIdAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of IssuedDocumentDetails</returns>
+        public async System.Threading.Tasks.Task<IssuedDocumentDetails> GetIssuedDocumentByIdAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument> localVarResponse = await GetIssuedDocumentByIdWithHttpInfoAsync(documentId, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentDetails> localVarResponse = await GetIssuedDocumentByIdWithHttpInfoAsync(documentId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -549,8 +553,8 @@ namespace MyDataMyConsent.Sdk.Api
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document id.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IssuedDocument)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocument>> GetIssuedDocumentByIdWithHttpInfoAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (IssuedDocumentDetails)</returns>
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentDetails>> GetIssuedDocumentByIdWithHttpInfoAsync(Guid documentId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -579,7 +583,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocument>("/v1/documents/issued/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocumentDetails>("/v1/documents/issued/{documentId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -597,13 +601,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>IssuedDocumentPaginatedList</returns>
-        public IssuedDocumentPaginatedList GetIssuedDocuments(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public IssuedDocumentPaginatedList GetIssuedDocuments(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> localVarResponse = GetIssuedDocumentsWithHttpInfo(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize);
             return localVarResponse.Data;
@@ -613,13 +617,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of IssuedDocumentPaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> GetIssuedDocumentsWithHttpInfo(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -643,7 +647,10 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentTypeId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentTypeId)); // path parameter
+            if (documentTypeId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "documentTypeId", documentTypeId));
+            }
             if (fromDateTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "fromDateTime", fromDateTime));
@@ -663,7 +670,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<IssuedDocumentPaginatedList>("/v1/documents/issued/{documentTypeId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<IssuedDocumentPaginatedList>("/v1/documents/issued", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIssuedDocuments", localVarResponse);
@@ -680,14 +687,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IssuedDocumentPaginatedList</returns>
-        public async System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IssuedDocumentPaginatedList> GetIssuedDocumentsAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList> localVarResponse = await GetIssuedDocumentsWithHttpInfoAsync(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -697,14 +704,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of issued documents of given document type. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentTypeId">Document type id.</param>
+        /// <param name="documentTypeId">Document type id. (optional)</param>
         /// <param name="fromDateTime">From DateTime in UTC timezone. (optional)</param>
         /// <param name="toDateTime">To DateTime in UTC timezone. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IssuedDocumentPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid documentTypeId, DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<IssuedDocumentPaginatedList>> GetIssuedDocumentsWithHttpInfoAsync(Guid? documentTypeId = default(Guid?), DateTime? fromDateTime = default(DateTime?), DateTime? toDateTime = default(DateTime?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -729,7 +736,10 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("documentTypeId", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(documentTypeId)); // path parameter
+            if (documentTypeId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "documentTypeId", documentTypeId));
+            }
             if (fromDateTime != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "fromDateTime", fromDateTime));
@@ -749,7 +759,7 @@ namespace MyDataMyConsent.Sdk.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocumentPaginatedList>("/v1/documents/issued/{documentTypeId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<IssuedDocumentPaginatedList>("/v1/documents/issued", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -767,12 +777,13 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>DocumentTypePaginatedList</returns>
-        public DocumentTypePaginatedList GetRegisteredDocumentTypes(int? pageNo = default(int?), int? pageSize = default(int?))
+        public DocumentTypePaginatedList GetRegisteredDocumentTypes(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = GetRegisteredDocumentTypesWithHttpInfo(pageNo, pageSize);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = GetRegisteredDocumentTypesWithHttpInfo(supportedEntityType, pageNo, pageSize);
             return localVarResponse.Data;
         }
 
@@ -780,10 +791,11 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <returns>ApiResponse of DocumentTypePaginatedList</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(int? pageNo = default(int?), int? pageSize = default(int?))
+        public MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> GetRegisteredDocumentTypesWithHttpInfo(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?))
         {
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -807,6 +819,10 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (supportedEntityType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "supportedEntityType", supportedEntityType));
+            }
             if (pageNo != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "pageNo", pageNo));
@@ -835,13 +851,14 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DocumentTypePaginatedList</returns>
-        public async System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DocumentTypePaginatedList> GetRegisteredDocumentTypesAsync(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = await GetRegisteredDocumentTypesWithHttpInfoAsync(pageNo, pageSize, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList> localVarResponse = await GetRegisteredDocumentTypesWithHttpInfoAsync(supportedEntityType, pageNo, pageSize, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -849,11 +866,12 @@ namespace MyDataMyConsent.Sdk.Api
         /// Get paginated list of registered document types. 
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="supportedEntityType">Supported entity type. (optional)</param>
         /// <param name="pageNo">Page number. (optional, default to 1)</param>
         /// <param name="pageSize">Number of items to return. (optional, default to 25)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DocumentTypePaginatedList)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<DocumentTypePaginatedList>> GetRegisteredDocumentTypesWithHttpInfoAsync(SupportedEntityType? supportedEntityType = default(SupportedEntityType?), int? pageNo = default(int?), int? pageSize = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
@@ -878,6 +896,10 @@ namespace MyDataMyConsent.Sdk.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (supportedEntityType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "supportedEntityType", supportedEntityType));
+            }
             if (pageNo != null)
             {
                 localVarRequestOptions.QueryParameters.Add(MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToMultiMap("", "pageNo", pageNo));

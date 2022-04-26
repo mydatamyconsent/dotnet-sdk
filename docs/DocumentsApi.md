@@ -5,7 +5,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetIssuedDocumentById**](DocumentsApi.md#getissueddocumentbyid) | **GET** /v1/documents/issued/{documentId} | Get issued document.
-[**GetIssuedDocuments**](DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
+[**GetIssuedDocuments**](DocumentsApi.md#getissueddocuments) | **GET** /v1/documents/issued | Get paginated list of issued documents of given document type.
 [**GetRegisteredDocumentTypes**](DocumentsApi.md#getregistereddocumenttypes) | **GET** /v1/documents/types | Get paginated list of registered document types.
 [**IssueDocumentToIndividual**](DocumentsApi.md#issuedocumenttoindividual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 [**IssueDocumentToOrganization**](DocumentsApi.md#issuedocumenttoorganization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getissueddocumentbyid"></a>
 # **GetIssuedDocumentById**
-> IssuedDocument GetIssuedDocumentById (Guid documentId)
+> IssuedDocumentDetails GetIssuedDocumentById (Guid documentId)
 
 Get issued document.
 
@@ -41,7 +41,7 @@ namespace Example
             try
             {
                 // Get issued document.
-                IssuedDocument result = apiInstance.GetIssuedDocumentById(documentId);
+                IssuedDocumentDetails result = apiInstance.GetIssuedDocumentById(documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IssuedDocument**](IssuedDocument.md)
+[**IssuedDocumentDetails**](IssuedDocumentDetails.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ No authorization required
 
 <a name="getissueddocuments"></a>
 # **GetIssuedDocuments**
-> IssuedDocumentPaginatedList GetIssuedDocuments (Guid documentTypeId, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
+> IssuedDocumentPaginatedList GetIssuedDocuments (Guid? documentTypeId = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get paginated list of issued documents of given document type.
 
@@ -108,7 +108,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
-            var documentTypeId = "documentTypeId_example";  // Guid | Document type id.
+            var documentTypeId = "documentTypeId_example";  // Guid? | Document type id. (optional) 
             var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From DateTime in UTC timezone. (optional) 
             var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To DateTime in UTC timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -135,7 +135,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentTypeId** | **Guid**| Document type id. | 
+ **documentTypeId** | **Guid?**| Document type id. | [optional] 
  **fromDateTime** | **DateTime?**| From DateTime in UTC timezone. | [optional] 
  **toDateTime** | **DateTime?**| To DateTime in UTC timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -166,7 +166,7 @@ No authorization required
 
 <a name="getregistereddocumenttypes"></a>
 # **GetRegisteredDocumentTypes**
-> DocumentTypePaginatedList GetRegisteredDocumentTypes (int? pageNo = null, int? pageSize = null)
+> DocumentTypePaginatedList GetRegisteredDocumentTypes (SupportedEntityType? supportedEntityType = null, int? pageNo = null, int? pageSize = null)
 
 Get paginated list of registered document types.
 
@@ -187,13 +187,14 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DocumentsApi(config);
+            var supportedEntityType = new SupportedEntityType?(); // SupportedEntityType? | Supported entity type. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
             var pageSize = 25;  // int? | Number of items to return. (optional)  (default to 25)
 
             try
             {
                 // Get paginated list of registered document types.
-                DocumentTypePaginatedList result = apiInstance.GetRegisteredDocumentTypes(pageNo, pageSize);
+                DocumentTypePaginatedList result = apiInstance.GetRegisteredDocumentTypes(supportedEntityType, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -211,6 +212,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **supportedEntityType** | [**SupportedEntityType?**](SupportedEntityType?.md)| Supported entity type. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
  **pageSize** | **int?**| Number of items to return. | [optional] [default to 25]
 

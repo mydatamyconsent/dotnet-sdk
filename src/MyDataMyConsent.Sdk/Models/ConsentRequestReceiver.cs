@@ -26,7 +26,7 @@ using OpenAPIDateConverter = MyDataMyConsent.Sdk.Client.OpenAPIDateConverter;
 namespace MyDataMyConsent.Sdk.Models
 {
     /// <summary>
-    /// Consent request receiver details
+    /// ConsentRequestReceiver
     /// </summary>
     [DataContract(Name = "ConsentRequestReceiver")]
     public partial class ConsentRequestReceiver : IEquatable<ConsentRequestReceiver>
@@ -45,8 +45,8 @@ namespace MyDataMyConsent.Sdk.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsentRequestReceiver" /> class.
         /// </summary>
-        /// <param name="countryIso2Code">Consent request receiver country ISO 2 code (required).</param>
-        /// <param name="identifiers">Consent request receiver identifiers (required).</param>
+        /// <param name="countryIso2Code">countryIso2Code (required).</param>
+        /// <param name="identifiers">identifiers (required).</param>
         /// <param name="identificationStrategy">identificationStrategy (required).</param>
         public ConsentRequestReceiver(string countryIso2Code = default(string), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy identificationStrategy = default(IdentificationStrategy))
         {
@@ -60,16 +60,14 @@ namespace MyDataMyConsent.Sdk.Models
         }
 
         /// <summary>
-        /// Consent request receiver country ISO 2 code
+        /// Gets or Sets CountryIso2Code
         /// </summary>
-        /// <value>Consent request receiver country ISO 2 code</value>
         [DataMember(Name = "countryIso2Code", IsRequired = true, EmitDefaultValue = false)]
         public string CountryIso2Code { get; set; }
 
         /// <summary>
-        /// Consent request receiver identifiers
+        /// Gets or Sets Identifiers
         /// </summary>
-        /// <value>Consent request receiver identifiers</value>
         [DataMember(Name = "identifiers", IsRequired = true, EmitDefaultValue = false)]
         public List<StringStringKeyValuePair> Identifiers { get; set; }
 

@@ -47,11 +47,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="id">Data consent request id. (required).</param>
         /// <param name="templateId">Data consent template id..</param>
+        /// <param name="consentId">Data consent id..</param>
         /// <param name="title">Data consent title. (required).</param>
         /// <param name="description">Data consent description. (required).</param>
         /// <param name="purpose">Data consent purpose..</param>
         /// <param name="dataLife">dataLife.</param>
         /// <param name="collectables">List of supported collectables. (required).</param>
+        /// <param name="receiver">receiver (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="createdAtUtc">Request creation datetime in UTC timezone. (required).</param>
         /// <param name="expiresAtUtc">Request expiration datetime in UTC timezone. (required).</param>
@@ -59,7 +61,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="dataAccessExpiresAtUtc">Data access expiration datetime in UTC timezone..</param>
         /// <param name="rejectedAtUtc">Request rejection datetime in UTC timezone..</param>
         /// <param name="revokedAtUtc">Request revocation datetime in UTC timezone..</param>
-        public DataConsentRequest(Guid id = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), Life dataLife = default(Life), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), DataConsentStatus status = default(DataConsentStatus), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime), DateTime? approvedAtUtc = default(DateTime?), DateTime? dataAccessExpiresAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?))
+        public DataConsentRequest(Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), Life dataLife = default(Life), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), ConsentRequestReceiver receiver = default(ConsentRequestReceiver), DataConsentStatus status = default(DataConsentStatus), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime), DateTime? approvedAtUtc = default(DateTime?), DateTime? dataAccessExpiresAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.Title = title;
@@ -69,10 +71,16 @@ namespace MyDataMyConsent.Sdk.Models
                 throw new ArgumentNullException("collectables is a required property for DataConsentRequest and cannot be null");
             }
             this.Collectables = collectables;
+            // to ensure "receiver" is required (not null)
+            if (receiver == null) {
+                throw new ArgumentNullException("receiver is a required property for DataConsentRequest and cannot be null");
+            }
+            this.Receiver = receiver;
             this.Status = status;
             this.CreatedAtUtc = createdAtUtc;
             this.ExpiresAtUtc = expiresAtUtc;
             this.TemplateId = templateId;
+            this.ConsentId = consentId;
             this.Purpose = purpose;
             this.DataLife = dataLife;
             this.ApprovedAtUtc = approvedAtUtc;
@@ -94,6 +102,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// <value>Data consent template id.</value>
         [DataMember(Name = "templateId", EmitDefaultValue = true)]
         public Guid? TemplateId { get; set; }
+
+        /// <summary>
+        /// Data consent id.
+        /// </summary>
+        /// <value>Data consent id.</value>
+        [DataMember(Name = "consentId", EmitDefaultValue = true)]
+        public Guid? ConsentId { get; set; }
 
         /// <summary>
         /// Data consent title.
@@ -128,6 +143,12 @@ namespace MyDataMyConsent.Sdk.Models
         /// <value>List of supported collectables.</value>
         [DataMember(Name = "collectables", IsRequired = true, EmitDefaultValue = false)]
         public List<CollectibleTypes> Collectables { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Receiver
+        /// </summary>
+        [DataMember(Name = "receiver", IsRequired = true, EmitDefaultValue = false)]
+        public ConsentRequestReceiver Receiver { get; set; }
 
         /// <summary>
         /// Request creation datetime in UTC timezone.
@@ -181,11 +202,13 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("class DataConsentRequest {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  ConsentId: ").Append(ConsentId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Purpose: ").Append(Purpose).Append("\n");
             sb.Append("  DataLife: ").Append(DataLife).Append("\n");
             sb.Append("  Collectables: ").Append(Collectables).Append("\n");
+            sb.Append("  Receiver: ").Append(Receiver).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedAtUtc: ").Append(CreatedAtUtc).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
@@ -239,6 +262,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.TemplateId.Equals(input.TemplateId))
                 ) && 
                 (
+                    this.ConsentId == input.ConsentId ||
+                    (this.ConsentId != null &&
+                    this.ConsentId.Equals(input.ConsentId))
+                ) && 
+                (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
@@ -263,6 +291,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Collectables != null &&
                     input.Collectables != null &&
                     this.Collectables.SequenceEqual(input.Collectables)
+                ) && 
+                (
+                    this.Receiver == input.Receiver ||
+                    (this.Receiver != null &&
+                    this.Receiver.Equals(input.Receiver))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -317,6 +350,10 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.TemplateId.GetHashCode();
                 }
+                if (this.ConsentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ConsentId.GetHashCode();
+                }
                 if (this.Title != null)
                 {
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();
@@ -336,6 +373,10 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.Collectables != null)
                 {
                     hashCode = (hashCode * 59) + this.Collectables.GetHashCode();
+                }
+                if (this.Receiver != null)
+                {
+                    hashCode = (hashCode * 59) + this.Receiver.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.CreatedAtUtc != null)

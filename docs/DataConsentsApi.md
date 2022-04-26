@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 <a name="downloadconsenteddocumentanalysis"></a>
 # **DownloadConsentedDocumentAnalysis**
-> Object DownloadConsentedDocumentAnalysis (string consentId, string documentId)
+> void DownloadConsentedDocumentAnalysis (string consentId, string documentId)
 
 Get analysis of a consented document.
 
@@ -53,8 +53,7 @@ namespace Example
             try
             {
                 // Get analysis of a consented document.
-                Object result = apiInstance.DownloadConsentedDocumentAnalysis(consentId, documentId);
-                Debug.WriteLine(result);
+                apiInstance.DownloadConsentedDocumentAnalysis(consentId, documentId);
             }
             catch (ApiException  e)
             {
@@ -76,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+void (empty response body)
 
 ### Authorization
 
@@ -100,7 +99,7 @@ No authorization required
 
 <a name="downloadindividualconsenteddocumentbyid"></a>
 # **DownloadIndividualConsentedDocumentById**
-> Object DownloadIndividualConsentedDocumentById (Guid consentId, string documentId)
+> void DownloadIndividualConsentedDocumentById (Guid consentId, string documentId)
 
 Download individual consented document by document id.
 
@@ -127,8 +126,7 @@ namespace Example
             try
             {
                 // Download individual consented document by document id.
-                Object result = apiInstance.DownloadIndividualConsentedDocumentById(consentId, documentId);
-                Debug.WriteLine(result);
+                apiInstance.DownloadIndividualConsentedDocumentById(consentId, documentId);
             }
             catch (ApiException  e)
             {
@@ -150,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+void (empty response body)
 
 ### Authorization
 
@@ -174,7 +172,7 @@ No authorization required
 
 <a name="downloadorganizationconsenteddocumentbyid"></a>
 # **DownloadOrganizationConsentedDocumentById**
-> Object DownloadOrganizationConsentedDocumentById (Guid consentId, string documentId)
+> void DownloadOrganizationConsentedDocumentById (Guid consentId, string documentId)
 
 Download organization consent document based on document id.
 
@@ -201,8 +199,7 @@ namespace Example
             try
             {
                 // Download organization consent document based on document id.
-                Object result = apiInstance.DownloadOrganizationConsentedDocumentById(consentId, documentId);
-                Debug.WriteLine(result);
+                apiInstance.DownloadOrganizationConsentedDocumentById(consentId, documentId);
             }
             catch (ApiException  e)
             {
@@ -224,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+void (empty response body)
 
 ### Authorization
 
@@ -460,7 +457,7 @@ No authorization required
 
 <a name="getconsenteddocumentbyid"></a>
 # **GetConsentedDocumentById**
-> Object GetConsentedDocumentById (Guid consentId, string documentId)
+> DataConsentDocument GetConsentedDocumentById (Guid consentId, string documentId)
 
 Get individual consented document by document id.
 
@@ -487,7 +484,7 @@ namespace Example
             try
             {
                 // Get individual consented document by document id.
-                Object result = apiInstance.GetConsentedDocumentById(consentId, documentId);
+                DataConsentDocument result = apiInstance.GetConsentedDocumentById(consentId, documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -510,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsentDocument**](DataConsentDocument.md)
 
 ### Authorization
 
@@ -759,7 +756,7 @@ No authorization required
 
 <a name="getconsents"></a>
 # **GetConsents**
-> Object GetConsents (DataConsentStatus? status = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
+> DataConsentDetailsPaginatedList GetConsents (DataConsentStatus? status = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get the paginated list of individual data consents.
 
@@ -782,7 +779,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
-            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From datetime in UTC timezone. (optional) 
             var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To datetime in UTC timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -791,7 +788,7 @@ namespace Example
             try
             {
                 // Get the paginated list of individual data consents.
-                Object result = apiInstance.GetConsents(status, fromDateTime, toDateTime, pageNo, pageSize);
+                DataConsentDetailsPaginatedList result = apiInstance.GetConsents(status, fromDateTime, toDateTime, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -809,7 +806,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status. | [optional] 
  **fromDateTime** | **DateTime?**| From datetime in UTC timezone. | [optional] 
  **toDateTime** | **DateTime?**| To datetime in UTC timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -817,7 +814,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsentDetailsPaginatedList**](DataConsentDetailsPaginatedList.md)
 
 ### Authorization
 
@@ -840,7 +837,7 @@ No authorization required
 
 <a name="getindividualconsenteddocuments"></a>
 # **GetIndividualConsentedDocuments**
-> Object GetIndividualConsentedDocuments (Guid consentId)
+> List&lt;DataConsentDocument&gt; GetIndividualConsentedDocuments (Guid consentId)
 
 Get individual consented documents by consent id.
 
@@ -866,7 +863,7 @@ namespace Example
             try
             {
                 // Get individual consented documents by consent id.
-                Object result = apiInstance.GetIndividualConsentedDocuments(consentId);
+                List<DataConsentDocument> result = apiInstance.GetIndividualConsentedDocuments(consentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -888,7 +885,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**List&lt;DataConsentDocument&gt;**](DataConsentDocument.md)
 
 ### Authorization
 
@@ -912,7 +909,7 @@ No authorization required
 
 <a name="getindividualdataconsentbyid"></a>
 # **GetIndividualDataConsentById**
-> Object GetIndividualDataConsentById (Guid consentId)
+> DataConsent GetIndividualDataConsentById (Guid consentId)
 
 Get individuals data consent details by consent id.
 
@@ -938,7 +935,7 @@ namespace Example
             try
             {
                 // Get individuals data consent details by consent id.
-                Object result = apiInstance.GetIndividualDataConsentById(consentId);
+                DataConsent result = apiInstance.GetIndividualDataConsentById(consentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -960,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsent**](DataConsent.md)
 
 ### Authorization
 
@@ -1066,7 +1063,7 @@ No authorization required
 
 <a name="getorganizationconsenteddocumentbyid"></a>
 # **GetOrganizationConsentedDocumentById**
-> Object GetOrganizationConsentedDocumentById (Guid consentId, string documentId)
+> DataConsentDocument GetOrganizationConsentedDocumentById (Guid consentId, string documentId)
 
 Get organization consent document based on document id.
 
@@ -1093,7 +1090,7 @@ namespace Example
             try
             {
                 // Get organization consent document based on document id.
-                Object result = apiInstance.GetOrganizationConsentedDocumentById(consentId, documentId);
+                DataConsentDocument result = apiInstance.GetOrganizationConsentedDocumentById(consentId, documentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1116,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsentDocument**](DataConsentDocument.md)
 
 ### Authorization
 
@@ -1140,7 +1137,7 @@ No authorization required
 
 <a name="getorganizationconsenteddocuments"></a>
 # **GetOrganizationConsentedDocuments**
-> Object GetOrganizationConsentedDocuments (Guid consentId)
+> List&lt;DataConsentDocument&gt; GetOrganizationConsentedDocuments (Guid consentId)
 
 Get organization consented documents by consent id.
 
@@ -1166,7 +1163,7 @@ namespace Example
             try
             {
                 // Get organization consented documents by consent id.
-                Object result = apiInstance.GetOrganizationConsentedDocuments(consentId);
+                List<DataConsentDocument> result = apiInstance.GetOrganizationConsentedDocuments(consentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1188,7 +1185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**List&lt;DataConsentDocument&gt;**](DataConsentDocument.md)
 
 ### Authorization
 
@@ -1212,7 +1209,7 @@ No authorization required
 
 <a name="getorganizationdataconsentbyid"></a>
 # **GetOrganizationDataConsentById**
-> Object GetOrganizationDataConsentById (Guid consentId)
+> DataConsent GetOrganizationDataConsentById (Guid consentId)
 
 Get organizations data consent details by consent id.
 
@@ -1238,7 +1235,7 @@ namespace Example
             try
             {
                 // Get organizations data consent details by consent id.
-                Object result = apiInstance.GetOrganizationDataConsentById(consentId);
+                DataConsent result = apiInstance.GetOrganizationDataConsentById(consentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1260,7 +1257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsent**](DataConsent.md)
 
 ### Authorization
 
@@ -1284,7 +1281,7 @@ No authorization required
 
 <a name="getorganizationdataconsents"></a>
 # **GetOrganizationDataConsents**
-> Object GetOrganizationDataConsents (DataConsentStatus? status = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
+> DataConsentDetailsPaginatedList GetOrganizationDataConsents (DataConsentStatus? status = null, DateTime? fromDateTime = null, DateTime? toDateTime = null, int? pageNo = null, int? pageSize = null)
 
 Get the paginated list of organization data consents.
 
@@ -1305,7 +1302,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.mydatamyconsent.com";
             var apiInstance = new DataConsentsApi(config);
-            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. (optional) 
+            var status = new DataConsentStatus?(); // DataConsentStatus? | Data consent status. (optional) 
             var fromDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | From datetime in UTC timezone. (optional) 
             var toDateTime = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | To datetime in UTC timezone. (optional) 
             var pageNo = 1;  // int? | Page number. (optional)  (default to 1)
@@ -1314,7 +1311,7 @@ namespace Example
             try
             {
                 // Get the paginated list of organization data consents.
-                Object result = apiInstance.GetOrganizationDataConsents(status, fromDateTime, toDateTime, pageNo, pageSize);
+                DataConsentDetailsPaginatedList result = apiInstance.GetOrganizationDataConsents(status, fromDateTime, toDateTime, pageNo, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1332,7 +1329,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] 
+ **status** | [**DataConsentStatus?**](DataConsentStatus?.md)| Data consent status. | [optional] 
  **fromDateTime** | **DateTime?**| From datetime in UTC timezone. | [optional] 
  **toDateTime** | **DateTime?**| To datetime in UTC timezone. | [optional] 
  **pageNo** | **int?**| Page number. | [optional] [default to 1]
@@ -1340,7 +1337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**DataConsentDetailsPaginatedList**](DataConsentDetailsPaginatedList.md)
 
 ### Authorization
 
