@@ -46,8 +46,9 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="issuedAtUtc">Datetime of issue in UTC timezone. (required).</param>
         /// <param name="validFromUtc">Valid from datetime in UTC timezone. (required).</param>
         /// <param name="expiresAtUtc">Datetime of expiry in UTC timezone..</param>
+        /// <param name="paymentRequest">paymentRequest.</param>
         /// <param name="metadata">Metadata..</param>
-        public DocumentIssueRequest(Guid documentTypeId = default(Guid), string identifier = default(string), string description = default(string), DocumentReceiver receiver = default(DocumentReceiver), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        public DocumentIssueRequest(Guid documentTypeId = default(Guid), string identifier = default(string), string description = default(string), DocumentReceiver receiver = default(DocumentReceiver), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), PaymentRequest paymentRequest = default(PaymentRequest), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             this.DocumentTypeId = documentTypeId;
             this.Identifier = identifier;
@@ -60,6 +61,7 @@ namespace MyDataMyConsent.Sdk.Models
             this.IssuedAtUtc = issuedAtUtc;
             this.ValidFromUtc = validFromUtc;
             this.ExpiresAtUtc = expiresAtUtc;
+            this.PaymentRequest = paymentRequest;
             this.Metadata = metadata;
         }
 
@@ -112,6 +114,12 @@ namespace MyDataMyConsent.Sdk.Models
         public DateTime? ExpiresAtUtc { get; set; }
 
         /// <summary>
+        /// Gets or Sets PaymentRequest
+        /// </summary>
+        [DataMember(Name = "paymentRequest", EmitDefaultValue = false)]
+        public PaymentRequest PaymentRequest { get; set; }
+
+        /// <summary>
         /// Metadata.
         /// </summary>
         /// <value>Metadata.</value>
@@ -133,6 +141,7 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  IssuedAtUtc: ").Append(IssuedAtUtc).Append("\n");
             sb.Append("  ValidFromUtc: ").Append(ValidFromUtc).Append("\n");
             sb.Append("  ExpiresAtUtc: ").Append(ExpiresAtUtc).Append("\n");
+            sb.Append("  PaymentRequest: ").Append(PaymentRequest).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -205,6 +214,11 @@ namespace MyDataMyConsent.Sdk.Models
                     this.ExpiresAtUtc.Equals(input.ExpiresAtUtc))
                 ) && 
                 (
+                    this.PaymentRequest == input.PaymentRequest ||
+                    (this.PaymentRequest != null &&
+                    this.PaymentRequest.Equals(input.PaymentRequest))
+                ) && 
+                (
                     this.Metadata == input.Metadata ||
                     this.Metadata != null &&
                     input.Metadata != null &&
@@ -248,6 +262,10 @@ namespace MyDataMyConsent.Sdk.Models
                 if (this.ExpiresAtUtc != null)
                 {
                     hashCode = (hashCode * 59) + this.ExpiresAtUtc.GetHashCode();
+                }
+                if (this.PaymentRequest != null)
+                {
+                    hashCode = (hashCode * 59) + this.PaymentRequest.GetHashCode();
                 }
                 if (this.Metadata != null)
                 {

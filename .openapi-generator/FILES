@@ -58,6 +58,7 @@ docs/OrganizationDataConsentRequestDetailsPaginatedList.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
 docs/OrganizationFinancialTransactionsDtoPaginatedList.md
+docs/PaymentRequest.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
@@ -145,6 +146,7 @@ src/MyDataMyConsent.Sdk/Models/OrganizationDataConsentRequestDetailsPaginatedLis
 src/MyDataMyConsent.Sdk/Models/OrganizationFinancialAccountDto.cs
 src/MyDataMyConsent.Sdk/Models/OrganizationFinancialTransactionsDto.cs
 src/MyDataMyConsent.Sdk/Models/OrganizationFinancialTransactionsDtoPaginatedList.cs
+src/MyDataMyConsent.Sdk/Models/PaymentRequest.cs
 src/MyDataMyConsent.Sdk/Models/ProblemDetails.cs
 src/MyDataMyConsent.Sdk/Models/PushUriRequest.cs
 src/MyDataMyConsent.Sdk/Models/PushUriResponse.cs
