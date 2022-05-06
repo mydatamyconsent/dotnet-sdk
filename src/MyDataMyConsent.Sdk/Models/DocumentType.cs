@@ -62,10 +62,10 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="repositoryServiceName">Document repository service name..</param>
         /// <param name="supportedEntityTypes">Supported entity types. eg: Individual, Organization. (required).</param>
         /// <param name="addedBy">Name of the document type creator. (required).</param>
-        /// <param name="payableAmount">Payable amount if document is chargeable. eg: 10.25..</param>
+        /// <param name="payableAmount">Payable amount if document is chargeable. eg: 10.25. (required).</param>
         /// <param name="payableAmountCurrency">Payable amount currency. eg: INR, USD etc.,..</param>
         /// <param name="approvedAtUtc">DateTime of approval in UTC timezone..</param>
-        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double? payableAmount = default(double?), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?))
+        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double payableAmount = default(double), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.CategoryType = categoryType;
@@ -79,10 +79,10 @@ namespace MyDataMyConsent.Sdk.Models
             }
             this.SupportedEntityTypes = supportedEntityTypes;
             this.AddedBy = addedBy;
+            this.PayableAmount = payableAmount;
             this.Description = description;
             this.SearchServiceName = searchServiceName;
             this.RepositoryServiceName = repositoryServiceName;
-            this.PayableAmount = payableAmount;
             this.PayableAmountCurrency = payableAmountCurrency;
             this.ApprovedAtUtc = approvedAtUtc;
         }
@@ -154,8 +154,8 @@ namespace MyDataMyConsent.Sdk.Models
         /// Payable amount if document is chargeable. eg: 10.25.
         /// </summary>
         /// <value>Payable amount if document is chargeable. eg: 10.25.</value>
-        [DataMember(Name = "payableAmount", EmitDefaultValue = true)]
-        public double? PayableAmount { get; set; }
+        [DataMember(Name = "payableAmount", IsRequired = true, EmitDefaultValue = false)]
+        public double PayableAmount { get; set; }
 
         /// <summary>
         /// Payable amount currency. eg: INR, USD etc.,.
@@ -284,8 +284,7 @@ namespace MyDataMyConsent.Sdk.Models
                 ) && 
                 (
                     this.PayableAmount == input.PayableAmount ||
-                    (this.PayableAmount != null &&
-                    this.PayableAmount.Equals(input.PayableAmount))
+                    this.PayableAmount.Equals(input.PayableAmount)
                 ) && 
                 (
                     this.PayableAmountCurrency == input.PayableAmountCurrency ||
@@ -346,10 +345,7 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.AddedBy.GetHashCode();
                 }
-                if (this.PayableAmount != null)
-                {
-                    hashCode = (hashCode * 59) + this.PayableAmount.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.PayableAmount.GetHashCode();
                 if (this.PayableAmountCurrency != null)
                 {
                     hashCode = (hashCode * 59) + this.PayableAmountCurrency.GetHashCode();
