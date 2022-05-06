@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Identifier** | [**string?**](string?.md) |  | [optional] 
-**Amount** | [**string?**](string?.md) |  | [optional] 
+**Items** | [**List&lt;BillPaymentOrderItem&gt;**](BillPaymentOrderItem.md) |  | [optional] 
 **CurrencyCode** | [**string?**](string?.md) |  | [optional] 
 **PaymentUrl** | [**string?**](string?.md) |  | [optional] 
 **Description** | [**string?**](string?.md) |  | [optional] 

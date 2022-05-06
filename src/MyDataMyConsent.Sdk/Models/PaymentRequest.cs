@@ -35,15 +35,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// Initializes a new instance of the <see cref="PaymentRequest" /> class.
         /// </summary>
         /// <param name="identifier">identifier.</param>
-        /// <param name="amount">amount.</param>
+        /// <param name="items">items.</param>
         /// <param name="currencyCode">currencyCode.</param>
         /// <param name="paymentUrl">paymentUrl.</param>
         /// <param name="description">description.</param>
         /// <param name="dueByUtc">dueByUtc.</param>
-        public PaymentRequest(string? identifier = default(string?), string? amount = default(string?), string? currencyCode = default(string?), string? paymentUrl = default(string?), string? description = default(string?), DateTime dueByUtc = default(DateTime))
+        public PaymentRequest(string? identifier = default(string?), List<BillPaymentOrderItem> items = default(List<BillPaymentOrderItem>), string? currencyCode = default(string?), string? paymentUrl = default(string?), string? description = default(string?), DateTime dueByUtc = default(DateTime))
         {
             this.Identifier = identifier;
-            this.Amount = amount;
+            this.Items = items;
             this.CurrencyCode = currencyCode;
             this.PaymentUrl = paymentUrl;
             this.Description = description;
@@ -57,10 +57,10 @@ namespace MyDataMyConsent.Sdk.Models
         public string? Identifier { get; set; }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Gets or Sets Items
         /// </summary>
-        [DataMember(Name = "amount", EmitDefaultValue = true)]
-        public string? Amount { get; set; }
+        [DataMember(Name = "items", EmitDefaultValue = true)]
+        public List<BillPaymentOrderItem> Items { get; set; }
 
         /// <summary>
         /// Gets or Sets CurrencyCode
@@ -95,7 +95,7 @@ namespace MyDataMyConsent.Sdk.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentRequest {\n");
             sb.Append("  Identifier: ").Append(Identifier).Append("\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  PaymentUrl: ").Append(PaymentUrl).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -141,9 +141,10 @@ namespace MyDataMyConsent.Sdk.Models
                     this.Identifier.Equals(input.Identifier))
                 ) && 
                 (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
+                    this.Items == input.Items ||
+                    this.Items != null &&
+                    input.Items != null &&
+                    this.Items.SequenceEqual(input.Items)
                 ) && 
                 (
                     this.CurrencyCode == input.CurrencyCode ||
@@ -180,9 +181,9 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
                 }
-                if (this.Amount != null)
+                if (this.Items != null)
                 {
-                    hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Items.GetHashCode();
                 }
                 if (this.CurrencyCode != null)
                 {

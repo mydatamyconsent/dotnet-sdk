@@ -150,6 +150,7 @@ Class | Method | HTTP request | Description
  - [Models.Activity](docs/Activity.md)
  - [Models.ApprovedConsentRequest](docs/ApprovedConsentRequest.md)
  - [Models.BankAccountType](docs/BankAccountType.md)
+ - [Models.BillPaymentOrderItem](docs/BillPaymentOrderItem.md)
  - [Models.CollectibleTypes](docs/CollectibleTypes.md)
  - [Models.ConsentRequestReceiver](docs/ConsentRequestReceiver.md)
  - [Models.CreateDataConsentRequest](docs/CreateDataConsentRequest.md)

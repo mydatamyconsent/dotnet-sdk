@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/BillPaymentOrderItem.md
 docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
@@ -98,6 +99,7 @@ src/MyDataMyConsent.Sdk/Models/AbstractOpenAPISchema.cs
 src/MyDataMyConsent.Sdk/Models/Activity.cs
 src/MyDataMyConsent.Sdk/Models/ApprovedConsentRequest.cs
 src/MyDataMyConsent.Sdk/Models/BankAccountType.cs
+src/MyDataMyConsent.Sdk/Models/BillPaymentOrderItem.cs
 src/MyDataMyConsent.Sdk/Models/CollectibleTypes.cs
 src/MyDataMyConsent.Sdk/Models/ConsentRequestReceiver.cs
 src/MyDataMyConsent.Sdk/Models/CreateDataConsentRequest.cs
