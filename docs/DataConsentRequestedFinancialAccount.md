@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomKey** | [**string?**](string?.md) |  | [optional] 
-**Drn** | [**string?**](string?.md) |  | [optional] 
+**CustomKey** | **string** |  | [optional] 
+**Drn** | **string** |  | [optional] 
 **AccountTypeId** | **Guid?** |  | [optional] 
 **AccountIdentifier** | **Guid?** |  | [optional] 
 

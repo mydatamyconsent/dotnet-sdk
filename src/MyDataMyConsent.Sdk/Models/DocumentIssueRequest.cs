@@ -51,10 +51,21 @@ namespace MyDataMyConsent.Sdk.Models
         public DocumentIssueRequest(Guid documentTypeId = default(Guid), string identifier = default(string), string description = default(string), DocumentReceiver receiver = default(DocumentReceiver), DateTime issuedAtUtc = default(DateTime), DateTime validFromUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), PaymentRequest paymentRequest = default(PaymentRequest), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             this.DocumentTypeId = documentTypeId;
+            // to ensure "identifier" is required (not null)
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier is a required property for DocumentIssueRequest and cannot be null");
+            }
             this.Identifier = identifier;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for DocumentIssueRequest and cannot be null");
+            }
             this.Description = description;
             // to ensure "receiver" is required (not null)
-            if (receiver == null) {
+            if (receiver == null)
+            {
                 throw new ArgumentNullException("receiver is a required property for DocumentIssueRequest and cannot be null");
             }
             this.Receiver = receiver;

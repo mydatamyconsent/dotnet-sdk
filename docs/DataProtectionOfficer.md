@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | [**string?**](string?.md) |  | [optional] 
-**Email** | [**string?**](string?.md) |  | [optional] 
-**PhoneNumber** | [**string?**](string?.md) |  | [optional] 
-**Website** | [**string?**](string?.md) |  | [optional] 
-**PostalAddress** | [**string?**](string?.md) |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Email** | **string** |  | [optional] 
+**PhoneNumber** | **string** |  | [optional] 
+**Website** | **string** |  | [optional] 
+**PostalAddress** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

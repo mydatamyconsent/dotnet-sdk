@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="name">name.</param>
         /// <param name="individualIdentifiers">individualIdentifiers.</param>
         /// <param name="organizationIdentifiers">organizationIdentifiers.</param>
-        public SupportedIdentifier(string? iso2 = default(string?), string? name = default(string?), List<Identifier> individualIdentifiers = default(List<Identifier>), List<Identifier> organizationIdentifiers = default(List<Identifier>))
+        public SupportedIdentifier(string iso2 = default(string), string name = default(string), List<Identifier> individualIdentifiers = default(List<Identifier>), List<Identifier> organizationIdentifiers = default(List<Identifier>))
         {
             this.Iso2 = iso2;
             this.Name = name;
@@ -50,13 +50,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Iso2
         /// </summary>
         [DataMember(Name = "iso2", EmitDefaultValue = true)]
-        public string? Iso2 { get; set; }
+        public string Iso2 { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets IndividualIdentifiers

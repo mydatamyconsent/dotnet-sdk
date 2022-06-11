@@ -51,20 +51,52 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="digitalSignatures">Digital signatures. (required).</param>
         public DataConsentDocument(string id = default(string), string name = default(string), string category = default(string), string identifier = default(string), string fieldTitle = default(string), string fieldSlug = default(string), DateTime issuedAtUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), DataConsentDocumentIssuer issuer = default(DataConsentDocumentIssuer), List<DocumentDigitalSignature> digitalSignatures = default(List<DocumentDigitalSignature>))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for DataConsentDocument and cannot be null");
+            }
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DataConsentDocument and cannot be null");
+            }
             this.Name = name;
+            // to ensure "category" is required (not null)
+            if (category == null)
+            {
+                throw new ArgumentNullException("category is a required property for DataConsentDocument and cannot be null");
+            }
             this.Category = category;
+            // to ensure "identifier" is required (not null)
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier is a required property for DataConsentDocument and cannot be null");
+            }
             this.Identifier = identifier;
+            // to ensure "fieldTitle" is required (not null)
+            if (fieldTitle == null)
+            {
+                throw new ArgumentNullException("fieldTitle is a required property for DataConsentDocument and cannot be null");
+            }
             this.FieldTitle = fieldTitle;
+            // to ensure "fieldSlug" is required (not null)
+            if (fieldSlug == null)
+            {
+                throw new ArgumentNullException("fieldSlug is a required property for DataConsentDocument and cannot be null");
+            }
             this.FieldSlug = fieldSlug;
             this.IssuedAtUtc = issuedAtUtc;
             // to ensure "issuer" is required (not null)
-            if (issuer == null) {
+            if (issuer == null)
+            {
                 throw new ArgumentNullException("issuer is a required property for DataConsentDocument and cannot be null");
             }
             this.Issuer = issuer;
             // to ensure "digitalSignatures" is required (not null)
-            if (digitalSignatures == null) {
+            if (digitalSignatures == null)
+            {
                 throw new ArgumentNullException("digitalSignatures is a required property for DataConsentDocument and cannot be null");
             }
             this.DigitalSignatures = digitalSignatures;

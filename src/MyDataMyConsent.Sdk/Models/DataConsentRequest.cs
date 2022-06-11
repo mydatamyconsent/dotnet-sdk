@@ -61,18 +61,30 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="dataAccessExpiresAtUtc">Data access expiration datetime in UTC timezone..</param>
         /// <param name="rejectedAtUtc">Request rejection datetime in UTC timezone..</param>
         /// <param name="revokedAtUtc">Request revocation datetime in UTC timezone..</param>
-        public DataConsentRequest(Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), Life dataLife = default(Life), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), ConsentRequestReceiver receiver = default(ConsentRequestReceiver), DataConsentStatus status = default(DataConsentStatus), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime), DateTime? approvedAtUtc = default(DateTime?), DateTime? dataAccessExpiresAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?))
+        public DataConsentRequest(Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string purpose = default(string), Life dataLife = default(Life), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), ConsentRequestReceiver receiver = default(ConsentRequestReceiver), DataConsentStatus status = default(DataConsentStatus), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime), DateTime? approvedAtUtc = default(DateTime?), DateTime? dataAccessExpiresAtUtc = default(DateTime?), DateTime? rejectedAtUtc = default(DateTime?), DateTime? revokedAtUtc = default(DateTime?))
         {
             this.Id = id;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for DataConsentRequest and cannot be null");
+            }
             this.Title = title;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for DataConsentRequest and cannot be null");
+            }
             this.Description = description;
             // to ensure "collectables" is required (not null)
-            if (collectables == null) {
+            if (collectables == null)
+            {
                 throw new ArgumentNullException("collectables is a required property for DataConsentRequest and cannot be null");
             }
             this.Collectables = collectables;
             // to ensure "receiver" is required (not null)
-            if (receiver == null) {
+            if (receiver == null)
+            {
                 throw new ArgumentNullException("receiver is a required property for DataConsentRequest and cannot be null");
             }
             this.Receiver = receiver;
@@ -129,7 +141,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Data consent purpose.</value>
         [DataMember(Name = "purpose", EmitDefaultValue = true)]
-        public string? Purpose { get; set; }
+        public string Purpose { get; set; }
 
         /// <summary>
         /// Gets or Sets DataLife

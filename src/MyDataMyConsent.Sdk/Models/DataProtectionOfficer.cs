@@ -39,7 +39,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="phoneNumber">phoneNumber.</param>
         /// <param name="website">website.</param>
         /// <param name="postalAddress">postalAddress.</param>
-        public DataProtectionOfficer(string? name = default(string?), string? email = default(string?), string? phoneNumber = default(string?), string? website = default(string?), string? postalAddress = default(string?))
+        public DataProtectionOfficer(string name = default(string), string email = default(string), string phoneNumber = default(string), string website = default(string), string postalAddress = default(string))
         {
             this.Name = name;
             this.Email = email;
@@ -52,31 +52,31 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = true)]
-        public string? Email { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
         [DataMember(Name = "phoneNumber", EmitDefaultValue = true)]
-        public string? PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Website
         /// </summary>
         [DataMember(Name = "website", EmitDefaultValue = true)]
-        public string? Website { get; set; }
+        public string Website { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalAddress
         /// </summary>
         [DataMember(Name = "postalAddress", EmitDefaultValue = true)]
-        public string? PostalAddress { get; set; }
+        public string PostalAddress { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

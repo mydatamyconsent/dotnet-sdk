@@ -40,7 +40,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="contactNumber">contactNumber.</param>
         /// <param name="profileUrl">profileUrl.</param>
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
-        public SharedWith(Guid id = default(Guid), Guid receiverId = default(Guid), string? name = default(string?), string? contactNumber = default(string?), string? profileUrl = default(string?), DateTime? expiresAtUtc = default(DateTime?))
+        public SharedWith(Guid id = default(Guid), Guid receiverId = default(Guid), string name = default(string), string contactNumber = default(string), string profileUrl = default(string), DateTime? expiresAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.ReceiverId = receiverId;
@@ -66,19 +66,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ContactNumber
         /// </summary>
         [DataMember(Name = "contactNumber", EmitDefaultValue = true)]
-        public string? ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfileUrl
         /// </summary>
         [DataMember(Name = "profileUrl", EmitDefaultValue = true)]
-        public string? ProfileUrl { get; set; }
+        public string ProfileUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpiresAtUtc

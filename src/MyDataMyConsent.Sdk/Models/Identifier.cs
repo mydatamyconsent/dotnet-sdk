@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="exampleValue">exampleValue.</param>
-        public Identifier(string? key = default(string?), string? name = default(string?), string? description = default(string?), string? exampleValue = default(string?))
+        public Identifier(string key = default(string), string name = default(string), string description = default(string), string exampleValue = default(string))
         {
             this.Key = key;
             this.Name = name;
@@ -50,25 +50,25 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Key
         /// </summary>
         [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string? Key { get; set; }
+        public string Key { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ExampleValue
         /// </summary>
         [DataMember(Name = "exampleValue", EmitDefaultValue = true)]
-        public string? ExampleValue { get; set; }
+        public string ExampleValue { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

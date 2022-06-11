@@ -46,10 +46,11 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="txn">txn.</param>
         /// <param name="orgId">orgId.</param>
         /// <param name="keyhash">keyhash.</param>
-        public PushUriRequest(UriDetails uriDetails = default(UriDetails), string? ns2 = default(string?), string? ver = default(string?), string? ts = default(string?), string? txn = default(string?), string? orgId = default(string?), string? keyhash = default(string?))
+        public PushUriRequest(UriDetails uriDetails = default(UriDetails), string ns2 = default(string), string ver = default(string), string ts = default(string), string txn = default(string), string orgId = default(string), string keyhash = default(string))
         {
             // to ensure "uriDetails" is required (not null)
-            if (uriDetails == null) {
+            if (uriDetails == null)
+            {
                 throw new ArgumentNullException("uriDetails is a required property for PushUriRequest and cannot be null");
             }
             this.UriDetails = uriDetails;
@@ -71,37 +72,37 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Ns2
         /// </summary>
         [DataMember(Name = "ns2", EmitDefaultValue = true)]
-        public string? Ns2 { get; set; }
+        public string Ns2 { get; set; }
 
         /// <summary>
         /// Gets or Sets Ver
         /// </summary>
         [DataMember(Name = "ver", EmitDefaultValue = true)]
-        public string? Ver { get; set; }
+        public string Ver { get; set; }
 
         /// <summary>
         /// Gets or Sets Ts
         /// </summary>
         [DataMember(Name = "ts", EmitDefaultValue = true)]
-        public string? Ts { get; set; }
+        public string Ts { get; set; }
 
         /// <summary>
         /// Gets or Sets Txn
         /// </summary>
         [DataMember(Name = "txn", EmitDefaultValue = true)]
-        public string? Txn { get; set; }
+        public string Txn { get; set; }
 
         /// <summary>
         /// Gets or Sets OrgId
         /// </summary>
         [DataMember(Name = "orgId", EmitDefaultValue = true)]
-        public string? OrgId { get; set; }
+        public string OrgId { get; set; }
 
         /// <summary>
         /// Gets or Sets Keyhash
         /// </summary>
         [DataMember(Name = "keyhash", EmitDefaultValue = true)]
-        public string? Keyhash { get; set; }
+        public string Keyhash { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

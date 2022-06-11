@@ -46,8 +46,23 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="validToUtc">Signature valid to datatime in UTC timezone. (required).</param>
         public DocumentDigitalSignature(string name = default(string), string issuedBy = default(string), string issuerName = default(string), DateTime validFromUtc = default(DateTime), DateTime validToUtc = default(DateTime))
         {
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DocumentDigitalSignature and cannot be null");
+            }
             this.Name = name;
+            // to ensure "issuedBy" is required (not null)
+            if (issuedBy == null)
+            {
+                throw new ArgumentNullException("issuedBy is a required property for DocumentDigitalSignature and cannot be null");
+            }
             this.IssuedBy = issuedBy;
+            // to ensure "issuerName" is required (not null)
+            if (issuerName == null)
+            {
+                throw new ArgumentNullException("issuerName is a required property for DocumentDigitalSignature and cannot be null");
+            }
             this.IssuerName = issuerName;
             this.ValidFromUtc = validFromUtc;
             this.ValidToUtc = validToUtc;

@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **DocId** | **string** |  | 
 **IssuedOn** | **string** |  | 
 **ValidFrom** | **string** |  | 
-**ValidTo** | [**string?**](string?.md) |  | [optional] 
-**Timestamp** | [**string?**](string?.md) |  | [optional] 
-**Action** | [**string?**](string?.md) |  | [optional] 
+**ValidTo** | **string** |  | [optional] 
+**Timestamp** | **string** |  | [optional] 
+**Action** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

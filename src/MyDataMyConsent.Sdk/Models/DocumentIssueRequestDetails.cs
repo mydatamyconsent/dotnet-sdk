@@ -61,12 +61,28 @@ namespace MyDataMyConsent.Sdk.Models
         {
             this.Id = id;
             this.DocumentTypeId = documentTypeId;
+            // to ensure "typeName" is required (not null)
+            if (typeName == null)
+            {
+                throw new ArgumentNullException("typeName is a required property for DocumentIssueRequestDetails and cannot be null");
+            }
             this.TypeName = typeName;
+            // to ensure "identifier" is required (not null)
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier is a required property for DocumentIssueRequestDetails and cannot be null");
+            }
             this.Identifier = identifier;
             this.Status = status;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for DocumentIssueRequestDetails and cannot be null");
+            }
             this.Description = description;
             // to ensure "receiver" is required (not null)
-            if (receiver == null) {
+            if (receiver == null)
+            {
                 throw new ArgumentNullException("receiver is a required property for DocumentIssueRequestDetails and cannot be null");
             }
             this.Receiver = receiver;

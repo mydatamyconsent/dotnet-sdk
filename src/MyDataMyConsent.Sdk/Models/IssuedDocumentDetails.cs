@@ -52,17 +52,34 @@ namespace MyDataMyConsent.Sdk.Models
         public IssuedDocumentDetails(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), DateTime? acceptedAtUtc = default(DateTime?), DocumentReceiver receiver = default(DocumentReceiver), Dictionary<string, string> metadata = default(Dictionary<string, string>), List<DocumentDigitalSignature> digitalSignatures = default(List<DocumentDigitalSignature>))
         {
             this.Id = id;
+            // to ensure "identifier" is required (not null)
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier is a required property for IssuedDocumentDetails and cannot be null");
+            }
             this.Identifier = identifier;
+            // to ensure "documentType" is required (not null)
+            if (documentType == null)
+            {
+                throw new ArgumentNullException("documentType is a required property for IssuedDocumentDetails and cannot be null");
+            }
             this.DocumentType = documentType;
+            // to ensure "issuedTo" is required (not null)
+            if (issuedTo == null)
+            {
+                throw new ArgumentNullException("issuedTo is a required property for IssuedDocumentDetails and cannot be null");
+            }
             this.IssuedTo = issuedTo;
             this.IssuedAtUtc = issuedAtUtc;
             // to ensure "receiver" is required (not null)
-            if (receiver == null) {
+            if (receiver == null)
+            {
                 throw new ArgumentNullException("receiver is a required property for IssuedDocumentDetails and cannot be null");
             }
             this.Receiver = receiver;
             // to ensure "digitalSignatures" is required (not null)
-            if (digitalSignatures == null) {
+            if (digitalSignatures == null)
+            {
                 throw new ArgumentNullException("digitalSignatures is a required property for IssuedDocumentDetails and cannot be null");
             }
             this.DigitalSignatures = digitalSignatures;

@@ -50,9 +50,15 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="identificationStrategy">identificationStrategy (required).</param>
         public DocumentReceiver(string countryIso2Code = default(string), List<StringStringKeyValuePair> identifiers = default(List<StringStringKeyValuePair>), IdentificationStrategy identificationStrategy = default(IdentificationStrategy))
         {
+            // to ensure "countryIso2Code" is required (not null)
+            if (countryIso2Code == null)
+            {
+                throw new ArgumentNullException("countryIso2Code is a required property for DocumentReceiver and cannot be null");
+            }
             this.CountryIso2Code = countryIso2Code;
             // to ensure "identifiers" is required (not null)
-            if (identifiers == null) {
+            if (identifiers == null)
+            {
                 throw new ArgumentNullException("identifiers is a required property for DocumentReceiver and cannot be null");
             }
             this.Identifiers = identifiers;

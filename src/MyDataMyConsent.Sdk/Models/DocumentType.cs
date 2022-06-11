@@ -65,19 +65,40 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="payableAmount">Payable amount if document is chargeable. eg: 10.25. (required).</param>
         /// <param name="payableAmountCurrency">Payable amount currency. eg: INR, USD etc.,..</param>
         /// <param name="approvedAtUtc">DateTime of approval in UTC timezone..</param>
-        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string? description = default(string?), string logoUrl = default(string), string? searchServiceName = default(string?), string? repositoryServiceName = default(string?), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double payableAmount = default(double), string? payableAmountCurrency = default(string?), DateTime? approvedAtUtc = default(DateTime?))
+        public DocumentType(Guid id = default(Guid), DocumentCategoryType categoryType = default(DocumentCategoryType), DocumentSubCategoryType subCategoryType = default(DocumentSubCategoryType), string name = default(string), string slug = default(string), string description = default(string), string logoUrl = default(string), string searchServiceName = default(string), string repositoryServiceName = default(string), List<SupportedEntityType> supportedEntityTypes = default(List<SupportedEntityType>), string addedBy = default(string), double payableAmount = default(double), string payableAmountCurrency = default(string), DateTime? approvedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.CategoryType = categoryType;
             this.SubCategoryType = subCategoryType;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DocumentType and cannot be null");
+            }
             this.Name = name;
+            // to ensure "slug" is required (not null)
+            if (slug == null)
+            {
+                throw new ArgumentNullException("slug is a required property for DocumentType and cannot be null");
+            }
             this.Slug = slug;
+            // to ensure "logoUrl" is required (not null)
+            if (logoUrl == null)
+            {
+                throw new ArgumentNullException("logoUrl is a required property for DocumentType and cannot be null");
+            }
             this.LogoUrl = logoUrl;
             // to ensure "supportedEntityTypes" is required (not null)
-            if (supportedEntityTypes == null) {
+            if (supportedEntityTypes == null)
+            {
                 throw new ArgumentNullException("supportedEntityTypes is a required property for DocumentType and cannot be null");
             }
             this.SupportedEntityTypes = supportedEntityTypes;
+            // to ensure "addedBy" is required (not null)
+            if (addedBy == null)
+            {
+                throw new ArgumentNullException("addedBy is a required property for DocumentType and cannot be null");
+            }
             this.AddedBy = addedBy;
             this.PayableAmount = payableAmount;
             this.Description = description;
@@ -113,7 +134,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Document Type description. eg: Gujarat State Driving License.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Logo URL of document type.
@@ -127,14 +148,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Document search repository service name.</value>
         [DataMember(Name = "searchServiceName", EmitDefaultValue = true)]
-        public string? SearchServiceName { get; set; }
+        public string SearchServiceName { get; set; }
 
         /// <summary>
         /// Document repository service name.
         /// </summary>
         /// <value>Document repository service name.</value>
         [DataMember(Name = "repositoryServiceName", EmitDefaultValue = true)]
-        public string? RepositoryServiceName { get; set; }
+        public string RepositoryServiceName { get; set; }
 
         /// <summary>
         /// Supported entity types. eg: Individual, Organization.
@@ -162,7 +183,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Payable amount currency. eg: INR, USD etc.,.</value>
         [DataMember(Name = "payableAmountCurrency", EmitDefaultValue = true)]
-        public string? PayableAmountCurrency { get; set; }
+        public string PayableAmountCurrency { get; set; }
 
         /// <summary>
         /// DateTime of approval in UTC timezone.

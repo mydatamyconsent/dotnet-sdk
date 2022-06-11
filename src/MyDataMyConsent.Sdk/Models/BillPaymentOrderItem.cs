@@ -36,7 +36,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="amount">amount.</param>
-        public BillPaymentOrderItem(string? name = default(string?), double amount = default(double))
+        public BillPaymentOrderItem(string name = default(string), double amount = default(double))
         {
             this.Name = name;
             this.Amount = amount;
@@ -46,7 +46,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount

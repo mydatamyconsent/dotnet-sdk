@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Iso2** | [**string?**](string?.md) |  | [optional] 
-**Name** | [**string?**](string?.md) |  | [optional] 
+**Iso2** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
 **IndividualIdentifiers** | [**List&lt;Identifier&gt;**](Identifier.md) |  | [optional] 
 **OrganizationIdentifiers** | [**List&lt;Identifier&gt;**](Identifier.md) |  | [optional] 
 

@@ -51,13 +51,29 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="dataProtectionOfficer">dataProtectionOfficer.</param>
         /// <param name="supportedDocumentTypes">supportedDocumentTypes (required).</param>
         /// <param name="supportedAccountTypes">supportedAccountTypes.</param>
-        public DataProvider(string id = default(string), string name = default(string), string category = default(string), string? logoUrl = default(string?), string? website = default(string?), string? supportEmail = default(string?), string? helpLineNumber = default(string?), string? privacyPolicy = default(string?), string? termOfService = default(string?), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedDocumentTypes = default(List<string>), List<string> supportedAccountTypes = default(List<string>))
+        public DataProvider(string id = default(string), string name = default(string), string category = default(string), string logoUrl = default(string), string website = default(string), string supportEmail = default(string), string helpLineNumber = default(string), string privacyPolicy = default(string), string termOfService = default(string), DataProtectionOfficer dataProtectionOfficer = default(DataProtectionOfficer), List<string> supportedDocumentTypes = default(List<string>), List<string> supportedAccountTypes = default(List<string>))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for DataProvider and cannot be null");
+            }
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DataProvider and cannot be null");
+            }
             this.Name = name;
+            // to ensure "category" is required (not null)
+            if (category == null)
+            {
+                throw new ArgumentNullException("category is a required property for DataProvider and cannot be null");
+            }
             this.Category = category;
             // to ensure "supportedDocumentTypes" is required (not null)
-            if (supportedDocumentTypes == null) {
+            if (supportedDocumentTypes == null)
+            {
                 throw new ArgumentNullException("supportedDocumentTypes is a required property for DataProvider and cannot be null");
             }
             this.SupportedDocumentTypes = supportedDocumentTypes;
@@ -93,37 +109,37 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string? LogoUrl { get; set; }
+        public string LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Website
         /// </summary>
         [DataMember(Name = "website", EmitDefaultValue = true)]
-        public string? Website { get; set; }
+        public string Website { get; set; }
 
         /// <summary>
         /// Gets or Sets SupportEmail
         /// </summary>
         [DataMember(Name = "supportEmail", EmitDefaultValue = true)]
-        public string? SupportEmail { get; set; }
+        public string SupportEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets HelpLineNumber
         /// </summary>
         [DataMember(Name = "helpLineNumber", EmitDefaultValue = true)]
-        public string? HelpLineNumber { get; set; }
+        public string HelpLineNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivacyPolicy
         /// </summary>
         [DataMember(Name = "privacyPolicy", EmitDefaultValue = true)]
-        public string? PrivacyPolicy { get; set; }
+        public string PrivacyPolicy { get; set; }
 
         /// <summary>
         /// Gets or Sets TermOfService
         /// </summary>
         [DataMember(Name = "termOfService", EmitDefaultValue = true)]
-        public string? TermOfService { get; set; }
+        public string TermOfService { get; set; }
 
         /// <summary>
         /// Gets or Sets DataProtectionOfficer

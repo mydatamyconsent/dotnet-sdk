@@ -38,7 +38,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="requiredDetails">requiredDetails.</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
-        public FinancialAccounts(string? drn = default(string?), List<FinancialAccountDetailsRequired> requiredDetails = default(List<FinancialAccountDetailsRequired>), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
+        public FinancialAccounts(string drn = default(string), List<FinancialAccountDetailsRequired> requiredDetails = default(List<FinancialAccountDetailsRequired>), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
         {
             this.Drn = drn;
             this.RequiredDetails = requiredDetails;
@@ -50,7 +50,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Drn
         /// </summary>
         [DataMember(Name = "drn", EmitDefaultValue = true)]
-        public string? Drn { get; set; }
+        public string Drn { get; set; }
 
         /// <summary>
         /// Gets or Sets RequiredDetails

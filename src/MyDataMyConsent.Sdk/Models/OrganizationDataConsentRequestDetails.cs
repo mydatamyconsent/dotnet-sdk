@@ -56,11 +56,26 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="transactionId">Transaction id.</param>
         /// <param name="createdAtUtc">Request creation datetime in UTC timezone (required).</param>
         /// <param name="expiresAtUtc">Request expiration datetime in UTC timezone (required).</param>
-        public OrganizationDataConsentRequestDetails(string receiver = default(string), Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime))
+        public OrganizationDataConsentRequestDetails(string receiver = default(string), Guid id = default(Guid), Guid? templateId = default(Guid?), Guid? consentId = default(Guid?), string title = default(string), string description = default(string), string purpose = default(string), DataConsentStatus status = default(DataConsentStatus), string transactionId = default(string), DateTime createdAtUtc = default(DateTime), DateTime expiresAtUtc = default(DateTime))
         {
+            // to ensure "receiver" is required (not null)
+            if (receiver == null)
+            {
+                throw new ArgumentNullException("receiver is a required property for OrganizationDataConsentRequestDetails and cannot be null");
+            }
             this.Receiver = receiver;
             this.Id = id;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for OrganizationDataConsentRequestDetails and cannot be null");
+            }
             this.Title = title;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for OrganizationDataConsentRequestDetails and cannot be null");
+            }
             this.Description = description;
             this.Status = status;
             this.CreatedAtUtc = createdAtUtc;
@@ -118,14 +133,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Consent request purpose.</value>
         [DataMember(Name = "purpose", EmitDefaultValue = true)]
-        public string? Purpose { get; set; }
+        public string Purpose { get; set; }
 
         /// <summary>
         /// Transaction id
         /// </summary>
         /// <value>Transaction id</value>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
-        public string? TransactionId { get; set; }
+        public string TransactionId { get; set; }
 
         /// <summary>
         /// Request creation datetime in UTC timezone

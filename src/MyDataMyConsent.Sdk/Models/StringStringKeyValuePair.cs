@@ -36,7 +36,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <param name="key">key.</param>
         /// <param name="value">value.</param>
-        public StringStringKeyValuePair(string? key = default(string?), string? value = default(string?))
+        public StringStringKeyValuePair(string key = default(string), string value = default(string))
         {
             this.Key = key;
             this.Value = value;
@@ -46,13 +46,13 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Key
         /// </summary>
         [DataMember(Name = "key", EmitDefaultValue = true)]
-        public string? Key { get; set; }
+        public string Key { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string? Value { get; set; }
+        public string Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **TemplateId** | **Guid?** | Consent template id. | [optional] 
 **Title** | **string** | Consent title. | 
 **Description** | **string** | Consent description. | 
-**Purpose** | [**string?**](string?.md) | Consent purpose. | [optional] 
+**Purpose** | **string** | Consent purpose. | [optional] 
 **Status** | **DataConsentStatus** |  | 
-**TransactionId** | [**string?**](string?.md) | Transaction id. | [optional] 
+**TransactionId** | **string** | Transaction id. | [optional] 
 **RequestedAtUtc** | **DateTime** | Consent requested datetime in UTC timezone. | 
 **ApprovedAtUtc** | **DateTime** | Consent approval datetime in UTC timezone. | 
 **DataAccessExpiresAtUtc** | **DateTime** | Data access expiration datetime in UTC timezone. | 

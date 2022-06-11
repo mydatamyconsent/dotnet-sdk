@@ -35,8 +35,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SupportedIdentifier</returns>
-        SupportedIdentifier GetAllSupportedIdentifiers(string countryIso2Code);
+        SupportedIdentifier GetAllSupportedIdentifiers(string countryIso2Code, int operationIndex = 0);
 
         /// <summary>
         /// Get all supported identifiers by country.
@@ -46,8 +47,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SupportedIdentifier</returns>
-        ApiResponse<SupportedIdentifier> GetAllSupportedIdentifiersWithHttpInfo(string countryIso2Code);
+        ApiResponse<SupportedIdentifier> GetAllSupportedIdentifiersWithHttpInfo(string countryIso2Code, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -65,9 +67,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SupportedIdentifier</returns>
-        System.Threading.Tasks.Task<SupportedIdentifier> GetAllSupportedIdentifiersAsync(string countryIso2Code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SupportedIdentifier> GetAllSupportedIdentifiersAsync(string countryIso2Code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all supported identifiers by country.
@@ -77,9 +80,10 @@ namespace MyDataMyConsent.Sdk.Api
         /// </remarks>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SupportedIdentifier)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SupportedIdentifier>> GetAllSupportedIdentifiersWithHttpInfoAsync(string countryIso2Code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SupportedIdentifier>> GetAllSupportedIdentifiersWithHttpInfoAsync(string countryIso2Code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -205,8 +209,9 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SupportedIdentifier</returns>
-        public SupportedIdentifier GetAllSupportedIdentifiers(string countryIso2Code)
+        public SupportedIdentifier GetAllSupportedIdentifiers(string countryIso2Code, int operationIndex = 0)
         {
             MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier> localVarResponse = GetAllSupportedIdentifiersWithHttpInfo(countryIso2Code);
             return localVarResponse.Data;
@@ -217,9 +222,16 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SupportedIdentifier</returns>
-        public MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier> GetAllSupportedIdentifiersWithHttpInfo(string countryIso2Code)
+        public MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier> GetAllSupportedIdentifiersWithHttpInfo(string countryIso2Code, int operationIndex = 0)
         {
+            // verify the required parameter 'countryIso2Code' is set
+            if (countryIso2Code == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'countryIso2Code' when calling SupportedIdentifiersApi->GetAllSupportedIdentifiers");
+            }
+
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -243,6 +255,9 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("countryIso2Code", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(countryIso2Code)); // path parameter
+
+            localVarRequestOptions.Operation = "SupportedIdentifiersApi.GetAllSupportedIdentifiers";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
@@ -264,11 +279,12 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SupportedIdentifier</returns>
-        public async System.Threading.Tasks.Task<SupportedIdentifier> GetAllSupportedIdentifiersAsync(string countryIso2Code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SupportedIdentifier> GetAllSupportedIdentifiersAsync(string countryIso2Code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier> localVarResponse = await GetAllSupportedIdentifiersWithHttpInfoAsync(countryIso2Code, cancellationToken).ConfigureAwait(false);
+            MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier> localVarResponse = await GetAllSupportedIdentifiersWithHttpInfoAsync(countryIso2Code, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -277,10 +293,17 @@ namespace MyDataMyConsent.Sdk.Api
         /// </summary>
         /// <exception cref="MyDataMyConsent.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="countryIso2Code">Country ISO 2 code.</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SupportedIdentifier)</returns>
-        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier>> GetAllSupportedIdentifiersWithHttpInfoAsync(string countryIso2Code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MyDataMyConsent.Sdk.Client.ApiResponse<SupportedIdentifier>> GetAllSupportedIdentifiersWithHttpInfoAsync(string countryIso2Code, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
+            // verify the required parameter 'countryIso2Code' is set
+            if (countryIso2Code == null)
+            {
+                throw new MyDataMyConsent.Sdk.Client.ApiException(400, "Missing required parameter 'countryIso2Code' when calling SupportedIdentifiersApi->GetAllSupportedIdentifiers");
+            }
+
 
             MyDataMyConsent.Sdk.Client.RequestOptions localVarRequestOptions = new MyDataMyConsent.Sdk.Client.RequestOptions();
 
@@ -305,6 +328,9 @@ namespace MyDataMyConsent.Sdk.Api
             }
 
             localVarRequestOptions.PathParameters.Add("countryIso2Code", MyDataMyConsent.Sdk.Client.ClientUtils.ParameterToString(countryIso2Code)); // path parameter
+
+            localVarRequestOptions.Operation = "SupportedIdentifiersApi.GetAllSupportedIdentifiers";
+            localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request

@@ -41,7 +41,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="ts">ts.</param>
         /// <param name="txn">txn.</param>
         /// <param name="orgId">orgId.</param>
-        public PushUriResponse(string? responseStatus = default(string?), string? responseMessage = default(string?), string? ns2 = default(string?), string? ver = default(string?), string? ts = default(string?), string? txn = default(string?), string? orgId = default(string?))
+        public PushUriResponse(string responseStatus = default(string), string responseMessage = default(string), string ns2 = default(string), string ver = default(string), string ts = default(string), string txn = default(string), string orgId = default(string))
         {
             this.ResponseStatus = responseStatus;
             this.ResponseMessage = responseMessage;
@@ -56,43 +56,43 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ResponseStatus
         /// </summary>
         [DataMember(Name = "responseStatus", EmitDefaultValue = true)]
-        public string? ResponseStatus { get; set; }
+        public string ResponseStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseMessage
         /// </summary>
         [DataMember(Name = "responseMessage", EmitDefaultValue = true)]
-        public string? ResponseMessage { get; set; }
+        public string ResponseMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Ns2
         /// </summary>
         [DataMember(Name = "ns2", EmitDefaultValue = true)]
-        public string? Ns2 { get; set; }
+        public string Ns2 { get; set; }
 
         /// <summary>
         /// Gets or Sets Ver
         /// </summary>
         [DataMember(Name = "ver", EmitDefaultValue = true)]
-        public string? Ver { get; set; }
+        public string Ver { get; set; }
 
         /// <summary>
         /// Gets or Sets Ts
         /// </summary>
         [DataMember(Name = "ts", EmitDefaultValue = true)]
-        public string? Ts { get; set; }
+        public string Ts { get; set; }
 
         /// <summary>
         /// Gets or Sets Txn
         /// </summary>
         [DataMember(Name = "txn", EmitDefaultValue = true)]
-        public string? Txn { get; set; }
+        public string Txn { get; set; }
 
         /// <summary>
         /// Gets or Sets OrgId
         /// </summary>
         [DataMember(Name = "orgId", EmitDefaultValue = true)]
-        public string? OrgId { get; set; }
+        public string OrgId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

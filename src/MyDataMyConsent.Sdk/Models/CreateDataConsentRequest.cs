@@ -45,7 +45,8 @@ namespace MyDataMyConsent.Sdk.Models
         {
             this.ConsentTemplateId = consentTemplateId;
             // to ensure "receiver" is required (not null)
-            if (receiver == null) {
+            if (receiver == null)
+            {
                 throw new ArgumentNullException("receiver is a required property for CreateDataConsentRequest and cannot be null");
             }
             this.Receiver = receiver;

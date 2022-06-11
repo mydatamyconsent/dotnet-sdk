@@ -49,14 +49,49 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="validTo">validTo.</param>
         /// <param name="timestamp">timestamp.</param>
         /// <param name="action">action.</param>
-        public UriDetails(string aadhaar = default(string), string uri = default(string), string docType = default(string), string docName = default(string), string docId = default(string), string issuedOn = default(string), string validFrom = default(string), string? validTo = default(string?), string? timestamp = default(string?), string? action = default(string?))
+        public UriDetails(string aadhaar = default(string), string uri = default(string), string docType = default(string), string docName = default(string), string docId = default(string), string issuedOn = default(string), string validFrom = default(string), string validTo = default(string), string timestamp = default(string), string action = default(string))
         {
+            // to ensure "aadhaar" is required (not null)
+            if (aadhaar == null)
+            {
+                throw new ArgumentNullException("aadhaar is a required property for UriDetails and cannot be null");
+            }
             this.Aadhaar = aadhaar;
+            // to ensure "uri" is required (not null)
+            if (uri == null)
+            {
+                throw new ArgumentNullException("uri is a required property for UriDetails and cannot be null");
+            }
             this.Uri = uri;
+            // to ensure "docType" is required (not null)
+            if (docType == null)
+            {
+                throw new ArgumentNullException("docType is a required property for UriDetails and cannot be null");
+            }
             this.DocType = docType;
+            // to ensure "docName" is required (not null)
+            if (docName == null)
+            {
+                throw new ArgumentNullException("docName is a required property for UriDetails and cannot be null");
+            }
             this.DocName = docName;
+            // to ensure "docId" is required (not null)
+            if (docId == null)
+            {
+                throw new ArgumentNullException("docId is a required property for UriDetails and cannot be null");
+            }
             this.DocId = docId;
+            // to ensure "issuedOn" is required (not null)
+            if (issuedOn == null)
+            {
+                throw new ArgumentNullException("issuedOn is a required property for UriDetails and cannot be null");
+            }
             this.IssuedOn = issuedOn;
+            // to ensure "validFrom" is required (not null)
+            if (validFrom == null)
+            {
+                throw new ArgumentNullException("validFrom is a required property for UriDetails and cannot be null");
+            }
             this.ValidFrom = validFrom;
             this.ValidTo = validTo;
             this.Timestamp = timestamp;
@@ -109,19 +144,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets ValidTo
         /// </summary>
         [DataMember(Name = "validTo", EmitDefaultValue = true)]
-        public string? ValidTo { get; set; }
+        public string ValidTo { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name = "timestamp", EmitDefaultValue = true)]
-        public string? Timestamp { get; set; }
+        public string Timestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Action
         /// </summary>
         [DataMember(Name = "action", EmitDefaultValue = true)]
-        public string? Action { get; set; }
+        public string Action { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

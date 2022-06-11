@@ -44,6 +44,11 @@ namespace MyDataMyConsent.Sdk.Models
         public DataConsentDocumentIssuer(Guid id = default(Guid), string name = default(string))
         {
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for DataConsentDocumentIssuer and cannot be null");
+            }
             this.Name = name;
         }
 

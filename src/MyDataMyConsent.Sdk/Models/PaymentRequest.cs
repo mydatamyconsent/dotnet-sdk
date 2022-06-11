@@ -40,7 +40,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="paymentUrl">paymentUrl.</param>
         /// <param name="description">description.</param>
         /// <param name="dueByUtc">dueByUtc.</param>
-        public PaymentRequest(string? identifier = default(string?), List<BillPaymentOrderItem> items = default(List<BillPaymentOrderItem>), string? currencyCode = default(string?), string? paymentUrl = default(string?), string? description = default(string?), DateTime dueByUtc = default(DateTime))
+        public PaymentRequest(string identifier = default(string), List<BillPaymentOrderItem> items = default(List<BillPaymentOrderItem>), string currencyCode = default(string), string paymentUrl = default(string), string description = default(string), DateTime dueByUtc = default(DateTime))
         {
             this.Identifier = identifier;
             this.Items = items;
@@ -54,7 +54,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Identifier
         /// </summary>
         [DataMember(Name = "identifier", EmitDefaultValue = true)]
-        public string? Identifier { get; set; }
+        public string Identifier { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
@@ -66,19 +66,19 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets CurrencyCode
         /// </summary>
         [DataMember(Name = "currencyCode", EmitDefaultValue = true)]
-        public string? CurrencyCode { get; set; }
+        public string CurrencyCode { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentUrl
         /// </summary>
         [DataMember(Name = "paymentUrl", EmitDefaultValue = true)]
-        public string? PaymentUrl { get; set; }
+        public string PaymentUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets DueByUtc

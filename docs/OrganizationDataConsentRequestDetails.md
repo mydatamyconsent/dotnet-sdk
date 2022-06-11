@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **ConsentId** | **Guid?** | Data Consent id | [optional] 
 **Title** | **string** | Consent request title. | 
 **Description** | **string** | Consent request description. | 
-**Purpose** | [**string?**](string?.md) | Consent request purpose. | [optional] 
+**Purpose** | **string** | Consent request purpose. | [optional] 
 **Status** | **DataConsentStatus** |  | 
-**TransactionId** | [**string?**](string?.md) | Transaction id | [optional] 
+**TransactionId** | **string** | Transaction id | [optional] 
 **CreatedAtUtc** | **DateTime** | Request creation datetime in UTC timezone | 
 **ExpiresAtUtc** | **DateTime** | Request expiration datetime in UTC timezone | 
 

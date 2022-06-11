@@ -57,11 +57,21 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="approvedAtUtc">Consent approval datetime in UTC timezone. (required).</param>
         /// <param name="dataAccessExpiresAtUtc">Data access expiration datetime in UTC timezone. (required).</param>
         /// <param name="revokedAtUtc">Consent revocation datetime in UTC timezone..</param>
-        public DataConsentDetails(Guid id = default(Guid), Guid requestId = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime requestedAtUtc = default(DateTime), DateTime approvedAtUtc = default(DateTime), DateTime dataAccessExpiresAtUtc = default(DateTime), DateTime? revokedAtUtc = default(DateTime?))
+        public DataConsentDetails(Guid id = default(Guid), Guid requestId = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string purpose = default(string), DataConsentStatus status = default(DataConsentStatus), string transactionId = default(string), DateTime requestedAtUtc = default(DateTime), DateTime approvedAtUtc = default(DateTime), DateTime dataAccessExpiresAtUtc = default(DateTime), DateTime? revokedAtUtc = default(DateTime?))
         {
             this.Id = id;
             this.RequestId = requestId;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for DataConsentDetails and cannot be null");
+            }
             this.Title = title;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for DataConsentDetails and cannot be null");
+            }
             this.Description = description;
             this.Status = status;
             this.RequestedAtUtc = requestedAtUtc;
@@ -113,14 +123,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Consent purpose.</value>
         [DataMember(Name = "purpose", EmitDefaultValue = true)]
-        public string? Purpose { get; set; }
+        public string Purpose { get; set; }
 
         /// <summary>
         /// Transaction id.
         /// </summary>
         /// <value>Transaction id.</value>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
-        public string? TransactionId { get; set; }
+        public string TransactionId { get; set; }
 
         /// <summary>
         /// Consent requested datetime in UTC timezone.

@@ -49,7 +49,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="expiresAtUtc">expiresAtUtc.</param>
         /// <param name="activities">activities.</param>
         /// <param name="approvedConsentRequests">approvedConsentRequests.</param>
-        public FinancialAccount(Guid id = default(Guid), string? issuer = default(string?), string? logoUrl = default(string?), string? categoryId = default(string?), string? categoryName = default(string?), string? accountName = default(string?), string? accountLogoUrl = default(string?), string? balance = default(string?), string? balanceType = default(string?), bool isShared = default(bool), List<SharedWith> sharedWith = default(List<SharedWith>), bool isReceived = default(bool), DateTime expiresAtUtc = default(DateTime), List<Activity> activities = default(List<Activity>), List<ApprovedConsentRequest> approvedConsentRequests = default(List<ApprovedConsentRequest>))
+        public FinancialAccount(Guid id = default(Guid), string issuer = default(string), string logoUrl = default(string), string categoryId = default(string), string categoryName = default(string), string accountName = default(string), string accountLogoUrl = default(string), string balance = default(string), string balanceType = default(string), bool isShared = default(bool), List<SharedWith> sharedWith = default(List<SharedWith>), bool isReceived = default(bool), DateTime expiresAtUtc = default(DateTime), List<Activity> activities = default(List<Activity>), List<ApprovedConsentRequest> approvedConsentRequests = default(List<ApprovedConsentRequest>))
         {
             this.Id = id;
             this.Issuer = issuer;
@@ -78,49 +78,49 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets Issuer
         /// </summary>
         [DataMember(Name = "issuer", EmitDefaultValue = true)]
-        public string? Issuer { get; set; }
+        public string Issuer { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string? LogoUrl { get; set; }
+        public string LogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets CategoryId
         /// </summary>
         [DataMember(Name = "categoryId", EmitDefaultValue = true)]
-        public string? CategoryId { get; set; }
+        public string CategoryId { get; set; }
 
         /// <summary>
         /// Gets or Sets CategoryName
         /// </summary>
         [DataMember(Name = "categoryName", EmitDefaultValue = true)]
-        public string? CategoryName { get; set; }
+        public string CategoryName { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountName
         /// </summary>
         [DataMember(Name = "accountName", EmitDefaultValue = true)]
-        public string? AccountName { get; set; }
+        public string AccountName { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountLogoUrl
         /// </summary>
         [DataMember(Name = "accountLogoUrl", EmitDefaultValue = true)]
-        public string? AccountLogoUrl { get; set; }
+        public string AccountLogoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Balance
         /// </summary>
         [DataMember(Name = "balance", EmitDefaultValue = true)]
-        public string? Balance { get; set; }
+        public string Balance { get; set; }
 
         /// <summary>
         /// Gets or Sets BalanceType
         /// </summary>
         [DataMember(Name = "balanceType", EmitDefaultValue = true)]
-        public string? BalanceType { get; set; }
+        public string BalanceType { get; set; }
 
         /// <summary>
         /// Gets or Sets IsShared

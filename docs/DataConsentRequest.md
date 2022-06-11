@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ConsentId** | **Guid?** | Data consent id. | [optional] 
 **Title** | **string** | Data consent title. | 
 **Description** | **string** | Data consent description. | 
-**Purpose** | [**string?**](string?.md) | Data consent purpose. | [optional] 
+**Purpose** | **string** | Data consent purpose. | [optional] 
 **DataLife** | [**Life**](Life.md) |  | [optional] 
 **Collectables** | [**List&lt;CollectibleTypes&gt;**](CollectibleTypes.md) | List of supported collectables. | 
 **Receiver** | [**ConsentRequestReceiver**](ConsentRequestReceiver.md) |  | 

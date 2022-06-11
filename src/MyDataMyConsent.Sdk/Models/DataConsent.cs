@@ -59,17 +59,28 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="collectables">List of supported collectible types. (required).</param>
         /// <param name="identifiers">Consented identity details..</param>
         /// <param name="documents">List of consented documents..</param>
-        public DataConsent(Guid id = default(Guid), Guid requestId = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string? purpose = default(string?), DataConsentStatus status = default(DataConsentStatus), string? transactionId = default(string?), DateTime approvedAtUtc = default(DateTime), DateTime dataAccessExpiresAtUtc = default(DateTime), DateTime? revokedAtUtc = default(DateTime?), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), Object identifiers = default(Object), List<DataConsentDocument> documents = default(List<DataConsentDocument>))
+        public DataConsent(Guid id = default(Guid), Guid requestId = default(Guid), Guid? templateId = default(Guid?), string title = default(string), string description = default(string), string purpose = default(string), DataConsentStatus status = default(DataConsentStatus), string transactionId = default(string), DateTime approvedAtUtc = default(DateTime), DateTime dataAccessExpiresAtUtc = default(DateTime), DateTime? revokedAtUtc = default(DateTime?), List<CollectibleTypes> collectables = default(List<CollectibleTypes>), Object identifiers = default(Object), List<DataConsentDocument> documents = default(List<DataConsentDocument>))
         {
             this.Id = id;
             this.RequestId = requestId;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for DataConsent and cannot be null");
+            }
             this.Title = title;
+            // to ensure "description" is required (not null)
+            if (description == null)
+            {
+                throw new ArgumentNullException("description is a required property for DataConsent and cannot be null");
+            }
             this.Description = description;
             this.Status = status;
             this.ApprovedAtUtc = approvedAtUtc;
             this.DataAccessExpiresAtUtc = dataAccessExpiresAtUtc;
             // to ensure "collectables" is required (not null)
-            if (collectables == null) {
+            if (collectables == null)
+            {
                 throw new ArgumentNullException("collectables is a required property for DataConsent and cannot be null");
             }
             this.Collectables = collectables;
@@ -121,14 +132,14 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         /// <value>Consent purpose.</value>
         [DataMember(Name = "purpose", EmitDefaultValue = true)]
-        public string? Purpose { get; set; }
+        public string Purpose { get; set; }
 
         /// <summary>
         /// Transaction id.
         /// </summary>
         /// <value>Transaction id.</value>
         [DataMember(Name = "transactionId", EmitDefaultValue = true)]
-        public string? TransactionId { get; set; }
+        public string TransactionId { get; set; }
 
         /// <summary>
         /// Consent approval datetime in UTC timezone.

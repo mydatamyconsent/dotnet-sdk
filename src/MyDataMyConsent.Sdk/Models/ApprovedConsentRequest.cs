@@ -35,7 +35,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Initializes a new instance of the <see cref="ApprovedConsentRequest" /> class.
         /// </summary>
         /// <param name="logoUrl">logoUrl.</param>
-        public ApprovedConsentRequest(string? logoUrl = default(string?))
+        public ApprovedConsentRequest(string logoUrl = default(string))
         {
             this.LogoUrl = logoUrl;
         }
@@ -44,7 +44,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// Gets or Sets LogoUrl
         /// </summary>
         [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
-        public string? LogoUrl { get; set; }
+        public string LogoUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

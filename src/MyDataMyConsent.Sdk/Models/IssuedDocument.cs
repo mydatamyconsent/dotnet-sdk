@@ -49,8 +49,23 @@ namespace MyDataMyConsent.Sdk.Models
         public IssuedDocument(Guid id = default(Guid), string identifier = default(string), string documentType = default(string), string issuedTo = default(string), DateTime issuedAtUtc = default(DateTime), DateTime? expiresAtUtc = default(DateTime?), DateTime? acceptedAtUtc = default(DateTime?))
         {
             this.Id = id;
+            // to ensure "identifier" is required (not null)
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier is a required property for IssuedDocument and cannot be null");
+            }
             this.Identifier = identifier;
+            // to ensure "documentType" is required (not null)
+            if (documentType == null)
+            {
+                throw new ArgumentNullException("documentType is a required property for IssuedDocument and cannot be null");
+            }
             this.DocumentType = documentType;
+            // to ensure "issuedTo" is required (not null)
+            if (issuedTo == null)
+            {
+                throw new ArgumentNullException("issuedTo is a required property for IssuedDocument and cannot be null");
+            }
             this.IssuedTo = issuedTo;
             this.IssuedAtUtc = issuedAtUtc;
             this.ExpiresAtUtc = expiresAtUtc;
