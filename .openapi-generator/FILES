@@ -41,7 +41,8 @@ docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
-docs/FileType.md
+docs/Error.md
+docs/ErrorType.md
 docs/Financial.md
 docs/FinancialAccount.md
 docs/FinancialAccountDetailsRequired.md
@@ -130,7 +131,8 @@ src/MyDataMyConsent.Sdk/Models/DocumentSubCategoryType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentType.cs
 src/MyDataMyConsent.Sdk/Models/DocumentTypePaginatedList.cs
 src/MyDataMyConsent.Sdk/Models/DocumentsRequired.cs
-src/MyDataMyConsent.Sdk/Models/FileType.cs
+src/MyDataMyConsent.Sdk/Models/Error.cs
+src/MyDataMyConsent.Sdk/Models/ErrorType.cs
 src/MyDataMyConsent.Sdk/Models/Financial.cs
 src/MyDataMyConsent.Sdk/Models/FinancialAccount.cs
 src/MyDataMyConsent.Sdk/Models/FinancialAccountDetailsRequired.cs

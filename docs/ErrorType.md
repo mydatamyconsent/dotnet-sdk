@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.FileType
+# MyDataMyConsent.Sdk.Models.ErrorType
 
 ## Properties
 

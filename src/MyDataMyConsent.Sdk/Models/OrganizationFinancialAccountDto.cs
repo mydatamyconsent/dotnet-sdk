@@ -37,12 +37,6 @@ namespace MyDataMyConsent.Sdk.Models
         /// </summary>
         [DataMember(Name = "bankAccountType", EmitDefaultValue = false)]
         public BankAccountType? BankAccountType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FileType
-        /// </summary>
-        [DataMember(Name = "fileType", EmitDefaultValue = false)]
-        public FileType? FileType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationFinancialAccountDto" /> class.
         /// </summary>
@@ -58,8 +52,7 @@ namespace MyDataMyConsent.Sdk.Models
         /// <param name="bankName">bankName.</param>
         /// <param name="bankAccountType">bankAccountType.</param>
         /// <param name="bankAccountProofUrl">bankAccountProofUrl.</param>
-        /// <param name="fileType">fileType.</param>
-        public OrganizationFinancialAccountDto(Guid id = default(Guid), Guid organizationId = default(Guid), string organizationName = default(string), string beneficiaryName = default(string), string accountNumber = default(string), string routingNumber = default(string), bool isPrimary = default(bool), bool isVerified = default(bool), string logoUrl = default(string), string bankName = default(string), BankAccountType? bankAccountType = default(BankAccountType?), string bankAccountProofUrl = default(string), FileType? fileType = default(FileType?))
+        public OrganizationFinancialAccountDto(Guid id = default(Guid), Guid organizationId = default(Guid), string organizationName = default(string), string beneficiaryName = default(string), string accountNumber = default(string), string routingNumber = default(string), bool isPrimary = default(bool), bool isVerified = default(bool), string logoUrl = default(string), string bankName = default(string), BankAccountType? bankAccountType = default(BankAccountType?), string bankAccountProofUrl = default(string))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -73,7 +66,6 @@ namespace MyDataMyConsent.Sdk.Models
             this.BankName = bankName;
             this.BankAccountType = bankAccountType;
             this.BankAccountProofUrl = bankAccountProofUrl;
-            this.FileType = fileType;
         }
 
         /// <summary>
@@ -162,7 +154,6 @@ namespace MyDataMyConsent.Sdk.Models
             sb.Append("  BankName: ").Append(BankName).Append("\n");
             sb.Append("  BankAccountType: ").Append(BankAccountType).Append("\n");
             sb.Append("  BankAccountProofUrl: ").Append(BankAccountProofUrl).Append("\n");
-            sb.Append("  FileType: ").Append(FileType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,10 +245,6 @@ namespace MyDataMyConsent.Sdk.Models
                     this.BankAccountProofUrl == input.BankAccountProofUrl ||
                     (this.BankAccountProofUrl != null &&
                     this.BankAccountProofUrl.Equals(input.BankAccountProofUrl))
-                ) && 
-                (
-                    this.FileType == input.FileType ||
-                    this.FileType.Equals(input.FileType)
                 );
         }
 
@@ -309,7 +296,6 @@ namespace MyDataMyConsent.Sdk.Models
                 {
                     hashCode = (hashCode * 59) + this.BankAccountProofUrl.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.FileType.GetHashCode();
                 return hashCode;
             }
         }
