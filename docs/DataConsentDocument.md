@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataConsentDocument
+# MyDataMyConsent.Models.DataConsentDocument
 Data Consent document details.
 
 ## Properties

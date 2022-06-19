@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Api.SupportedIdentifiersApi
+# MyDataMyConsent.Api.SupportedIdentifiersApi
 
 All URIs are relative to *https://api.mydatamyconsent.com*
 
@@ -19,9 +19,9 @@ Get all supported identifiers by country.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

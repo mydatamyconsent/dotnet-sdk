@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.SupportedEntityType
+# MyDataMyConsent.Models.SupportedEntityType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DocumentType
+# MyDataMyConsent.Models.DocumentType
 Issuable Document Type details.
 
 ## Properties

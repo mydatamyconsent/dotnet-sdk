@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.IndividualDataConsentRequestDetails
+# MyDataMyConsent.Models.IndividualDataConsentRequestDetails
 DataConsentRequestResponse
 
 ## Properties

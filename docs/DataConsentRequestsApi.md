@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Api.DataConsentRequestsApi
+# MyDataMyConsent.Api.DataConsentRequestsApi
 
 All URIs are relative to *https://api.mydatamyconsent.com*
 
@@ -24,9 +24,9 @@ Cancel the individual data consent request by Id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -96,9 +96,9 @@ Cancel the organization data consent request by Id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -170,9 +170,9 @@ Create data consent request for an individual.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -244,9 +244,9 @@ Create data consent request for an organization.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -316,9 +316,9 @@ Get all Consent Requests sent to individuals.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -396,9 +396,9 @@ Get all Consent Requests sent to organizations.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -476,9 +476,9 @@ Get individual data consent request by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -549,9 +549,9 @@ Get a OrganizationConsent Request by Id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

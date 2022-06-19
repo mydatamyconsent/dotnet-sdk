@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk - the C# library for the My Data My Consent - Developer API
+# MyDataMyConsent - the C# library for the My Data My Consent - Developer API
 
 Unleashing the power of data consent by establishing trust. The Platform Core Developer API defines a set of capabilities that can be used to request, issue, manage and update data, documents and credentials by organizations. The API can be used to request, manage and update Decentralised Identifiers, Financial Data, Health Data issue Documents, Credentials directly or using OpenID Connect flows, and verify Messages signed with DIDs and much more.
 
@@ -38,9 +38,9 @@ Generate the DLL using your preferred tool (e.g. `dotnet build`)
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 ```
 <a name="usage"></a>
 ## Usage
@@ -59,9 +59,9 @@ c.Proxy = webProxy;
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

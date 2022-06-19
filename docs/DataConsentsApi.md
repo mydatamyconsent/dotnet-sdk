@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Api.DataConsentsApi
+# MyDataMyConsent.Api.DataConsentsApi
 
 All URIs are relative to *https://api.mydatamyconsent.com*
 
@@ -34,9 +34,9 @@ Get analysis of a consented document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -107,9 +107,9 @@ Download individual consented document by document id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -180,9 +180,9 @@ Download organization consent document based on document id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -253,9 +253,9 @@ Get all individual consented financial accounts.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -323,9 +323,9 @@ Get all organizational consented financial accounts.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -393,9 +393,9 @@ Get individual consented financial account details based on account id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -465,9 +465,9 @@ Get individual consented document by document id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -539,9 +539,9 @@ Get organization consented financial account details based on account id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -611,9 +611,9 @@ Get consented financial account insights.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -682,9 +682,9 @@ Get individual consented financial account transactions of an individual based o
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -766,9 +766,9 @@ GetIndividualDataConsents
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -845,9 +845,9 @@ Get individual consented documents by consent id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -917,9 +917,9 @@ Get individuals data consent details by consent id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -989,9 +989,9 @@ Get organization consented financial account transactions of an individual based
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -1071,9 +1071,9 @@ Get organization consent document based on document id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -1145,9 +1145,9 @@ Get organization consented documents by consent id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -1217,9 +1217,9 @@ Get organizations data consent details by consent id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -1289,9 +1289,9 @@ Get the paginated list of organization data consents.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.CreateDataConsentRequest
+# MyDataMyConsent.Models.CreateDataConsentRequest
 Create individual data consent request
 
 ## Properties

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataProcessingAgreementPaginatedList
+# MyDataMyConsent.Models.DataProcessingAgreementPaginatedList
 
 ## Properties
 

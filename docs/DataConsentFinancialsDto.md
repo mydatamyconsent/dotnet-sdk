@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataConsentFinancialsDto
+# MyDataMyConsent.Models.DataConsentFinancialsDto
 
 ## Properties
 

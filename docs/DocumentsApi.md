@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Api.DocumentsApi
+# MyDataMyConsent.Api.DocumentsApi
 
 All URIs are relative to *https://api.mydatamyconsent.com*
 
@@ -23,9 +23,9 @@ Get issued document.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -95,9 +95,9 @@ Get paginated list of issued documents of given document type.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -174,9 +174,9 @@ Get paginated list of registered document types.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -249,9 +249,9 @@ Issue a new document to an individual user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -321,9 +321,9 @@ Issue a new document to an organization.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -394,9 +394,9 @@ Upload a document for issuance request of individual.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -467,9 +467,9 @@ Upload a document for issuance request of organization.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

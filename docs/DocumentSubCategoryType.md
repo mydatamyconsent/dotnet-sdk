@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DocumentSubCategoryType
+# MyDataMyConsent.Models.DocumentSubCategoryType
 
 ## Properties
 

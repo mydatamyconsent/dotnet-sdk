@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.IssuedDocument
+# MyDataMyConsent.Models.IssuedDocument
 Issued Document Identifier.
 
 ## Properties

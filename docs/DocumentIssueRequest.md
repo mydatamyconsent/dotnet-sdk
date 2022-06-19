@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DocumentIssueRequest
+# MyDataMyConsent.Models.DocumentIssueRequest
 Document Issue Request.
 
 ## Properties

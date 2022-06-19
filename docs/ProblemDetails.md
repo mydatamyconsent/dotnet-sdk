@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.ProblemDetails
+# MyDataMyConsent.Models.ProblemDetails
 
 ## Properties
 

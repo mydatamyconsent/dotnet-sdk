@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.BillPaymentOrderItem
+# MyDataMyConsent.Models.BillPaymentOrderItem
 
 ## Properties
 

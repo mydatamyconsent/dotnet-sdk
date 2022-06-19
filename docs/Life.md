@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.Life
+# MyDataMyConsent.Models.Life
 
 ## Properties
 

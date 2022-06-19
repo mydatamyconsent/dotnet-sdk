@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataProcessingAgreement
+# MyDataMyConsent.Models.DataProcessingAgreement
 Data processing agreement details.
 
 ## Properties

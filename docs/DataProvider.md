@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataProvider
+# MyDataMyConsent.Models.DataProvider
 
 ## Properties
 

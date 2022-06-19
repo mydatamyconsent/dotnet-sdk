@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.IssuedDocumentPaginatedList
+# MyDataMyConsent.Models.IssuedDocumentPaginatedList
 
 ## Properties
 

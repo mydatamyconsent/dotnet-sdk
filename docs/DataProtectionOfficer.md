@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataProtectionOfficer
+# MyDataMyConsent.Models.DataProtectionOfficer
 
 ## Properties
 

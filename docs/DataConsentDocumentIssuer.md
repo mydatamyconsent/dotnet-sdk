@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DataConsentDocumentIssuer
+# MyDataMyConsent.Models.DataConsentDocumentIssuer
 Data Consent document issuer details.
 
 ## Properties

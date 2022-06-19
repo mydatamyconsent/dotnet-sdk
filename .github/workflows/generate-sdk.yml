@@ -44,24 +44,23 @@ jobs:
               run: |
                   npx @openapitools/openapi-generator-cli generate
 
-            - run: dotnet build src/MyDataMyConsent.Sdk/MyDataMyConsent.Sdk.csproj
+            - run: dotnet build src/MyDataMyConsent/MyDataMyConsent.csproj
             
             - name: Create the package
-              run: dotnet pack --configuration Release src/MyDataMyConsent.Sdk/MyDataMyConsent.Sdk.csproj
+              run: dotnet pack --configuration Release src/MyDataMyConsent/MyDataMyConsent.csproj
 
             - uses: actions/delete-package-versions@v3
               with:
-                package-name: 'MyDataMyConsent.Sdk'
+                package-name: 'MyDataMyConsent'
                 num-old-versions-to-delete: 1
             
             - name: Publish the package to Github Package Registry
-              run: dotnet nuget push src/MyDataMyConsent.Sdk/bin/Release/*.nupkg
+              run: dotnet nuget push src/MyDataMyConsent/bin/Release/*.nupkg
 
             - name: Repository update
-              uses: EndBug/add-and-commit@v8
+              uses: EndBug/add-and-commit@v9
               with:
                   author_name: Balamurali Pandranki
                   author_email: balamurali@live.com
-                  default_author: github_actor
                   message: 'Generate API SDK'
                   push: true

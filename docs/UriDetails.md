@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.UriDetails
+# MyDataMyConsent.Models.UriDetails
 
 ## Properties
 

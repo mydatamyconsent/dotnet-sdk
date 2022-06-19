@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DocumentReceiver
+# MyDataMyConsent.Models.DocumentReceiver
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.StringStringKeyValuePair
+# MyDataMyConsent.Models.StringStringKeyValuePair
 
 ## Properties
 

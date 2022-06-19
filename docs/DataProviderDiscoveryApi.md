@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Api.DataProviderDiscoveryApi
+# MyDataMyConsent.Api.DataProviderDiscoveryApi
 
 All URIs are relative to *https://api.mydatamyconsent.com*
 
@@ -18,9 +18,9 @@ Get a Data Provider details by provider id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {
@@ -90,9 +90,9 @@ Discover all data providers in My Data My Consent by country and filters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using MyDataMyConsent.Sdk.Api;
-using MyDataMyConsent.Sdk.Client;
-using MyDataMyConsent.Sdk.Models;
+using MyDataMyConsent.Api;
+using MyDataMyConsent.Client;
+using MyDataMyConsent.Models;
 
 namespace Example
 {

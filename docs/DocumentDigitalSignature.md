@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.DocumentDigitalSignature
+# MyDataMyConsent.Models.DocumentDigitalSignature
 Document digital signature.
 
 ## Properties

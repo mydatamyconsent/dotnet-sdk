@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.IdentificationStrategy
+# MyDataMyConsent.Models.IdentificationStrategy
 
 ## Properties
 

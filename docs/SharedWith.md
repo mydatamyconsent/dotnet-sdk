@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.SharedWith
+# MyDataMyConsent.Models.SharedWith
 
 ## Properties
 

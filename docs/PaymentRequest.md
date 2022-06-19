@@ -1,4 +1,4 @@
-# MyDataMyConsent.Sdk.Models.PaymentRequest
+# MyDataMyConsent.Models.PaymentRequest
 
 ## Properties
 
