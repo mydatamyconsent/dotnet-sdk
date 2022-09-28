@@ -1,11 +1,12 @@
 # MyDataMyConsent.Models.Life
+Life : Life with unit and value.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Unit** | **string** |  | [optional] 
-**Value** | **string** |  | [optional] 
+**Unit** | **string** | Life unit. Example: days, hours, minutes. | 
+**Value** | **string** | Life value in number. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

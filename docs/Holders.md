@@ -1,0 +1,11 @@
+# MyDataMyConsent.Models.Holders
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Holder** | [**Holder**](Holder.md) |  | 
+**Type** | **HoldersType** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

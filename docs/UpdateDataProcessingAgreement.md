@@ -1,5 +1,5 @@
 # MyDataMyConsent.Models.UpdateDataProcessingAgreement
-Update data processing agreement details.
+UpdateDataProcessingAgreement : Update data processing agreement details.
 
 ## Properties
 

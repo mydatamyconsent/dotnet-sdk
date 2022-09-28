@@ -1,5 +1,5 @@
 # MyDataMyConsent.Models.CreateDataProcessingAgreement
-Create data processing agreement details.
+CreateDataProcessingAgreement : Create data processing agreement details.
 
 ## Properties
 

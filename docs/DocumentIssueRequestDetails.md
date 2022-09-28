@@ -1,20 +1,21 @@
 # MyDataMyConsent.Models.DocumentIssueRequestDetails
-Document issue request details.
+DocumentIssueRequestDetails : Document issue request details.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Document issue request Id. | 
-**DocumentTypeId** | **Guid** | Document type Id. | 
+**Id** | **string** | Document issue request Id. | 
+**DocumentTypeId** | **string** | Document type Id. | 
 **TypeName** | **string** | Document type name. | 
 **Identifier** | **string** | Document identifier. | 
 **Status** | **DocumentIssueRequestStatus** |  | 
 **Description** | **string** | Document description. | 
-**Receiver** | **Object** | Document receiver details. | 
+**Receiver** | [**DocumentIssueRequestDetailsReceiver**](DocumentIssueRequestDetailsReceiver.md) |  | 
+**PaymentRequest** | [**PaymentRequest**](PaymentRequest.md) |  | [optional] 
 **IssuedAtUtc** | **DateTime** | Datetime of issue in UTC timezone. | 
 **ValidFromUtc** | **DateTime** | Valid from datetime in UTC timezone. | 
-**ExpiresAtUtc** | **DateTime?** | Datetime of expiry in UTC timezone. | [optional] 
+**ExpiresAtUtc** | **DateTime** | Datetime of expiry in UTC timezone. | [optional] 
 **MetaData** | **Object** | Metadata. | [optional] 
 **CreatedAtUtc** | **DateTime** | Creation datetime of issue request in UTC timezone. | 
 

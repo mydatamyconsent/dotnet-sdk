@@ -1,4 +1,5 @@
 # MyDataMyConsent.Models.DocumentIssueRequestStatus
+Document issue request status.
 
 ## Properties
 

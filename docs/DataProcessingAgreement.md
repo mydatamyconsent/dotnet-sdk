@@ -1,11 +1,11 @@
 # MyDataMyConsent.Models.DataProcessingAgreement
-Data processing agreement details.
+DataProcessingAgreement : Data processing agreement details.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Agreement id. | 
+**Id** | **string** | Agreement id. | 
 **_Version** | **string** | Agreement version. | 
 **Body** | **string** | Agreement body content. | 
 **AttachmentUrl** | **string** | Agreement attachment file URL. | 
