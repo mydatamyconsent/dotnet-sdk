@@ -10,6 +10,7 @@
         "gitHost": "github.com",
         "gitRepoId": "dotnet-sdk",
         "gitUserId": "mydatamyconsent",
+        "skipValidateSpec": true,
         "inputSpec": "./openapi-spec.json",
         "removeOperationIdPrefix": true,
         "additionalProperties": {
