@@ -40,6 +40,15 @@ jobs:
                 rm -rf ./src
                 rm -rf ./docs
 
+            - name: Download OpenAPI Spec
+              run: curl https://api.mydatamyconsent.com/openapi-spec.json --output openapi-spec.json
+
+            - name: Cleanup Spec
+              run: |
+                sed -i 's/FinancialAccount\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
+                sed -i 's/FinancialAccountTransaction\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
+                sed -i 's/PaginatedList<\(.*\)>/PaginatedListOf\1s/' openapi-spec.json
+
             - name: Generate SDK's
               run: |
                   npx @openapitools/openapi-generator-cli generate
@@ -67,5 +76,5 @@ jobs:
               with:
                   author_name: Balamurali Pandranki
                   author_email: balamurali@live.com
-                  message: 'Generate API SDK'
+                  message: 'Regenerate API SDK'
                   push: true
