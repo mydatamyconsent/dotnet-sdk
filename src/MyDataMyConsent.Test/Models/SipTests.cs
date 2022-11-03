@@ -74,20 +74,60 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
-        /// Test the property 'Identifier'
+        /// Test the property 'InvestmentValue'
         /// </summary>
         [Fact]
-        public void IdentifierTest()
+        public void InvestmentValueTest()
         {
-            // TODO unit test for the property 'Identifier'
+            // TODO unit test for the property 'InvestmentValue'
         }
         /// <summary>
-        /// Test the property 'Amount'
+        /// Test the property 'CurrentValue'
         /// </summary>
         [Fact]
-        public void AmountTest()
+        public void CurrentValueTest()
         {
-            // TODO unit test for the property 'Amount'
+            // TODO unit test for the property 'CurrentValue'
+        }
+        /// <summary>
+        /// Test the property 'CurrencyCode'
+        /// </summary>
+        [Fact]
+        public void CurrencyCodeTest()
+        {
+            // TODO unit test for the property 'CurrencyCode'
+        }
+        /// <summary>
+        /// Test the property 'PlanInfo'
+        /// </summary>
+        [Fact]
+        public void PlanInfoTest()
+        {
+            // TODO unit test for the property 'PlanInfo'
+        }
+        /// <summary>
+        /// Test the property 'InvestmentInfo'
+        /// </summary>
+        [Fact]
+        public void InvestmentInfoTest()
+        {
+            // TODO unit test for the property 'InvestmentInfo'
+        }
+        /// <summary>
+        /// Test the property 'Holder'
+        /// </summary>
+        [Fact]
+        public void HolderTest()
+        {
+            // TODO unit test for the property 'Holder'
+        }
+        /// <summary>
+        /// Test the property 'Transactions'
+        /// </summary>
+        [Fact]
+        public void TransactionsTest()
+        {
+            // TODO unit test for the property 'Transactions'
         }
 
     }

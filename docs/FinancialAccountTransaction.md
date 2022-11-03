@@ -6,14 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | 
 **Id** | **string** |  | 
-**TxnType** | **CreditCardTransactionType** |  | 
-**TxnDate** | **DateTime** |  | 
-**Amount** | **string** |  | 
-**ValueDate** | **DateTime** |  | 
-**Narration** | **string** |  | 
-**StatementDate** | **DateTime** |  | 
-**Mcc** | **string** |  | 
-**MaskedCardNumber** | **string** |  | 
 **Amc** | **string** |  | 
 **Registrar** | **string** |  | 
 **SchemeCode** | **string** |  | 
@@ -25,6 +17,7 @@ Name | Type | Description | Notes
 **SchemeTypes** | **MutualFundSchemeType** |  | 
 **SchemeCategory** | **MutualFundSchemeCategory** |  | 
 **Ucc** | **string** |  | 
+**Amount** | **string** |  | 
 **ClosingUnits** | **string** |  | 
 **LienUnits** | **string** |  | 
 **Nav** | **string** |  | 
@@ -34,6 +27,7 @@ Name | Type | Description | Notes
 **LockinFlag** | **string** |  | 
 **LockinDays** | **string** |  | 
 **Mode** | **MutualFundHoldingMode** |  | 
+**Narration** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

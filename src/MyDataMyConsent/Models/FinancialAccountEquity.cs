@@ -42,14 +42,16 @@ namespace MyDataMyConsent.Models
         /// <param name="type">type (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="identifier">identifier (required).</param>
-        /// <param name="balance">balance (required).</param>
-        /// <param name="profile">profile (required).</param>
-        /// <param name="summary">summary (required).</param>
-        /// <param name="maskedAccountNumber">maskedAccountNumber (required).</param>
-        /// <param name="linkedAccountRef">linkedAccountRef (required).</param>
-        /// <param name="version">version (required).</param>
-        public FinancialAccountEquity(string type = default(string), string id = default(string), string name = default(string), string identifier = default(string), double balance = default(double), Profile profile = default(Profile), EquitySummary summary = default(EquitySummary), string maskedAccountNumber = default(string), string linkedAccountRef = default(string), float version = default(float))
+        /// <param name="issuerName">issuerName (required).</param>
+        /// <param name="exchange">exchange (required).</param>
+        /// <param name="isin">isin (required).</param>
+        /// <param name="units">units (required).</param>
+        /// <param name="investmentValue">investmentValue (required).</param>
+        /// <param name="currentValue">currentValue (required).</param>
+        /// <param name="currencyCode">currencyCode (required).</param>
+        /// <param name="holder">holder (required).</param>
+        /// <param name="transactions">transactions (required).</param>
+        public FinancialAccountEquity(string type = default(string), string id = default(string), string name = default(string), string issuerName = default(string), string exchange = default(string), string isin = default(string), long units = default(long), double investmentValue = default(double), double currentValue = default(double), string currencyCode = default(string), Holder holder = default(Holder), bool transactions = default(bool))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -69,38 +71,40 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("name is a required property for FinancialAccountEquity and cannot be null");
             }
             this.Name = name;
-            // to ensure "identifier" is required (not null)
-            if (identifier == null)
+            // to ensure "issuerName" is required (not null)
+            if (issuerName == null)
             {
-                throw new ArgumentNullException("identifier is a required property for FinancialAccountEquity and cannot be null");
+                throw new ArgumentNullException("issuerName is a required property for FinancialAccountEquity and cannot be null");
             }
-            this.Identifier = identifier;
-            this.Balance = balance;
-            // to ensure "profile" is required (not null)
-            if (profile == null)
+            this.IssuerName = issuerName;
+            // to ensure "exchange" is required (not null)
+            if (exchange == null)
             {
-                throw new ArgumentNullException("profile is a required property for FinancialAccountEquity and cannot be null");
+                throw new ArgumentNullException("exchange is a required property for FinancialAccountEquity and cannot be null");
             }
-            this.Profile = profile;
-            // to ensure "summary" is required (not null)
-            if (summary == null)
+            this.Exchange = exchange;
+            // to ensure "isin" is required (not null)
+            if (isin == null)
             {
-                throw new ArgumentNullException("summary is a required property for FinancialAccountEquity and cannot be null");
+                throw new ArgumentNullException("isin is a required property for FinancialAccountEquity and cannot be null");
             }
-            this.Summary = summary;
-            // to ensure "maskedAccountNumber" is required (not null)
-            if (maskedAccountNumber == null)
+            this.Isin = isin;
+            this.Units = units;
+            this.InvestmentValue = investmentValue;
+            this.CurrentValue = currentValue;
+            // to ensure "currencyCode" is required (not null)
+            if (currencyCode == null)
             {
-                throw new ArgumentNullException("maskedAccountNumber is a required property for FinancialAccountEquity and cannot be null");
+                throw new ArgumentNullException("currencyCode is a required property for FinancialAccountEquity and cannot be null");
             }
-            this.MaskedAccountNumber = maskedAccountNumber;
-            // to ensure "linkedAccountRef" is required (not null)
-            if (linkedAccountRef == null)
+            this.CurrencyCode = currencyCode;
+            // to ensure "holder" is required (not null)
+            if (holder == null)
             {
-                throw new ArgumentNullException("linkedAccountRef is a required property for FinancialAccountEquity and cannot be null");
+                throw new ArgumentNullException("holder is a required property for FinancialAccountEquity and cannot be null");
             }
-            this.LinkedAccountRef = linkedAccountRef;
-            this._Version = version;
+            this.Holder = holder;
+            this.Transactions = transactions;
         }
 
         /// <summary>
@@ -122,46 +126,58 @@ namespace MyDataMyConsent.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Gets or Sets IssuerName
         /// </summary>
-        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        [DataMember(Name = "issuer_name", IsRequired = true, EmitDefaultValue = true)]
+        public string IssuerName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Balance
+        /// Gets or Sets Exchange
         /// </summary>
-        [DataMember(Name = "balance", IsRequired = true, EmitDefaultValue = true)]
-        public double Balance { get; set; }
+        [DataMember(Name = "exchange", IsRequired = true, EmitDefaultValue = true)]
+        public string Exchange { get; set; }
 
         /// <summary>
-        /// Gets or Sets Profile
+        /// Gets or Sets Isin
         /// </summary>
-        [DataMember(Name = "profile", IsRequired = true, EmitDefaultValue = true)]
-        public Profile Profile { get; set; }
+        [DataMember(Name = "isin", IsRequired = true, EmitDefaultValue = true)]
+        public string Isin { get; set; }
 
         /// <summary>
-        /// Gets or Sets Summary
+        /// Gets or Sets Units
         /// </summary>
-        [DataMember(Name = "summary", IsRequired = true, EmitDefaultValue = true)]
-        public EquitySummary Summary { get; set; }
+        [DataMember(Name = "units", IsRequired = true, EmitDefaultValue = true)]
+        public long Units { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaskedAccountNumber
+        /// Gets or Sets InvestmentValue
         /// </summary>
-        [DataMember(Name = "masked_account_number", IsRequired = true, EmitDefaultValue = true)]
-        public string MaskedAccountNumber { get; set; }
+        [DataMember(Name = "investment_value", IsRequired = true, EmitDefaultValue = true)]
+        public double InvestmentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets LinkedAccountRef
+        /// Gets or Sets CurrentValue
         /// </summary>
-        [DataMember(Name = "linked_account_ref", IsRequired = true, EmitDefaultValue = true)]
-        public string LinkedAccountRef { get; set; }
+        [DataMember(Name = "current_value", IsRequired = true, EmitDefaultValue = true)]
+        public double CurrentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Version
+        /// Gets or Sets CurrencyCode
         /// </summary>
-        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = true)]
-        public float _Version { get; set; }
+        [DataMember(Name = "currency_code", IsRequired = true, EmitDefaultValue = true)]
+        public string CurrencyCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Holder
+        /// </summary>
+        [DataMember(Name = "holder", IsRequired = true, EmitDefaultValue = true)]
+        public Holder Holder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Transactions
+        /// </summary>
+        [DataMember(Name = "transactions", IsRequired = true, EmitDefaultValue = true)]
+        public bool Transactions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -174,13 +190,15 @@ namespace MyDataMyConsent.Models
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Identifier: ").Append(Identifier).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
-            sb.Append("  Profile: ").Append(Profile).Append("\n");
-            sb.Append("  Summary: ").Append(Summary).Append("\n");
-            sb.Append("  MaskedAccountNumber: ").Append(MaskedAccountNumber).Append("\n");
-            sb.Append("  LinkedAccountRef: ").Append(LinkedAccountRef).Append("\n");
-            sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  IssuerName: ").Append(IssuerName).Append("\n");
+            sb.Append("  Exchange: ").Append(Exchange).Append("\n");
+            sb.Append("  Isin: ").Append(Isin).Append("\n");
+            sb.Append("  Units: ").Append(Units).Append("\n");
+            sb.Append("  InvestmentValue: ").Append(InvestmentValue).Append("\n");
+            sb.Append("  CurrentValue: ").Append(CurrentValue).Append("\n");
+            sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
+            sb.Append("  Holder: ").Append(Holder).Append("\n");
+            sb.Append("  Transactions: ").Append(Transactions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -232,37 +250,45 @@ namespace MyDataMyConsent.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Identifier == input.Identifier ||
-                    (this.Identifier != null &&
-                    this.Identifier.Equals(input.Identifier))
+                    this.IssuerName == input.IssuerName ||
+                    (this.IssuerName != null &&
+                    this.IssuerName.Equals(input.IssuerName))
                 ) && 
                 (
-                    this.Balance == input.Balance ||
-                    this.Balance.Equals(input.Balance)
+                    this.Exchange == input.Exchange ||
+                    (this.Exchange != null &&
+                    this.Exchange.Equals(input.Exchange))
                 ) && 
                 (
-                    this.Profile == input.Profile ||
-                    (this.Profile != null &&
-                    this.Profile.Equals(input.Profile))
+                    this.Isin == input.Isin ||
+                    (this.Isin != null &&
+                    this.Isin.Equals(input.Isin))
                 ) && 
                 (
-                    this.Summary == input.Summary ||
-                    (this.Summary != null &&
-                    this.Summary.Equals(input.Summary))
+                    this.Units == input.Units ||
+                    this.Units.Equals(input.Units)
                 ) && 
                 (
-                    this.MaskedAccountNumber == input.MaskedAccountNumber ||
-                    (this.MaskedAccountNumber != null &&
-                    this.MaskedAccountNumber.Equals(input.MaskedAccountNumber))
+                    this.InvestmentValue == input.InvestmentValue ||
+                    this.InvestmentValue.Equals(input.InvestmentValue)
                 ) && 
                 (
-                    this.LinkedAccountRef == input.LinkedAccountRef ||
-                    (this.LinkedAccountRef != null &&
-                    this.LinkedAccountRef.Equals(input.LinkedAccountRef))
+                    this.CurrentValue == input.CurrentValue ||
+                    this.CurrentValue.Equals(input.CurrentValue)
                 ) && 
                 (
-                    this._Version == input._Version ||
-                    this._Version.Equals(input._Version)
+                    this.CurrencyCode == input.CurrencyCode ||
+                    (this.CurrencyCode != null &&
+                    this.CurrencyCode.Equals(input.CurrencyCode))
+                ) && 
+                (
+                    this.Holder == input.Holder ||
+                    (this.Holder != null &&
+                    this.Holder.Equals(input.Holder))
+                ) && 
+                (
+                    this.Transactions == input.Transactions ||
+                    this.Transactions.Equals(input.Transactions)
                 );
         }
 
@@ -287,28 +313,30 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Identifier != null)
+                if (this.IssuerName != null)
                 {
-                    hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IssuerName.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Balance.GetHashCode();
-                if (this.Profile != null)
+                if (this.Exchange != null)
                 {
-                    hashCode = (hashCode * 59) + this.Profile.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Exchange.GetHashCode();
                 }
-                if (this.Summary != null)
+                if (this.Isin != null)
                 {
-                    hashCode = (hashCode * 59) + this.Summary.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Isin.GetHashCode();
                 }
-                if (this.MaskedAccountNumber != null)
+                hashCode = (hashCode * 59) + this.Units.GetHashCode();
+                hashCode = (hashCode * 59) + this.InvestmentValue.GetHashCode();
+                hashCode = (hashCode * 59) + this.CurrentValue.GetHashCode();
+                if (this.CurrencyCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.MaskedAccountNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CurrencyCode.GetHashCode();
                 }
-                if (this.LinkedAccountRef != null)
+                if (this.Holder != null)
                 {
-                    hashCode = (hashCode * 59) + this.LinkedAccountRef.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Holder.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                hashCode = (hashCode * 59) + this.Transactions.GetHashCode();
                 return hashCode;
             }
         }

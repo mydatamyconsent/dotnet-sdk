@@ -41,9 +41,14 @@ namespace MyDataMyConsent.Models
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="identifier">identifier (required).</param>
-        /// <param name="amount">amount (required).</param>
-        public Sip(string id = default(string), string name = default(string), string identifier = default(string), double amount = default(double))
+        /// <param name="investmentValue">investmentValue (required).</param>
+        /// <param name="currentValue">currentValue (required).</param>
+        /// <param name="currencyCode">currencyCode (required).</param>
+        /// <param name="planInfo">planInfo (required).</param>
+        /// <param name="investmentInfo">investmentInfo (required).</param>
+        /// <param name="holder">holder (required).</param>
+        /// <param name="transactions">transactions (required).</param>
+        public Sip(string id = default(string), string name = default(string), double investmentValue = default(double), double currentValue = default(double), string currencyCode = default(string), SipPlanInformation planInfo = default(SipPlanInformation), SipInvestmentInformation investmentInfo = default(SipInvestmentInformation), Holder holder = default(Holder), bool transactions = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -57,13 +62,33 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("name is a required property for Sip and cannot be null");
             }
             this.Name = name;
-            // to ensure "identifier" is required (not null)
-            if (identifier == null)
+            this.InvestmentValue = investmentValue;
+            this.CurrentValue = currentValue;
+            // to ensure "currencyCode" is required (not null)
+            if (currencyCode == null)
             {
-                throw new ArgumentNullException("identifier is a required property for Sip and cannot be null");
+                throw new ArgumentNullException("currencyCode is a required property for Sip and cannot be null");
             }
-            this.Identifier = identifier;
-            this.Amount = amount;
+            this.CurrencyCode = currencyCode;
+            // to ensure "planInfo" is required (not null)
+            if (planInfo == null)
+            {
+                throw new ArgumentNullException("planInfo is a required property for Sip and cannot be null");
+            }
+            this.PlanInfo = planInfo;
+            // to ensure "investmentInfo" is required (not null)
+            if (investmentInfo == null)
+            {
+                throw new ArgumentNullException("investmentInfo is a required property for Sip and cannot be null");
+            }
+            this.InvestmentInfo = investmentInfo;
+            // to ensure "holder" is required (not null)
+            if (holder == null)
+            {
+                throw new ArgumentNullException("holder is a required property for Sip and cannot be null");
+            }
+            this.Holder = holder;
+            this.Transactions = transactions;
         }
 
         /// <summary>
@@ -79,16 +104,46 @@ namespace MyDataMyConsent.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Gets or Sets InvestmentValue
         /// </summary>
-        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        [DataMember(Name = "investment_value", IsRequired = true, EmitDefaultValue = true)]
+        public double InvestmentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Amount
+        /// Gets or Sets CurrentValue
         /// </summary>
-        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
-        public double Amount { get; set; }
+        [DataMember(Name = "current_value", IsRequired = true, EmitDefaultValue = true)]
+        public double CurrentValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CurrencyCode
+        /// </summary>
+        [DataMember(Name = "currency_code", IsRequired = true, EmitDefaultValue = true)]
+        public string CurrencyCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PlanInfo
+        /// </summary>
+        [DataMember(Name = "plan_info", IsRequired = true, EmitDefaultValue = true)]
+        public SipPlanInformation PlanInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InvestmentInfo
+        /// </summary>
+        [DataMember(Name = "investment_info", IsRequired = true, EmitDefaultValue = true)]
+        public SipInvestmentInformation InvestmentInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Holder
+        /// </summary>
+        [DataMember(Name = "holder", IsRequired = true, EmitDefaultValue = true)]
+        public Holder Holder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Transactions
+        /// </summary>
+        [DataMember(Name = "transactions", IsRequired = true, EmitDefaultValue = true)]
+        public bool Transactions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -100,8 +155,13 @@ namespace MyDataMyConsent.Models
             sb.Append("class Sip {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Identifier: ").Append(Identifier).Append("\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  InvestmentValue: ").Append(InvestmentValue).Append("\n");
+            sb.Append("  CurrentValue: ").Append(CurrentValue).Append("\n");
+            sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
+            sb.Append("  PlanInfo: ").Append(PlanInfo).Append("\n");
+            sb.Append("  InvestmentInfo: ").Append(InvestmentInfo).Append("\n");
+            sb.Append("  Holder: ").Append(Holder).Append("\n");
+            sb.Append("  Transactions: ").Append(Transactions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,13 +208,36 @@ namespace MyDataMyConsent.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Identifier == input.Identifier ||
-                    (this.Identifier != null &&
-                    this.Identifier.Equals(input.Identifier))
+                    this.InvestmentValue == input.InvestmentValue ||
+                    this.InvestmentValue.Equals(input.InvestmentValue)
                 ) && 
                 (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
+                    this.CurrentValue == input.CurrentValue ||
+                    this.CurrentValue.Equals(input.CurrentValue)
+                ) && 
+                (
+                    this.CurrencyCode == input.CurrencyCode ||
+                    (this.CurrencyCode != null &&
+                    this.CurrencyCode.Equals(input.CurrencyCode))
+                ) && 
+                (
+                    this.PlanInfo == input.PlanInfo ||
+                    (this.PlanInfo != null &&
+                    this.PlanInfo.Equals(input.PlanInfo))
+                ) && 
+                (
+                    this.InvestmentInfo == input.InvestmentInfo ||
+                    (this.InvestmentInfo != null &&
+                    this.InvestmentInfo.Equals(input.InvestmentInfo))
+                ) && 
+                (
+                    this.Holder == input.Holder ||
+                    (this.Holder != null &&
+                    this.Holder.Equals(input.Holder))
+                ) && 
+                (
+                    this.Transactions == input.Transactions ||
+                    this.Transactions.Equals(input.Transactions)
                 );
         }
 
@@ -175,11 +258,25 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Identifier != null)
+                hashCode = (hashCode * 59) + this.InvestmentValue.GetHashCode();
+                hashCode = (hashCode * 59) + this.CurrentValue.GetHashCode();
+                if (this.CurrencyCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CurrencyCode.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.PlanInfo != null)
+                {
+                    hashCode = (hashCode * 59) + this.PlanInfo.GetHashCode();
+                }
+                if (this.InvestmentInfo != null)
+                {
+                    hashCode = (hashCode * 59) + this.InvestmentInfo.GetHashCode();
+                }
+                if (this.Holder != null)
+                {
+                    hashCode = (hashCode * 59) + this.Holder.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Transactions.GetHashCode();
                 return hashCode;
             }
         }

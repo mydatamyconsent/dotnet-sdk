@@ -74,60 +74,132 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
-        /// Test the property 'Identifier'
+        /// Test the property 'InvestmentValue'
         /// </summary>
         [Fact]
-        public void IdentifierTest()
+        public void InvestmentValueTest()
         {
-            // TODO unit test for the property 'Identifier'
+            // TODO unit test for the property 'InvestmentValue'
         }
         /// <summary>
-        /// Test the property 'Balance'
+        /// Test the property 'CurrentValue'
         /// </summary>
         [Fact]
-        public void BalanceTest()
+        public void CurrentValueTest()
         {
-            // TODO unit test for the property 'Balance'
+            // TODO unit test for the property 'CurrentValue'
         }
         /// <summary>
-        /// Test the property 'Profile'
+        /// Test the property 'CurrencyCode'
         /// </summary>
         [Fact]
-        public void ProfileTest()
+        public void CurrencyCodeTest()
         {
-            // TODO unit test for the property 'Profile'
+            // TODO unit test for the property 'CurrencyCode'
         }
         /// <summary>
-        /// Test the property 'Summary'
+        /// Test the property 'Amc'
         /// </summary>
         [Fact]
-        public void SummaryTest()
+        public void AmcTest()
         {
-            // TODO unit test for the property 'Summary'
+            // TODO unit test for the property 'Amc'
         }
         /// <summary>
-        /// Test the property 'MaskedAccountNumber'
+        /// Test the property 'Registrar'
         /// </summary>
         [Fact]
-        public void MaskedAccountNumberTest()
+        public void RegistrarTest()
         {
-            // TODO unit test for the property 'MaskedAccountNumber'
+            // TODO unit test for the property 'Registrar'
         }
         /// <summary>
-        /// Test the property 'LinkedAccountRef'
+        /// Test the property 'FundName'
         /// </summary>
         [Fact]
-        public void LinkedAccountRefTest()
+        public void FundNameTest()
         {
-            // TODO unit test for the property 'LinkedAccountRef'
+            // TODO unit test for the property 'FundName'
         }
         /// <summary>
-        /// Test the property '_Version'
+        /// Test the property 'Isin'
         /// </summary>
         [Fact]
-        public void _VersionTest()
+        public void IsinTest()
         {
-            // TODO unit test for the property '_Version'
+            // TODO unit test for the property 'Isin'
+        }
+        /// <summary>
+        /// Test the property 'FolioNumber'
+        /// </summary>
+        [Fact]
+        public void FolioNumberTest()
+        {
+            // TODO unit test for the property 'FolioNumber'
+        }
+        /// <summary>
+        /// Test the property 'SchemeCode'
+        /// </summary>
+        [Fact]
+        public void SchemeCodeTest()
+        {
+            // TODO unit test for the property 'SchemeCode'
+        }
+        /// <summary>
+        /// Test the property 'FundType'
+        /// </summary>
+        [Fact]
+        public void FundTypeTest()
+        {
+            // TODO unit test for the property 'FundType'
+        }
+        /// <summary>
+        /// Test the property 'FundCategory'
+        /// </summary>
+        [Fact]
+        public void FundCategoryTest()
+        {
+            // TODO unit test for the property 'FundCategory'
+        }
+        /// <summary>
+        /// Test the property 'Units'
+        /// </summary>
+        [Fact]
+        public void UnitsTest()
+        {
+            // TODO unit test for the property 'Units'
+        }
+        /// <summary>
+        /// Test the property 'LienUnits'
+        /// </summary>
+        [Fact]
+        public void LienUnitsTest()
+        {
+            // TODO unit test for the property 'LienUnits'
+        }
+        /// <summary>
+        /// Test the property 'CreationDate'
+        /// </summary>
+        [Fact]
+        public void CreationDateTest()
+        {
+            // TODO unit test for the property 'CreationDate'
+        }
+        /// <summary>
+        /// Test the property 'Holder'
+        /// </summary>
+        [Fact]
+        public void HolderTest()
+        {
+            // TODO unit test for the property 'Holder'
+        }
+        /// <summary>
+        /// Test the property 'Transactions'
+        /// </summary>
+        [Fact]
+        public void TransactionsTest()
+        {
+            // TODO unit test for the property 'Transactions'
         }
 
     }

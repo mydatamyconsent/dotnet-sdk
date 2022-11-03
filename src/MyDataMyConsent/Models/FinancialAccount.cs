@@ -36,10 +36,10 @@ namespace MyDataMyConsent.Models
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountCreditCard" /> class
+        /// with the <see cref="FinancialAccountEquity" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountCreditCard.</param>
-        public FinancialAccount(FinancialAccountCreditCard actualInstance)
+        /// <param name="actualInstance">An instance of FinancialAccountEquity.</param>
+        public FinancialAccount(FinancialAccountEquity actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -60,274 +60,10 @@ namespace MyDataMyConsent.Models
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountEquity" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountEquity.</param>
-        public FinancialAccount(FinancialAccountEquity actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountBillPayment" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountBillPayment.</param>
-        public FinancialAccount(FinancialAccountBillPayment actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountAif" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountAif.</param>
-        public FinancialAccount(FinancialAccountAif actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountBond" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountBond.</param>
-        public FinancialAccount(FinancialAccountBond actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountCertificateOfDeposit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountCertificateOfDeposit.</param>
-        public FinancialAccount(FinancialAccountCertificateOfDeposit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountCIS" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountCIS.</param>
-        public FinancialAccount(FinancialAccountCIS actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountCommercialPaper" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountCommercialPaper.</param>
-        public FinancialAccount(FinancialAccountCommercialPaper actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountDebenture" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountDebenture.</param>
-        public FinancialAccount(FinancialAccountDebenture actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountDeposit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountDeposit.</param>
-        public FinancialAccount(FinancialAccountDeposit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountEpf" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountEpf.</param>
-        public FinancialAccount(FinancialAccountEpf actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountEtf" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountEtf.</param>
-        public FinancialAccount(FinancialAccountEtf actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountGovtSecurity" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountGovtSecurity.</param>
-        public FinancialAccount(FinancialAccountGovtSecurity actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountIdr" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountIdr.</param>
-        public FinancialAccount(FinancialAccountIdr actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountInsurancePolicy" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountInsurancePolicy.</param>
-        public FinancialAccount(FinancialAccountInsurancePolicy actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountInvit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountInvit.</param>
-        public FinancialAccount(FinancialAccountInvit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountLoan" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountLoan.</param>
-        public FinancialAccount(FinancialAccountLoan actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountNps" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountNps.</param>
-        public FinancialAccount(FinancialAccountNps actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountPpf" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountPpf.</param>
-        public FinancialAccount(FinancialAccountPpf actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountRecurringDeposit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountRecurringDeposit.</param>
-        public FinancialAccount(FinancialAccountRecurringDeposit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountReit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountReit.</param>
-        public FinancialAccount(FinancialAccountReit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
         /// with the <see cref="FinancialAccountSip" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of FinancialAccountSip.</param>
         public FinancialAccount(FinancialAccountSip actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountTermDeposit" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountTermDeposit.</param>
-        public FinancialAccount(FinancialAccountTermDeposit actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FinancialAccount" /> class
-        /// with the <see cref="FinancialAccountUlip" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FinancialAccountUlip.</param>
-        public FinancialAccount(FinancialAccountUlip actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -348,71 +84,7 @@ namespace MyDataMyConsent.Models
             }
             set
             {
-                if (value.GetType() == typeof(FinancialAccountAif))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountBillPayment))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountBond))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountCIS))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountCertificateOfDeposit))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountCommercialPaper))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountCreditCard))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountDebenture))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountDeposit))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountEpf))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountEquity))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountEtf))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountGovtSecurity))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountIdr))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountInsurancePolicy))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountInvit))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountLoan))
+                if (value.GetType() == typeof(FinancialAccountEquity))
                 {
                     this._actualInstance = value;
                 }
@@ -420,59 +92,15 @@ namespace MyDataMyConsent.Models
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(FinancialAccountNps))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountPpf))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountRecurringDeposit))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountReit))
-                {
-                    this._actualInstance = value;
-                }
                 else if (value.GetType() == typeof(FinancialAccountSip))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountTermDeposit))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FinancialAccountUlip))
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: FinancialAccountAif, FinancialAccountBillPayment, FinancialAccountBond, FinancialAccountCIS, FinancialAccountCertificateOfDeposit, FinancialAccountCommercialPaper, FinancialAccountCreditCard, FinancialAccountDebenture, FinancialAccountDeposit, FinancialAccountEpf, FinancialAccountEquity, FinancialAccountEtf, FinancialAccountGovtSecurity, FinancialAccountIdr, FinancialAccountInsurancePolicy, FinancialAccountInvit, FinancialAccountLoan, FinancialAccountMutualFund, FinancialAccountNps, FinancialAccountPpf, FinancialAccountRecurringDeposit, FinancialAccountReit, FinancialAccountSip, FinancialAccountTermDeposit, FinancialAccountUlip");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: FinancialAccountEquity, FinancialAccountMutualFund, FinancialAccountSip");
                 }
             }
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountCreditCard`. If the actual instance is not `FinancialAccountCreditCard`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountCreditCard</returns>
-        public FinancialAccountCreditCard GetFinancialAccountCreditCard()
-        {
-            return (FinancialAccountCreditCard)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountMutualFund`. If the actual instance is not `FinancialAccountMutualFund`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountMutualFund</returns>
-        public FinancialAccountMutualFund GetFinancialAccountMutualFund()
-        {
-            return (FinancialAccountMutualFund)this.ActualInstance;
         }
 
         /// <summary>
@@ -486,193 +114,13 @@ namespace MyDataMyConsent.Models
         }
 
         /// <summary>
-        /// Get the actual instance of `FinancialAccountBillPayment`. If the actual instance is not `FinancialAccountBillPayment`,
+        /// Get the actual instance of `FinancialAccountMutualFund`. If the actual instance is not `FinancialAccountMutualFund`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of FinancialAccountBillPayment</returns>
-        public FinancialAccountBillPayment GetFinancialAccountBillPayment()
+        /// <returns>An instance of FinancialAccountMutualFund</returns>
+        public FinancialAccountMutualFund GetFinancialAccountMutualFund()
         {
-            return (FinancialAccountBillPayment)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountAif`. If the actual instance is not `FinancialAccountAif`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountAif</returns>
-        public FinancialAccountAif GetFinancialAccountAif()
-        {
-            return (FinancialAccountAif)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountBond`. If the actual instance is not `FinancialAccountBond`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountBond</returns>
-        public FinancialAccountBond GetFinancialAccountBond()
-        {
-            return (FinancialAccountBond)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountCertificateOfDeposit`. If the actual instance is not `FinancialAccountCertificateOfDeposit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountCertificateOfDeposit</returns>
-        public FinancialAccountCertificateOfDeposit GetFinancialAccountCertificateOfDeposit()
-        {
-            return (FinancialAccountCertificateOfDeposit)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountCIS`. If the actual instance is not `FinancialAccountCIS`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountCIS</returns>
-        public FinancialAccountCIS GetFinancialAccountCIS()
-        {
-            return (FinancialAccountCIS)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountCommercialPaper`. If the actual instance is not `FinancialAccountCommercialPaper`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountCommercialPaper</returns>
-        public FinancialAccountCommercialPaper GetFinancialAccountCommercialPaper()
-        {
-            return (FinancialAccountCommercialPaper)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountDebenture`. If the actual instance is not `FinancialAccountDebenture`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountDebenture</returns>
-        public FinancialAccountDebenture GetFinancialAccountDebenture()
-        {
-            return (FinancialAccountDebenture)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountDeposit`. If the actual instance is not `FinancialAccountDeposit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountDeposit</returns>
-        public FinancialAccountDeposit GetFinancialAccountDeposit()
-        {
-            return (FinancialAccountDeposit)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountEpf`. If the actual instance is not `FinancialAccountEpf`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountEpf</returns>
-        public FinancialAccountEpf GetFinancialAccountEpf()
-        {
-            return (FinancialAccountEpf)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountEtf`. If the actual instance is not `FinancialAccountEtf`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountEtf</returns>
-        public FinancialAccountEtf GetFinancialAccountEtf()
-        {
-            return (FinancialAccountEtf)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountGovtSecurity`. If the actual instance is not `FinancialAccountGovtSecurity`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountGovtSecurity</returns>
-        public FinancialAccountGovtSecurity GetFinancialAccountGovtSecurity()
-        {
-            return (FinancialAccountGovtSecurity)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountIdr`. If the actual instance is not `FinancialAccountIdr`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountIdr</returns>
-        public FinancialAccountIdr GetFinancialAccountIdr()
-        {
-            return (FinancialAccountIdr)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountInsurancePolicy`. If the actual instance is not `FinancialAccountInsurancePolicy`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountInsurancePolicy</returns>
-        public FinancialAccountInsurancePolicy GetFinancialAccountInsurancePolicy()
-        {
-            return (FinancialAccountInsurancePolicy)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountInvit`. If the actual instance is not `FinancialAccountInvit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountInvit</returns>
-        public FinancialAccountInvit GetFinancialAccountInvit()
-        {
-            return (FinancialAccountInvit)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountLoan`. If the actual instance is not `FinancialAccountLoan`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountLoan</returns>
-        public FinancialAccountLoan GetFinancialAccountLoan()
-        {
-            return (FinancialAccountLoan)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountNps`. If the actual instance is not `FinancialAccountNps`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountNps</returns>
-        public FinancialAccountNps GetFinancialAccountNps()
-        {
-            return (FinancialAccountNps)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountPpf`. If the actual instance is not `FinancialAccountPpf`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountPpf</returns>
-        public FinancialAccountPpf GetFinancialAccountPpf()
-        {
-            return (FinancialAccountPpf)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountRecurringDeposit`. If the actual instance is not `FinancialAccountRecurringDeposit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountRecurringDeposit</returns>
-        public FinancialAccountRecurringDeposit GetFinancialAccountRecurringDeposit()
-        {
-            return (FinancialAccountRecurringDeposit)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountReit`. If the actual instance is not `FinancialAccountReit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountReit</returns>
-        public FinancialAccountReit GetFinancialAccountReit()
-        {
-            return (FinancialAccountReit)this.ActualInstance;
+            return (FinancialAccountMutualFund)this.ActualInstance;
         }
 
         /// <summary>
@@ -683,26 +131,6 @@ namespace MyDataMyConsent.Models
         public FinancialAccountSip GetFinancialAccountSip()
         {
             return (FinancialAccountSip)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountTermDeposit`. If the actual instance is not `FinancialAccountTermDeposit`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountTermDeposit</returns>
-        public FinancialAccountTermDeposit GetFinancialAccountTermDeposit()
-        {
-            return (FinancialAccountTermDeposit)this.ActualInstance;
-        }
-
-        /// <summary>
-        /// Get the actual instance of `FinancialAccountUlip`. If the actual instance is not `FinancialAccountUlip`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of FinancialAccountUlip</returns>
-        public FinancialAccountUlip GetFinancialAccountUlip()
-        {
-            return (FinancialAccountUlip)this.ActualInstance;
         }
 
         /// <summary>
@@ -743,126 +171,6 @@ namespace MyDataMyConsent.Models
 
             try
             {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountAif>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountAif: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountBillPayment>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountBillPayment: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountBond>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountBond: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountCIS>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountCIS: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountCertificateOfDeposit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountCertificateOfDeposit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountCommercialPaper>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountCommercialPaper: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountCreditCard>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountCreditCard: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountDebenture>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountDebenture: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountDeposit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountDeposit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountEpf>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountEpf: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
                 newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountEquity>(jsonString, FinancialAccount.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
                 return newFinancialAccount;
@@ -871,78 +179,6 @@ namespace MyDataMyConsent.Models
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountEquity: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountEtf>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountEtf: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountGovtSecurity>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountGovtSecurity: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountIdr>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountIdr: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountInsurancePolicy>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountInsurancePolicy: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountInvit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountInvit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountLoan>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountLoan: {1}", jsonString, exception.ToString()));
             }
 
             try
@@ -959,54 +195,6 @@ namespace MyDataMyConsent.Models
 
             try
             {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountNps>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountNps: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountPpf>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountPpf: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountRecurringDeposit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountRecurringDeposit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountReit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountReit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
                 newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountSip>(jsonString, FinancialAccount.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
                 return newFinancialAccount;
@@ -1015,30 +203,6 @@ namespace MyDataMyConsent.Models
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountSip: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountTermDeposit>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountTermDeposit: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newFinancialAccount = new FinancialAccount(JsonConvert.DeserializeObject<FinancialAccountUlip>(jsonString, FinancialAccount.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFinancialAccount;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FinancialAccountUlip: {1}", jsonString, exception.ToString()));
             }
 
             // no match found, throw an exception

@@ -31,12 +31,6 @@ namespace MyDataMyConsent.Models
     [DataContract(Name = "Holder")]
     public partial class Holder : IEquatable<Holder>
     {
-
-        /// <summary>
-        /// Gets or Sets Nominee
-        /// </summary>
-        [DataMember(Name = "nominee", EmitDefaultValue = false)]
-        public HoldingNominee? Nominee { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Holder" /> class.
         /// </summary>
@@ -46,16 +40,12 @@ namespace MyDataMyConsent.Models
         /// Initializes a new instance of the <see cref="Holder" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
-        /// <param name="dob">dob.</param>
+        /// <param name="dateOfBirth">dateOfBirth.</param>
         /// <param name="mobile">mobile.</param>
-        /// <param name="nominee">nominee.</param>
         /// <param name="dematId">dematId (required).</param>
-        /// <param name="landline">landline.</param>
-        /// <param name="address">address.</param>
         /// <param name="email">email (required).</param>
         /// <param name="pan">pan.</param>
-        /// <param name="ckycCompliance">ckycCompliance (required).</param>
-        public Holder(string name = default(string), DateTime dob = default(DateTime), string mobile = default(string), HoldingNominee? nominee = default(HoldingNominee?), string dematId = default(string), string landline = default(string), string address = default(string), string email = default(string), string pan = default(string), bool ckycCompliance = default(bool))
+        public Holder(string name = default(string), DateTime dateOfBirth = default(DateTime), string mobile = default(string), string dematId = default(string), string email = default(string), string pan = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -75,12 +65,8 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("email is a required property for Holder and cannot be null");
             }
             this.Email = email;
-            this.CkycCompliance = ckycCompliance;
-            this.Dob = dob;
+            this.DateOfBirth = dateOfBirth;
             this.Mobile = mobile;
-            this.Nominee = nominee;
-            this.Landline = landline;
-            this.Address = address;
             this.Pan = pan;
         }
 
@@ -91,10 +77,10 @@ namespace MyDataMyConsent.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Dob
+        /// Gets or Sets DateOfBirth
         /// </summary>
-        [DataMember(Name = "dob", EmitDefaultValue = false)]
-        public DateTime Dob { get; set; }
+        [DataMember(Name = "date_of_birth", EmitDefaultValue = false)]
+        public DateTime DateOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets Mobile
@@ -105,20 +91,8 @@ namespace MyDataMyConsent.Models
         /// <summary>
         /// Gets or Sets DematId
         /// </summary>
-        [DataMember(Name = "dematId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "demat_id", IsRequired = true, EmitDefaultValue = true)]
         public string DematId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Landline
-        /// </summary>
-        [DataMember(Name = "landline", EmitDefaultValue = false)]
-        public string Landline { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Address
-        /// </summary>
-        [DataMember(Name = "address", EmitDefaultValue = false)]
-        public string Address { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
@@ -133,12 +107,6 @@ namespace MyDataMyConsent.Models
         public string Pan { get; set; }
 
         /// <summary>
-        /// Gets or Sets CkycCompliance
-        /// </summary>
-        [DataMember(Name = "ckycCompliance", IsRequired = true, EmitDefaultValue = true)]
-        public bool CkycCompliance { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,15 +115,11 @@ namespace MyDataMyConsent.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class Holder {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Dob: ").Append(Dob).Append("\n");
+            sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
             sb.Append("  Mobile: ").Append(Mobile).Append("\n");
-            sb.Append("  Nominee: ").Append(Nominee).Append("\n");
             sb.Append("  DematId: ").Append(DematId).Append("\n");
-            sb.Append("  Landline: ").Append(Landline).Append("\n");
-            sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Pan: ").Append(Pan).Append("\n");
-            sb.Append("  CkycCompliance: ").Append(CkycCompliance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,9 +161,9 @@ namespace MyDataMyConsent.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Dob == input.Dob ||
-                    (this.Dob != null &&
-                    this.Dob.Equals(input.Dob))
+                    this.DateOfBirth == input.DateOfBirth ||
+                    (this.DateOfBirth != null &&
+                    this.DateOfBirth.Equals(input.DateOfBirth))
                 ) && 
                 (
                     this.Mobile == input.Mobile ||
@@ -207,23 +171,9 @@ namespace MyDataMyConsent.Models
                     this.Mobile.Equals(input.Mobile))
                 ) && 
                 (
-                    this.Nominee == input.Nominee ||
-                    this.Nominee.Equals(input.Nominee)
-                ) && 
-                (
                     this.DematId == input.DematId ||
                     (this.DematId != null &&
                     this.DematId.Equals(input.DematId))
-                ) && 
-                (
-                    this.Landline == input.Landline ||
-                    (this.Landline != null &&
-                    this.Landline.Equals(input.Landline))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
                 ) && 
                 (
                     this.Email == input.Email ||
@@ -234,10 +184,6 @@ namespace MyDataMyConsent.Models
                     this.Pan == input.Pan ||
                     (this.Pan != null &&
                     this.Pan.Equals(input.Pan))
-                ) && 
-                (
-                    this.CkycCompliance == input.CkycCompliance ||
-                    this.CkycCompliance.Equals(input.CkycCompliance)
                 );
         }
 
@@ -254,26 +200,17 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Dob != null)
+                if (this.DateOfBirth != null)
                 {
-                    hashCode = (hashCode * 59) + this.Dob.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DateOfBirth.GetHashCode();
                 }
                 if (this.Mobile != null)
                 {
                     hashCode = (hashCode * 59) + this.Mobile.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Nominee.GetHashCode();
                 if (this.DematId != null)
                 {
                     hashCode = (hashCode * 59) + this.DematId.GetHashCode();
-                }
-                if (this.Landline != null)
-                {
-                    hashCode = (hashCode * 59) + this.Landline.GetHashCode();
-                }
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
                 }
                 if (this.Email != null)
                 {
@@ -283,7 +220,6 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Pan.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CkycCompliance.GetHashCode();
                 return hashCode;
             }
         }

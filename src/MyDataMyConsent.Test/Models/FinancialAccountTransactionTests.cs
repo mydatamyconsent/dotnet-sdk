@@ -74,70 +74,6 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'TxnType'
-        /// </summary>
-        [Fact]
-        public void TxnTypeTest()
-        {
-            // TODO unit test for the property 'TxnType'
-        }
-        /// <summary>
-        /// Test the property 'TxnDate'
-        /// </summary>
-        [Fact]
-        public void TxnDateTest()
-        {
-            // TODO unit test for the property 'TxnDate'
-        }
-        /// <summary>
-        /// Test the property 'Amount'
-        /// </summary>
-        [Fact]
-        public void AmountTest()
-        {
-            // TODO unit test for the property 'Amount'
-        }
-        /// <summary>
-        /// Test the property 'ValueDate'
-        /// </summary>
-        [Fact]
-        public void ValueDateTest()
-        {
-            // TODO unit test for the property 'ValueDate'
-        }
-        /// <summary>
-        /// Test the property 'Narration'
-        /// </summary>
-        [Fact]
-        public void NarrationTest()
-        {
-            // TODO unit test for the property 'Narration'
-        }
-        /// <summary>
-        /// Test the property 'StatementDate'
-        /// </summary>
-        [Fact]
-        public void StatementDateTest()
-        {
-            // TODO unit test for the property 'StatementDate'
-        }
-        /// <summary>
-        /// Test the property 'Mcc'
-        /// </summary>
-        [Fact]
-        public void MccTest()
-        {
-            // TODO unit test for the property 'Mcc'
-        }
-        /// <summary>
-        /// Test the property 'MaskedCardNumber'
-        /// </summary>
-        [Fact]
-        public void MaskedCardNumberTest()
-        {
-            // TODO unit test for the property 'MaskedCardNumber'
-        }
-        /// <summary>
         /// Test the property 'Amc'
         /// </summary>
         [Fact]
@@ -226,6 +162,14 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'Ucc'
         }
         /// <summary>
+        /// Test the property 'Amount'
+        /// </summary>
+        [Fact]
+        public void AmountTest()
+        {
+            // TODO unit test for the property 'Amount'
+        }
+        /// <summary>
         /// Test the property 'ClosingUnits'
         /// </summary>
         [Fact]
@@ -296,6 +240,14 @@ namespace MyDataMyConsent.Test.Model
         public void ModeTest()
         {
             // TODO unit test for the property 'Mode'
+        }
+        /// <summary>
+        /// Test the property 'Narration'
+        /// </summary>
+        [Fact]
+        public void NarrationTest()
+        {
+            // TODO unit test for the property 'Narration'
         }
 
     }

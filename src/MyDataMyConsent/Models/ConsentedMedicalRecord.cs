@@ -42,10 +42,12 @@ namespace MyDataMyConsent.Models
         /// <param name="id">Health id..</param>
         /// <param name="fieldTitle">Health field title. (required).</param>
         /// <param name="fieldSlug">Health field slug. (required).</param>
+        /// <param name="issuerId">Issuer id. (required).</param>
+        /// <param name="issuerName">Issuer name. (required).</param>
         /// <param name="category">health category type. (required).</param>
         /// <param name="toDate">To Date.</param>
         /// <param name="fromDate">From Date.</param>
-        public ConsentedMedicalRecord(string id = default(string), string fieldTitle = default(string), string fieldSlug = default(string), string category = default(string), DateTime toDate = default(DateTime), DateTime fromDate = default(DateTime))
+        public ConsentedMedicalRecord(string id = default(string), string fieldTitle = default(string), string fieldSlug = default(string), string issuerId = default(string), string issuerName = default(string), string category = default(string), DateTime toDate = default(DateTime), DateTime fromDate = default(DateTime))
         {
             // to ensure "fieldTitle" is required (not null)
             if (fieldTitle == null)
@@ -59,6 +61,18 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("fieldSlug is a required property for ConsentedMedicalRecord and cannot be null");
             }
             this.FieldSlug = fieldSlug;
+            // to ensure "issuerId" is required (not null)
+            if (issuerId == null)
+            {
+                throw new ArgumentNullException("issuerId is a required property for ConsentedMedicalRecord and cannot be null");
+            }
+            this.IssuerId = issuerId;
+            // to ensure "issuerName" is required (not null)
+            if (issuerName == null)
+            {
+                throw new ArgumentNullException("issuerName is a required property for ConsentedMedicalRecord and cannot be null");
+            }
+            this.IssuerName = issuerName;
             // to ensure "category" is required (not null)
             if (category == null)
             {
@@ -92,6 +106,20 @@ namespace MyDataMyConsent.Models
         public string FieldSlug { get; set; }
 
         /// <summary>
+        /// Issuer id.
+        /// </summary>
+        /// <value>Issuer id.</value>
+        [DataMember(Name = "issuerId", IsRequired = true, EmitDefaultValue = true)]
+        public string IssuerId { get; set; }
+
+        /// <summary>
+        /// Issuer name.
+        /// </summary>
+        /// <value>Issuer name.</value>
+        [DataMember(Name = "issuerName", IsRequired = true, EmitDefaultValue = true)]
+        public string IssuerName { get; set; }
+
+        /// <summary>
         /// health category type.
         /// </summary>
         /// <value>health category type.</value>
@@ -123,6 +151,8 @@ namespace MyDataMyConsent.Models
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  FieldTitle: ").Append(FieldTitle).Append("\n");
             sb.Append("  FieldSlug: ").Append(FieldSlug).Append("\n");
+            sb.Append("  IssuerId: ").Append(IssuerId).Append("\n");
+            sb.Append("  IssuerName: ").Append(IssuerName).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  ToDate: ").Append(ToDate).Append("\n");
             sb.Append("  FromDate: ").Append(FromDate).Append("\n");
@@ -177,6 +207,16 @@ namespace MyDataMyConsent.Models
                     this.FieldSlug.Equals(input.FieldSlug))
                 ) && 
                 (
+                    this.IssuerId == input.IssuerId ||
+                    (this.IssuerId != null &&
+                    this.IssuerId.Equals(input.IssuerId))
+                ) && 
+                (
+                    this.IssuerName == input.IssuerName ||
+                    (this.IssuerName != null &&
+                    this.IssuerName.Equals(input.IssuerName))
+                ) && 
+                (
                     this.Category == input.Category ||
                     (this.Category != null &&
                     this.Category.Equals(input.Category))
@@ -213,6 +253,14 @@ namespace MyDataMyConsent.Models
                 if (this.FieldSlug != null)
                 {
                     hashCode = (hashCode * 59) + this.FieldSlug.GetHashCode();
+                }
+                if (this.IssuerId != null)
+                {
+                    hashCode = (hashCode * 59) + this.IssuerId.GetHashCode();
+                }
+                if (this.IssuerName != null)
+                {
+                    hashCode = (hashCode * 59) + this.IssuerName.GetHashCode();
                 }
                 if (this.Category != null)
                 {

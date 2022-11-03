@@ -41,14 +41,23 @@ namespace MyDataMyConsent.Models
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="identifier">identifier (required).</param>
-        /// <param name="balance">balance (required).</param>
-        /// <param name="profile">profile (required).</param>
-        /// <param name="summary">summary (required).</param>
-        /// <param name="maskedAccountNumber">maskedAccountNumber (required).</param>
-        /// <param name="linkedAccountRef">linkedAccountRef (required).</param>
-        /// <param name="version">version (required).</param>
-        public MutualFund(string id = default(string), string name = default(string), string identifier = default(string), double balance = default(double), Profile profile = default(Profile), MutualFundSummary summary = default(MutualFundSummary), string maskedAccountNumber = default(string), string linkedAccountRef = default(string), float version = default(float))
+        /// <param name="investmentValue">investmentValue (required).</param>
+        /// <param name="currentValue">currentValue (required).</param>
+        /// <param name="currencyCode">currencyCode (required).</param>
+        /// <param name="amc">amc.</param>
+        /// <param name="registrar">registrar.</param>
+        /// <param name="fundName">fundName (required).</param>
+        /// <param name="isin">isin (required).</param>
+        /// <param name="folioNumber">folioNumber (required).</param>
+        /// <param name="schemeCode">schemeCode.</param>
+        /// <param name="fundType">fundType.</param>
+        /// <param name="fundCategory">fundCategory.</param>
+        /// <param name="units">units (required).</param>
+        /// <param name="lienUnits">lienUnits.</param>
+        /// <param name="creationDate">creationDate.</param>
+        /// <param name="holder">holder (required).</param>
+        /// <param name="transactions">transactions (required).</param>
+        public MutualFund(string id = default(string), string name = default(string), double investmentValue = default(double), double currentValue = default(double), string currencyCode = default(string), string amc = default(string), string registrar = default(string), string fundName = default(string), string isin = default(string), string folioNumber = default(string), string schemeCode = default(string), string fundType = default(string), string fundCategory = default(string), double units = default(double), string lienUnits = default(string), DateTime creationDate = default(DateTime), Holder holder = default(Holder), bool transactions = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -62,38 +71,47 @@ namespace MyDataMyConsent.Models
                 throw new ArgumentNullException("name is a required property for MutualFund and cannot be null");
             }
             this.Name = name;
-            // to ensure "identifier" is required (not null)
-            if (identifier == null)
+            this.InvestmentValue = investmentValue;
+            this.CurrentValue = currentValue;
+            // to ensure "currencyCode" is required (not null)
+            if (currencyCode == null)
             {
-                throw new ArgumentNullException("identifier is a required property for MutualFund and cannot be null");
+                throw new ArgumentNullException("currencyCode is a required property for MutualFund and cannot be null");
             }
-            this.Identifier = identifier;
-            this.Balance = balance;
-            // to ensure "profile" is required (not null)
-            if (profile == null)
+            this.CurrencyCode = currencyCode;
+            // to ensure "fundName" is required (not null)
+            if (fundName == null)
             {
-                throw new ArgumentNullException("profile is a required property for MutualFund and cannot be null");
+                throw new ArgumentNullException("fundName is a required property for MutualFund and cannot be null");
             }
-            this.Profile = profile;
-            // to ensure "summary" is required (not null)
-            if (summary == null)
+            this.FundName = fundName;
+            // to ensure "isin" is required (not null)
+            if (isin == null)
             {
-                throw new ArgumentNullException("summary is a required property for MutualFund and cannot be null");
+                throw new ArgumentNullException("isin is a required property for MutualFund and cannot be null");
             }
-            this.Summary = summary;
-            // to ensure "maskedAccountNumber" is required (not null)
-            if (maskedAccountNumber == null)
+            this.Isin = isin;
+            // to ensure "folioNumber" is required (not null)
+            if (folioNumber == null)
             {
-                throw new ArgumentNullException("maskedAccountNumber is a required property for MutualFund and cannot be null");
+                throw new ArgumentNullException("folioNumber is a required property for MutualFund and cannot be null");
             }
-            this.MaskedAccountNumber = maskedAccountNumber;
-            // to ensure "linkedAccountRef" is required (not null)
-            if (linkedAccountRef == null)
+            this.FolioNumber = folioNumber;
+            this.Units = units;
+            // to ensure "holder" is required (not null)
+            if (holder == null)
             {
-                throw new ArgumentNullException("linkedAccountRef is a required property for MutualFund and cannot be null");
+                throw new ArgumentNullException("holder is a required property for MutualFund and cannot be null");
             }
-            this.LinkedAccountRef = linkedAccountRef;
-            this._Version = version;
+            this.Holder = holder;
+            this.Transactions = transactions;
+            this.Amc = amc;
+            this.Registrar = registrar;
+            this.SchemeCode = schemeCode;
+            this.FundType = fundType;
+            this.FundCategory = fundCategory;
+            this.LienUnits = lienUnits;
+            this.CreationDate = creationDate;
         }
 
         /// <summary>
@@ -109,46 +127,100 @@ namespace MyDataMyConsent.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identifier
+        /// Gets or Sets InvestmentValue
         /// </summary>
-        [DataMember(Name = "identifier", IsRequired = true, EmitDefaultValue = true)]
-        public string Identifier { get; set; }
+        [DataMember(Name = "investment_value", IsRequired = true, EmitDefaultValue = true)]
+        public double InvestmentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Balance
+        /// Gets or Sets CurrentValue
         /// </summary>
-        [DataMember(Name = "balance", IsRequired = true, EmitDefaultValue = true)]
-        public double Balance { get; set; }
+        [DataMember(Name = "current_value", IsRequired = true, EmitDefaultValue = true)]
+        public double CurrentValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets Profile
+        /// Gets or Sets CurrencyCode
         /// </summary>
-        [DataMember(Name = "profile", IsRequired = true, EmitDefaultValue = true)]
-        public Profile Profile { get; set; }
+        [DataMember(Name = "currency_code", IsRequired = true, EmitDefaultValue = true)]
+        public string CurrencyCode { get; set; }
 
         /// <summary>
-        /// Gets or Sets Summary
+        /// Gets or Sets Amc
         /// </summary>
-        [DataMember(Name = "summary", IsRequired = true, EmitDefaultValue = true)]
-        public MutualFundSummary Summary { get; set; }
+        [DataMember(Name = "amc", EmitDefaultValue = false)]
+        public string Amc { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaskedAccountNumber
+        /// Gets or Sets Registrar
         /// </summary>
-        [DataMember(Name = "masked_account_number", IsRequired = true, EmitDefaultValue = true)]
-        public string MaskedAccountNumber { get; set; }
+        [DataMember(Name = "registrar", EmitDefaultValue = false)]
+        public string Registrar { get; set; }
 
         /// <summary>
-        /// Gets or Sets LinkedAccountRef
+        /// Gets or Sets FundName
         /// </summary>
-        [DataMember(Name = "linked_account_ref", IsRequired = true, EmitDefaultValue = true)]
-        public string LinkedAccountRef { get; set; }
+        [DataMember(Name = "fund_name", IsRequired = true, EmitDefaultValue = true)]
+        public string FundName { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Version
+        /// Gets or Sets Isin
         /// </summary>
-        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = true)]
-        public float _Version { get; set; }
+        [DataMember(Name = "isin", IsRequired = true, EmitDefaultValue = true)]
+        public string Isin { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FolioNumber
+        /// </summary>
+        [DataMember(Name = "folio_number", IsRequired = true, EmitDefaultValue = true)]
+        public string FolioNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SchemeCode
+        /// </summary>
+        [DataMember(Name = "scheme_code", EmitDefaultValue = false)]
+        public string SchemeCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FundType
+        /// </summary>
+        [DataMember(Name = "fund_type", EmitDefaultValue = false)]
+        public string FundType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FundCategory
+        /// </summary>
+        [DataMember(Name = "fund_category", EmitDefaultValue = false)]
+        public string FundCategory { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Units
+        /// </summary>
+        [DataMember(Name = "units", IsRequired = true, EmitDefaultValue = true)]
+        public double Units { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LienUnits
+        /// </summary>
+        [DataMember(Name = "lien_units", EmitDefaultValue = false)]
+        public string LienUnits { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreationDate
+        /// </summary>
+        [DataMember(Name = "creation_date", EmitDefaultValue = false)]
+        public DateTime CreationDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Holder
+        /// </summary>
+        [DataMember(Name = "holder", IsRequired = true, EmitDefaultValue = true)]
+        public Holder Holder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Transactions
+        /// </summary>
+        [DataMember(Name = "transactions", IsRequired = true, EmitDefaultValue = true)]
+        public bool Transactions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -160,13 +232,22 @@ namespace MyDataMyConsent.Models
             sb.Append("class MutualFund {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Identifier: ").Append(Identifier).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
-            sb.Append("  Profile: ").Append(Profile).Append("\n");
-            sb.Append("  Summary: ").Append(Summary).Append("\n");
-            sb.Append("  MaskedAccountNumber: ").Append(MaskedAccountNumber).Append("\n");
-            sb.Append("  LinkedAccountRef: ").Append(LinkedAccountRef).Append("\n");
-            sb.Append("  _Version: ").Append(_Version).Append("\n");
+            sb.Append("  InvestmentValue: ").Append(InvestmentValue).Append("\n");
+            sb.Append("  CurrentValue: ").Append(CurrentValue).Append("\n");
+            sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
+            sb.Append("  Amc: ").Append(Amc).Append("\n");
+            sb.Append("  Registrar: ").Append(Registrar).Append("\n");
+            sb.Append("  FundName: ").Append(FundName).Append("\n");
+            sb.Append("  Isin: ").Append(Isin).Append("\n");
+            sb.Append("  FolioNumber: ").Append(FolioNumber).Append("\n");
+            sb.Append("  SchemeCode: ").Append(SchemeCode).Append("\n");
+            sb.Append("  FundType: ").Append(FundType).Append("\n");
+            sb.Append("  FundCategory: ").Append(FundCategory).Append("\n");
+            sb.Append("  Units: ").Append(Units).Append("\n");
+            sb.Append("  LienUnits: ").Append(LienUnits).Append("\n");
+            sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  Holder: ").Append(Holder).Append("\n");
+            sb.Append("  Transactions: ").Append(Transactions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,37 +294,80 @@ namespace MyDataMyConsent.Models
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Identifier == input.Identifier ||
-                    (this.Identifier != null &&
-                    this.Identifier.Equals(input.Identifier))
+                    this.InvestmentValue == input.InvestmentValue ||
+                    this.InvestmentValue.Equals(input.InvestmentValue)
                 ) && 
                 (
-                    this.Balance == input.Balance ||
-                    this.Balance.Equals(input.Balance)
+                    this.CurrentValue == input.CurrentValue ||
+                    this.CurrentValue.Equals(input.CurrentValue)
                 ) && 
                 (
-                    this.Profile == input.Profile ||
-                    (this.Profile != null &&
-                    this.Profile.Equals(input.Profile))
+                    this.CurrencyCode == input.CurrencyCode ||
+                    (this.CurrencyCode != null &&
+                    this.CurrencyCode.Equals(input.CurrencyCode))
                 ) && 
                 (
-                    this.Summary == input.Summary ||
-                    (this.Summary != null &&
-                    this.Summary.Equals(input.Summary))
+                    this.Amc == input.Amc ||
+                    (this.Amc != null &&
+                    this.Amc.Equals(input.Amc))
                 ) && 
                 (
-                    this.MaskedAccountNumber == input.MaskedAccountNumber ||
-                    (this.MaskedAccountNumber != null &&
-                    this.MaskedAccountNumber.Equals(input.MaskedAccountNumber))
+                    this.Registrar == input.Registrar ||
+                    (this.Registrar != null &&
+                    this.Registrar.Equals(input.Registrar))
                 ) && 
                 (
-                    this.LinkedAccountRef == input.LinkedAccountRef ||
-                    (this.LinkedAccountRef != null &&
-                    this.LinkedAccountRef.Equals(input.LinkedAccountRef))
+                    this.FundName == input.FundName ||
+                    (this.FundName != null &&
+                    this.FundName.Equals(input.FundName))
                 ) && 
                 (
-                    this._Version == input._Version ||
-                    this._Version.Equals(input._Version)
+                    this.Isin == input.Isin ||
+                    (this.Isin != null &&
+                    this.Isin.Equals(input.Isin))
+                ) && 
+                (
+                    this.FolioNumber == input.FolioNumber ||
+                    (this.FolioNumber != null &&
+                    this.FolioNumber.Equals(input.FolioNumber))
+                ) && 
+                (
+                    this.SchemeCode == input.SchemeCode ||
+                    (this.SchemeCode != null &&
+                    this.SchemeCode.Equals(input.SchemeCode))
+                ) && 
+                (
+                    this.FundType == input.FundType ||
+                    (this.FundType != null &&
+                    this.FundType.Equals(input.FundType))
+                ) && 
+                (
+                    this.FundCategory == input.FundCategory ||
+                    (this.FundCategory != null &&
+                    this.FundCategory.Equals(input.FundCategory))
+                ) && 
+                (
+                    this.Units == input.Units ||
+                    this.Units.Equals(input.Units)
+                ) && 
+                (
+                    this.LienUnits == input.LienUnits ||
+                    (this.LienUnits != null &&
+                    this.LienUnits.Equals(input.LienUnits))
+                ) && 
+                (
+                    this.CreationDate == input.CreationDate ||
+                    (this.CreationDate != null &&
+                    this.CreationDate.Equals(input.CreationDate))
+                ) && 
+                (
+                    this.Holder == input.Holder ||
+                    (this.Holder != null &&
+                    this.Holder.Equals(input.Holder))
+                ) && 
+                (
+                    this.Transactions == input.Transactions ||
+                    this.Transactions.Equals(input.Transactions)
                 );
         }
 
@@ -264,28 +388,58 @@ namespace MyDataMyConsent.Models
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Identifier != null)
+                hashCode = (hashCode * 59) + this.InvestmentValue.GetHashCode();
+                hashCode = (hashCode * 59) + this.CurrentValue.GetHashCode();
+                if (this.CurrencyCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.Identifier.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CurrencyCode.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Balance.GetHashCode();
-                if (this.Profile != null)
+                if (this.Amc != null)
                 {
-                    hashCode = (hashCode * 59) + this.Profile.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Amc.GetHashCode();
                 }
-                if (this.Summary != null)
+                if (this.Registrar != null)
                 {
-                    hashCode = (hashCode * 59) + this.Summary.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Registrar.GetHashCode();
                 }
-                if (this.MaskedAccountNumber != null)
+                if (this.FundName != null)
                 {
-                    hashCode = (hashCode * 59) + this.MaskedAccountNumber.GetHashCode();
+                    hashCode = (hashCode * 59) + this.FundName.GetHashCode();
                 }
-                if (this.LinkedAccountRef != null)
+                if (this.Isin != null)
                 {
-                    hashCode = (hashCode * 59) + this.LinkedAccountRef.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Isin.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                if (this.FolioNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.FolioNumber.GetHashCode();
+                }
+                if (this.SchemeCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.SchemeCode.GetHashCode();
+                }
+                if (this.FundType != null)
+                {
+                    hashCode = (hashCode * 59) + this.FundType.GetHashCode();
+                }
+                if (this.FundCategory != null)
+                {
+                    hashCode = (hashCode * 59) + this.FundCategory.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Units.GetHashCode();
+                if (this.LienUnits != null)
+                {
+                    hashCode = (hashCode * 59) + this.LienUnits.GetHashCode();
+                }
+                if (this.CreationDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreationDate.GetHashCode();
+                }
+                if (this.Holder != null)
+                {
+                    hashCode = (hashCode * 59) + this.Holder.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Transactions.GetHashCode();
                 return hashCode;
             }
         }

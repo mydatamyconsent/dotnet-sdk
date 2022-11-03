@@ -82,6 +82,22 @@ namespace MyDataMyConsent.Test.Model
             // TODO unit test for the property 'FieldSlug'
         }
         /// <summary>
+        /// Test the property 'IssuerId'
+        /// </summary>
+        [Fact]
+        public void IssuerIdTest()
+        {
+            // TODO unit test for the property 'IssuerId'
+        }
+        /// <summary>
+        /// Test the property 'IssuerName'
+        /// </summary>
+        [Fact]
+        public void IssuerNameTest()
+        {
+            // TODO unit test for the property 'IssuerName'
+        }
+        /// <summary>
         /// Test the property 'Category'
         /// </summary>
         [Fact]
