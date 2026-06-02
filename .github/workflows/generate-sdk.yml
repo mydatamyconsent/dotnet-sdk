@@ -72,7 +72,7 @@ jobs:
 #                  NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
             - name: Repository update
-              uses: EndBug/add-and-commit@v9
+              uses: EndBug/add-and-commit@v10
               with:
                   author_name: Balamurali Pandranki
                   author_email: balamurali@live.com
